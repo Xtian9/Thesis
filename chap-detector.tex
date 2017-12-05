@@ -1,0 +1,214 @@
+\chapter{Experimental setup}
+\label{chap:detector}
+
+20-25 pages.
+Intro to chapter.
+
+\section{The Large Hadron Collider}
+
+CERN and LHC. Franco-Swiss border. 26 km. x km underground. Largest and most 
+powerful.
+Collider physics. Luminosity (instantaneous/integrated) and cross 
+section formulas (Marco-Andrea/Pesaresi).
+Used to search for new physics and discover Higgs boson.
+Need very high energy to produce high mass particles and search for new physics 
+(cf xs vs com).
+(Compare to ep collider and fixed target).
+Proton-proton (and ion) collisions.
+Bunch spacing, number of bunches, number of protons per bunch (Marco-Andrea 
+table).
+ATLAS, CMS, LHCb, ALICE.
+Accelerator complex: hydrogen, LINAC, PS, SPS, etc (show diagram).
+Centre of mass energy. Pileup (formula/estimate using inelastic xs?). 
+
+Diagram of accelerator complex.
+
+History of Run1, shutdown, Run 2. Amount of data delivered.
+
+\section{The Compact Muon Solenoid}
+
+One of two multipurpose detectors. Used to search for new physics and discover 
+Higgs boson.
+
+Hermetic coverage. Overview of subdetectors. Magnet strength.
+
+Diagram.
+
+Coordinate system. Pseudorapidity.
+
+\subsection{Tracker}
+
+How tracker works, ie electron-hole pairs (see Adam and MSci report).
+High radiation environment. Little material.
+
+Pixel tracker.
+
+Silicon strip tracker.
+
+TOB, TEC, etc. Their positions/extents.
+
+Diagram of layout.
+
+Momentum resolution, tracking efficiency, spatial resolution.
+
+\subsection{Electromagnetic calorimeter}
+
+Designed to detect electrons and photons. Lead tungstate crystals.
+
+EB. EE. Preshower.
+
+Diagram of layout.
+
+How ECAL works (ECAL shower, bremmstrahlung and pair production - see Adam and 
+APP MSci course.)
+
+Resolution formula (a+b+c).
+
+\subsection{Hadronic calorimeter}
+
+Designed to detect hadrons/jets. Brass and scintillating plastic. Photodiodes. 
+HF. Fibres.
+
+HB. HE. HO. HF
+
+Diagram of layout.
+
+How HCAL works (hadronic showers produce scintillation light - see Adam and APP 
+MSci course.)
+
+Resolution formula.
+
+\subsection{Muon system}
+
+Adam: As muons are heavier than electrons, they are minimally ionising and lose 
+little energy through bremsstrahlung. They therefore mostly pass through the 
+ECAL and HCAL. As muons are a key component of many electroweak decays, CMS has 
+a dedicated muon system interleaved with the iron return yoke surrounding the 
+solenoid.
+ 
+DT (MB), CSC (ME), RPC.
+
+Diagram of layout.
+
+Momentum resolution 1\%.
+
+\subsection{Magnet}
+
+Just one or two short paragraphs.
+See Marco-Andrea, Citron, Baber.
+
+\subsection{Trigger and data acquisition}
+
+40 MHz.
+
+L1 trigger.
+
+HLT.
+
+%\subsection{Software and computing}
+% CMSSW
+Computing tiers.
+
+\subsubsection{L1 trigger upgrade and my service work?}
+
+Not sure yet. Look at Adam, Matt, Jad.
+
+\section{Event reconstruction}
+
+Intro: need to put together the things observed in the detector to reconstruct 
+the objects.
+
+Object reconstruction/identification (requires revision).
+Tag and probe.
+vertexing/tracking, btagging, PF, antikt.
+PU subtraction, isolation, cross-cleaning.
+MC corrections (JECs, PU, btagging, lepton ID, etc.).
+
+Mention objects/working points used in analysis as you go along. Maybe summary 
+table like Matt. Actually maybe include this in analysis chapter (see Adam).
+
+\subsection{Tracks and vertices}
+
+Combinatorial track finder (CTF), Kalman filter.
+
+Primary vertex. PU vertices. Secondary/displaced vertices (b quarks) found in 
+subsequent levels of reconstruction.
+
+Efficiencies.
+
+Isolated tracks? (when talking about analysis objects).
+
+\subsection{Electrons and photons}
+%\subsubsection{Tag and probe/corrections}
+
+\subsection{Muons}
+
+\subsection{Particle flow algorithm}
+Need to decide where to put this. Not clear on the connection between object 
+reconstruction and particle flow.
+Resources: Particle Flow paper, Particle Flow summary.
+
+The tracks are extrapolated through the calorimeters, if they fall within the 
+boundaries of one or several clusters, the clusters are associated to the 
+track. The set of track and cluster(s) constitute a charged hadron and the 
+building bricks are not considered anymore in the rest of the algorithm. The 
+muons are identified beforehand so that their track does not give rise to a 
+charged hadron. The electrons are more difficult to deal with. Indeed, due to 
+the frequent Bremsstrahlung photon emission, a specific track reconstruction [3]
+is needed as well as a dedicated treatment to properly attach the photon 
+clusters to the electron and avoid energy double counting. Once all the tracks 
+are treated, the remaining clusters result in photons in case of the 
+electromagnetic calorimeter (ECAL) and neutral hadrons in the hadron 
+calorimeter (HCAL). Once all the deposits
+
+\subsection{Jets}
+
+Briefly describe what a jet is (hadronisation, tight cone of particles [MA]).
+antikt algorithm. Infrared and collinear safe.
+Inputs are PF candidates. Pileup subtraction (not just here but for all 
+objects).
+
+\subsubsection{Correcting the energy of jets}
+
+\subsubsection{b-tagging}
+Identification of jets originating from bottom quarks.
+
+\subsection{Energy sums and missing energy}
+
+Define HT, MHT and MET. At some point (maybe near the beginning) explain why we 
+use  the transverse plane (initial momentum is zero, whereas it isn't in the 
+longitudinal plane).
+
+Neutrinos do not interact in particle detectors, and therefore escape 
+undetected. Their presence can be inferred by the momentum imbalance of the 
+visible particles in an event. (this should be mentioned in overview of 
+analysis in intro chapter).
+
+Type-1 corrections.
+
+\section{Data sets}
+
+See Nick. MA has this in the analysis chapter.
+We use data collected by the CMS during certain runs, plus simulated data of 
+background and signal processes.
+
+\subsection{Collected data}
+
+35.9 fb-1. 2016. (This would be mentioned in the intro anyway).
+Show lumi delivered/collected vs time.
+Triggers/Primary Datasets.
+SR and Muon CRs.
+
+Maybe keep this chapter general, just have section on MC simulation, and 
+mention which specific data and MC samples elsewhere.
+
+\subsection{Monte Carlo simulation}
+
+Description of madgraph, pythia, GEANT.
+
+MC simulation data sets.
+(Grid of masses and ctau, couplings used) - no need to specify grid, couplings 
+mentioned in simplified models section.
+See paper.
+
+Describe weights and xs/lumi normalisation?

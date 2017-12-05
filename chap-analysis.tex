@@ -1,0 +1,375 @@
+\chapter{Search strategy}
+\label{chap:analysis}
+
+This chapter describes the analysis strategy of a search for physics 
+beyond the standard model in proton-proton collisions at a centre of mass 
+energy of 13~TeV. The search is performed in final states containing missing 
+transverse momentum and at least one jet. 
+
+The search is designed to have sensitivity to a wide range of new physics 
+models that involve the production of a weakly interacting 
+particle (WIMP), such as dark matter or the lightest supersymmetric particle. 
+The search has been optimised for signatures in which the WIMP is produced from 
+prompt decays at the primary collision vertex. However, as will be discussed in 
+Chap.~\ref{chap:results}, the search is also sensitive to signatures in which 
+the WIMP is produced at a displaced vertex following the decay of a long-lived 
+particle. %This will be the focus of the interpretation.
+% OB: prompt MET signatures
+
+%explain hard scatter somewhere?
+% overall momentum
+%is an imbalance in transverse momentum in the final state, as they travel 
+%through the detector without interacting %undetected
+% this whole paragraph might need to go somewhere else (maybe intro)
+In the proton-proton collisions, the net momentum of the colliding partons in 
+the plane transverse to the beam direction is effectively zero, whereas the 
+longitudinal momentum is not necessarily so. In order to conserve momentum, the 
+outgoing particles produced in the collision must therefore have an overall 
+transverse momentum of zero. As WIMPs do not interact with the detector 
+material, the measured net transverse momentum in the event will be non-zero. 
+This non-zero ``missing transverse momentum'' is the key signature of such 
+particles. In addition, at a hadron collider such as the LHC, the dominant 
+production is via the strong interaction, and hence jets are readily produced 
+either in association with the WIMP, or as initial or final state radiation 
+(ISR, FSR). For these two reasons the search is performed in final states 
+containing jets and missing energy. At least one jet is required in order for 
+the missing momentum to be defined and for the event to be triggered.
+
+A missing energy signature is not unique to WIMPs, however, and is also present 
+in certain standard model processes. Neutrinos (produced in the decays of Z and 
+W bosons, for example) are also weakly interacting and undetectable at CMS. It 
+is also possible for particles to be over or under-measured, thereby 
+introducing a ``fake'' momentum imbalance. This type of background arising from 
+energy mismeasurements is suppressed as much as possible (to lt1\% of the total 
+background) using the variables described in Sec.~X. The remaining standard 
+model background (that involving neutrinos) must be estimated as precisely as 
+possible, using a combination of theory calculations, simulation, and 
+calibrations in data. This is described in Sec.~X. One can then look for a 
+statistically significant excess in the data above the expected amount of 
+standard model background that would be an indication of the observation of 
+physics beyond the standard model. The statistical analysis is covered in 
+Chap.~\ref{chap:results}.
+
+inclusiveness
+The ways in which a WIMP/BSM signature can manifest are numerous
+SR
+CRs
+binning in four variables
+
+Similar searches for supersymmetry have been performed in Runs 1 and 2 of the 
+LHC, at centre of mass energies of 8 and 13~TeV, and for a range of 
+integrated luminosities. These can be found in Refs.~[1,2,3,4,5]. These 
+searches are used as a basis for the analysis described in this thesis. A 
+series of developments and optimisations have been made in order to adapt the 
+analysis for the higher centre of mass energy and larger amount of data 
+collected. In addition, the interpretations in dark matter and long-lived 
+particles described in Chap.~X are a novelty to this search.
+
+%has ptmiss been defined?
+
+This chapter is organised as follows: Section bla describes bla etc.
+
+\begin{comment}
+Variable definitions, trigger, selections, binning, signal and control regions, 
+background estimations, systematic uncertainties, likelihood model
+
+See AN and paper (old ones too) and theses
+
+This search does not employ specialized reconstruction techniques [36–41] that 
+target long-lived gluinos
+
+
+
+Inclusive, jets + MET search for new physics
+(lots of params in susy)
+►Low thresholds of HT > 200 GeV, MHT > 130 GeV, Njet >= 1
+►Maximise sensitivity by binning in Njet, Nb, HT, MHT ►Using dedicated 
+variables αT, Δφ* to strongly suppress the QCD background ►Data-driven 
+estimation of EWK and QCD backgrounds using several control regions
+
+Intro/overview (1-2 pages) to analysis (typical first slide of a presentation) 
+- jets plus MET final states, inclusive to wide range of SUSY/DM models, low 
+thresholds, binning in 4 variables to maximise sensitivity, QCD suppression, 
+data-driven estimations.
+Need to mention SR and CRs (muon and dimuon).
+Basically need to give 1-2 page overview such that it's clear roughly what our 
+cuts are, the dominant backgrounds, the main cuts, the SR and CRs.
+Refer to previous analysis results (7, 8 TeV, 2.6, 12.9 fb).
+
+\end{comment}
+
+%\section{Overview of analysis strategy}
+
+%\subsection{title}
+Dataset used is 36.9 pm x fb-1 and corresponds to the p-p run of 2016.
+
+\section{Physics objects}
+2-3 pages
+
+Using reconstruction algorithms described in Detector Chapter.
+Additional requirements are imposed in the analysis.
+Jets and energy sums form key component in the search.
+Electrons and photons are vetoed in the SR.
+Muons are vetoed in the SR and selected in the CRs.
+Isolated tracks are vetoed in both SR and CRs.
+See AN section 6.
+
+\subsection*{Jets}
+
+antikt 0.4.
+pt 40 eta 2.4
+CHS.
+loose ID (chf, nhf, etc).
+b-tagging medium working point CSVv2IVF.
+
+\subsection*{Photons}
+
+Vetoed in SR.
+Tight working point. Isolation. Pileup correction. Some other requirements.
+pt 25 eta 2.5
+
+\subsection*{Electrons}
+
+Vetoed in SR.
+Loose working point. Isolation. Pileup correction. Some other requirements.
+pt 10 eta 2.5
+
+\subsection*{Muons}
+
+Vetoed in SR, selected in CRs.
+Loose, tight.
+Bunch of requirements.
+mini-isolation.
+
+\subsection*{Isolated tracks}
+
+Vetoed in SR and CRs.
+pt 10, dz, isolation.
+
+\subsection*{Energy sums}
+
+HT and MHT computed using jets as described above.
+MET computed using all PF candidates in the event, with type 1 corrections. 
+Used in MT and MHT/MET cuts.
+
+\section{Baseline selections}
+1 page
+
+Summary table of selections at some point.
+
+Events collected by triggers as described later in Section X.
+
+Wants jets and missing energy. Veto photons and leptons and SITs. Jet pt and 
+eta requirements. MET filters (bullet list). Beam halo CHF cuts. Primary vertex 
+selection. HT and MHT. Forward jet veto here or QCD rejection?
+
+Beam halo plots - jet phi data/MC with and without cut (and jet CHF?).
+
+
+\section{Standard model backgrounds}
+2-3 pages
+
+After these requirements, still left with significant SM backgrounds from 
+electroweak and QCD processes.
+
+\subsection{Electroweak processes}
+
+Dominant are Z and W.
+	
+Z is irreducible. Neutrinos.
+	
+W/ttbar is when lepton lost - not reconstructed or out of acceptance.
+	
+Plus minor/residual backgrounds - single top, diboson, Higgs, etc.
+	
+\subsection{QCD processes}
+
+Different QCD mechanisms (bullet list plus my studies) - detector effects, fake 
+MET, mismeasurement, below threshold, heavy flavour.
+
+\section{QCD background rejection}
+2-3 pages.
+
+Various ways of killing it: alphat, bdphi, mht/met.
+Propaganda plots.
+
+\subsection{alphaT}
+
+\subsection{bdphi}
+
+\subsection{missing energy ratio MHT/MET}
+
+\section{Event selection}
+2-3 pages
+
+Now define the cuts to suppress the QCD, the definition of the signal region 
+where we expect the signal, and the definition of the control regions that are 
+used to estimate the SM backgrounds.
+
+Big summary table of all selections/regions.
+
+\subsection{Signal region}
+
+alphat (summarise HT-dependent cuts in table), bdphi, mht/met cuts.
+Anything else?
+
+\subsection{Control regions}
+
+Enriched in background they want to estimate. No overlap with SR events. 
+Ignored lepton in sums to mimic/proxy the SR. Exactly the same cuts as SR 
+except for inversion of muon veto to selection, plus some other differences 
+described in the following.
+
+Background estimation described in Sec X (EWK) and Y (QCD).
+
+\subsubsection{mujets}
+
+Exactly one muon that passes requirements mentioned before. DeltaR. MT. No 
+alphat or bdphi.
+
+\subsubsection{mumujets}
+
+Exactly two muons opposite charge. DeltaR. Mll.
+
+% \subsubsection{single photon}
+% used in validation of nb, mHT?
+
+\subsubsection{QCD sidebands} %hadronic control regions
+
+bdphi and MHT/MET sidebands. Enriched in QCD.
+
+\section{Event categorisation}
+2 pages.
+
+See AN.
+
+Signal region binning in njet, nb, ht, mht. 
+Jet pt (mono sym asym).
+
+Same bins in single mu as SR.
+Slightly different in double mu - only two nb bins. Explain why? Higher stats. 
+Show nb extrapolation validation (AN) or just summarise briefly in couple of 
+sentences (similar to MHT validation).
+
+Table of bins.
+
+%\subsection{Simplified binning scheme}
+% Probably not necessary, just show results with nominal bins
+
+%\subsection{Nb extrapolation}
+
+\section{Triggers}
+5 pages.
+
+See Mark.
+List of SR and CR triggers.
+Efficiencies.
+
+\section{Simulation samples}
+0.5 pages.
+Maybe put here the "datasets" section of data and MC samples (see Matt).
+
+\section{Corrections to simulation}
+3-5 pages
+
+Simulation modelling is not perfect. Need to correct it using scale factors by 
+comparing data and MC. These corrections introduce systematic uncertainties in 
+the background estimation, that will be described later in Sec X.
+
+\subsection{Pileup}
+\subsection{b-tagging efficiency}
+Reweighting formula.
+\subsection{Trigger efficiency}
+\subsection{Lepton and photon reconstruction, identification, isolation and 
+triggering efficiency}
+Tag and probe.
+\subsection{Top quark pT}
+\subsection{Cross-sections}
+Sideband corrections.
+Summarise in table.
+
+\subsection{Plus more?}
+NLO, pdf/scale
+Signal (maybe later): nISR, gen met
+
+\section{b-tag formula method}
+1-2 pages.
+
+See Burton. AN Sec 4.4.
+Relevant but be brief.
+How much improves limits? Just refer to T1bbbb as T1qqqqLL 1 mm is very similar.
+
+Purpose: reduce stat uncertainty of simulation in higher nb bins (where signal 
+can lie).
+
+Method: show the formula and explain it.
+
+Summarise in table/plot or one-two sentences how much the stat unc is reduced. 
+Maybe also how much the limits are improved (Lucien did this).
+
+Formula systematics.
+%\subsection{Systematics}
+
+\section{Estimation of electroweak background processes}
+Predict normalisation using CRs (data-driven to reduce reliance on MC). Use MHT 
+templates from MC.
+
+\subsection{nj, nb, ht dimensions}
+1 page
+
+Transfer factor method.
+
+\subsection{MHT dimension}
+2 pages
+
+Take templates because don't want to bin CRs too finely (lose statistical power 
+- curse of dimensionality).
+
+Validation: Check data MC ratio is flat in CRs. Assign syst as described later 
+in Sec X.
+
+\section{Estimation of QCD background processes}
+2 pages
+
+Method.
+
+Validation.
+
+Plot of estimated yields per bin.
+
+\section{Systematic uncertainties on background estimation}
+
+These are explained below and also summarised, with representative magnitudes, 
+in the big summary table of systs.
+
+\subsection{MC-based}
+3-4 pages (maybe 2 pages just of plots).
+
+Known theoretical and experimental uncertainties.
+Largely cancel out in the TF ratio.
+
+Refer to Section of corrections to simulation. These are the associated 
+uncertainties.
+
+Pileup, JEC, b-tagging, lepton, photon, trigger, top pt, W/tt, NLO, ttbar nISR.
+
+Example 2D plots of variations in the bins.
+
+\subsection{Closure tests}
+2-3 pages.
+
+Probe additional sources of systematics.
+
+Define method.
+
+Go through each test (there's not many now) and describe what it's probing: 
+extrapolation in alphat and bdphi, W polarisation, SITV.
+
+Closure plots.
+
+\subsection{MHT templates}
+2 pages. See Matt and old ANs.
+
+Derivation of uncertainties. Vs njet and ht.
+
+Plot illustrating size of uncertainty in each bin.

@@ -26,8 +26,9 @@
 
 %% Define the thesis title and author
 \title{Search for long-lived scenarios of dark matter and supersymmetry in 
-final states with jets and missing transverse momentum in the CMS detector}
+final states with jets and missing energy in the CMS detector}
 \author{Christian Laner Ogilvy}
+% no transverse? energy instead of momentum?
 
 %% Doc-specific PDF metadata
 \makeatletter
@@ -55,8 +56,11 @@ final states with jets and missing transverse momentum in the CMS detector}
 \begin{mainmatter}
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
   \input{chap-introduction}
-  %\input{chap2}
-  %\input{chap3}
+  \input{chap-theory}
+  \input{chap-detector}
+  \input{chap-analysis}
+  \input{chap-results}
+  \input{chap-conclusion}
   %% To ignore a specific chapter while working on another, making the build faster, comment it out:
   %\input{chap4}
 \end{mainmatter}
