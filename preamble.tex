@@ -4,6 +4,8 @@
 \usepackage{mathrsfs} % script font
 \usepackage{verbatim}
 
+\usepackage{cancel}
+
 %% Using Babel allows other languages to be used and mixed-in easily
 %\usepackage[ngerman,english]{babel}
 \usepackage[english]{babel}
@@ -43,28 +45,30 @@
 %\usepackage{abhep} % important? doesn't work for me
 \usepackage{hepnames}
 \usepackage{hepunits}
-\DeclareRobustCommand{\arXivCode}[1]{arXiv:#1}
-\DeclareRobustCommand{\CP}{\ensuremath{\mathcal{CP}}\xspace}
-\DeclareRobustCommand{\CPviolation}{\CP-violation\xspace}
-\DeclareRobustCommand{\CPv}{\CPviolation}
-\DeclareRobustCommand{\LHCb}{LHCb\xspace}
-\DeclareRobustCommand{\LHC}{LHC\xspace}
-\DeclareRobustCommand{\LEP}{LEP\xspace}
-\DeclareRobustCommand{\CERN}{CERN\xspace}
-\DeclareRobustCommand{\bphysics}{\Pbottom-physics\xspace}
-\DeclareRobustCommand{\bhadron}{\Pbottom-hadron\xspace}
-\DeclareRobustCommand{\Bmeson}{\PB-meson\xspace}
-\DeclareRobustCommand{\bbaryon}{\Pbottom-baryon\xspace}
-\DeclareRobustCommand{\Bdecay}{\PB-decay\xspace}
-\DeclareRobustCommand{\bdecay}{\Pbottom-decay\xspace}
-\DeclareRobustCommand{\BToKPi}{\HepProcess{ \PB \to \PK \Ppi }\xspace}
-\DeclareRobustCommand{\BToPiPi}{\HepProcess{ \PB \to \Ppi \Ppi }\xspace}
-\DeclareRobustCommand{\BToKK}{\HepProcess{ \PB \to \PK \PK }\xspace}
-\DeclareRobustCommand{\BToRhoPi}{\HepProcess{ \PB \to \Prho \Ppi }\xspace}
-\DeclareRobustCommand{\BToRhoRho}{\HepProcess{ \PB \to \Prho \Prho }\xspace}
-\DeclareRobustCommand{\X}{\thesismath{X}\xspace}
-\DeclareRobustCommand{\Xbar}{\thesismath{\overline{X}}\xspace}
-\DeclareRobustCommand{\Xzero}{\HepGenParticle{X}{}{0}\xspace}
-\DeclareRobustCommand{\Xzerobar}{\HepGenAntiParticle{X}{}{0}\xspace}
-\DeclareRobustCommand{\epluseminus}{\Ppositron\!\Pelectron\xspace}
-\DeclareRobustCommand{\protonproton}{\Pproton\APantiproton\xspace}
+%\DeclareRobustCommand{\arXivCode}[1]{arXiv:#1}
+%\DeclareRobustCommand{\CP}{\ensuremath{\mathcal{CP}}\xspace}
+%\DeclareRobustCommand{\CPviolation}{\CP-violation\xspace}
+%\DeclareRobustCommand{\CPv}{\CPviolation}
+%\DeclareRobustCommand{\LHCb}{LHCb\xspace}
+%\DeclareRobustCommand{\LHC}{LHC\xspace}
+%\DeclareRobustCommand{\LEP}{LEP\xspace}
+%\DeclareRobustCommand{\CERN}{CERN\xspace}
+%\DeclareRobustCommand{\bphysics}{\Pbottom-physics\xspace}
+%\DeclareRobustCommand{\bhadron}{\Pbottom-hadron\xspace}
+%\DeclareRobustCommand{\Bmeson}{\PB-meson\xspace}
+%\DeclareRobustCommand{\bbaryon}{\Pbottom-baryon\xspace}
+%\DeclareRobustCommand{\Bdecay}{\PB-decay\xspace}
+%\DeclareRobustCommand{\bdecay}{\Pbottom-decay\xspace}
+%\DeclareRobustCommand{\BToKPi}{\HepProcess{ \PB \to \PK \Ppi }\xspace}
+%\DeclareRobustCommand{\BToPiPi}{\HepProcess{ \PB \to \Ppi \Ppi }\xspace}
+%\DeclareRobustCommand{\BToKK}{\HepProcess{ \PB \to \PK \PK }\xspace}
+%\DeclareRobustCommand{\BToRhoPi}{\HepProcess{ \PB \to \Prho \Ppi }\xspace}
+%\DeclareRobustCommand{\BToRhoRho}{\HepProcess{ \PB \to \Prho \Prho }\xspace}
+%\DeclareRobustCommand{\X}{\thesismath{X}\xspace}
+%\DeclareRobustCommand{\Xbar}{\thesismath{\overline{X}}\xspace}
+%\DeclareRobustCommand{\Xzero}{\HepGenParticle{X}{}{0}\xspace}
+%\DeclareRobustCommand{\Xzerobar}{\HepGenAntiParticle{X}{}{0}\xspace}
+%\DeclareRobustCommand{\epluseminus}{\Ppositron\!\Pelectron\xspace}
+%\DeclareRobustCommand{\protonproton}{\Pproton\APantiproton\xspace}
+
+\input{symbols}

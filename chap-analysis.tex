@@ -20,7 +20,7 @@ particle. %This will be the focus of the interpretation.
 % overall momentum
 %is an imbalance in transverse momentum in the final state, as they travel 
 %through the detector without interacting %undetected
-% this whole paragraph might need to go somewhere else (maybe intro)
+% this whole paragraph might need to go somewhere else (maybe intro or chap2)
 In the proton-proton collisions, the net momentum of the colliding partons in 
 the plane transverse to the beam direction is effectively zero, whereas the 
 longitudinal momentum is not necessarily so. In order to conserve momentum, the 
@@ -32,8 +32,10 @@ particles. In addition, at a hadron collider such as the LHC, the dominant
 production is via the strong interaction, and hence jets are readily produced 
 either in association with the WIMP, or as initial or final state radiation 
 (ISR, FSR). For these two reasons the search is performed in final states 
-containing jets and missing energy. At least one jet is required in order for 
-the missing momentum to be defined and for the event to be triggered.
+containing jets and missing energy. The requirement of at least one jet is 
+needed for the missing momentum to be defined and for the event to be 
+triggered. A hadronic final state is ensured by vetoing events containing 
+leptons or photons.
 
 A missing energy signature is not unique to WIMPs, however, and is also present 
 in certain standard model processes. Neutrinos (produced in the decays of Z and 
@@ -50,11 +52,18 @@ standard model background that would be an indication of the observation of
 physics beyond the standard model. The statistical analysis is covered in 
 Chap.~\ref{chap:results}.
 
-inclusiveness
-The ways in which a WIMP/BSM signature can manifest are numerous
-SR
-CRs
-binning in four variables
+In order to maximise the sensitivity to a wide range of SUSY and DM scenarios, 
+all of which may manifest themselves in topologically slightly different ways 
+in the detector, the candidate signal events (which form part of the 
+\textit{signal region}) are categorised according to four variables (the total 
+jet energy, the missing jet energy, the number of jets, and the number of 
+b-tagged jets) as detailed 
+in Sec.~X. Two \textit{control regions} are defined, labelled \mj and 
+\mmj, that are analogous to the signal region but are enriched by 
+selection of muons in the W and Z background processes, respectively, and are 
+employed in the background estimations as described in Sec.~X.
+%inclusiveness
+%The ways in which a WIMP/BSM signature can manifest are numerous
 
 Similar searches for supersymmetry have been performed in Runs 1 and 2 of the 
 LHC, at centre of mass energies of 8 and 13~TeV, and for a range of 
@@ -67,7 +76,8 @@ particles described in Chap.~X are a novelty to this search.
 
 %has ptmiss been defined?
 
-This chapter is organised as follows: Section bla describes bla etc.
+%This chapter is organised as follows: Section bla describes bla etc.
+% just mention as you go along
 
 \begin{comment}
 Variable definitions, trigger, selections, binning, signal and control regions, 
@@ -104,67 +114,340 @@ Refer to previous analysis results (7, 8 TeV, 2.6, 12.9 fb).
 Dataset used is 36.9 pm x fb-1 and corresponds to the p-p run of 2016.
 
 \section{Physics objects}
-2-3 pages
+\label{analysis-physicsobjects}
+%2-3 pages. AN section 6.
 
-Using reconstruction algorithms described in Detector Chapter.
-Additional requirements are imposed in the analysis.
-Jets and energy sums form key component in the search.
-Electrons and photons are vetoed in the SR.
-Muons are vetoed in the SR and selected in the CRs.
-Isolated tracks are vetoed in both SR and CRs.
-See AN section 6.
+This section describes the definitions of the various physics objects employed 
+in the search. Each object is reconstructed using the algorithms described in 
+Chap.~\ref{chap:detector}, and each algorithm has parameters that can be tuned 
+in order to provide a desired balance between identification efficiency and 
+fake rate. Jets and energy sums form a key component in the search and are 
+required in both the signal and control regions. Electrons, photons and 
+isolated tracks are vetoed in the signal region. Muons are vetoed in the signal 
+region and are required in the control regions.
+
+% muon paper
+%Physics analyses can set the desired balance between identification efficiency 
+%and purity by applying a selection based on various muon identification 
+%variables
+
+%Additional requirements are imposed in the analysis.
 
 \subsection*{Jets}
 
-antikt 0.4.
-pt 40 eta 2.4
-CHS.
-loose ID (chf, nhf, etc).
-b-tagging medium working point CSVv2IVF.
+Jets are constructed by clustering Particle Flow candidates using the \antikt 
+algorithm with a distance parameter of $0.4$. Charged PF candidates that 
+originate from pileup vertices are not included. The four-momentum of a jet is 
+defined to be the vector sum of the four-momenta of all clustered constituents. 
+Corrections to the energies of the resulting jets are applied as described in 
+Sec.~Detector.
+%refer to detector chapter section on jets?
+%what about neutral hadron subtraction?
 
-\subsection*{Photons}
+Several loose requirements on the jet constituents are imposed in order to 
+avoid spurious jets originating from noise in the calorimeters. These 
+requirements include a minimum number of charged constituents and a minimum 
+fraction of the jet energy attributed to charged hadrons, as well as an upper 
+bound on neutral hadron, photon, and electron contributions. The requirements 
+are summarised in Tab.~\ref{tab:jet-id}.
+%loose ID (chf, nhf, etc).
 
-Vetoed in SR.
-Tight working point. Isolation. Pileup correction. Some other requirements.
-pt 25 eta 2.5
+%%% Resources
+% AN2017_074_v2
+% https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetID13TeVRun2016
+% num constituents > 1 --> shouldn't have isolated leptons being jets??
 
-\subsection*{Electrons}
+\begin{table}[ht!]
+\caption{Table: jet ID requirements (have 3 columns for each eta region, merge 
+columns if applies to more than one, dash if not applied).
+Do similar ID table for other objects? Ideally not (I haven't worked on it), 
+but yes if you need to fill up space.}
+\label{tab:jet-id}
+\centering
+\begin{tabular}{ ccc }
+Variable & cut & notes \\ \hline
+\multicolumn{3}{c}{$-3.0 < \eta_{\mathrm{jet}} < 3.0$} \\ \hline    
+Neutral Hadron Fraction & $<0.99$ & - \\
+Neutral Electromagnetic Fraction & $<0.99$ & - \\
+Number of constituents & $>1$ & - \\
+Charged Hadron Fraction & $>0$ & only for $|\eta_{\mathrm{jet}}| < 2.4$ \\
+Charged Multiplicity & $>0$ & only for $|\eta_{\mathrm{jet}}| < 2.4$ \\
+Charged Electromagnetic Fraction & $<0.99$ & only for $|\eta_{\mathrm{jet}}| < 
+2.4$ \\ \hline
+\multicolumn{3}{c}{$|\eta_{\mathrm{jet}}| > 3.0$} \\ \hline        
+Neutral Electromagnetic Fraction & $<0.90$ & - \\
+Number of Neutral Particles & $>10$ & - \\
+\end{tabular}
+\end{table}
 
-Vetoed in SR.
-Loose working point. Isolation. Pileup correction. Some other requirements.
-pt 10 eta 2.5
+%b-tagging medium working point CSVv2IVF.
+Jets in the event are assigned a probability of having originated from a bottom 
+quark by the CSV algorithm described in Sec.~X. A jet in the analysis is 
+considered to be b-tagged if its probability is larger than $0.8484$. This 
+value 
+results in a b-tagging efficiency of $\sim$60\%, as well as a mis-tagging rate 
+of $\sim$10\% for charm quarks and $\sim$1\% for up, down, strange, and gluon 
+quarks.
+%mistag rate --> probability of incorrectly b-tagging
+%probability value --> discriminator
+
+The jets employed in the analysis have pt 40 and eta 2.4 to select jets 
+originating from the hard scatter, avoid pileup jets. Mention pt and eta cuts 
+of the other objects here or in event selection?
 
 \subsection*{Muons}
 
-Vetoed in SR, selected in CRs.
-Loose, tight.
-Bunch of requirements.
-mini-isolation.
+The muons considered for event vetoing in the signal region are required to be 
+reconstructed as either global or tracker muons. The efficiency for this is 
+$\sim98$\%. The contribution to the muon energy from pileup tracks is 
+subtracted using the effective area correction. A mini-isolation requirement of 
+\miniiso~$ < 0.2$ is imposed that aids in identifying muons from the decays of 
+boosted top quarks.
+
+In the control regions, global muons are selected. Additional quality criteria 
+are required in order to enhance the purity of prompt W and Z boson decays. 
+These include a minimum goodness of fit of the corresponding track, and a 
+minimum number of hits in the muon chambers -- this helps to suppress fake 
+muons resulting from \textit{hadron punch-through}, that is high energy hadron 
+shower remnants that penetrate the calorimeters and reach the muon chambers. A 
+minimum number of hits in the 
+tracker is required to provide an accurate measurement of the momentum. The 
+muon track is also required to be compatible with having originated from the 
+primary vertex -- this suppresses the potential background from cosmic muons 
+and muons produced at a pileup vertex. The effective area pileup correction is 
+applied. The relative isolation quantity is required to be \reliso~$ < 0.15$. 
+The mini-isolation algorithm is not employed in the control regions because of 
+QCD and trigger efficiency???
+% also suppress muons from decays in flight (from heavy quarks)
+% The efficiency for this is $\sim 96$\%.
+
+% reference http://iopscience.iop.org/article/10.1088/1748-0221/7/10/P10002/pdf
+% chi2/dof < 10
+% dxy < 2 mm, dz < 5 mm
+% >=1 muon chamber hit in global track fit
+% >=2 muon chamber hits matched to track
+%did you define punch-through?
+
+%AN: In the hadronic signal region a variable cone size for the isolation 631 
+%is used, which is referred to as “mini-isolation”. This isolation algorithm 
+%helps in recovering 632 some efficiency in the lepton selection for boosted 
+%topology of top quark decays, in which the 633 muon’s trackmay be found close 
+%to the jet activity due to the boost of the parent top
+
+pt 10, eta 2.5 in SR veto. pt 30, eta 2.1 in CR selection.
+
+\subsection*{Photons}
+
+%% https://arxiv.org/pdf/1502.02702.pdf
+%% https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedPhotonIdentificationRun2
+
+% has cone / dr=dphi+deta been defined in detector chapter?
+
+Events containing photons are vetoed in both the signal and control regions. 
+The isolation of a photon is measured with respect to charged 
+hadrons, neutral hadrons, and other photons within a \detadphi cone of size 
+$0.3$. These three isolation variables are required to be below certain 
+thresholds. 
+%depend on photon pt, need rho area corrections
+An upper bound is also imposed on the ratio of the photon's energy deposited in 
+the HCAL and the ECAL, which can be non-zero in the case of leakage of the 
+electromagnetic shower. The shape of the shower as measured by the distribution 
+of energy deposits in the ECAL crystals is used as a further discriminator. 
+\textbf{What is sigmaietaieta!!}
+The photon identification efficiency following these requirements is 
+$\sim71$\%. The effects of pileup are mitigated using the effective area 
+corrections.
+%Photons are identified using the following quality criteria, with an 
+%efficiency of $\sim 71$\%.
+%separate for barrel and endcap
+% shower shape and isolation
+
+%. The hadronic leakage of the shower, fh, is defined as the ratio between the 
+%energy collected by the HCAL towers behind the supercluster and the energy of 
+%the supercluster.
+
+pt 25 eta 2.5
+
+% https://arxiv.org/pdf/1502.02702.pdf  page 29 etc
+% https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedPhotonIdentificationRun2
+% cuts on H/E, sigmaietaieta, CH/NH/pho isolation, electron safe conversion veto
+\subsection*{Electrons}
+
+%% page 27 etc https://arxiv.org/pdf/1502.02701.pdf  
+%%https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2
+% paper: Several strategies are used in CMS to identify prompt isolated 
+%electrons (signal), and to separate them from background sources, mainly 
+%originating from photon conversions, jets misidentified as electrons, or 
+%electrons from semileptonic decays of b and c quarks. Simple and robust 
+%algorithms have been developed to apply sequential selections on a set of 
+%discriminants. More complex algorithms combine variables in an MVA analysis to 
+%achieve better discrimination
+
+The electrons considered for vetoing in the signal region are identified 
+according to requirements on the shape of the electromagnetic shower, the ratio 
+of energy deposits in the HCAL and ECAL, the number of hits in the tracker, and 
+the track's impact parameter.  %define impact parameter?
+These requirements provide an identification efficiency of $\sim90$\%, and are 
+effective at %rejecting
+avoiding spurious electrons (such as jets misidentified as 
+electrons) and electrons produced from photon conversions. % and electrons from 
+%semi-leptonic decays of heavy quarks.
+Effective area pileup corrections and a mini-isolation requirement of 
+\miniiso~$ < 0.1$ are applied.
+
+pt 10 eta 2.5
 
 \subsection*{Isolated tracks}
 
-Vetoed in SR and CRs.
-pt 10, dz, isolation.
+Events containing isolated tracks are vetoed in the signal and control regions 
+as discussed in Sec.~EventSelectionSITV. An isolated track is defined to be a 
+charged PF candidate that originates from the primary vertex and has a relative 
+isolation (computed with respect to other charged PF candidates within a cone 
+of size \DR$=0.3$) of \reliso~$ < 0.1$.
+
+pt 10, eta?
+Yes and then in event selection say "veto muons" where muons are defined as in 
+this section.
 
 \subsection*{Energy sums}
 
-HT and MHT computed using jets as described above.
-MET computed using all PF candidates in the event, with type 1 corrections. 
-Used in MT and MHT/MET cuts.
+The \scalht and \MHT variables are defined, respectively, as the scalar sum and 
+the magnitude of the negative vector sum of the transverse energy of all jets 
+in the event satisfying \pt~$>40$~GeV and \etaabs~$<2.4$.
+% are they defined with pt or et of jets?
+% Quick definition of HT, MHT, MET (eg scalar sum of jet energies), already 
+%have more mathematical definition in detector chapter.
+% HT and MHT computed using jets as described above.
 
-\section{Baseline selections}
-1 page
+The missing transverse energy \met is computed as the magnitude of the negative 
+vector sum of the transverse energy/momentum of all PF candidates in the event. 
+The jet energy corrections described in Sec.X are progagated as a correction to 
+the \met value [FIXME]. This variable is used in the definition of the \mt and 
+\mhtmet variables as described in Sec.EventSelection.
+%type 1 corrections
+% any pt requirement on PF cands?
 
-Summary table of selections at some point.
+%In the control regions the object(s) used to define the control region are not 
+%included the MET calculation
 
-Events collected by triggers as described later in Section X.
+%The HT and HT are defined using the vector and scalar sum, respectively, of 
+%all PF jets satisfying pT > 40 GeV and|η| < 2.4
 
-Wants jets and missing energy. Veto photons and leptons and SITs. Jet pt and 
-eta requirements. MET filters (bullet list). Beam halo CHF cuts. Primary vertex 
-selection. HT and MHT. Forward jet veto here or QCD rejection?
+\section{Baseline selection}
+%1 page
+%Events collected by triggers as described later in Section X. [don't think of 
+%triggers as a selection, they collect the data you want]
 
-Beam halo plots - jet phi data/MC with and without cut (and jet CHF?).
+%Wants jets and missing energy. 
+This section describes a set of baseline selections and filters that are used 
+to ensure a final state with significant hadronic activity and genuine missing 
+energy that is typical of the SUSY and DM processes being searched for.
 
+%Veto photons and leptons and SITs.
+Events containing muons or electrons are vetoed. This mainly suppresses the 
+\Wjets background process in which the W boson decays semileptonically, 
+resulting in missing energy and a lepton in the final state. In case the lepton 
+is not identified as such but its track is reconstructed, events are vetoed if 
+they contain an isolated track. This veto also helps to reject single prong 
+decays of tau leptons. %tau from W but could also come from other processes? 
+%e.g. Higgs
+As a final requirement to ensure an all-jet final state, events containing 
+photons are also vetoed.
+
+%Jet pt and energy sums
+%Jets are required to fall within the central region of the detector ( < 3) and 
+%have a transverse momentum larger than 40 GeV.
+At least one jet in the event is required to have a transverse momentum 
+{\pt~$>100$~GeV}. The jet energy sums must satisfy {\scalht~$>200$~GeV} and 
+{\mht~$>200$}. 
+%In order to maximise the acceptance of the search towards models with a small 
+%mass splitting
+These two thresholds are chosen to be as low as possible in order to maximise 
+the acceptance of the search across a wide range of the SUSY and DM mass 
+parameter space, while simultaneously maintaining a reasonable trigger rate and 
+efficiency. The trigger strategy will be discussed further in 
+Sec.~\ref{sec:analysis-trigger}.
+
+[TODO] Primary vertex selection? MC and AE have it in MET filter section. See 
+vertex skimmer in heppy - "good vertex".
+
+%MET filters (bullet list).
+Missing energy is not only caused by undetectable or misreconstructed particles 
+produced in the proton-proton collisions. Spurious \met can also be induced by 
+effects related to detector malfunctions and beam dynamics. These effects 
+include spurious energy in the HCAL due to electronics noise and particle 
+interactions with the instrumentation, missed energy in the ECAL due to dead 
+cells, anomalous high amplitude pulses in certain ECAL endcap supercrystals, 
+and beam halo particles. Beam halo refers to the showers of particles, 
+including pions, neutrons and muons, that are produced when beam protons 
+collide with residual gas particles in the LHC vacuum chambers or with the beam 
+collimators. These beam halo particles can deposit energy in the calorimeters 
+and CSCs of the muon system along lines parallel to the beam direction.
+%(1) HCAL hybrid photodiode and readout box electronics noise and (2) direct 
+%particle interactions with the light guides and photomultiplier tubes of the 
+%forward calorimeter
+%also HCAL laser calibration misfires
+% bad tracks
+Events affected by these spurious \met sources are identified and vetoed using 
+dedicated algorithms as described in Ref.~\cite{met-filters-16}. These 
+algorithms take advantage of various features related to geometrical patterns, 
+pulse shapes and timing information. The impact of these filters on signal 
+acceptance is negligible.
+%, geometry/topology, timing 
+%We developed several algorithms to identify false MET. These algorithms, for 
+%example, use timing, pulse shape, and topology of signal
+%filters that are used to identify events contaminated by the beam halo muons 
+%rely on various information related to the geometric quantities, energy 
+%deposits, and timing signatures
+% The geometrical patterns of hybrid photodiode or readout box channels as well 
+%as the pulse shape and timing information are utilized by various HCAL barrel 
+%and endcap (HBHE) algorithms to identify and eliminate the noise signals 
+%originating from HCAL
+
+%Beam halo CHF cuts. 
+%Beam halo plots - jet phi data/MC with and without cut (and jet CHF?).
+The beam halo filter, however, only targets halo muons, and is ineffective 
+against calorimeter deposits from halo hadrons. These types of events are 
+straightforwardly recognised, as shown in Fig.~\ref{fig:beamhalo}. The highest 
+\pt jet in the event usually appears at $\phi$ values of 0 and $\pi$ as this 
+corresponds to the plane of the LHC ring in which the proton beams are steered, 
+and will have a contribution from charged hadrons close to zero because of the 
+lack of tracker hits. To suppress these beam halo events, events are rejected 
+if the leading jet has a charged hadron energy fraction \chf~$<0.1$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.32\textwidth]{figs/analysis/jet_chHEF_mono_all_before.pdf}
+\includegraphics[width=0.32\textwidth]{figs/analysis/jet_phi[0]_mono_all_before.pdf}
+\includegraphics[width=0.32\textwidth]{figs/analysis/jet_phi[0]_mono_all_after.pdf}
+\caption{The leading jet's charged hadron energy fraction (Left) and $\phi$ 
+direction before (Centre) and after (Right) applying a requirement of 
+\chf~$>0.1$. The large excess in data at \chf values close to zero and $\phi = 
+0$ and $\pi$ is consistent with beam halo effects, and is effectively 
+suppressed by the \chf requirement.}
+\label{fig:beamhalo}
+\end{center}
+\end{figure}
+
+%odd jet veto
+As a further safeguard against noise and misreconstruction effects, events that 
+contain a jet that fails the identification requirements outlined in 
+Sec.~\ref{analysis-physicsobjects} are not considered.
+
+%Forward jet veto here or QCD rejection? both
+Finally within the set of baseline selections, events are vetoed if there are 
+any jets with pseudorapidity direction \etaabs~$>2.4$. This threshold 
+corresponds to the extent of the tracker and hence ensures well reconstructed 
+jets and a better resolution of the energy sums. This requirement also has the 
+added benefit of rejecting a larger proportion of background, particularly QCD 
+processes, compared to signal processes, which tend to have more central 
+jets.
+%Adam: As most BSM physics scenarios result in the production of particles at a 
+%high mass scale, they are more likely to deposit their energy centrally than 
+%many of the SM backgrounds. Therefore, this forward jet veto does not 
+%significantly effect the signal efficiency for most models. The QCD multijet 
+%background consists of many soft scattering events, which typically deposit a 
+%significant proportion of energy within the forward region
 
 \section{Standard model backgrounds}
 2-3 pages
@@ -179,7 +462,9 @@ Dominant are Z and W.
 Z is irreducible. Neutrinos.
 	
 W/ttbar is when lepton lost - not reconstructed or out of acceptance.
-	
+%or is produced in a direction that is not within the acceptance of the CMS 
+%detector
+
 Plus minor/residual backgrounds - single top, diboson, Higgs, etc.
 	
 \subsection{QCD processes}
@@ -206,7 +491,9 @@ Now define the cuts to suppress the QCD, the definition of the signal region
 where we expect the signal, and the definition of the control regions that are 
 used to estimate the SM backgrounds.
 
-Big summary table of all selections/regions.
+Big summary table of all selections/regions/objects (see paper).
+
+define mono sym asym somewhere.
 
 \subsection{Signal region}
 
@@ -259,6 +546,7 @@ Table of bins.
 %\subsection{Nb extrapolation}
 
 \section{Triggers}
+\label{sec:analysis-trigger}
 5 pages.
 
 See Mark.
