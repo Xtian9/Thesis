@@ -193,7 +193,7 @@ quarks.
 
 The jets employed in the analysis have pt 40 and eta 2.4 to select jets 
 originating from the hard scatter, avoid pileup jets. Mention pt and eta cuts 
-of the other objects here or in event selection?
+of the other objects here or in event selection? Here.
 
 \subsection*{Muons}
 
@@ -255,7 +255,7 @@ electromagnetic shower. The shape of the shower as measured by the distribution
 of energy deposits in the ECAL crystals is used as a further discriminator. 
 \textbf{What is sigmaietaieta!!}
 The photon identification efficiency following these requirements is 
-$\sim71$\%. The effects of pileup are mitigated using the effective area 
+$\sim$71\%. The effects of pileup are mitigated using the effective area 
 corrections.
 %Photons are identified using the following quality criteria, with an 
 %efficiency of $\sim 71$\%.
@@ -287,7 +287,7 @@ The electrons considered for vetoing in the signal region are identified
 according to requirements on the shape of the electromagnetic shower, the ratio 
 of energy deposits in the HCAL and ECAL, the number of hits in the tracker, and 
 the track's impact parameter.  %define impact parameter?
-These requirements provide an identification efficiency of $\sim90$\%, and are 
+These requirements provide an identification efficiency of $\sim$90\%, and are 
 effective at %rejecting
 avoiding spurious electrons (such as jets misidentified as 
 electrons) and electrons produced from photon conversions. % and electrons from 
@@ -308,6 +308,7 @@ of size \DR$=0.3$) of \reliso~$ < 0.1$.
 pt 10, eta?
 Yes and then in event selection say "veto muons" where muons are defined as in 
 this section.
+How many hits in tracker?
 
 \subsection*{Energy sums}
 
@@ -334,6 +335,7 @@ the \met value [FIXME]. This variable is used in the definition of the \mt and
 %all PF jets satisfying pT > 40 GeV and|η| < 2.4
 
 \section{Baseline selection}
+\label{analysis-baselineselections}
 %1 page
 %Events collected by triggers as described later in Section X. [don't think of 
 %triggers as a selection, they collect the data you want]
@@ -345,7 +347,7 @@ energy that is typical of the SUSY and DM processes being searched for.
 
 %Veto photons and leptons and SITs.
 Events containing muons or electrons are vetoed. This mainly suppresses the 
-\Wjets background process in which the W boson decays semileptonically, 
+\wj background process in which the W boson decays semileptonically, 
 resulting in missing energy and a lepton in the final state. In case the lepton 
 is not identified as such but its track is reconstructed, events are vetoed if 
 they contain an isolated track. This veto also helps to reject single prong 
@@ -404,6 +406,9 @@ acceptance is negligible.
 %and endcap (HBHE) algorithms to identify and eliminate the noise signals 
 %originating from HCAL
 
+%matt has plot of MET distribution before and after filters (gets rid of 
+%massive excess in tail)
+
 %Beam halo CHF cuts. 
 %Beam halo plots - jet phi data/MC with and without cut (and jet CHF?).
 The beam halo filter, however, only targets halo muons, and is ineffective 
@@ -430,7 +435,7 @@ suppressed by the \chf requirement.}
 \end{figure}
 
 %odd jet veto
-As a further safeguard against noise and misreconstruction effects, events that 
+As a further safeguard against noise and misreconstruction issues, events that 
 contain a jet that fails the identification requirements outlined in 
 Sec.~\ref{analysis-physicsobjects} are not considered.
 
@@ -450,41 +455,366 @@ jets.
 %significant proportion of energy within the forward region
 
 \section{Standard model backgrounds}
-2-3 pages
+%2-3 pages
 
-After these requirements, still left with significant SM backgrounds from 
-electroweak and QCD processes.
+%After these requirements, still left with significant SM backgrounds from 
+%electroweak and QCD processes.
+The baseline selections described in the previous section select events with 
+significant hadronic activity and missing energy, as desired. However, a large 
+number of standard model events still remain. These include processes (labelled 
+electroweak background processes) with `genuine' missing energy in the final 
+state due to neutrinos, as well as QCD multijet processes with `fake' missing 
+energy in the final state due to jet energy mismeasurements.
+
+Give rough proportions and what regions of njnbht phase space they occupy. 
+Branching fractions.
 
 \subsection{Electroweak processes}
 
-Dominant are Z and W.
-	
-Z is irreducible. Neutrinos.
-	
-W/ttbar is when lepton lost - not reconstructed or out of acceptance.
-%or is produced in a direction that is not within the acceptance of the CMS 
-%detector
+The dominant electroweak background process (comprising $\sim$50\% of the 
+signal region background events) is the production of a Z boson in 
+association with jets, with the Z boson decaying to two neutrinos. This 
+background is irreducible as the final state consists of only jets and missing 
+energy, just like the SUSY and DM models being searched for.
+% Z boson BF to neutrinos.
 
-Plus minor/residual backgrounds - single top, diboson, Higgs, etc.
-	
+The second largest background process (making up $\sim$40\% of the total 
+background) is the production of a W boson in 
+association with jets, with the W boson decaying semi-leptonically to a lepton 
+and a neutrino. Such an event may not be vetoed if the lepton is not 
+reconstructed or travels in a direction that is outside the acceptance of the 
+detector, or is a muon or electron that fails the kinematic, identification, or 
+isolation criteria listed in Sec.~\ref{analysis-physicsobjects}. If the lepton 
+is a tau, it may decay semi-leptonically to a muon or electron that is not 
+vetoed for the aforementioned reasons, or it may decay hadronically resulting 
+in a jets + \met final state. In the case of a single-prong hadronic decay, the 
+tau background is suppressed with a veto on events containing an isolated 
+track, as mentioned in Sec.~Selections. The veto on isolated tracks cannot 
+capture three-prong decays, however, as the tracks are usually not isolated and 
+are instead reconstructed as a jet.
+% W branching fractions.
+% W --> tau 6%
+% 70% single prong
+
+The third largest background process (constituting $\sim$5\% of the signal 
+region background) is the production of top quark-antiquark pairs 
+(\ttj). This background is characterised by b-jets and a larger number 
+of jets in the final state compared to the other two dominant backgrounds.  
+Each top quark decays to a bottom quark and W boson, and each W boson can decay 
+hadronically or semi-leptonically. The dominant decay mode in the signal region 
+is the one in which one of the W bosons decays hadronically and the other 
+decays semi-leptonically, resulting in a lepton that is then `lost' in the same 
+way as for the \wlj background described previously. The decay mode in which 
+both W bosons decay hadronically is negligible because there is no significant 
+amount of \met in the final state. The decay mode in which both W bosons decay 
+semi-leptonically is also negligible because of the low probability of losing 
+both leptons.
+% ttbar BRs: 45,45,20% had,semilep,lep
+
+Additional, residual standard model background processes include the production 
+of a single top quark (in association with a b quark, light quark, or W boson), 
+the production of vector boson pairs (WW, WZ, ZZ), \ttbar production in 
+association with a vector boson, \zllj production, and \gj production.
+% single top feynman http://inspirehep.net/record/1205888/files/SingleTop.png
+
 \subsection{QCD processes}
+%Several OOMs (several, Matt: 7) larger than other backgrounds because of 
+%massive xs at hadron collider.
+%Different QCD mechanisms (bullet list plus my studies) - detector effects, 
+%fake MET, mismeasurement, below threshold, heavy flavour.
 
-Different QCD mechanisms (bullet list plus my studies) - detector effects, fake 
-MET, mismeasurement, below threshold, heavy flavour.
+% check what QCD xs is and how much larger it is.
+
+At a hadron collider such as the LHC, the dominant/most abundant process is 
+that of QCD multijet production, having a cross section that is several 
+OOM/seven times [FIXME] larger than other standard model processes. The final 
+state consists of two or more jets, and there is no missing energy (except in 
+the case of heavy flavour QCD, as discussed below). However, issues with the 
+detector or inaccuracies in the reconstruction [FIXME: tails of Gaussian 
+resolution] can cause the event to appear 
+unbalanced in transverse momentum, thereby introducing fake \met. Although 
+these effects are not very common, when coupled with the large QCD production 
+cross section, the result is that QCD multijet production remains as the 
+largest background even when requiring a reasonable amount of \met such as 
+200~GeV. The following is a comprehensive list of the various mechanisms by 
+which QCD processes can have a large amount of missing energy. The 
+next section will describe a set of variables that are used to identify and 
+reject/suppress this type of background.
+
+%see my studies: RA1_QCDMC_161101
+% AcceptanceEffect, HeavyFlavour, Mismeasurement (MismeasurementLostJet, 
+%SingleMismeasurement, MultipleMismeasurement, HotCellEffect)
+\begin{itemize}
+	\item Soft jets with transverse momentum \pt~$<40$~GeV are not included in 
+	the computation of the jet energy sums, and therefore result in an 
+	apparently unbalanced event.
+	%contribute to a non-zero met
+	The resulting missing jet energy is particularly significant when there are 
+	several jets below the \pt threshold. A similar problem can occur when the 
+	jets are outside the acceptance of the detector.
+	% Inaccurate measurements
+	\item Significant over or under-measurements of jets' energies due to the 
+	tails of the resolution distribution. This includes the mismeasurement of a 
+	single jet in the event, in which case the missing transverse momentum 
+	vector is collinear/parallel (if the jet's energy is under-measured; or 
+	anti-parallel/anti-collinear
+	if it is over-measured) to the jet's direction, as well as the 
+	mismeasurement of two or more jets, in which case the missing momentum is 
+	not aligned with any jet. A third effect is when a jet is severely 
+	under-measured such that its measured transverse momentum is below the 
+	40~GeV threshold. 
+	\item Detector effects, such as dead cells and hot cells in the 
+	calorimeters, can result in a large amount of fake missing energy. These 
+	effects are dealt with by the dedicated \met filters described in 
+	Sec.~\ref{analysis-baselineselections}.
+	% hot cell: electronics noise
+	\item The production of bottom quarks with a subsequent semi-leptonic decay 
+	leads to genuine missing energy in the final state due to the resulting 
+	neutrino. The lepton and neutrino are typically contained within the jet 
+	cone. This means that the lepton is not isolated and so such events are not 
+	rejected by the lepton veto. It also means that the missing transverse 
+	momentum vector is roughly collinear with the jet. %small azimuthal 
+	%separation
+\end{itemize}
+
+The dominant mechanism by which QCD processes can pass the baseline selections 
+is that due to jet energy mismeasurements ($\sim$70\%), followed by threshold 
+effects ($\sim$30\%). The heavy flavour and detector effects are comparatively 
+much smaller ($\sim$1\%).
+%numbers taken from slide 11 of 160509
+
 
 \section{QCD background rejection}
-2-3 pages.
+%4-5 pages.
 
-Various ways of killing it: alphat, bdphi, mht/met.
-Propaganda plots.
+It is important to suppress the overwhelming QCD background so that it does not 
+swamp any potential signal. This section describes three key variables 
+(\alphat, \bdphi, and \mhtmet) that effectively distinguish QCD events from 
+events with genuine missing energy. Each variable exploits certain topological 
+or kinematical features, and each one targets different sources of missing 
+energy of those described in the previous section.
 
-\subsection{alphaT}
+Events in the signal region need to satisfy certain requirements on these 
+variables, as will be in outlined in Sec.~\ref{analysis-eventselection}. These 
+thresholds are chosen such that the QCD background forms no more than $\sim$1\% 
+of the total standard model background in the signal region. This choice is 
+motivated by the difficulty in estimating this type of background accurately 
+and precisely. The difficulty arises from the lack of precise [FIXME: high 
+order?] theoretical calculations on the production cross section and kinematic 
+properties. 
+In addition, because of the large cross section and computing limitations, the 
+number of simulated events is much smaller than that expected by the integrated 
+luminosity of $35.9$~\ifb, and so the simulated events have large weights and 
+hence large statistical uncertainties.
+%necessitates an infeasibly large number of simulated events , which due to 
+%computing limitations,  which necessitates.
+Therefore, if QCD processes were to form a large part of the total expected 
+background this would significantly reduce the sensitivity of the search. A 
+small contribution of $\sim$1\%, even with a large uncertainty, has a 
+negligible impact on the sensitivity.
+%choose cuts such that backgroudn rej is 1\% and signal eff is
+%, while maintaining a good acceptance to signal events
+%Want to kill it (aim for sub-percent) because very difficult to model in 
+%simulation and requires lots of MC stat. Prefer conservative unc on small 
+%contribution than trying to estimate large contribution.
 
-\subsection{bdphi}
+%[TODO] If have time make diagrams illustrating alphat and bdphi.
 
-\subsection{missing energy ratio MHT/MET}
+\subsection{The \alphat variable}
+
+The \alphat variable is designed to discriminate between balanced events that 
+may contain mismeasurements and unbalanced events containing invisible 
+particles~\cite{alpha-variable}. For a dijet event it is defined as:
+\begin{equation}
+\alpha_\mathrm T = \frac{E_\mathrm{T}^{j_2}}{M_\mathrm{T}}, 
+\end{equation} 
+where $E_\mathrm{T}^{j_2}$ is the transverse energy of the least energetic jet, 
+and $M_\mathrm{T}$ is the transverse mass of the dijet system, which is given 
+in general for a number of jets by:
+% define ET=Esintheta?
+\begin{equation}
+M_\mathrm{T} = \sqrt{\left(\sum_{i}E_{\mathrm T}^{j_i}\right)^2 - 
+\left|\sum_{i}\bm{p}_\mathrm{T}^{j_i}\right|^2},
+\end{equation}
+where $E_{\mathrm T}^{j_i}$ is the transverse energy of the $i^\mathrm{th}$ 
+most energetic jet, and 
+$\bm{p}_\mathrm{T}^{j_i} = (p_x^{j_i}, p_y^{j_i})$ is its 
+transverse momentum vector, $p_x^{j_i}$ and $p_y^{j_i}$ being the $x$ and $y$ 
+components, respectively. [FIXME] already defined in MHT definition?
+
+To illustrate how the \alphat variable works, one can assume the mass of the 
+jets to be much smaller than their momenta (so that $E_\mathrm T \approx 
+p_\mathrm T$, which is a good approximation for jets produced at the LHC), and 
+rewrite $M_\mathrm T$ in terms of the 
+azimuthal angle $\Delta\phi(j_1,j_2)$ between the two jets such that:
+\begin{equation}
+\alpha_\mathrm T \approx \frac{E_\mathrm{T}^{j_2}}{\sqrt{2E_{\mathrm 
+T}^{j_1}E_{\mathrm T}^{j_2}(1-\mathrm{cos}\Delta\phi(j_1,j_2))}}.
+\end{equation}
+If the jets have equal and opposite transverse momenta such as in a QCD dijet 
+event, then the azimuthal angle between them is $\pi$, their transverse 
+energies are the same, and the value of \alphat is exactly $0.5$. If one of the 
+jets' energies is mismeasured, then $E_\mathrm{T}^{j_2} < E_\mathrm{T}^{j_1}$ 
+and \alphat takes values less than $0.5$. In an event where the jets are 
+recoiling against a system of invisible particles, the angle between them is 
+smaller than $\pi$ and the value of \alphat is generally larger than $0.5$.
+
+For events with more than two jets in the final state, the jets can be grouped 
+into two \textit{pseudo jets} such that the difference in transverse energy 
+$\Delta E_\mathrm T$ between the two pseudo jets is minimised, where the 
+transverse energy of a pseudo jet is computed via the vector sum of the 
+transverse energies of the constituent jets. This is done so that the resulting 
+pseudo dijet system is as close to a balanced event as possible. Since $\Delta 
+E_\mathrm T = E_\mathrm{T}^{j_1} - E_\mathrm{T}^{j_2}$ and 
+$|\Sigma_i\bm{p}_\mathrm{T}^{j_i}| = \mht$, the general form of the \alphat 
+variable can be defined as:
+\begin{equation}
+\alpha_T=\frac{\Sigma_i E_\mathrm{T}^{j_i}-\Delta 
+E_\mathrm{T}}{2\sqrt{(\Sigma_i E_\mathrm{T}^{j_i})^2-\cancel{H}_\mathrm{T}^2}}.
+\end{equation}
+
+For balanced QCD events with no missing energy, $\Delta E_\mathrm T = \mht = 0$ 
+and $\alphat = 0.5$. If a jet in such an event is mismeasured, then $\Delta 
+E_\mathrm T \approx \mht$ and $\alphat < 0.5$. For events with genuine missing 
+energy, $\mht > 0$ and $\Delta E_\mathrm T = 0$, resulting in $\alphat > 0.5$.
+
+The discriminating power of the \alphat variable is shown in 
+Fig.~\ref{fig:alphat}. Multijet QCD events are the dominant process in the 
+region of $\alphat \leq 0.5$, while processes with genuine missing energy 
+occupy the region of $\alphat > 0.5$. It is possible for QCD events to have 
+values of \alphat slightly larger than $0.5$ if there is a severe 
+mismeasurement or there are several jets below the \pt threshold.
+
+% Does it deal with multiple mismeasurements?
+
+% remember my plot of alphat vs mismeasurement - starts at 0.5, falls, then 
+%shoots up for large mismeasurement
+
+%matt/AN: The αT distribution becomes more sharply peaked with increasing HT in 
+%the event as mismeasurements are larger for lower jet pT
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{figs/analysis/propaganda_alphat}
+\caption{The distribution of the \alphat variable in data and simulation for 
+events satisfying the signal region selections 
+(Sec.~\ref{analysis-eventselection}) except the \alphat requirement. The 
+ability of the variable to effectively discriminate between QCD processes and 
+processes with genuine missing energy is evidenced by the sharp edge at $0.5$. 
+[FIXME: actually, presel left full sel right]}
+\label{fig:alphat}
+\end{center}
+\end{figure}
+
+\subsection{The \bdphi variable}
+
+The \bdphi variable also provides powerful discrimination between events with 
+fake missing energy and genuine missing energy.
+% note if mht=0 for qcd, dphi is undefined, whereas alphat=0.5 and captures it
+First it is instructive to consider the \dphimin variable, which is the minimum 
+(over all jets in the event above the \pt threshold) azimuthal angle between a 
+jet and the missing transverse jet energy vector:
+\begin{equation}
+\Delta\phi_{\mathrm{min}} = \mathrm{min}~\Delta\phi\left(\bm{p}_{\mathrm 
+T}^{j_i},\bm{\cancel{H}_\mathrm{T}}\right).
+\end{equation}
+If a jet's energy in the final state is under-measured, the missing energy 
+vector is collinear with the jet direction, and so \dphimin is zero, whereas 
+for processes in which the jets are recoiling against genuine missing energy, 
+the value of \dphimin is non-zero.
+
+However, if a jet's energy is over-measured, the missing energy vector points 
+in the opposite direction to the jet and so \dphimin is not necessarily zero. 
+This limitation can be overcome by comparing the jet's direction with the 
+missing energy vector that does not consider the jet in the vector sum, 
+$\vec{\mht}^{j_i} = \vec{\mht} + \vec{p}_{\mathrm T}^{j_i}$. This is the 
+definition of the 
+\bdphi variable:
+\begin{equation}
+\Delta\phi^{*}_{\mathrm{min}} = \mathrm{min}~\Delta\phi\left(\bm{p}_{\mathrm 
+	T}^{j_i},\bm{\cancel{H}}_\mathrm{T}^{j_i}\right).
+\end{equation}
+
+The discriminating power of the \bdphi variable is shown in 
+Fig.~\ref{fig:bdphi}. Multijet QCD events have values of \bdphi close to 0, 
+with the distribution falling sharply beyond this, 
+whereas processes containing genuine missing energy exhibit a longer tail up to 
+values of $\pi$.
+
+The \bdphi variable is effective at capturing QCD events that contain a single 
+mismeasurement or a neutrino produced by a heavy quark decay that is collinear 
+with a jet. It is less effective if a jet is severely mismeasured such 
+that it's \pt is below threshold, or if there are two or more mismeasured jets. 
+Both of these cases result in missing momentum that is not necessarily 
+collinear with any jet.
+
+%captures single mismeasurements and heavy flavour
+%captures both under and over measurements
+%doesn't capture severe mismeasurements (would need to lower threshold)
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{figs/analysis/propaganda_bdphi}
+\caption{The distribution of the \bdphi variable in data and simulation for 
+events satisfying the signal region selections 
+(Sec.~\ref{analysis-eventselection}) except the \bdphi requirement. The ability 
+of the variable to effectively discriminate between QCD processes and processes 
+with genuine missing energy is evidenced by the cluster of QCD events close to 
+0, while processes with genuine \met take on larger values up to $\pi$.}
+\label{fig:bdphi}
+\end{center}
+\end{figure}
+
+\subsection{The \mhtmet variable}
+
+As mentioned previously, the \alphat and \bdphi variables are not as effective 
+at identifying QCD events in which there are several jets with transverse 
+momentum below the 40~GeV threshold. In such events, the value of \mht is 
+biased to larger values. The \met variable, however, is computed using all PF 
+objects in the event satisfying a much lower threshold (10~GeV for jets) 
+[FIXME: is it actually 10?] and so is less susceptible to this bias and remains 
+closer to zero. One can compare the values of \mht and \met to identify these 
+events -- the ratio of \mhtmet tends to be significantly larger than 1 for such 
+events. 
+
+For processes with genuine missing energy, on the other hand, the ratio 
+generally remains close to unity as the increase in missing energy due to 
+threshold effects is proportionally smaller with respect to the true missing 
+energy which is already significantly large. The distribution of the \mhtmet 
+ratio is shown in Fig.~\ref{fig:mhtmet} and demonstrates the difference between 
+the two types of backgrounds. Multijet QCD processes tend to populate the 
+region of \mhtmet$>1.25$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{figs/analysis/mhtmet}
+\caption{The distribution of the \mhtmet ratio in data and simulation for 
+events satisfying the signal region selections 
+(Sec.~\ref{analysis-eventselection}) except the \mhtmet requirement. The 
+ability of the variable to effectively discriminate between QCD processes and 
+processes with genuine missing energy is evidenced by the population of QCD 
+events above $1.25$, while processes with genuine \met have values more 
+consistent with 1. [FIXME: remove ratio plot and fix axis label?]}
+\label{fig:mhtmet}
+\end{center}
+\end{figure}
+
+
+
+
+\textbf{FIXME
+multiple mismeasurements is kinda irreducible.
+This and severe mismeasurements below threshold are the two dominant mechanisms 
+left in the SR after these qcd killing selections.
+Nevertheless still sub-percent.
+Begs question whether sidebands are suitable. Have an answer or don't mention 
+the mechanisms.}
+
+
+
 
 \section{Event selection}
+\label{analysis-eventselection}
 2-3 pages
 
 Now define the cuts to suppress the QCD, the definition of the signal region 
@@ -499,6 +829,9 @@ define mono sym asym somewhere.
 
 alphat (summarise HT-dependent cuts in table), bdphi, mht/met cuts.
 Anything else?
+
+baby bdphi for monojet if there are jets 25, otherwise remains undefined. baby 
+alphat not applied in monojet.
 
 \subsection{Control regions}
 
