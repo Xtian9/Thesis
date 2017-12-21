@@ -114,7 +114,7 @@ Refer to previous analysis results (7, 8 TeV, 2.6, 12.9 fb).
 Dataset used is 36.9 pm x fb-1 and corresponds to the p-p run of 2016.
 
 \section{Physics objects}
-\label{analysis-physicsobjects}
+\label{sec:analysis-physicsobjects}
 %2-3 pages. AN section 6.
 
 This section describes the definitions of the various physics objects employed 
@@ -123,8 +123,10 @@ Chap.~\ref{chap:detector}, and each algorithm has parameters that can be tuned
 in order to provide a desired balance between identification efficiency and 
 fake rate. Jets and energy sums form a key component in the search and are 
 required in both the signal and control regions. Electrons, photons and 
-isolated tracks are vetoed in the signal region. Muons are vetoed in the signal 
-region and are required in the control regions.
+isolated tracks are vetoed in both the signal and regions. Muons are vetoed in 
+the signal region and are required in the control regions. A summary of the 
+kinematic requirements on these physics objects is provided in 
+Tab.~\ref{tab:physicsobjects}.
 
 % muon paper
 %Physics analyses can set the desired balance between identification efficiency 
@@ -132,6 +134,26 @@ region and are required in the control regions.
 %variables
 
 %Additional requirements are imposed in the analysis.
+
+\begin{table}[h!]
+\centering
+%\footnotesize
+\begin{tabular}{llcc}
+\hline
+Object & Selection or veto & \pt ($>$~GeV) & \etaabs $(<)$ \\
+\hline
+Jet & Selection (signal and control regions) & 40 & 2.4 \\
+Muon & Selection (control region) & 30 & 2.1 \\
+     & Veto (signal region) & 10 & 2.4 \\
+Electron & Veto (signal and control regions) & 10 & 2.4 \\
+Photon & Veto (signal and control regions) & 25 & 2.4 \\
+Isolated track & Veto (signal and control regions) & 10 & 2.4 \\
+\hline
+\end{tabular}
+\caption{The \pt and $\eta$ thresholds for physics objects that are used to 
+either select events or veto them.}
+\label{tab:physicsobjects}
+\end{table}
 
 \subsection*{Jets}
 
@@ -191,9 +213,10 @@ quarks.
 %mistag rate --> probability of incorrectly b-tagging
 %probability value --> discriminator
 
-The jets employed in the analysis have pt 40 and eta 2.4 to select jets 
-originating from the hard scatter, avoid pileup jets. Mention pt and eta cuts 
-of the other objects here or in event selection? Here.
+The jets employed in the analysis have transverse momenta and pseudorapidities 
+satisfying $\pt>40$~GeV and $\etaabs<2.4$. The \pt threshold is chosen to avoid 
+jets originating from pileup vertices.
+%to select jets originating from the hard scatter, avoid pileup jets.
 
 \subsection*{Muons}
 
@@ -216,8 +239,10 @@ muon track is also required to be compatible with having originated from the
 primary vertex -- this suppresses the potential background from cosmic muons 
 and muons produced at a pileup vertex. The effective area pileup correction is 
 applied. The relative isolation quantity is required to be \reliso~$ < 0.15$. 
-The mini-isolation algorithm is not employed in the control regions because of 
-QCD and trigger efficiency???
+\textbf{The mini-isolation algorithm is not employed in the control regions 
+because of 
+[FIXME]
+QCD and trigger efficiency???}
 % also suppress muons from decays in flight (from heavy quarks)
 % The efficiency for this is $\sim 96$\%.
 
@@ -234,7 +259,11 @@ QCD and trigger efficiency???
 %topology of top quark decays, in which the 633 muon’s trackmay be found close 
 %to the jet activity due to the boost of the parent top
 
-pt 10, eta 2.5 in SR veto. pt 30, eta 2.1 in CR selection.
+Muons in the control regions are required to satisfy $\pt>30$~GeV and 
+$\etaabs<2.1$, while events in the signal region are vetoed if they contain 
+muons with $\pt>10$~GeV and $\etaabs<2.4$. 
+\textbf{[TODO: write/prepare/have explanation for why these thresholds]}
+%pt 10, eta 2.5 in SR veto. pt 30, eta 2.1 in CR selection.
 
 \subsection*{Photons}
 
@@ -253,7 +282,7 @@ An upper bound is also imposed on the ratio of the photon's energy deposited in
 the HCAL and the ECAL, which can be non-zero in the case of leakage of the 
 electromagnetic shower. The shape of the shower as measured by the distribution 
 of energy deposits in the ECAL crystals is used as a further discriminator. 
-\textbf{What is sigmaietaieta!!}
+\textbf{TODO: What is sigmaietaieta!!}
 The photon identification efficiency following these requirements is 
 $\sim$71\%. The effects of pileup are mitigated using the effective area 
 corrections.
@@ -266,7 +295,9 @@ corrections.
 %energy collected by the HCAL towers behind the supercluster and the energy of 
 %the supercluster.
 
-pt 25 eta 2.5
+Photons in the signal region satisfying $\pt>25$~GeV and $\etaabs<2.5$ are used 
+to veto such events.
+%pt 25 eta 2.5
 
 % https://arxiv.org/pdf/1502.02702.pdf  page 29 etc
 % https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedPhotonIdentificationRun2
@@ -293,22 +324,25 @@ avoiding spurious electrons (such as jets misidentified as
 electrons) and electrons produced from photon conversions. % and electrons from 
 %semi-leptonic decays of heavy quarks.
 Effective area pileup corrections and a mini-isolation requirement of 
-\miniiso~$ < 0.1$ are applied.
+\miniiso~$<0.1$ are applied.
 
-pt 10 eta 2.5
+Events in the signal region are vetoed if they contain 
+electrons with $\pt>10$~GeV and $\etaabs<2.4$.
+%pt 10 eta 2.5
 
 \subsection*{Isolated tracks}
 
 Events containing isolated tracks are vetoed in the signal and control regions 
-as discussed in Sec.~EventSelectionSITV. An isolated track is defined to be a 
+as discussed in Sec.~\ref{sec:analysis-eventselection}. An isolated track is 
+defined to be a 
 charged PF candidate that originates from the primary vertex and has a relative 
 isolation (computed with respect to other charged PF candidates within a cone 
 of size \DR$=0.3$) of \reliso~$ < 0.1$.
+\textbf{[TODO: How many hits in tracker?]}
 
-pt 10, eta?
-Yes and then in event selection say "veto muons" where muons are defined as in 
-this section.
-How many hits in tracker?
+Events in the signal region are vetoed if they contain 
+an isolated track with $\pt>10$~GeV and $\etaabs<2.4$.
+%pt 10, eta 2.4  (eta is basically extent of tracker)
 
 \subsection*{Energy sums}
 
@@ -335,7 +369,7 @@ the \met value [FIXME]. This variable is used in the definition of the \mt and
 %all PF jets satisfying pT > 40 GeV and|η| < 2.4
 
 \section{Baseline selection}
-\label{analysis-baselineselections}
+\label{sec:analysis-baselineselections}
 %1 page
 %Events collected by triggers as described later in Section X. [don't think of 
 %triggers as a selection, they collect the data you want]
@@ -343,10 +377,13 @@ the \met value [FIXME]. This variable is used in the definition of the \mt and
 %Wants jets and missing energy. 
 This section describes a set of baseline selections and filters that are used 
 to ensure a final state with significant hadronic activity and genuine missing 
-energy that is typical of the SUSY and DM processes being searched for.
+energy that is typical of the SUSY and DM processes being searched for. These 
+are summarised, along with the full set of selections described in 
+Sec.~\ref{sec:analysis-eventselection}, in Tab.~\ref{tab:selections}.
 
 %Veto photons and leptons and SITs.
-Events containing muons or electrons are vetoed. This mainly suppresses the 
+Events in the signal region containing muons or electrons are vetoed. This 
+mainly suppresses the 
 \wj background process in which the W boson decays semileptonically, 
 resulting in missing energy and a lepton in the final state. In case the lepton 
 is not identified as such but its track is reconstructed, events are vetoed if 
@@ -437,7 +474,7 @@ suppressed by the \chf requirement.}
 %odd jet veto
 As a further safeguard against noise and misreconstruction issues, events that 
 contain a jet that fails the identification requirements outlined in 
-Sec.~\ref{analysis-physicsobjects} are not considered.
+Sec.~\ref{sec:analysis-physicsobjects} are not considered.
 
 %Forward jet veto here or QCD rejection? both
 Finally within the set of baseline selections, events are vetoed if there are 
@@ -484,7 +521,8 @@ association with jets, with the W boson decaying semi-leptonically to a lepton
 and a neutrino. Such an event may not be vetoed if the lepton is not 
 reconstructed or travels in a direction that is outside the acceptance of the 
 detector, or is a muon or electron that fails the kinematic, identification, or 
-isolation criteria listed in Sec.~\ref{analysis-physicsobjects}. If the lepton 
+isolation criteria listed in Sec.~\ref{sec:analysis-physicsobjects}. If the 
+lepton 
 is a tau, it may decay semi-leptonically to a muon or electron that is not 
 vetoed for the aforementioned reasons, or it may decay hadronically resulting 
 in a jets + \met final state. In the case of a single-prong hadronic decay, the 
@@ -556,8 +594,8 @@ reject/suppress this type of background.
 	\item Significant over or under-measurements of jets' energies due to the 
 	tails of the resolution distribution. This includes the mismeasurement of a 
 	single jet in the event, in which case the missing transverse momentum 
-	vector is collinear/parallel (if the jet's energy is under-measured; or 
-	anti-parallel/anti-collinear
+	vector is collinear (if the jet's energy is under-measured; or 
+	anti-collinear
 	if it is over-measured) to the jet's direction, as well as the 
 	mismeasurement of two or more jets, in which case the missing momentum is 
 	not aligned with any jet. A third effect is when a jet is severely 
@@ -739,7 +777,7 @@ The discriminating power of the \bdphi variable is shown in
 Fig.~\ref{fig:bdphi}. Multijet QCD events have values of \bdphi close to 0, 
 with the distribution falling sharply beyond this, 
 whereas processes containing genuine missing energy exhibit a longer tail up to 
-values of $\pi$.
+values of $\pi$ radians.
 
 The \bdphi variable is effective at capturing QCD events that contain a single 
 mismeasurement or a neutrino produced by a heavy quark decay that is collinear 
@@ -760,7 +798,7 @@ events satisfying the signal region selections
 (Sec.~\ref{analysis-eventselection}) except the \bdphi requirement. The ability 
 of the variable to effectively discriminate between QCD processes and processes 
 with genuine missing energy is evidenced by the cluster of QCD events close to 
-0, while processes with genuine \met take on larger values up to $\pi$.}
+0, while processes with genuine \met take on larger values up to $\pi$ radians.}
 \label{fig:bdphi}
 \end{center}
 \end{figure}
@@ -780,7 +818,7 @@ events.
 For processes with genuine missing energy, on the other hand, the ratio 
 generally remains close to unity as the increase in missing energy due to 
 threshold effects is proportionally smaller with respect to the true missing 
-energy which is already significantly large. The distribution of the \mhtmet 
+energy which is already relatively large. The distribution of the \mhtmet 
 ratio is shown in Fig.~\ref{fig:mhtmet} and demonstrates the difference between 
 the two types of backgrounds. Multijet QCD processes tend to populate the 
 region of \mhtmet$>1.25$.
@@ -794,7 +832,8 @@ events satisfying the signal region selections
 ability of the variable to effectively discriminate between QCD processes and 
 processes with genuine missing energy is evidenced by the population of QCD 
 events above $1.25$, while processes with genuine \met have values more 
-consistent with 1. [FIXME: remove ratio plot and fix axis label?]}
+consistent with 1. [FIXME: remove ratio plot and fix axis label? Update to 
+36fb]}
 \label{fig:mhtmet}
 \end{center}
 \end{figure}
@@ -814,64 +853,250 @@ the mechanisms.}
 
 
 \section{Event selection}
-\label{analysis-eventselection}
-2-3 pages
+\label{sec:analysis-eventselection}
+%2-3 pages
 
-Now define the cuts to suppress the QCD, the definition of the signal region 
-where we expect the signal, and the definition of the control regions that are 
-used to estimate the SM backgrounds.
+After the baseline selections outlined in 
+Sec.~\ref{sec:analysis-baselineselections}, additional selections are applied 
+in order to suppress the QCD background in the signal region and enrich the 
+control regions in the relevant standard model processes that need to be 
+estimated. These are summarised, along with the baseline selections 
+described in Sec.~\ref{sec:analysis-baselineselections}, in 
+Tab.~\ref{tab:selections}.
 
-Big summary table of all selections/regions/objects (see paper).
+%Big summary table of all selections/regions/objects (see paper). Or have a 
+%smaller table within each section.
+%define mono sym asym somewhere - sec. categorisation?
 
-define mono sym asym somewhere.
+% PRIMARY VERTEX SELECTION?
+\begingroup
+\renewcommand*{\arraystretch}{1.4}
+\begin{table}[h!]
+\label{tab:selections}
+\centering
+\footnotesize
+\begin{tabular}{ll}
+\hline
+%\multicolumn{2}{l}{\bf Baseline event selection}
+\textbf{Baseline selection} & \\
+All-jet final state & At least one jet; no muons, electrons, photons or 
+isolated tracks \\
+\met quality & No spurious \met due to instrumental effects or beam halo \\
+Jet energy and sums & $p_{\mathrm T}^{j_1}>100$~GeV, $\scalht>200$~GeV, 
+$\mht>200$~GeV \\
+Jets outside acceptance & $\mhtmet<1.25$; no jets with $\etaabs>2.4$ \\
+Jet quality & No jets that fail identification criteria \\
+\hline
+\textbf{Signal region} & Baseline selection + \\
+\alphat ($>$) (\scalht GeV range) & 0.65 (200-250), 0.60 (250-300), 0.55 
+(300-350), 0.53 (350-400), 0.52 (400-900) \\%($\njet \geq 2$) \\
+\bdphi & $\bdphi>0.5$ \\
+\hline
+\textbf{Control regions} & Baseline selection + \\
+\mj & One muon; $\mathrm{min}~\Delta R(\mu,j_i) > 0.5$; $30 < 
+M_{\mathrm{T}}(\mu,\met) < 125$~GeV \\
+\mmj & Two muons opp.~charge; $\mathrm{min}~\Delta R(\mu_{1,2},j_i) > 0.5$; 
+$|M(\mu_1,\mu_2) - m_\mathrm{Z}| < 25$~GeV \\
+Hadronic & Signal region sidebands $1.25<\mhtmet<3.0$ and/or $0.2<\bdphi<0.5$ \\
+\hline
+\end{tabular}
+\caption{Summary of selections as part of the definition of the signal and 
+control regions.} %topcaption
+\end{table}
+\endgroup
 
 \subsection{Signal region}
 
-alphat (summarise HT-dependent cuts in table), bdphi, mht/met cuts.
-Anything else?
+The baseline selections in the signal region are chosen to ensure a hadronic 
+final state with significant energy and missing momentum that is characteristic 
+of the DM and SUSY models that are sought. As a reminder, these include minimum 
+requirements on \scalht and \mht, and event vetoes on non-hadronic objects and 
+forward jets as well as spurious \met sources. However, a large number of QCD
+events remain that contain fake missing energy (or missing energy from heavy 
+quark decays). This background is suppressed to a very small level 
+($\lessapprox$1\% of the total standard model background) by imposing certain 
+requirements on the QCD-discriminating variables \alphat, \bdphi, and \mhtmet 
+described in the previous section.
 
-baby bdphi for monojet if there are jets 25, otherwise remains undefined. baby 
-alphat not applied in monojet.
+An \scalht-dependent \alphat requirement is used for multijet events, as 
+summarised 
+in Tab.~\ref{tab:alphatcuts}. For events containing only one jet above 40~GeV, 
+\alphat is undefined and no requirement is imposed. The \alphat threshold is as 
+high as $0.65$ for 
+events with $200<\scalht<250$~GeV, and is reduced with increasing \scalht down 
+to $0.52$ for events with $400<\scalht<900$~GeV, while no requirement at all is 
+made for $\scalht>900$~GeV. The thresholds are a decreasing function of \scalht 
+because the expected number of QCD events falls quickly with increasing 
+\scalht. The thresholds are also chosen to ensure that events are triggered 
+with full efficiency, as the \alphat trigger thresholds have been chosen to 
+provide a reasonable trigger rate. The trigger strategy will be discussed in 
+Sec.~\ref{sec:analysis-trigger}.
+
+\begin{table}[h!]
+\centering
+%\footnotesize
+\begin{tabular}{l|cccccc}
+\hline
+\scalht (GeV) & 200-250 & 250-300 & 300-350 & 350-400 & 400-900 & $>$900  \\
+\hline      
+\alphat requirement ($>$) & 0.65 & 0.60 & 0.55 & 0.53 & 0.52 & 0 \\
+\hline
+\end{tabular}
+\caption{The \alphat thresholds as a function of \scalht for events containing 
+at least two jets. No requirement is made on events containing only one jet.}
+\label{tab:alphatcuts}
+\end{table}
+
+Any QCD background events not captured by the \alphat selection, in particular 
+events with $\scalht>900$~GeV or with only one jet for which there is no 
+\alphat requirement, are suppressed by a requirement on \bdphi. The threshold 
+is chosen to be $\bdphi>0.5$~radians for all events, regardless of \scalht and 
+the 
+number of jets. For monojet events, \bdphi is undefined when using only jets 
+with $\pt>40$~GeV, and is instead computed using jets that satisfy a lower 
+threshold of $\pt>25$~GeV. If there are no jets with $25<\pt<40$~GeV, \bdphi 
+remains undefined and no requirement is made on monojet events. The \alphat 
+variable could also be defined similarly using jets of lower \pt, but QCD 
+events are produced with at least two jets, so QCD monojet events (which must 
+result from a severe mismeasurement) form a relatively smaller background and 
+these are effectively suppressed by the \bdphi requirement alone.
+
+Finally, in order to suppress the fake \met QCD background due to several jets 
+with a transverse momentum below the 40~GeV threshold, a requirement is made on 
+the \mhtmet ratio of $\mhtmet < 1.25$.
 
 \subsection{Control regions}
 
-Enriched in background they want to estimate. No overlap with SR events. 
-Ignored lepton in sums to mimic/proxy the SR. Exactly the same cuts as SR 
-except for inversion of muon veto to selection, plus some other differences 
-described in the following.
+Each control region is used to estimate a particular standard model background 
+process. The estimation methods will be discussed in 
+Secs.~\ref{sec:analysis-estimation-ewk}~and~\ref{sec:analysis-estimation-qcd}.
+The selections in the control regions are chosen so that they are enriched in 
+the background processes that each is designed to estimate, while remaining 
+kinematically as similar as possible to the signal region. 
+% similar in phase space
+For this reason, the 
+selections are the same as in the signal region except for the inversion of 
+certain requirements and additional purity criteria, as described in the 
+following subsections.
 
-Background estimation described in Sec X (EWK) and Y (QCD).
+In the case of the two muon control regions, the muons are not included in the 
+computation of \met (and similarly all jet-based variables) in order to mimic 
+the missing energy due to the neutrinos or lost lepton.
+% define metnomu = met + pt(muon) if necessary but don't think so
+The control regions are also orthogonal to the signal 
+region (an event cannot occupy both regions, by construction) and are expected 
+to contain very little signal. In any case, any potential signal contamination 
+in the control regions is accounted for in the statistical model 
+(Sec.~\ref{sec:analysis-likelihood}).
 
-\subsubsection{mujets}
+%Enriched in background they want to estimate. similar to SR but No overlap 
+%with SR events. 
+%Ignored lepton in sums to mimic/proxy the SR. 
+%Exactly the same cuts as SR except for inversion of muon veto to selection, 
+%plus some other differences described in the following.
+%devoid of signal (although account for signal contam)
 
-Exactly one muon that passes requirements mentioned before. DeltaR. MT. No 
-alphat or bdphi.
+\textbf{FIXME: Have transverse mass and invariant mass been or need to be 
+defined?}
 
-\subsubsection{mumujets}
+\subsubsection{\mj control region}
 
-Exactly two muons opposite charge. DeltaR. Mll.
+The \mj control region is used to estimate the \wlj and \ttbar backgrounds 
+(plus the residual backgrounds).
+The selections are chosen to identify W bosons, originating from such 
+processes, decaying to a muon and a neutrino. 
 
-% \subsubsection{single photon}
-% used in validation of nb, mHT?
+The muon veto of the signal 
+region is inverted and instead exactly one muon (as defined in 
+Sec.~\ref{sec:analysis-physicsobjects}) is required. The muon is required to be 
+separated from the closest jet by $\Delta R(\mu,\mathrm{jet}) > 0.5$ in order 
+to select isolated muons from prompt W decays rather than from QCD decays.
 
-\subsubsection{QCD sidebands} %hadronic control regions
+To 
+improve the purity in W bosons, the transverse mass of the muon and missing 
+transverse energy (which 
+is a proxy for the neutrino) is required to be compatible with the W mass with 
+$30 < M_{\mathrm{T}}(\mu,\met) < 125$~GeV. The transverse mass must be used 
+rather than the invariant mass as the 
+z-component of the missing momentum is unknown [FIXME: not sure if this last 
+sentence is needed or is already obvious/mentioned previously]. 
 
-bdphi and MHT/MET sidebands. Enriched in QCD.
+All of these 
+criteria are effective at selecting a pure sample of \wlj and \ttbar events 
+with minimal QCD contamination, and hence no requirements on \alphat or \bdphi 
+are made in this control region. This has the benefit of significantly 
+increasing the number of events in the control region, which decreases the 
+statistical uncertainties associated with the corresponding background 
+estimations. Any potential issues in the background estimation arising from 
+different \alphat and \bdphi selections are accounted for as a systematic 
+uncertainty (see Sec.~\ref{sec:analysis-closuretests}).
+
+\subsubsection{\mmj control region}
+
+The \mmj control region is used to estimate the main irreducible \znnj 
+background. The selections are chosen to identify Z bosons decaying to two 
+muons. The muon veto of the signal region is again inverted and instead exactly 
+two muons, of opposite charge, are required. Each muon is required to be 
+separated in $\Delta R$ from jets by the same amount as in the \mj control 
+region. In order to improve the purity in Z bosons, the invariant mass of the 
+dimuon system is required to be compatible with the mass of the Z boson, with 
+$|M(\mu_1,\mu_2) - m_\mathrm{Z}| < 25$~GeV. Similarly to the \mj control 
+region, no requirements on \alphat and \bdphi are needed.
+
+% Matt: Electron control regions can provide complementary statistical power to 
+%the muon control regions. However, they are not used in the αT analysis due to 
+%the significant increase in the rate of fakes from QCD multijet processes 
+%compared to the muon control regions.
+
+\subsubsection{\gj control region}
+used in validation of nb, MHT?
+probably leave out
+
+\subsubsection{Hadronic control regions}
+
+Three hadronic control regions are used in the estimation of the small QCD 
+background remaining after the full set of selections have been applied. These 
+control regions consist of the exact same selections as the signal region, 
+except that the \bdphi and \mhtmet requirements are inverted, both individually 
+and in conjunction, providing three control regions or ``sidebands'' that are 
+enriched in QCD processes. The sidebands are capped such that 
+$0.2<\bdphi<0.5$~rad and $1.25<\mhtmet<3.0$. The lower bound on the \bdphi 
+sideband and upper bound on the \mhtmet sideband are imposed because [FIXME] 
+modelling not right or what? ah trigger?
 
 \section{Event categorisation}
-2 pages.
+%2-3 pages.
 
-See AN.
+
+
+intro to purpose of binning.
+need min stats in each bin
+
+See AN and paper.
 
 Signal region binning in njet, nb, ht, mht. 
+
+Summarised in
+Table of bins. (like table 16 in AN)
+total bins = 254 + 198 + 122 = 574
+
+hadronic CRs treated differently.
+
+\subsection{Categorisation by \njet}
+
 Jet pt (mono sym asym).
 
-Same bins in single mu as SR.
+\subsection{Categorisation by \scalht}
+
+\subsection{Categorisation by \nb}
+
+\subsection{Categorisation by \mht}
+
+Same bins in single mu as SR (say why).
+no mht bins in CRs.
 Slightly different in double mu - only two nb bins. Explain why? Higher stats. 
 Show nb extrapolation validation (AN) or just summarise briefly in couple of 
 sentences (similar to MHT validation).
-
-Table of bins.
 
 %\subsection{Simplified binning scheme}
 % Probably not necessary, just show results with nominal bins
@@ -932,8 +1157,11 @@ Formula systematics.
 %\subsection{Systematics}
 
 \section{Estimation of electroweak background processes}
+\label{sec:analysis-estimation-ewk}
 Predict normalisation using CRs (data-driven to reduce reliance on MC). Use MHT 
 templates from MC.
+
+ttw = W + ttbar + residual backgrounds
 
 \subsection{nj, nb, ht dimensions}
 1 page
@@ -950,6 +1178,7 @@ Validation: Check data MC ratio is flat in CRs. Assign syst as described later
 in Sec X.
 
 \section{Estimation of QCD background processes}
+\label{sec:analysis-estimation-qcd}
 2 pages
 
 Method.
