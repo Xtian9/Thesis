@@ -860,9 +860,9 @@ After the baseline selections outlined in
 Sec.~\ref{sec:analysis-baselineselections}, additional selections are applied 
 in order to suppress the QCD background in the signal region and enrich the 
 control regions in the relevant standard model processes that need to be 
-estimated. These are summarised, along with the baseline selections 
-described in Sec.~\ref{sec:analysis-baselineselections}, in 
-Tab.~\ref{tab:selections}.
+estimated. These are described in this section and are summarised, along with 
+the baseline selections described in 
+Sec.~\ref{sec:analysis-baselineselections}, in Tab.~\ref{tab:selections}.
 
 %Big summary table of all selections/regions/objects (see paper). Or have a 
 %smaller table within each section.
@@ -1066,48 +1066,219 @@ modelling not right or what? ah trigger?
 
 \section{Event categorisation}
 %2-3 pages.
+%See AN and paper.
 
+%intro to purpose of binning. to be inclusive to wide range of models; 
+%background and signal occupy different regions of parameter space
+Events are categorised, or binned, according to four variables. This is done to 
+improve the discrimination between signal and background processes, which tend 
+to populate different regions of this four-parameter space. Moreover, different 
+SUSY and DM processes occupy different regions depending on the particular 
+production mode and final state considered. The four variables are the number 
+of jets \njet, the number of b-tagged jets \nb, the total jet energy \scalht, 
+and the missing transverse jet energy \mht. The binning scheme and motivation 
+for each discriminating variable are described in this section.
 
+The control regions are binned identically to the signal region, with some 
+exceptions in the \mht and \nb dimensions that will be explained in this 
+section. This is done to ensure that the backgrounds are 
+estimated (as described in Sec.~\ref{sec:analysis-estimation-ewk}) using events 
+in the control regions of similar kinematic and topological properties. Any 
+estimations that are not made between equivalent bins, or are made directly 
+according to simulation, are assigned an additional systematic uncertainty.
 
-intro to purpose of binning.
-need min stats in each bin
+A summary of the bins used in the signal region is provided in 
+Tab.~\ref{tab:binning}.
+In total, there are 254 bins in the signal region [FIXME: this is aggregated], 
+198 in the \mj control 
+region, and 122 in the \mmj control region.
+%total bins = 254 + 198 + 122 = 574
 
-See AN and paper.
+The hadronic control regions are categorised slightly differently, with coarser 
+bins. These regions do not form part of the overall statistical model used to 
+derive limits or significances, and instead are used to estimate the QCD 
+background separately. This will be discussed in 
+Sec.~\ref{sec:analysis-estimation-qcd}.
 
-Signal region binning in njet, nb, ht, mht. 
+%Table of bins. (like table 16 in AN)
+\begin{table}[h!]
+\label{tab:binning}
+\centering
+\footnotesize
+\begin{tabular}{r|r|ccccc}
+\hline
+\njet & \nb & \multicolumn{5}{c}{\scalht (GeV)} \\
+%\hline
+%& & \shortstack[c]{200-250, 250-300,\\300-350, 350-400} & 400-500, 500-600 & 
+%600-750, 750-900 & 900-1050, 1050-1200 & $>$1200 \\
+& & \shortstack[c]{200-250, 250-300,\\300-350, 350-400} & 
+\shortstack[c]{400-500,\\500-600} & \shortstack[c]{600-750,\\750-900} & 
+\shortstack[c]{900-1050,\\1050-1200} & $>$1200 \\
+\hline
+       1 &      0 & 200 & 200 & 200 & 200 & -- \\
+         &      1 & 200 & 200 & 200 & --  & -- \\
+\hline
+$\geq2a$ &      0 & 200 & 200,400 & 200,400,600 & 200,900 & -- \\
+         &      1 & 200 & 200,400 & 200,400,600 & 200,900 & -- \\
+         &      2 & 200 & 200,400 & 200,400,600 & 200,900 & -- \\
+         & $\ge3$ & 200 & 200,400 & 200,400,600 & --      & -- \\
+\hline
+       2 &      0 & 200 & 200,400 & 200,400,600 & 200,400,600,900 & 
+       200,400,600,900\\
+         &      1 & 200 & 200,400 & 200,400,600 & 200,400,600,900 & 
+         200,400,600,900\\
+         &      2 & 200 & 200,400 & 200,400,600 & --        & -- \\
+\hline
+       3 &      0 & 200 & 200,400 & 200,400,600 & 200,400,600,900 & 
+       200,400,600,900 \\
+         &      1 & 200 & 200,400 & 200,400,600 & 200,400,600,900 & 
+         200,400,600,900\\
+         &      2 & 200 & 200,400 & 200,400,600 & 200,400,600,900 & 
+         200,400,600,900\\
+         &      3 & 200 & 200,400 & 200,400,600 & --        & --\\
+\hline
+       4 &      0 & -- & 200,400 & 200,400,600 & 200,400,600,900 & 
+       200,400,600,900 \\
+         &      1 & -- & 200,400 & 200,400,600 & 200,400,600,900 & 
+         200,400,600,900 \\
+         &      2 & -- & 200,400 & 200,400,600 & 200,400,600,900 & 
+         200,400,600,900 \\
+         & $\ge3$ & -- & 200,400 & 200,400,600 & 200,400,600,900 & -- \\
+\hline
+       5 &      0 & -- & 200,400 & 200,400,600 & 200,400,600 & 200,400,600,900 
+       \\
+         &      1 & -- & 200,400 & 200,400,600 & 200,400,600 & 200,400,600,900 
+         \\
+         &      2 & -- & 200,400 & 200,400,600 & 200,400,600 & 200,400,600,900 
+         \\
+         &      3 & -- & 200,400 & 200,400,600 & 200,400,600 & -- \\
+         & $\ge4$ & -- & 200,400 & -- & -- & -- \\
+\hline
+  $\ge6$ &      0 & -- & 200       & 200,400 & 200,400,600 & 200,400,600,900 \\
+         &      1 & -- & 200       & 200,400 & 200,400,600 & 200,400,600,900 \\
+         &      2 & -- & 200       & 200,400 & 200,400,600 & 200,400,600,900 \\
+         &      3 & -- & 200       & 200,400 & 200,400,600 & 200,400,600,900 \\
+         & $\ge4$ & -- & 200       & -- & -- & -- \\
+\hline
+\end{tabular}
+\caption{Summary of all bins in the signal region. The listed numbers 
+correspond to the lower boundaries of the \mht bins in each \njnbht bin; the 
+final number in the list is always an open bin. A single-element list is 
+equivalent to no binning in \mht. 
+A dash means a particular \njnbht bin is not used, and so the previous \scalht 
+bin (if applicable) is an open bin.
+The muon control regions are binned identically, except that they are not 
+binned in \mht, and the largest \nb category in the 
+\mmj control region is
+$\ge1$.}
+\end{table}
 
-Summarised in
-Table of bins. (like table 16 in AN)
-total bins = 254 + 198 + 122 = 574
+\subsection*{Categorisation by \njet}
 
-hadronic CRs treated differently.
+First, it is convenient to define the topology of a final state in terms of the 
+momenta of the two most energetic jets. 
+As mentioned in Sec.~\ref{sec:analysis-baselineselections}, the leading jet is 
+required to have a transverse momentum larger than 100~GeV. 
+If the sub-leading jet also has $\pt>100$~GeV, the event is categorised as
+\textit{symmetric}. If it has $40<\pt<100$~GeV, the event is labelled 
+\textit{asymmetric}. If it has $\pt<40$~GeV or if there are no additional jets 
+in the final state, it is categorised as a \textit{monojet} event. 
+%Events with symmetric or asymmetric jet topologies can be collectively 
+%referred to as \textit{multijet} events.
 
-\subsection{Categorisation by \njet}
+The symmetric category captures many of the SUSY production scenarios in which 
+the mass difference with respect to the LSP is large and the final state 
+contains several highly energetic jets. In the case of a small mass difference, 
+little kinetic energy is available for the decay products and so the acceptance 
+for these models, which relies more on ISR and FSR, is provided by the 
+asymmetric and monojet categories. These categories are also useful at 
+targeting many models of dark matter production, which are also identified to a 
+large extent via additional radiation recoiling against the invisible system.
+\textbf{[TODO] LL SUSY: monojet. SL (short-lived) DM: multijet.}
 
-Jet pt (mono sym asym).
+Events are categorised according to the number of jets in the final state and 
+the jet topology. The seven categories employed are $\njet = 1$, $\geq2a$, 3, 
+4, 5, $\geq6$, where the $a$ denotes an asymmetric topology.
 
-\subsection{Categorisation by \scalht}
+\subsection*{Categorisation by \scalht}
 
-\subsection{Categorisation by \nb}
+The \scalht variable also provides a measure of the mass scale of a new physics 
+process  and the corresponding hadronic activity in the event. Events are 
+categorised by \scalht as follows: four bins of width 50~GeV in the range 
+200-400~GeV, two bins of width 100~GeV in the range 400-600~GeV, four bins of 
+width 150~GeV in the range 600-1200~GeV, and a final open bin 
+$\scalht>1200$~GeV. 
+[FIXME] For convenience, % easy of presentation/interpretation
+these 11 bins can be aggregated to just 5: 200-400, 400-600, 600-900, 900-1200, 
+and $\geq1200$~GeV.
 
-\subsection{Categorisation by \mht}
+The exact \scalht binning scheme depends on \njet and is included in 
+Tab.~\ref{tab:binning}. Because of the $\pt>40$~GeV threshold on jets, certain 
+low \scalht bins at high \njet are restricted or non-physical and are therefore 
+not considered. High \scalht bins at high \njet can be statistically limited 
+and are merged from above so that the corresponding bin in the control region 
+is well populated and the statistical uncertainty on the estimated background  
+is not too large.
+\textbf{TODO: What's the stat requirement for HT bins? paper: merged to satisfy 
+a threshold on the minimum number of events in the corresponding bins of the 
+CRs} 
 
-Same bins in single mu as SR (say why).
-no mht bins in CRs.
-Slightly different in double mu - only two nb bins. Explain why? Higher stats. 
-Show nb extrapolation validation (AN) or just summarise briefly in couple of 
-sentences (similar to MHT validation).
+\subsection*{Categorisation by \nb}
+
+The number of b-tagged jets is an effective discriminator for SUSY and DM 
+models that involved the production of heavy quarks. The standard model 
+background containing b-tagged jets is relatively smaller, and mainly comes 
+from \ttbar production, as well as some contribution from \wj and \zj in which 
+a jet is mistagged. Additional sensitivity is also found for long-lived 
+particles with lifetimes similar to that of b quarks, as their hadronic decay 
+products can be reconstructed as b-tagged jets.
+
+Events are categorised according to $\nb = 0$, 1, 2, 3, $\geq4$.
+Again, the exact binning scheme depends on \njet and is included in 
+Tab.~\ref{tab:binning}.
+The largest \nb bin can be at most equal to \njet. Bins are also merged from 
+above according to the number of data counts in the \mj control region to 
+ensure that the backgrounds estimations do not suffer from large statistical 
+uncertainties.
+As the \mmj control region is somewhat statistically limited, especially at 
+high \nb, the largest \nb bin employed in this control region is $\nb \geq 1$.
+\textbf{[TODO] an extrapolation in nb is performed for the region nb geq 1. The 
+simulation modelling of the nb and HTmiss variables are checked with both 
+samples, more details in section X.}
+
+\subsection*{Categorisation by \mht}
+
+The signal region is additionally categorised according to \mht. This helps to 
+further separate the background and signal, as signal processes (in particular 
+DM and compressed SUSY models), tend to have values of \mht closer to \scalht.
+% see matt
+
+Events are categorised in \mht using up to four bins, that are aligned with the 
+boundaries of the \scalht bins: 200-400, 400-600, 600-900, $\geq1200$~GeV. In 
+this case, the value of \mht is bounded above by \scalht by construction. Bins 
+are again merged from above such that there are at least 500 unweighted 
+simulation events in each (\njet, \scalht, \mht) bin [FIXME] to ensure well 
+populated mht/nb templates. For events with $\njet=1$, for which 
+$\mht=\scalht$, or with $200<\scalht<400$~GeV, no binning in \mht is employed.
+
+Unlike with the \njet, \nb and \scalht variables, events in the control regions 
+are not binned in the \mht dimension. The background estimations in each \mht 
+bin are taken directly from simulation instead of being derived from the 
+control regions. This is done to avoid binning the control regions too finely 
+which, due to the \textit{curse of dimensionality}, would greatly reduce their 
+statistical power. A validation of this method will be discussed in 
+Sec.~\ref{sec:analysis-estimation-mht}.
 
 %\subsection{Simplified binning scheme}
 % Probably not necessary, just show results with nominal bins
 
 %\subsection{Nb extrapolation}
 
-\section{Triggers}
+\section{Trigger}
 \label{sec:analysis-trigger}
-5 pages.
+%5 pages.
 
-See Mark.
+See Mark and old AN.
 List of SR and CR triggers.
 Efficiencies.
 
@@ -1164,12 +1335,16 @@ templates from MC.
 ttw = W + ttbar + residual backgrounds
 
 \subsection{nj, nb, ht dimensions}
+\label{sec:analysis-estimation-njnbht}
 1 page
 
 Transfer factor method.
 
 \subsection{MHT dimension}
+\label{sec:analysis-estimation-mht}
 2 pages
+
+If it helps (to give intro), see AN and matt's mht categorisation sections.
 
 Take templates because don't want to bin CRs too finely (lose statistical power 
 - curse of dimensionality).
@@ -1191,6 +1366,10 @@ Plot of estimated yields per bin.
 
 These are explained below and also summarised, with representative magnitudes, 
 in the big summary table of systs.
+
+(don't know where to put it)
+Show nb extrapolation validation (AN) or just summarise briefly in couple of 
+sentences (similar to MHT validation).
 
 \subsection{MC-based}
 3-4 pages (maybe 2 pages just of plots).
