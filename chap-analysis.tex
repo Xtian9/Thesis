@@ -1277,16 +1277,361 @@ Sec.~\ref{sec:analysis-estimation-mht}.
 \section{Trigger}
 \label{sec:analysis-trigger}
 %5 pages.
+%See Mark and old AN.
 
-See Mark and old AN.
-List of SR and CR triggers.
-Efficiencies.
+As discussed previously, % in Sec.~\ref{sec:analysis-baselineselections}, 
+the aim of the search is to be as inclusive as possible to a wide range of new 
+physics processes by having low thresholds on the amount of hadronic activity 
+and missing energy. This is particularly important for models with a compressed 
+mass spectrum, as well as models with long-lived particles, as these contain 
+relatively fewer and/or softer jets in the final state. The acceptance of the 
+search towards these new physics processes is therefore largely dependent on 
+the ability of the trigger to effectively select such events. 
+
+The HLT trigger thresholds are optimised to provide a maximal acceptance 
+subject to 
+constraints on the readout rate and the processing time. As there is often an 
+overlap between events selected by different triggers, and the same physics 
+objects are used by various triggers, the quantities of importance for a 
+particular trigger are the \textit{effective} or \textit{exclusive} rate and 
+processing time. These 
+are, respectively, the rate and processing time added by that trigger to the 
+overall HLT menu. The total available rate and processing time of the HLT are 
+$\approx$1~kHz and $\approx$200~ms, respectively, while individual triggers are 
+typically constrained to have an effective rate and processing time of at most 
+a few Hz and a few milliseconds.
+% see Timing_Tutorial_SUSY*pdf
+
+The triggers for this search make use of QCD-discriminating variables such as 
+\alphat to control the readout rate, and the thresholds are essentially chosen 
+to be as low as possible while satisfying the rate constraint and ensuring a 
+good selection efficiency for events in the signal region.
+The triggers make use of Particle Flow reconstruction, which is a 
+computationally intensive task as it involves the combination of information 
+from various sub-detectors. To help satisfy the timing constraint, loose 
+requirements are first made using simpler objects, such as jets reconstructed 
+using only the calorimeters, before proceeding with the PF reconstruction and 
+final trigger selections.
+
+In order to reduce the readout rate, triggers may be assigned a 
+\textit{prescale factor} \prescale, which is defined such that the probability 
+that an event which satisfies the trigger requirements is read out is 
+$1/\prescale$. This means that a trigger with, say, \prescale$=10$ only records 
+approximately one in every ten events that satisfy its requirements.
+
+Several versions of the same trigger are usually included in the HLT menu, each 
+with slightly different thresholds that are suited for different LHC running 
+conditions. As the instantaneous luminosity is increased throughout an LHC fill 
+and throughout the year, the lower threshold versions become prescaled or 
+disabled. To avoid large statistical uncertainties, only events collected by 
+unprescaled triggers are considered in the search.
+
+It is important to monitor the trigger rate and efficiency throughout an LHC 
+run, especially at the beginning, to check that the trigger is performing well 
+and within constraints, so as to be able to react promptly to any issues and 
+avoid a large loss of data. [FIXME maybe remove this paragraph]
+
+%selections for the signal region are chosen to be as inclusive as possible
+%inclusive, low thresholds, fully efficient
+%These two thresholds are chosen to be as low as possible in order to maximise 
+%the acceptance of the search across a wide range of the SUSY and DM mass 
+%parameter space, while simultaneously maintaining a reasonable trigger rate 
+%and efficiency. 
+
+%Introductory paragraph (see Mark, Adam, AN). L1 and HLT. Here focus on signal 
+%region HLT triggers.
+%Trigger thresholds are chosen to optimise efficiency while minimising timing 
+%and rate (for given instantaneous luminosity).
+%Describe timing (few ms).
+%Describe pre-filtering to reduce timing (using calo; triggers use PF 
+%candidates).
+%Describe rate (few tens of Hz for alphat suite).
+%NB: timing and rate are ADDITIONAL to other triggers, as there is some overlap 
+%between reconstructed objects and events selected.
+%Describe prescale. Trigger can be prescaled to reduce rate but increases stat 
+%unc. Primary triggers of analysis should be unprescaled, %although with higher 
+%lumi can be
+%Several versions of same trigger usually exist with slighly different 
+%thresholds. As lumi of run/year increases, the low threshold ones get 
+%prescaled 
+%and the higher threshold ones kick in.
+
+\subsection{Signal and control region triggers}
+
+Various triggers are utilised to collect data in the signal and control 
+regions. These are described in the following and summarised in 
+Tab.~\ref{tab:triggers}, which shows the thresholds employed by each trigger 
+and the amount of data collected by each one. All HLT triggers employ Particle 
+Flow reconstruction.
+
+\begin{table}[h]
+\footnotesize
+\centering
+\begin{tabular}{ccc}
+\hline
+HLT requirements & L1 seed requirements & HLT unprescaled fraction \\
+\hline\hline
+$\scalht>200$ \&\& $\alphat>(0.57,0.63)$ & $\scalht>(240,240)$ || 
+$\met>(70,90)$ & (0.53,0.47) \\
+$\scalht>250$ \&\& $\alphat>(0.55,0.58)$ & $\scalht>(240,240)$ || 
+$\met>(70,90)$ & (0.53,0.47) \\
+$\scalht>300$ \&\& $\alphat>(0.53,0.54)$ & $\scalht>(240,240)$ || 
+$\met>(70,90)$ & (0.53,0.47) \\
+$\scalht>350$ \&\& $\alphat>(0.52,0.53)$ & $\scalht>(240,240)$ || 
+$\met>(70,90)$ & (0.53,0.47) \\
+$\scalht>400$ \&\& $\alphat>(0.51,0.52)$ & $\scalht>(240,240)$ || 
+$\met>(70,90)$ & (0.53,0.47) \\
+\hline
+$\met$ \&\& $\mht>(90,100,110,120)$ & $\scalht>(240,240)$ || 
+$\met>(70,90)$ & (0.39,0.10,0.49,0.02) \\
+\hline
+$\scalht>(800,900)$ & $\scalht>(240,240)$ & (0.76,0.24) \\
+\hline
+$\pt^\mu>(22,24)$ & $\pt^\mu>(20,xx)$ & (0.80,0.20) \\
+\hline
+\end{tabular}
+\caption{FIXME List of L1 and HL triggers utilised in this search, grouped by 
+family, 
+indicating in parentheses their varying thresholds throughout the 2016 LHC run. 
+All quantities related to energy and momentum are quoted in GeV units.
+The muon trigger is employed in the muon 
+control regions, while all other triggers listed are employed in the signal 
+region and hadronic control regions.
+The \scalht-\alphat triggers also have a minimum requirement of 90~GeV on the 
+average \pt of the two leading jets, which did not change throughout run.
+Also provided is the fraction of the run for which a given trigger was the 
+lowest-threshold unprescaled trigger within its family.}
+\label{tab:triggers}
+\end{table}
+%Requirements/thresholds: Lumi Fraction collected. hline for every suite 
+%(alphat, met, ht, mu).
+%Table of lumi collected by each lowest unprescaled? (thomas)
+
+Three groups or families of triggers are used to collect events in the signal 
+region and hadronic control regions. An event that satisfies any of these 
+triggers is selected.
+
+The first group consists of five triggers with requirements on both \scalht and 
+\alphat. These are designed to map onto the the selections employed in the 
+analysis (described in Sec.~\ref{sec:analysis-eventselection}). Their 
+thresholds on (\scalht, \alphat) are (200, 0.57), (250, 0.55), (300, 0.53), 
+(350, 0.52), (400, 0.51). This set of triggers collected data for approximately 
+the first half of the 2016 run, and were substituted by slightly higher \alphat 
+thresholds in the second half when the instantaneous luminosity reached [FIXME] 
+1e34.
+%The \alphat threshold is lowered with increasing \scalht as the amount of QCD 
+%%%background falls.
+These triggers are most effective at selecting multijet events with a symmetric 
+topology. The requirement on \alphat helps to suppress QCD events and maintain 
+significantly lower thresholds on \scalht than would be possible with a pure 
+\scalht trigger.
+These triggers also have a threshold of 90~GeV on the average \pt of the two 
+most energetic jets in the event, which is necessary to maintain reasonable 
+trigger rates. This reduces their efficiency for selecting events with an 
+asymmetric jet topology.
+
+The second type of trigger is one with requirements on both \met and \mht. 
+These are used to collect events with a monojet or asymmetric topology more 
+effectively than the \scalht-\alphat triggers. The initial threshold on \met 
+and \mht was 90~GeV, and was raised throughout the 2016 run up to 120~GeV.
+
+The third type of trigger is one with a requirement only on \scalht. In this 
+case the threshold was either 800 or 900~GeV. This trigger is used to collect 
+events in the $\scalht>900$~GeV region in which there is no \alphat requirement.
+
+For both the \mj and \mmj control regions, events are collected using a trigger 
+that requires at least one isolated muon with a transverse momentum larger than 
+22~GeV (24~GeV later in the run).
+%No QCD so rate is lower so can use lower thresholds.
+
+Prior to the HLT, events are filtered by the Level 1 trigger. Each HLT trigger 
+is preceded, or \textit{seeded}, by a particular L1 trigger. The L1 seeds for 
+the HLT triggers employed in this search consist of requirements on \scalht, 
+\met and muon \pt, as summarised in Tab.~\ref{tab:triggers}. [TODO] thresholds 
+kept relatively low thanks to L1 upgrade.
+%L1 seeds. Give rough range (started at 80 ended at 120 or whatev)
+%alphat htt or etm
+%ht htt
+%met etm
+%muon muon
+
+%Events are triggered via requirements on combinations of \scalht, \mht, \met 
+%and \alphat.
+
+%List of SR and CR triggers. Trigger: (L1 seed just mention roughly in words): 
+%Requirements/thresholds: Lumi Fraction collected. hline for every suite 
+%(alphat, met, ht, mu).
+%Table of lumi collected by each lowest unprescaled? (thomas)
+%HT-alphaT triggers, with dijet average requirement because bla. AlphaT 
+%requirement allows this trigger to go as low as ht200 (for comparison, a 
+%straight ht 200 trigger has prescale 10000).
+%Inefficient for asym so use additional trigger mht-met to recover.
+%Check turnons for alphat and met separately (how much further down in ht does 
+%alphat go?).
+
+\subsection{Trigger efficiency}
+
+Accurately measuring the efficiency of the triggers is important as these 
+affect the background estimations. Due to imperfect or a lack of trigger 
+emulation in the simulation, the efficiencies need to be measured in data and 
+used to correct the simulation. More details on this will be provided in 
+Sec.~\ref{sec:analysis-mccorrections}. 
+%This section focuses specifically on the signal region triggers.
+
+The efficiency of a trigger is defined to be the fraction of events satisfying 
+a set of \textit{offline} requirements, such as those of the signal region, 
+that are selected by that trigger. The efficiency should be ideally close to 
+100\%. An inefficiency may arise close to the trigger threshold due to 
+differences in the online and offline reconstruction. For instance, instead of 
+Particle Flow reconstruction, jets in the HLT prefilter are reconstructed using 
+solely calorimeter deposits, and jets in the L1 trigger are reconstructed using 
+relatively coarse calorimeter information.
+TODO: anything else? met trigger uses 30 GeV instead of 40 GeV jets?
+%Say why efficiency is not necessarily 100 per cent - L1 inefficiency, 
+%prefilter inefficiency (coarse information), not exactly same objects as 
+%offline (e.g. 30 GeV jets), alphat is not exactly mht.
+
+In order to estimate the efficiency of a trigger using data, one can 
+measure the fraction of events collected by an alternative, \textit{reference} 
+trigger that satisfy the offline criteria. One possibility for a reference 
+trigger is a pure \scalht trigger with a relatively low threshold. However, 
+pure \scalht triggers are highly prescaled and result in a large statistical 
+uncertainty on the measured efficiency. Unprescaled single electron and muon 
+triggers are instead chosen as references. These provide a sample of events 
+that are inclusive with respect to the variables employed in the signal region 
+triggers.
+%These events represent w+jets background
+%electron trigger is 23-27 GeV
+
+When using lepton reference triggers to measure efficiencies, one must account 
+for differences in the treatment of leptons in the L1T, the HLT, and offline. 
+As muons deposit a negligible amount of energy in the calorimeters, they are 
+not reconstructed as jets in the L1T and HLT prefilter, whereas electrons are. 
+Offline, both electrons and muons are initially reconstructed as jets by the 
+Particle Flow
+algorithm which clusters all PF candidates. These `fake' jets are then removed 
+from the event if they are close to an isolated lepton, in a process known as 
+\textit{cross-cleaning}. At the HLT, which also utilises PF reconstruction, 
+cross-cleaning of muons is only employed by the \met-\mht triggers.
+% but not for the \scalht and \scalht-\alphat triggers. 
+Cross-cleaning of electrons is not performed for any of the HLT triggers.
+%In the case of electrons, these are reconstructed as jets at the L1, prefilter 
+%and HLT stages, but not offline where cross-cleaning is performed.
+An inconsistency in the treatment of leptons and jets across the L1, HLT and 
+offline reconstruction chain would introduce a bias in a trigger efficiency 
+estimate using a lepton trigger reference. For instance, a pure \scalht trigger 
+may falsely appear more efficient as the lepton would artificially enlarge the 
+\scalht of the event.
+In order to have a treatment that is as consistent as possible and avoid a bias 
+in the measured trigger efficiency, cross-cleaning of offline electrons and 
+muons is either enabled or disabled as appropriate for the particular trigger 
+being measured.
+%Bias from closs-cleaning inconsistencies in the L1-HLT-offline chain. 
+A completely unbiased estimate is not always possible, such as when measuring 
+the \scalht and \scalht-\alphat efficiencies via a muon sample. However, the 
+triggers are almost fully efficient in the signal region phase space and any 
+bias is covered with a conservative systematic uncertainty, as will be 
+discussed further in Sec.~\ref{sec:analysis-systematics}.
+
+The trigger efficiency is measured using both electron and muon reference 
+triggers as a function of \mht in bins of \scalht, 
+both corresponding to quantities computed offline. The efficiency in the 2016 
+data taking period is shown in Fig.~\ref{fig:trigger-eff}. The triggers have an 
+efficiency $>90$\% for $\mht>200$~GeV, and are practically fully efficient 
+above 300~GeV. The discrepancy in the \textit{turn-on} region of the efficiency 
+curve between the muon and electron samples is attributed to differences in 
+cross-cleaning methods, and motivates a selection of $\mht>200$~GeV in the 
+signal region. One could reduce this threshold to $\sim$100~GeV to increase the 
+acceptance of the search, but the lack of a precise knowledge of the trigger 
+efficiency in this region would incur a bias and large uncertainty on the 
+background expectation which would practically nullify the search's sensitivity 
+in this region.
+%Otherwise too much uncertainty about true efficiency which could lead to bias 
+%in background estimation
+
+\begin{figure}[h!]
+\label{fig:trigger-eff}
+\subfloat[$200 < \scalht < 
+400$~GeV]{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_200to400_mht}}
+~
+\subfloat[$200 < \scalht < 
+400$~GeV]{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_200to400_mht}}
+\\
+\subfloat[$400 < \scalht < 
+600$~GeV]{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_400to600_mht}}
+~
+\subfloat[$400 < \scalht < 
+600$~GeV]{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_400to600_mht}}
+\\
+\subfloat[$600 < \scalht < 
+900$~GeV]{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_600to900_mht}}
+~
+\subfloat[$600 < \scalht < 
+900$~GeV]{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_600to900_mht}}
+\\
+\subfloat[$\scalht > 900$~GeV]      
+{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_900to999999_mht}}
+~
+\subfloat[$\scalht > 900$~GeV]      
+{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_900to999999_mht}}
+\\
+\caption{Efficiency of the HL trigger in the signal region as a function of 
+offline \mht and \scalht, measured in a data sample collected by a single 
+electron (left) and single muon (right) trigger.}
+\end{figure}
+
+This section has focussed on the signal region triggers. The efficiency of the 
+muon trigger is also measured in data and used to correct the trigger 
+efficiency in the simulation. This will be discussed further in 
+Sec.~\ref{sec:analysis-mccorrections}.
+
+%Efficiencies. Define with equation, in terms of reference trigger. Estimate 
+%efficiency parameter. 
+%Importance is because affects background estimations. 
+%Need to correct simulation (see later) (not emulated in MC); also to to check 
+%triggers are performing well obv.
+%8 plots.
+%Differences between muon and electron clear in turnon. Previously had 130 
+%threshold but because of this raised to 200. Otherwise too much uncertainty 
+%about true efficiency which could lead to bias in background estimation
+%Say why efficiency is not necessarily 100 per cent - L1 inefficiency, 
+%prefilter inefficiency (coarse information), not exactly same objects as 
+%offline (e.g. 30 GeV jets), alphat is not exactly mht.
+%Measure in data to avoid MC mismodelling. 
+%Leptonic triggers are best because 
+%are unbiased/no selection of MET (when lepton ignored - just like W 
+%background (e.g. HT trigger eff appears better than it really is if you count 
+%the muon as a jet - but we are interested in the eff for events with no 
+%muons). 
+%Could use prescaled HT triggers (and would include Zinv not just W) but 
+%prescales too large so too large uncertainties. 
+%Anyway efficiencies are close to 100\% so any bias is covered with a 
+%conservative systematic unc, and met trigger is as good or better in most of 
+%phase space and there is no bias for that one.
+%Bias from closs-cleaning inconsistencies in the L1-HLT-offline chain. Table 
+%like mark yes no.
+%Can use electron for consistent chain but topology doesn't really represent 
+%that of SR.
+%Remember METNoMu does have cross-cleaning so not affected.
+
+%Eff for signal models is checked in simulation and is close tp 100\%.
+%Same triggers used in hadronic control regions (mhtmet caveat)
+
+%Two ways of doing muon cross cleaning in HLT (Mark): just reconstruct muon and 
+%apply deltaR cleaning (as offline) or remove jet if muon energy fraction is 
+%greater than 0.6
+
 
 \section{Simulation samples}
-0.5 pages.
-Maybe put here the "datasets" section of data and MC samples (see Matt).
+\label{sec:analysis-mcsamples}
+%0.5 pages.
+%Maybe put here the "datasets" section of data and MC samples (see Matt).
+
+
+
 
 \section{Corrections to simulation}
+\label{sec:analysis-mccorrections}
 3-5 pages
 
 Simulation modelling is not perfect. Need to correct it using scale factors by 
@@ -1297,6 +1642,9 @@ the background estimation, that will be described later in Sec X.
 \subsection{b-tagging efficiency}
 Reweighting formula.
 \subsection{Trigger efficiency}
+Efficiencies then applied to simulation as a correction to match data and a 
+systematic uncertainty is assigned based on differences between electron and 
+muon reference trigger, see Sections corrections and systematics.
 \subsection{Lepton and photon reconstruction, identification, isolation and 
 triggering efficiency}
 Tag and probe.
@@ -1306,7 +1654,7 @@ Sideband corrections.
 Summarise in table.
 
 \subsection{Plus more?}
-NLO, pdf/scale
+NLO, pdf/scale.
 Signal (maybe later): nISR, gen met
 
 \section{b-tag formula method}
@@ -1363,6 +1711,7 @@ Validation.
 Plot of estimated yields per bin.
 
 \section{Systematic uncertainties on background estimation}
+\label{sec:analysis-systematics}.
 
 These are explained below and also summarised, with representative magnitudes, 
 in the big summary table of systs.
