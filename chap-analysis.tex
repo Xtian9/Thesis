@@ -240,9 +240,9 @@ primary vertex -- this suppresses the potential background from cosmic muons
 and muons produced at a pileup vertex. The effective area pileup correction is 
 applied. The relative isolation quantity is required to be \reliso~$ < 0.15$. 
 \textbf{The mini-isolation algorithm is not employed in the control regions 
-because of 
+\textbf{because of 
 [FIXME]
-QCD and trigger efficiency???}
+QCD and trigger efficiency???}}
 % also suppress muons from decays in flight (from heavy quarks)
 % The efficiency for this is $\sim 96$\%.
 
@@ -731,7 +731,7 @@ mismeasurement or there are several jets below the \pt threshold.
 %matt/AN: The αT distribution becomes more sharply peaked with increasing HT in 
 %the event as mismeasurements are larger for lower jet pT
 
-\begin{figure}
+\begin{figure}[t!]
 \begin{center}
 \includegraphics[width=0.7\linewidth]{figs/analysis/propaganda_alphat}
 \caption{The distribution of the \alphat variable in data and simulation for 
@@ -790,7 +790,7 @@ collinear with any jet.
 %captures both under and over measurements
 %doesn't capture severe mismeasurements (would need to lower threshold)
 
-\begin{figure}
+\begin{figure}[t!]
 \begin{center}
 \includegraphics[width=0.7\linewidth]{figs/analysis/propaganda_bdphi}
 \caption{The distribution of the \bdphi variable in data and simulation for 
@@ -823,7 +823,7 @@ ratio is shown in Fig.~\ref{fig:mhtmet} and demonstrates the difference between
 the two types of backgrounds. Multijet QCD processes tend to populate the 
 region of \mhtmet$>1.25$.
 
-\begin{figure}
+\begin{figure}[t!]
 \begin{center}
 \includegraphics[width=0.7\linewidth]{figs/analysis/mhtmet}
 \caption{The distribution of the \mhtmet ratio in data and simulation for 
@@ -966,7 +966,7 @@ with a transverse momentum below the 40~GeV threshold, a requirement is made on
 the \mhtmet ratio of $\mhtmet < 1.25$.
 
 \subsection{Control regions}
-
+\label{sec:analysis-eventselection-cr}
 Each control region is used to estimate a particular standard model background 
 process. The estimation methods will be discussed in 
 Secs.~\ref{sec:analysis-estimation-ewk}~and~\ref{sec:analysis-estimation-qcd}.
@@ -1048,9 +1048,10 @@ region, no requirements on \alphat and \bdphi are needed.
 %the significant increase in the rate of fakes from QCD multijet processes 
 %compared to the muon control regions.
 
-\subsubsection{\gj control region}
-used in validation of nb, MHT?
-probably leave out
+%\subsubsection{\gj control region}
+%used in validation of nb, MHT?
+%probably leave out
+%TODO
 
 \subsubsection{Hadronic control regions}
 
@@ -1064,7 +1065,11 @@ $0.2<\bdphi<0.5$~rad and $1.25<\mhtmet<3.0$. The lower bound on the \bdphi
 sideband and upper bound on the \mhtmet sideband are imposed because [FIXME] 
 modelling not right or what? ah trigger?
 
+\subsubsection{\mj and \mmj \mht sidebands}
+\textbf{TODO: also two MHT sidebands for sideband corrs.}
+
 \section{Event categorisation}
+\label{sec:analysis-binning}
 %2-3 pages.
 %See AN and paper.
 
@@ -1399,8 +1404,8 @@ control regions, while all other triggers listed are employed in the signal
 region and hadronic control regions.
 The \scalht-\alphat triggers also have a minimum requirement of 90~GeV on the 
 average \pt of the two leading jets, which did not change throughout run.
-Also provided is the fraction of the run for which a given trigger was the 
-lowest-threshold unprescaled trigger within its family.}
+Also provided is the fraction of the run for which a given trigger version was 
+the lowest-threshold unprescaled trigger.}
 \label{tab:triggers}
 \end{table}
 %Requirements/thresholds: Lumi Fraction collected. hline for every suite 
@@ -1549,31 +1554,31 @@ in this region.
 %Otherwise too much uncertainty about true efficiency which could lead to bias 
 %in background estimation
 
-\begin{figure}[h!]
+\begin{figure}[!htb]
 \label{fig:trigger-eff}
 \subfloat[$200 < \scalht < 
-400$~GeV]{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_200to400_mht}}
+400$~GeV]{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_200to400_mht}}
 ~
 \subfloat[$200 < \scalht < 
-400$~GeV]{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_200to400_mht}}
+400$~GeV]{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_200to400_mht}}
 \\
 \subfloat[$400 < \scalht < 
-600$~GeV]{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_400to600_mht}}
+600$~GeV]{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_400to600_mht}}
 ~
 \subfloat[$400 < \scalht < 
-600$~GeV]{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_400to600_mht}}
+600$~GeV]{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_400to600_mht}}
 \\
 \subfloat[$600 < \scalht < 
-900$~GeV]{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_600to900_mht}}
+900$~GeV]{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_600to900_mht}}
 ~
 \subfloat[$600 < \scalht < 
-900$~GeV]{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_600to900_mht}}
+900$~GeV]{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_600to900_mht}}
 \\
 \subfloat[$\scalht > 900$~GeV]      
-{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_900to999999_mht}}
+{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_900to999999_mht}}
 ~
 \subfloat[$\scalht > 900$~GeV]      
-{\includegraphics[width=0.3\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_900to999999_mht}}
+{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_900to999999_mht}}
 \\
 \caption{Efficiency of the HL trigger in the signal region as a function of 
 offline \mht and \scalht, measured in a data sample collected by a single 
@@ -1622,80 +1627,745 @@ Sec.~\ref{sec:analysis-mccorrections}.
 %greater than 0.6
 
 
-\section{Simulation samples}
-\label{sec:analysis-mcsamples}
+\section{Data sets and simulation samples}
+\label{sec:analysis-samples}
 %0.5 pages.
 %Maybe put here the "datasets" section of data and MC samples (see Matt).
+This section describes the data sets in which the search for SUSY and DM takes 
+place, as well as the simulated data sets that aid in the estimation of the 
+background and signal processes.
 
+% both data and MC stored as ROOT trees with an entry per collision event, all 
+%important reco information stored per event
 
+\subsection{Data sets}
+\label{sec:analysis-samples-data}
+
+Between 22$^\mathrm{nd}$ April 2016 and 27$^\mathrm{th}$ October 2016, the 
+LHC delivered a total integrated luminosity of 40.8~\ifb of proton-proton 
+collisions at a centre of mass energy of \com with a proton bunch spacing of 
+25~ns. Of this, 37.8~\ifb (93\%) was recorded by the CMS detector, and 
+35.9~\ifb (88\%) was certified as containing data of good quality, meaning 
+there were no associated detector or reconstruction issues. The amount of data 
+delivered, recorded and certified over the year is shown in 
+Fig.~\ref{fig:lumi}.
+It is the certified 35.9~\ifb of data that form the basis of the search. The 
+data sets that are analysed correspond to those collected by the triggers 
+described in Sec.~\ref{sec:analysis-trigger}.
+%The uncertainty on the certified integrated luminosity is 2.x\%
+%\textbf{TODO: lumi uncertainty and reference (or just leave for corrections 
+%section).}
+%Each family of triggers collects a subset of these data, and these are stored 
+%as separate files which can then be processed further and analysed.
+% aod - miniaod - trees
+
+\begin{figure}[!htb]
+\label{fig:lumi}
+\includegraphics[width=0.7\textwidth]{figs/analysis/cmslumi}
+\caption{Cumulative integrated luminosity of pp collisions at \com delivered by 
+the LHC, recorded by CMS, and certified as good for physics analysis per day 
+during the year 2016~\cite{cmslumi16}.}
+\end{figure}
+
+%runs (2016B etc), certification, primary datasets. 25ns.
+
+\subsection{Simulation samples}
+\label{sec:analysis-samples-mc}
+
+The methods of Monte Carlo event generation, hadronisation and detector 
+simulation were described in Sec.~\ref{sec:detector-simulation}.
+The Monte Carlo generation of the main background processes (QCD, \zj, \wj, 
+\ttbar) is produced via the \textsc{MadGraph5}~\cite{madgraph5} generator 
+framework at leading order (LO) precision. 
+% also DY (same as Zjets)
+As the number of events falls exponentially with the energy scale of the event, 
+and it is the most energetic events that typically pass the signal region 
+requirements, these samples are generated in various bins of \hthat, the total 
+hadronic energy of the partons produced in the hard scattering. 
+%The \hthat sub-samples all contain approximately the same number of events
+%several parton ht bins to improve stats (exponential to flat), reweight)
+This improves the statistical precision of the simulation in the phase space 
+region of interest.
+Single top quark production is generated at next-to-leading order (NLO) using 
+both \textsc{MadGraph5} and \textsc{powheg}~\cite{powheg} for the different 
+production channels. The diboson background is generated with 
+\textsc{pythia8}~\cite{pythia8}.
+While events are generated at LO or NLO, the cross sections of most of the main 
+background processes are computed at next-to-next-to-leading order (NNLO) 
+precision~\cite{adam-lots}.
+%\textbf{TODO no need to mention pythia hadronisation and geant here?}
+
+The SUSY and DM signal samples are generated with \textsc{MadGraph5}. For each 
+model, various masses and lifetimes of the relevant particles are generated. 
+This allows for the sensitivity of the search to be explored as a function of 
+these variables.
+The \verb|T1qqqq| model with a promptly-decaying gluino is simulated via a 
+\textit{fast simulation} framework which employs a simplified detector geometry 
+and smearing of the particles' four-vectors, enabling it to perform $\sim$100 
+times faster than a full simulation with \textsc{geant} but with comparable 
+accuracy~\cite{fastsim}.
+%prompt fastsim (see my description in 9M?), ll fullsim
+
+%SUSY xs NLO+NLL.
+\textbf{TODO: RHADRONS (see paper), baryon and meson states, gluino ball - 
+maybe this will described in simplified models section.}
+
+%table of samples? not necessary (but familiarise with it and xs)
+
+Based on simulation, the estimated number of events of a given process with 
+cross-section $\sigma$ is given by:
+\begin{equation}
+\hat{n}_\mathrm{sim} = \sigma L \frac{N_{\mathrm{pass}}}{N_{\mathrm{gen}}}
+\end{equation}
+where $L$ is the integrated luminosity, $N_{\mathrm{gen}}$ is the number of 
+events generated, and $N_{\mathrm{pass}}$ is the number of events that pass the 
+analysis selections.
 
 
 \section{Corrections to simulation}
 \label{sec:analysis-mccorrections}
-3-5 pages
+%3-5 pages
+This section describes various ways in which the potential mismodelling of the 
+simulation is corrected for. This usually involves observing a distribution or 
+measuring an efficiency both in data and simulation and applying the 
+data-to-simulation ratio as a weighting factor to each simulated event. These 
+corrections are applied to the simulation of both background and signal 
+processes, as relevant.
+There are uncertainties associated with each set of correction factors, the 
+treatment of which is detailed in Sec.~\ref{sec:analysis-systematics}.
+%Simulation modelling is not perfect. Need to correct it using scale factors by 
+%comparing data and MC. These corrections introduce systematic uncertainties in 
+%the background estimation, that will be described later in Sec X.
 
-Simulation modelling is not perfect. Need to correct it using scale factors by 
-comparing data and MC. These corrections introduce systematic uncertainties in 
-the background estimation, that will be described later in Sec X.
+Mention typical size of weights in each subsection.
 
 \subsection{Pileup}
-\subsection{b-tagging efficiency}
-Reweighting formula.
-\subsection{Trigger efficiency}
-Efficiencies then applied to simulation as a correction to match data and a 
-systematic uncertainty is assigned based on differences between electron and 
-muon reference trigger, see Sections corrections and systematics.
-\subsection{Lepton and photon reconstruction, identification, isolation and 
-triggering efficiency}
-Tag and probe.
-\subsection{Top quark pT}
+
+The average number of pileup interactions per bunch crossing during the 2016 
+run was $\sim$20. The pileup distribution depends on the instantaneous 
+luminosity, which varies over time, and so is not reproduced very accurately by 
+the simulation.
+
+Reweighting factors to correct the pileup distribution in the simulation are 
+derived as a function of the number of pileup interactions. The pileup in a 
+given event in data is calculated from the average instantaneous luminosity 
+measured in the corresponding luminosity section, together with the inelastic 
+proton-proton cross section (63~mb~\cite{inelasticxs-atlas13tev}). The 
+correction factors are given by the ratio of the pileup distributions in data 
+and simulation. These range between $\sim$0.8-1.2 in the bulk of the 
+distribution.
+% distributions are normalised to normalisation of MC conserved
+
+\textbf{TODO: maybe put pileup reweighting plot (AN).}
+
+\subsection{b-tagging}
+\label{sec:analysis-corrections-btagging}
+% https://twiki.cern.ch/twiki/bin/viewauth/CMS/BTagSFMethods
+
+The efficiency for identifying jets as originating from a bottom quark tends to 
+be overestimated in the simulation. Similarly, the probability of incorrectly 
+b-tagging a jet that actually originated from a light flavour (u, d, s) quark 
+or gluon is underestimated. Correction factors for the b-tagging efficiency and 
+fake rate are therefore derived, in bins of jet \pt and $\eta$, and applied to 
+the simulation.
+
+The b-tagging probability 
+%(b-tagging efficiency (or mistagging probability) 
+for a jet originating from a quark (or gluon) of flavour $q$ with transverse 
+momentum \pt and pseudorapidity $\eta$ is estimated as:
+\begin{equation}
+\label{eqn:btag-eff}
+\varepsilon(\pt, \eta, q) = \frac{N_{\text{b-tagged}}(\pt, \eta, 
+q)}{N_{\text{total}}(\pt, \eta, q)} \, ,
+\end{equation}
+where $N_{\text{total}}(\pt, \eta, q)$ is the total number of jets of true 
+flavour $q$ in bin (\pt, $\eta$) and $N_{\text{b-tagged}}(\pt, \eta, q)$ is 
+the number of such jets that are b-tagged.
+The flavour $q$ is labelled as one of three types --- b, c, or light (u, d, 
+s, or gluon).
+
+% In simulation, generator information gives jet flavour
+In simulated events, the true flavour of a jet is determined according to 
+whether there are any bottom or charmed hadrons contained within the jet's cone.
+%using generator-level information.
+In data, the b-tagging efficiency is measured in a sample of \ttbar events or 
+jets containing a muon, and the mistagging probability is measured using jets 
+with a negative impact parameter or negative decay 
+length~\cite{btagging-cms-run2}.
+% 2 methods:
+% use jets with muons inside (ptrel method)
+% select ttbar events, predict background, do complex likelihood fit
+The ratio of the b-tagging probability in data and simulation provides a 
+correction factor $f(\pt, \eta, q)$ that is used to weight the events from 
+simulation.
+The correction factors are in the range $\sim$0.95–1 and $\sim$1–1.2 for bottom 
+quarks and light partons, respectively.
+%for a jet-pT range of 40–600GeV.
+
+While the correction factors derived in Ref.~\cite{btagging-cms-run2} are for 
+an inclusive set of jets, the b-tagging probabilities are also measured in 
+the signal and control regions of the search. Given these probabilities and the 
+correction factors, for each simulated event the probability of observing the 
+corresponding combination of tagged and non-tagged jets in data and simulation 
+is computed as:
+\begin{equation}
+P_\text{sim} = \prod_{j~\text{b-tagged}} \varepsilon_{j} 
+\prod_{j~\text{not 
+b-tagged}} (1 - \varepsilon_{j})
+\end{equation}
+\begin{equation}
+P_\text{data} = \prod_{j~\text{b-tagged}} f_{j} \varepsilon_{j} 
+\prod_{j~\text{not 
+b-tagged}} (1 - f_{j} \varepsilon_{j})
+\end{equation}
+where $\varepsilon_{j} \equiv \varepsilon(\pt(j), \eta(j), q(j))$ is 
+the probability of jet $j$ being b-tagged, as measured according to 
+Eq.~\ref{eqn:btag-eff}, and $f_{j} \equiv f(\pt(j), \eta(j), q(j))$ is 
+the corresponding correction factor. 
+The simulated event is then weighted by the ratio:
+\begin{equation}
+w = \frac{P_\text{data}}{P_\text{sim}} \, .
+\end{equation}
+
+Signal models that are simulated via a fast simulation procedure are weighted 
+according to correction factors that are derived to match the b-tagging 
+probability in full simulation, and are then weighted again using the above 
+procedure to match the b-tagging probability in data.
+%(only for T1qqqq prompt).
+
+%a plot? prob not
+
+% https://twiki.cern.ch/twiki/bin/view/CMS/BTagSFMethods
+% see btagging CMSDAS Introduction.pdf
+% scale factors: either jet-by-jet or event reweighting
+% all methods have pros and cons
+
+\subsection{Muon identification, isolation and triggering}
+%% and reconstruction
+%% muon tracking eff (SFs are in sequence but syst not in stats code)
+The efficiencies of the muon trigger and the muon identification and isolation 
+requirements 
+described in Sec.~\ref{sec:analysis-physicsobjects} are corrected for in 
+the simulated events that enter the muon control regions. These efficiencies 
+are measured in data and simulation using the \textit{tag-and-probe 
+method}~\cite{tagnprobe} as explained in the following.
+% point is need TnP for data, for MC could use truth info but need to use 
+%consistent method
+
+% eg Z, J/psi, upsilon
+The tag-and-probe method takes advantage of a known mass resonance to identify 
+particles of a desired type and evaluate various efficiency measures such as 
+the ability to reconstruct or trigger such particles. In this case the 
+particles of interest are muons and they are identified via the Z boson 
+resonance. 
+First, a muon that satisfies stringent quality criteria is selected and 
+labelled as the \textit{tag}. A second muon satisfying looser requirements, 
+labelled the \textit{probe}, is then paired with the tag if it is oppositely 
+charged and the invariant mass of the pair is within a $\sim$30~GeV window 
+around the Z boson mass. These requirements on the tag and probe mean that they 
+are almost certainly real muons. It is then checked whether the probe satisfies 
+the selection whose efficiency is of interest. An estimate of the efficiency is 
+given by the fraction of probes that pass the selection. Note that a tag 
+satisfies the probe requirements by definition, and so a dimuon event in which 
+both muons are tagged contains two tag and probe pairs. A tag is not considered 
+if it is paired with more than one probe.
+% window is actually 70-130
+
+The tag-and-probe efficiency estimate is slightly biased to a lower value than 
+the true efficiency. This is because in events in which there is a tag and a 
+`passing' probe that does not also satisfy the tag requirements, the tag is not 
+counted towards the efficiency. However, the efficiency estimate is also biased 
+higher because the method does not count events in which neither muon is a tag, 
+as well as events in which the second muon does not even satisfy the probe 
+requirements. Overall, the estimated efficiency is typically within $\sim$1\% 
+of the true efficiency, and the bias is expected to be negligible in the 
+data-to-simulation correction factors, as the bias largely cancels out in the 
+ratio.
+% difference tnp MINUS true = 1-2%
+\begin{comment}
+bias. WHY NOT COUNT TAG AS PASSING PROBE? then would be biased higher because 
+not counting events where neither muon is tag.
+actually not obvious which way biased - fact you select one tag biases up (not 
+counting when neither muon is tag) or second muon is not found/does not pass 
+probe, but fact you don't count tag in eff biases down, so cancels out?
+"true" MC eff can be found easily using gen level information - tells you bias 
+and could then correct for bias or cover with syst.
+AN-tnp shows 1-2 percent bias - which direction?
+BUT bias is in both data and MC so cancels out in SF!!! (as long as consistent)
+loose id: just global muon (no min hits in tracker/muon chambers, etc)
+
+bias should be ~constant with pt
+even if eff is lower at low pt, this means you're more likely to get TP events 
+(which bias down) but also more likely to miss notT-notT events (which bias up)
+\end{comment}
+
+A muon is labelled as a tag if it satisfies the stringent quality criteria 
+described in Sec.~\ref{sec:analysis-physicsobjects} and is also reconstructed 
+at the trigger level and fires the muon trigger. The latter is determined by 
+attempting to match the 
+offline muon to an HLT muon within a cone of size $\Delta R=0.3$ and checking 
+whether the matched trigger object satisfies the trigger requirements.
+The requirements on the probe depend on the particular measurement being made. 
+The three measurements of identification, isolation and trigger efficiency are 
+factorised and performed sequentially such that the probe requirements for one 
+measurement are the same as those for a passing probe in the previous 
+measurement. When measuring the identification efficiency, the probe is taken 
+as any reconstructed track, and the passing requirement is that in satisfies 
+the muon quality criteria of Sec.~\ref{sec:analysis-physicsobjects} except for 
+the 
+isolation requirement. These are then the requirements for a probe in the 
+isolation efficiency measurement, and the probe in this case is checked to 
+satisfy the {\reliso$<0.1$} requirement. These are then the input probes for 
+the trigger efficiency measurement, and it is checked whether they cause the 
+muon trigger to fire.
+%are reconstructed at the trigger level.
+%factorised (otherwise over-penalising).
+%describe selections on tag, probe and probe pass.
+
+%description of method - tag, probe, mass resonance, eff is fraction of probes 
+%passing requirement, 
+%but have (combinatoric) background so need to subtract this by fitting.
+%arbitration: oneProbe
+%if both muons pass tag that's fine, both contribute to eff emasuremeant
+%invariant mass and opposite sign charge
+
+%data: single muon
+%MC: DY (no background) - ideally should have background to be similar to data 
+%measurement (use QCD; actually main background might be W and ttbar?).
+
+%description of fitting procedure.
+%extended unbinned maximum likelihood fit simultaneously on passing and failing 
+%probes. it is binned tho?
+%but have (combinatoric) background so need to subtract this by fitting.
+%These must be subtracted before computing the efficiency. 
+%use a Voigtian function (Breit-Wigner convoluted with a Gaussian for detector
+%resolution).
+A small amount of combinatoric and fake muon background is present when 
+selecting tag and probe pairs.
+This background is subtracted and the efficiency extracted via an extended 
+simultaneous maximum likelihood fit to the invariant mass distributions of the 
+passing and failing probes. The two mass distributions are modelled, 
+respectively, by the following probability densities:
+\begin{equation}
+p_{\mathrm{pass}}(m) = \left(\frac{\varepsilon s}{\varepsilon s + 
+b_{\mathrm{pass}}}\right) p_{\mathrm{pass}}^{\mathrm{sig}}(m) + 
+\left(\frac{b_{\mathrm{pass}}}{\varepsilon s + b_{\mathrm{pass}}}\right) 
+p_{\mathrm{pass}}^{\mathrm{bkg}}(m)
+\end{equation}
+\begin{equation}
+p_{\mathrm{fail}}(m) = \left(\frac{(1 - \varepsilon )s}{(1 - \varepsilon)s + 
+b_{\mathrm{fail}}}\right) p_{\mathrm{fail}}^{\mathrm{sig}}(m) + 
+\left(\frac{b_{\mathrm{fail}}}{(1 - \varepsilon)s + b_{\mathrm{fail}}}\right) 
+p_{\mathrm{fail}}^{\mathrm{bkg}}(m)
+\end{equation}
+where $\varepsilon$ is the efficiency parameter; $s$, $b_{\mathrm{pass}}$ and 
+$b_{\mathrm{fail}}$ are the total number of 
+events attributed to signal, background passing probes and background failing 
+probes; and $p_{\mathrm{pass}}^{\mathrm{sig}}$, 
+$p_{\mathrm{pass}}^{\mathrm{bkg}}$, $p_{\mathrm{fail}}^{\mathrm{sig}}$ and 
+$p_{\mathrm{fail}}^{\mathrm{bkg}}$ are the signal and background probability 
+densities for passing and failing probes. The signal is usually modelled by a 
+Voigtian distribution, which is a Breit-Wigner distribution convoluted with a 
+Gaussian distribution to account for smearing due to detector resolution, while 
+the background is usually modelled by an exponential distribution.
+The extended likelihood function can then be written as:
+\begin{equation}
+\mathcal{L} = \mathcal{P}(s + b_{\mathrm{pass}} + b_{\mathrm{fail}})  
+\prod_{i~\mathrm{pass}} p_{\mathrm{pass}}(m_i) \prod_{i~\mathrm{fail}} 
+p_{\mathrm{fail}}(m_i), 
+\end{equation}
+%The width and mean of the Gaussian is allowed to float in the fit,
+%151 accounting for an additional smearing to the simulation mass shape and a 
+%%%shift in the Z mass 152 peak due to miscalibration of the energy scale.
+where the products are over all corresponding probes $i$, and $\mathcal{P}$ is 
+a Poisson distribution for the total number of events observed.
+An example of the fitting result in data is shown in Fig.~\ref{fig:tnp}.
+
+%a plot of tag and probe, not necessarily data vs mc (can just say that in 
+%words)
+\begin{figure}[h]
+\label{fig:tnp}
+\includegraphics[width=0.9\textwidth]{figs/analysis/muonIsolationTight_mll_all_muonDefaultPtBins_pt50-60_Data}
+\caption{Result of the tag-and-probe dimuon invariant mass fitting procedure to 
+passing (left) and failing (right) probes for an example isolation efficiency 
+measurement in data for muons with $50<\pt<60$~GeV. The blue (red) curves are 
+the fitted signal (background) distributions. The fitted efficiency in this 
+example is 96.0\%.}
+\end{figure}
+
+The efficiencies and corresponding data-to-simulation corrections are derived 
+as a function of muon \pt and $\eta$. The identification efficiency is around 
+97-99\% and the corresponding correction factors are in the range 0.97-0.99. 
+The efficiency 
+of the isolation requirement varies between 90-99\% and the correction factors 
+are around 0.99-1. The trigger efficiency is measured to be approximately 90\%, 
+with correction factors of about 0.98. 
+In the \mmj control region, the trigger efficiency is higher, as the 
+probability to trigger on at least one muon is $\approx 1-(1-0.9)(1-0.9) = 
+99\%$.
+The correction factors are then used to weight the simulated events in the muon 
+control regions.
+%need to describe how trigger SFs are applied to double muon CR.
+%assumes indep? yes
+% this is wrong (apply DATA effs):
+%https://github.com/CMSRA1/AlphaTools/blob/v1.10.x/analysis/Producers/WeightSFLeptonEtaPtCRMuons.py#L153
+% SF should be 1-(1-effD1)*(1-effD2) / 1-(1-effM1)*(1-effM2)
+
+\subsection{Trigger}
+Unlike the muon triggers, the signal region triggers are not emulated in the 
+simulation. Instead of determining data-to-simulation correction factors, the 
+trigger efficiencies measured in data as a function of \scalht and \mht using 
+an electron reference sample (as described in Sec.~\ref{sec:analysis-trigger}) 
+are themselves applied as corrections. As seen in 
+Fig.~\ref{fig:trigger-eff}, these can be as low as 90\% at low \mht, but 
+are close to unity for $\mht>300$~GeV.
+
+\subsection{Jet energy scale}
+TODO?
+Lepton veto?
+
+%\subsection{NLO precision of V+jets production}
+\subsection{Theoretical calculation of V+jets production}
+%2 plots?
+%Electroweak corrections play an especially important role in the context of BSM
+%searches, due to the presence of large EW Sudakov logarithms at the TeV scale
+As mentioned in Sec.~\ref{sec:analysis-samples-mc}, the simulation samples for 
+the vector boson production processes, namely \zj and \wj, are generated at 
+leading order, as this allows a larger number of events to be simulated. 
+The samples are corrected for missing higher orders as a function of the 
+boson's transverse momentum. This is done by deriving NLO QCD correction 
+factors using \textsc{Madgraph5}, and NLO electroweak correction factors from 
+theoretical calculations~\cite{nlo,nlo}. The combined NLO QCD+EW corrections 
+range from approximately 1.4 at a boson \pt of 200~GeV to 0.9 at 800~GeV, for 
+both the \zj and \wj processes.
+% see bosonptsystematics slides - bulk is boson pt 200, tail is 800
+
+%https://arxiv.org/pdf/1511.08692.pdf
+%https://arxiv.org/pdf/1412.5157.pdf
+
+%Therefore, LO simulations for the Z + jets, W + jets, and g + jets processes 
+%are corrected using pT-dependent NLO QCD K-factors derived using 
+%%MADGRAPH5aMC@NLO. They are also corrected using pT-dependent higher-order 
+%%electroweak (EW) corrections extracted from theoretical calculations
+
+\subsection{Initial state radiation in \ttbar events}
+% NO TOP PT REWEIGHTING! because for 8 TeV
+\begin{comment}
+https://twiki.cern.ch/twiki/bin/viewauth/CMS/SUSRecommendationsMoriond17
+To improve on the MadGraph modeling of the multiplicity of additional jets from 
+initial state radiation (ISR), Madgraph \ttbar Monte Carlo events are 
+reweighted based on the number of ISR jets ($N_J^{ISR}$) so as to make the jet
+multiplicity agree with data.  The same reweighting procedure is applied to 
+SUSY Monte Carlo events.
+The reweighting factors vary between 0.92 and 0.51 for $N_J^{ISR}$ between 1 
+and 6. 
+We take one half of the deviation from unity as the systematic uncertainty on 
+these reweighting factors
+\end{comment}
+%% 
+%%https://indico.cern.ch/event/592621/contributions/2398559/attachments/1383909/2105089/16-12-05_ana_manuelf_isr.pdf
+%% require 2ℓ and exactly 2 b-tagged jets - remaining jets define ISR jet 
+%%multiplicity and ISR pT
+
+Simulated events of the \ttbar background process are weighted to improve the 
+agreement with data of the multiplicity of jets from initial state radiation. 
+The data-to-simulation correction factors are derived as a function of the 
+number of ISR jets in an event, and take on values between 0.92 and 0.51 for an 
+ISR multiplicity of 1 and 6, respectively.
+
 \subsection{Cross-sections}
-Sideband corrections.
-Summarise in table.
+%correction to finite precision of xs calculation.
+Although the dominant standard model background processes are normalised using 
+the most accurate cross section calculations available (using NLO or NNLO 
+precision), the finite perturbative order combined with the high \scalht and 
+\met selections means that the overall simulated yields of the SM processes in 
+the search regions are not in agreement with those in data.
 
-\subsection{Plus more?}
-NLO, pdf/scale.
-Signal (maybe later): nISR, gen met
+% do fit instead of counting because have admixture of processes and not easy 
+%to subtract backgrounds
+Corrections to the cross sections of the dominant background processes, namely 
+\zj, \wj and \ttbar, that are appropriate for the phase space covered by the 
+search, are derived in a sideband of the \mj and \mmj control 
+regions defined by a selection of $100<\mht<200$~GeV.
+The two \mht sidebands are binned in \njet, \nb and \scalht identically to 
+their control region counterparts.
+%same (as similar as poss) phase space as analysis.
+The procedure is done after all other corrections to the simulation samples 
+have been applied.
 
-\section{b-tag formula method}
-1-2 pages.
+%sideband instead of CR because need orthogonal samples (don't want to derive a 
+%%%correction based on same data that will be used to correct MC in background 
+%%%prediction).
 
-See Burton. AN Sec 4.4.
-Relevant but be brief.
-How much improves limits? Just refer to T1bbbb as T1qqqqLL 1 mm is very similar.
+%signal contam? doesn't affect predictions.
+%depleted of signal.
 
-Purpose: reduce stat uncertainty of simulation in higher nb bins (where signal 
-can lie).
+%doesn't affect predictions but would inflate systs unnecessarily. 
+%affects admixture? well if admixture is same in SR and CR then also cancels out
+As the background composition in the signal and control regions is similar, 
+these cross section corrections have a very small effect on the background 
+estimations as they cancel out in the simulation-based transfer factor ratios 
+(explained in 
+Sec.~\ref{sec:analysis-estimation-njnbht}). However, this is not the case for 
+some of the tests that are used to derived systematic uncertainties (which will 
+be described in Sec.~\ref{sec:analysis-systematics-data}) and so the lack of 
+corrections would unnecessarily inflate these uncertainties.
 
-Method: show the formula and explain it.
+%Z,W,tt. (apply DY to Z).
 
-Summarise in table/plot or one-two sentences how much the stat unc is reduced. 
-Maybe also how much the limits are improved (Lucien did this).
+In order to extract the cross section correction factors, a simultaneous binned 
+maximum likelihood fit is performed over both \mht sideband regions, in which 
+the three correction parameters (one for each of the \zj, \wj and \ttbar 
+processes) are freely floating such that they modify the simulated yields to 
+give the best agreement with those in data. The likelihood function is given by:
+%rate parameters (lnU). same param in each bin.
+%likelihood formula.
+%actually lnU but doesn't really matter
+\begin{equation}
+\mathcal{L} = \mathcal{U}(f_{\mathrm W}) \mathcal{U}(f_{\mathrm Z}) 
+\mathcal{U}(f_{\ttbar}) 
+\prod_{b~(\mu+\mathrm{jets})} 
+\mathcal{P}\left(f_{\mathrm W} \lambda_{\mathrm W}^b + 
+f_{\ttbar} \lambda_{\ttbar}^b\right) \prod_{b~(\mu\mu+\mathrm{jets})} 
+\mathcal{P}\left(f_{\mathrm 
+Z} \lambda_{\mathrm Z}^b + f_{\ttbar} \lambda_{\ttbar}^b\right)
+\end{equation}
+where the $\lambda^b$'s are the number of background events in an \njnbht bin 
+$b$ given by the simulation for a given standard model process, the $f$'s are 
+the cross section correction factors, the $\mathcal{U}$'s define a uniform 
+distribution for the correction parameters, and the $\mathcal{P}$'s define a 
+Poisson distribution in each bin. 
 
-Formula systematics.
-%\subsection{Systematics}
+The cross section correction factors for the \zj, \wj and \ttbar processes are 
+mainly constrained, respectively, by the \mmj sideband, the \mj sideband, and a 
+combination of the two sidebands. The values of the correction factors obtained 
+from the fit are given in Tab.~\ref{tab:sideband-corrs}.
+\begin{table}[h!]
+%\footnotesize
+\centering
+\caption{Cross section correction factors for the three dominant standard model 
+background processes, along with an indication of the most constraining 
+sideband region for each process.}
+\label{tab:sideband-corrs}
+\begin{tabular}{ccc}
+\hline
+SM process & Sideband region & Correction factor \\
+\hline
+\zj    & \mmj      & $f_{\mathrm Z} = 0.91$ \\
+\wj    & \mj       & $f_{\mathrm W} = 1.06$ \\
+\ttbar & \mj, \mmj & $f_{\ttbar} = 0.93$ \\
+\hline
+\end{tabular}
+\end{table}
+
+%\subsection{Plus more?}
+%NLO, pdf/scale.
+%Signal (maybe later): nISR, gen met
+
+\subsection{Statistical precision at large \nb}
+%b-tag formula method
+%1-2 pages.
+%See Burton. AN Sec 4.4.
+%Relevant but be brief.
+%not really correction but rather improvement of stat precision at high nb.
+%Purpose: reduce stat uncertainty of simulation in higher nb bins (where signal 
+%can lie).
+The following describes a method by which the statistical precision of the 
+background simulation samples in the high \nb bins is improved. This is 
+particularly useful for the $\nb \ge 3$ region, which is populated by standard 
+model processes through the incorrect tagging of light flavour jets as b-jets, 
+mainly \ttbar events in which the two b-jets from the top quarks are correctly 
+tagged and an additional jet is mistagged. As the mistagging probability is 
+quite small, the number of such events in simulation is limited. Reducing the 
+statistical uncertainty on the expected standard model background in the high 
+\nb region helps to improve the sensitivity of the search to SUSY and DM 
+processes involving the production of multiple heavy quarks, as well as 
+processes containing displaced jets, as will be seen in 
+Chap.~\ref{chap:results}.
+%Events from the \zj and \wj processes usually do not contain any b-jets. 
+%Events from \ttbar typically contain two b-jets
+%called the \nb \textit{formula method}
+
+First, the b-tagging probabilities for bottom, charm and light flavour jets 
+($\varepsilon_\mathrm b$, $\varepsilon_\mathrm c$, $\varepsilon_\mathrm l$) are 
+computed in simulation in bins of (\nj, \scalht, \mht), after applying the \pt 
+and $\eta$ dependent correction weights described in 
+Sec.~\ref{sec:analysis-corrections-btagging}.
+For a given number of jets $n_q^\mathrm{gen}$ of underlying flavour $q$ (as 
+determined by generator-level information), the number of such jets that are 
+b-tagged $n_q^\mathrm{tag}$ follows a binomial distribution with probability 
+parameter $\varepsilon_q$, $P(n_q^\mathrm{tag}|n_q^\mathrm{gen}, 
+\varepsilon_q)$. For an event containing a particular combination of 
+underlying jet flavours ($n_\mathrm b^\mathrm{gen}$, $n_\mathrm 
+c^\mathrm{gen}$, $n_\mathrm l^\mathrm{gen}$), the probability of observing a 
+combination of b-tagged jets ($n_\mathrm b^\mathrm{tag}$, $n_\mathrm 
+c^\mathrm{tag}$, $n_\mathrm l^\mathrm{tag}$) is given by the product:
+\begin{equation}
+P\left( n_\mathrm b^\mathrm{tag}, n_\mathrm c^\mathrm{tag}, n_\mathrm 
+l^\mathrm{tag} | n_\mathrm b^\mathrm{gen}, n_\mathrm c^\mathrm{gen}, n_\mathrm 
+l^\mathrm{gen} \right) = P\left(n_\mathrm b^\mathrm{tag}|n_\mathrm 
+b^\mathrm{gen}, \varepsilon_\mathrm b\right) P\left(n_\mathrm 
+c^\mathrm{tag}|n_\mathrm c^\mathrm{gen}, \varepsilon_\mathrm c\right) 
+P\left(n_\mathrm l^\mathrm{tag}|n_\mathrm l^\mathrm{gen}, \varepsilon_\mathrm 
+l\right) \, .
+\end{equation}
+If there are $N\left(n_\mathrm b^\mathrm{gen}, n_\mathrm 
+c^\mathrm{gen}, n_\mathrm l^\mathrm{gen}\right)$ simulation events of a 
+particular process with such 
+combination of underlying jet flavour, the number of these events that result 
+in a combination of b-tagged jets ($n_\mathrm b^\mathrm{tag}$, $n_\mathrm 
+c^\mathrm{tag}$, $n_\mathrm l^\mathrm{tag}$) follows a binomial distribution 
+with the above probability, with an expected value of:
+\begin{equation}
+E\left[N\left(n_\mathrm 
+b^\mathrm{tag}, n_\mathrm c^\mathrm{tag}, n_\mathrm l^\mathrm{tag} | n_\mathrm 
+b^\mathrm{gen}, n_\mathrm c^\mathrm{gen}, n_\mathrm l^\mathrm{gen}\right) 
+\right] = N\left(n_\mathrm 
+b^\mathrm{gen}, n_\mathrm c^\mathrm{gen}, n_\mathrm l^\mathrm{gen}\right) 
+P\left( n_\mathrm b^\mathrm{tag}, n_\mathrm c^\mathrm{tag}, n_\mathrm 
+l^\mathrm{tag} | n_\mathrm b^\mathrm{gen}, n_\mathrm c^\mathrm{gen}, n_\mathrm 
+l^\mathrm{gen} \right) \, .
+\end{equation}
+The total expected number of events containing \nb b-tagged jets in a given 
+(\njet, \scalht, \mht) bin is then the 
+sum of this expected value over all combinations of underlying jet flavours 
+that sum to \njet and all combinations of b-tagged jets that sum to \nb:
+\begin{equation}
+N(\nb) = \sum_{n_\mathrm b^\mathrm{gen} + n_\mathrm c^\mathrm{gen} + n_\mathrm 
+l^\mathrm{gen} = \njet} ~ \sum_{n_\mathrm b^\mathrm{tag} + n_\mathrm 
+c^\mathrm{tag} + n_\mathrm l^\mathrm{tag} = \nb} E\left[N\left(n_\mathrm 
+b^\mathrm{tag}, n_\mathrm c^\mathrm{tag}, n_\mathrm l^\mathrm{tag} | n_\mathrm 
+b^\mathrm{gen}, n_\mathrm c^\mathrm{gen}, n_\mathrm l^\mathrm{gen}\right) 
+\right] \, .
+\end{equation}
+
+The strength of the method comes from a more effective utilisation of all 
+simulated events.
+%in calculating the expected number of events in each \nb bin. 
+Each simulated event, rather than resulting in one particular ($n_\mathrm 
+b^\mathrm{tag}$, $n_\mathrm c^\mathrm{tag}$, $n_\mathrm l^\mathrm{tag}$) 
+realisation, contributes to the estimation of the yield in multiple \nb bins.
+%eff uses info from all simulation events, and each event contributes to 
+%multiple bins rather than just one particular realisation.
+\textbf{The statistical uncertainties are found to be x times smaller than 
+those 
+obtained directly from the simulated events.. in nb 3, 4... TODO}
+As a means of validation, it is checked that the yields estimated with this 
+method are consistent with those obtained directly from simulation.
+
+%Summarise in table/plot or one-two sentences how much the stat unc is reduced. 
+%How much improves limits? Just refer to T1bbbb as T1qqqqLL 1 mm is very 
+%similar.
+%Formula systematics.
+
+Throughout the remainder of the thesis, all simulation-based event yields are 
+obtained via this method. Similarly, all references to simulated events assume 
+the inclusion of all the corrections described in this section. 
 
 \section{Estimation of electroweak background processes}
 \label{sec:analysis-estimation-ewk}
-Predict normalisation using CRs (data-driven to reduce reliance on MC). Use MHT 
-templates from MC.
+%Predict normalisation using CRs (data-driven to reduce reliance on MC). 
+%Use MHT templates from MC.
+%ttw = W + ttbar + residual backgrounds, from now on refer collectively as W/tt
+An accurate knowledge of the expected number of standard model background 
+events is very important when searching for new physics. Relying on simulation, 
+even after applying the corrections discussed in the previous section, would 
+introduce a bias in the background estimation due to imperfect modelling. A 
+data-driven approach is therefore utilised which combines simulated events and 
+control region data to perform a more accurate estimation.
 
-ttw = W + ttbar + residual backgrounds
+This section describes the methods of background estimation for the electroweak 
+processes, which involves an estimation per \njnbht bin and another one for the 
+\mht bins within each \njnbht bin. The estimation of the much smaller QCD 
+background will be discussed in Sec.~\ref{sec:analysis-estimation-qcd}.
 
-\subsection{nj, nb, ht dimensions}
+\subsection{The \njet, \nb and \scalht dimensions}
 \label{sec:analysis-estimation-njnbht}
-1 page
+%1 page
+The number of background events in each \njnbht bin is estimated using the muon 
+control regions. As mentioned in 
+Sec.~\ref{sec:analysis-eventselection-cr}~and~\ref{sec:analysis-binning}, these 
+are chosen to be enriched in the background processes they are trying to 
+estimate and are binned identically in \njnbht (with the exception of the \nb 
+dimension in the \mmj sample). The \mmj control region is used to estimate the 
+\znnj background, while the \mj control region is used to estimate the sum of 
+the \wlj, \ttbar and residual backgrounds, which will be collectively labelled 
+as \ttw.
 
-Transfer factor method.
+The estimated number of events of a given background process in a particular 
+\njnbht bin is related to the total number of events in the same bin of the 
+corresponding control region in data $N_\mathrm{control}^\mathrm{data}\njnbht$ 
+and simulation $N_\mathrm{control}^\mathrm{sim}\njnbht$ and the number of 
+events of that background in the same bin of the signal region in simulation 
+$N_\mathrm{signal}^\mathrm{sim}\njnbht$ by:
+%For a given \njnbht bin, one can define a transfer factor,
+\begin{equation}
+\label{eqn:estimation}
+\hat{N}_\mathrm{signal}\njnbht = 
+\frac{N_\mathrm{signal}^\mathrm{sim}\njnbht}{N_\mathrm{control}^\mathrm{sim}\njnbht}
+ N_\mathrm{control}^\mathrm{data}\njnbht \, .
+\end{equation}
+A special case of this formula applies for the \znnj process in the $\nb=1, 2, 
+3$~and~$\ge4$ bins, which is estimated in each of these bins using the $\nb \ge 
+1$ bin in the \mmj control region.
+\textbf{TODO: nb validation.}
 
-\subsection{MHT dimension}
+The extrapolation from the control region to the signal region is performed via 
+the simulation-based ratio of yields in the above equation, referred to as a 
+\textit{transfer factor}:
+\begin{equation}
+T\njnbht  = 
+\frac{N_\mathrm{signal}^\mathrm{sim}\njnbht}{N_\mathrm{control}^\mathrm{sim}\njnbht}
+ \, .
+\end{equation}
+The transfer factor can be viewed as a way of accounting for the different 
+branching fraction, acceptance and identification efficiency of a given process 
+between the signal and control region. For instance, the Z boson's branching 
+ratio between neutrinos and muons is 9, and unlike the weakly interacting 
+neutrinos, the muons are subject to acceptance and identification requirements. 
+The transfer factor also accounts for the different kinematic selections, 
+namely on \alphat and \bdphi, which are not used in the control regions.
+
+\textbf{TODO give size of TFs? Put 2 plots here or in appendix. See comments 
+and answers from Phil or whatevs.}
+
+Equivalently, the estimation in Eq.~\ref{eqn:estimation} can also be viewed as 
+a way of correcting the number of events obtained from the simulation according 
+to the data-to-simulation discrepancy ratio in the control region bin:
+\begin{equation}
+\hat{N}_\mathrm{signal}\njnbht = 
+\frac{N_\mathrm{control}^\mathrm{data}\njnbht}{N_\mathrm{control}^\mathrm{sim}\njnbht}
+N_\mathrm{signal}^\mathrm{sim}\njnbht \, .
+\end{equation}
+This highlights the importance of having similar kinematic requirements and 
+background compositions, as well as a similar binning scheme, in the control 
+and signal regions, as the discrepancy between data and simulation in a given 
+bin of the control region is likely to be similar to that in the corresponding 
+bin in the signal region.
+% see njet discrepancy argument in adam
+
+The transfer factors, and therefore the background estimations, are robust 
+against many sources of systematic effects relating to kinematic mismodelling 
+and theoretical uncertainties, 
+as these cancel out in the transfer factor ratio to a large extent.
+%This is because the background estimations are 
+%performed between equivalent \njnbht bins of the signal and control regions, 
+%which contain a similar background composition 
+%and so cancel out in the transfer factor ratio to a large extent.
+Several sources of systematic uncertainty are nevertheless accounted for in the 
+estimated backgrounds, as will be discussed in 
+Sec.~\ref{sec:analysis-systematics}.
+%syst effects cancel in TF. because similar events in SR and CR.
+
+\subsection{The \mht dimension}
 \label{sec:analysis-estimation-mht}
-2 pages
+%2 pages
 
 If it helps (to give intro), see AN and matt's mht categorisation sections.
 
 Take templates because don't want to bin CRs too finely (lose statistical power 
 - curse of dimensionality).
+CRs not binned in mht.
 
 Validation: Check data MC ratio is flat in CRs. Assign syst as described later 
 in Sec X.
@@ -1720,7 +2390,10 @@ in the big summary table of systs.
 Show nb extrapolation validation (AN) or just summarise briefly in couple of 
 sentences (similar to MHT validation).
 
+Formula systematics.
+
 \subsection{MC-based}
+\label{sec:analysis-systematics-mc}
 3-4 pages (maybe 2 pages just of plots).
 
 Known theoretical and experimental uncertainties.
@@ -1733,7 +2406,14 @@ Pileup, JEC, b-tagging, lepton, photon, trigger, top pt, W/tt, NLO, ttbar nISR.
 
 Example 2D plots of variations in the bins.
 
+Efficiencies then applied to simulation as a correction to match data and a 
+systematic uncertainty is assigned based on differences between electron and 
+muon reference trigger, see Sections corrections and systematics.
+
+boson pt NLO syst 100\% of correction.
+
 \subsection{Closure tests}
+\label{sec:analysis-systematics-data}
 2-3 pages.
 
 Probe additional sources of systematics.
