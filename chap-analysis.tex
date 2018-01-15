@@ -43,10 +43,12 @@ W bosons, for example) are also weakly interacting and undetectable at CMS. It
 is also possible for particles to be over or under-measured, thereby 
 introducing a ``fake'' momentum imbalance. This type of background arising from 
 energy mismeasurements is suppressed as much as possible (to lt1\% of the total 
-background) using the variables described in Sec.~X. The remaining standard 
+background) using the variables described in 
+Sec.~\ref{sec:analysis-qcdrejection}. The remaining standard 
 model background (that involving neutrinos) must be estimated as precisely as 
 possible, using a combination of theory calculations, simulation, and 
-calibrations in data. This is described in Sec.~X. One can then look for a 
+calibrations in data. \textbf{This is described in Sec.~X}. One can then look 
+for a 
 statistically significant excess in the data above the expected amount of 
 standard model background that would be an indication of the observation of 
 physics beyond the standard model. The statistical analysis is covered in 
@@ -58,10 +60,12 @@ in the detector, the candidate signal events (which form part of the
 \textit{signal region}) are categorised according to four variables (the total 
 jet energy, the missing jet energy, the number of jets, and the number of 
 b-tagged jets) as detailed 
-in Sec.~X. Two \textit{control regions} are defined, labelled \mj and 
+in Sec.~\ref{sec:analysis-binning}. Two \textit{control regions} are defined, 
+labelled \mj and 
 \mmj, that are analogous to the signal region but are enriched by 
 selection of muons in the W and Z background processes, respectively, and are 
-employed in the background estimations as described in Sec.~X.
+employed in the background estimations as described in 
+Sec.~\ref{sec:analysis-estimation-ewk}.
 %inclusiveness
 %The ways in which a WIMP/BSM signature can manifest are numerous
 
@@ -72,7 +76,7 @@ searches are used as a basis for the analysis described in this thesis. A
 series of developments and optimisations have been made in order to adapt the 
 analysis for the higher centre of mass energy and larger amount of data 
 collected. In addition, the interpretations in dark matter and long-lived 
-particles described in Chap.~X are a novelty to this search.
+particles described in Chap.~\ref{chap:results} are a novelty to this search.
 
 %has ptmiss been defined?
 
@@ -623,6 +627,7 @@ much smaller ($\sim$1\%).
 
 
 \section{QCD background rejection}
+\label{sec:analysis-qcdrejection}
 %4-5 pages.
 
 It is important to suppress the overwhelming QCD background so that it does not 
@@ -1054,7 +1059,7 @@ region, no requirements on \alphat and \bdphi are needed.
 %TODO
 
 \subsubsection{Hadronic control regions}
-
+\label{sec:analysis-eventselection-qcdsidebands}
 Three hadronic control regions are used in the estimation of the small QCD 
 background remaining after the full set of selections have been applied. These 
 control regions consist of the exact same selections as the signal region, 
@@ -1063,10 +1068,31 @@ and in conjunction, providing three control regions or ``sidebands'' that are
 enriched in QCD processes. The sidebands are capped such that 
 $0.2<\bdphi<0.5$~rad and $1.25<\mhtmet<3.0$. The lower bound on the \bdphi 
 sideband and upper bound on the \mhtmet sideband are imposed because [FIXME] 
-modelling not right or what? ah trigger?
+modelling not right or what? ah trigger? mhtmet trigger loses eff when met low. 
+what about bdphi cap? or to keep SBs "close" to SR in phase space (see qcd 
+mechanisms studies) (see qcd sidebands trigger studies)
+Table~\ref{tab:qcdsidebands} shows a summary of the selections that define 
+these sidebands.
+
+\begin{table}[h!]
+\caption{The definitions of the sideband regions employed in the estimation of 
+the QCD background.}  
+\label{tab:qcdsidebands}
+\centering
+%\footnotesize
+\begin{tabular}{ c|c|c }
+& $0.2 < \bdphi < 0.5$ & 
+$\bdphi > 0.5$ \\
+\hline
+$1.25 < \mhtmet < 3.0$ & \mhtmet-\bdphi sideband & \mhtmet sideband \\
+\hline
+$\mhtmet < 1.25$ & \bdphi sideband & Signal region \\
+\end{tabular}
+\end{table}
 
 \subsubsection{\mj and \mmj \mht sidebands}
-\textbf{TODO: also two MHT sidebands for sideband corrs.}
+\textbf{TODO: also two MHT sidebands for sideband corrs. also mhtmet and bdphi 
+muon sidebands for qcd.}
 
 \section{Event categorisation}
 \label{sec:analysis-binning}
@@ -1247,9 +1273,9 @@ ensure that the backgrounds estimations do not suffer from large statistical
 uncertainties.
 As the \mmj control region is somewhat statistically limited, especially at 
 high \nb, the largest \nb bin employed in this control region is $\nb \geq 1$.
-\textbf{[TODO] an extrapolation in nb is performed for the region nb geq 1. The 
-simulation modelling of the nb and HTmiss variables are checked with both 
-samples, more details in section X.}
+%\textbf{an extrapolation in nb is performed for the region nb geq 1. The 
+%simulation modelling of the nb and HTmiss variables are checked with both 
+%samples, more details in section X.}
 
 \subsection*{Categorisation by \mht}
 
@@ -1270,7 +1296,7 @@ Unlike with the \njet, \nb and \scalht variables, events in the control regions
 are not binned in the \mht dimension. The background estimations in each \mht 
 bin are taken directly from simulation instead of being derived from the 
 control regions. This is done to avoid binning the control regions too finely 
-which, due to the \textit{curse of dimensionality}, would greatly reduce their 
+which, due to the `curse of dimensionality', would greatly reduce their 
 statistical power. A validation of this method will be discussed in 
 Sec.~\ref{sec:analysis-estimation-mht}.
 
@@ -1412,9 +1438,9 @@ the lowest-threshold unprescaled trigger.}
 %(alphat, met, ht, mu).
 %Table of lumi collected by each lowest unprescaled? (thomas)
 
-Three groups or families of triggers are used to collect events in the signal 
-region and hadronic control regions. An event that satisfies any of these 
-triggers is selected.
+Three groups or families of triggers, which will be described in this section, 
+are used to collect events in the signal region and hadronic control regions. 
+An event that satisfies any of these triggers is selected.
 
 The first group consists of five triggers with requirements on both \scalht and 
 \alphat. These are designed to map onto the the selections employed in the 
@@ -1555,34 +1581,34 @@ in this region.
 %in background estimation
 
 \begin{figure}[!htb]
-\label{fig:trigger-eff}
 \subfloat[$200 < \scalht < 
 400$~GeV]{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_200to400_mht}}
-~
+~~
 \subfloat[$200 < \scalht < 
 400$~GeV]{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_200to400_mht}}
 \\
 \subfloat[$400 < \scalht < 
 600$~GeV]{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_400to600_mht}}
-~
+~~
 \subfloat[$400 < \scalht < 
 600$~GeV]{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_400to600_mht}}
 \\
 \subfloat[$600 < \scalht < 
 900$~GeV]{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_600to900_mht}}
-~
+~~
 \subfloat[$600 < \scalht < 
 900$~GeV]{\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_600to900_mht}}
 \\
 \subfloat[$\scalht > 900$~GeV]      
 {\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Ele_HLT_AlphaTHT800MonoAll_MoM_all_900to999999_mht}}
-~
+~~
 \subfloat[$\scalht > 900$~GeV]      
 {\includegraphics[width=0.26\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_900to999999_mht}}
 \\
 \caption{Efficiency of the HL trigger in the signal region as a function of 
 offline \mht and \scalht, measured in a data sample collected by a single 
 electron (left) and single muon (right) trigger.}
+\label{fig:trigger-eff}
 \end{figure}
 
 This section has focussed on the signal region triggers. The efficiency of the 
@@ -1675,8 +1701,8 @@ during the year 2016~\cite{cmslumi16}.}
 The methods of Monte Carlo event generation, hadronisation and detector 
 simulation were described in Sec.~\ref{sec:detector-simulation}.
 The Monte Carlo generation of the main background processes (QCD, \zj, \wj, 
-\ttbar) is produced via the \textsc{MadGraph5}~\cite{madgraph5} generator 
-framework at leading order (LO) precision. 
+\ttbar) is produced via the \textsc{MadGraph5}~\cite{madgraph,madgraph-amcnlo} 
+generator framework at leading order (LO) precision. 
 % also DY (same as Zjets)
 As the number of events falls exponentially with the energy scale of the event, 
 and it is the most energetic events that typically pass the signal region 
@@ -1689,10 +1715,10 @@ region of interest.
 Single top quark production is generated at next-to-leading order (NLO) using 
 both \textsc{MadGraph5} and \textsc{powheg}~\cite{powheg} for the different 
 production channels. The diboson background is generated with 
-\textsc{pythia8}~\cite{pythia8}.
+\textsc{pythia8}~\cite{pythia}.
 While events are generated at LO or NLO, the cross sections of most of the main 
 background processes are computed at next-to-next-to-leading order (NNLO) 
-precision~\cite{adam-lots}.
+precision.%~\cite{adam-lots}.
 %\textbf{TODO no need to mention pythia hadronisation and geant here?}
 
 The SUSY and DM signal samples are generated with \textsc{MadGraph5}. For each 
@@ -1706,7 +1732,7 @@ times faster than a full simulation with \textsc{geant} but with comparable
 accuracy~\cite{fastsim}.
 %prompt fastsim (see my description in 9M?), ll fullsim
 
-%SUSY xs NLO+NLL.
+%SUSY xs NLO+NLL (see Matt)
 \textbf{TODO: RHADRONS (see paper), baryon and meson states, gluino ball - 
 maybe this will described in simplified models section.}
 
@@ -1740,6 +1766,7 @@ treatment of which is detailed in Sec.~\ref{sec:analysis-systematics}.
 Mention typical size of weights in each subsection.
 
 \subsection{Pileup}
+\label{sec:analysis-mccorrections-pileup}
 
 The average number of pileup interactions per bunch crossing during the 2016 
 run was $\sim$20. The pileup distribution depends on the instantaneous 
@@ -1753,13 +1780,25 @@ measured in the corresponding luminosity section, together with the inelastic
 proton-proton cross section (63~mb~\cite{inelasticxs-atlas13tev}). The 
 correction factors are given by the ratio of the pileup distributions in data 
 and simulation. These range between $\sim$0.8-1.2 in the bulk of the 
-distribution.
+distribution. This is illustrated in Fig.~\ref{fig:puweights}. 
 % distributions are normalised to normalisation of MC conserved
 
-\textbf{TODO: maybe put pileup reweighting plot (AN).}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{figs/analysis/pileup-weights.pdf}
+\caption{Distribution of the number of pileup interactions in the Monte Carlo 
+(MC) simulation and in data. The ratio of the two is used to derive correction 
+factors that are used to weight the simulated events. The corrected simulated 
+distribution is also shown.}
+\label{fig:puweights}
+\end{figure}
+
+\subsection{Jet energy scale}
+\label{sec:analysis-mccorrections-jec}
+TODO. Jet energy response. As described in Sec.~\ref{sec:detector-jec}.
 
 \subsection{b-tagging}
-\label{sec:analysis-corrections-btagging}
+\label{sec:analysis-mccorrections-btagging}
 % https://twiki.cern.ch/twiki/bin/viewauth/CMS/BTagSFMethods
 
 The efficiency for identifying jets as originating from a bottom quark tends to 
@@ -1840,13 +1879,16 @@ procedure to match the b-tagging probability in data.
 % scale factors: either jet-by-jet or event reweighting
 % all methods have pros and cons
 
-\subsection{Muon identification, isolation and triggering}
+\subsection{Lepton identification, isolation and triggering}
+\label{sec:analysis-mccorrections-muonsf}
 %% and reconstruction
 %% muon tracking eff (SFs are in sequence but syst not in stats code)
 The efficiencies of the muon trigger and the muon identification and isolation 
 requirements 
 described in Sec.~\ref{sec:analysis-physicsobjects} are corrected for in 
-the simulated events that enter the muon control regions. These efficiencies 
+the simulated events that enter the muon control regions. A similar correction 
+is made for muons and electrons that form part of the `lost lepton' background 
+in the signal region. These efficiencies 
 are measured in data and simulation using the \textit{tag-and-probe 
 method}~\cite{tagnprobe} as explained in the following.
 % point is need TnP for data, for MC could use truth info but need to use 
@@ -1907,9 +1949,16 @@ offline muon to an HLT muon within a cone of size $\Delta R=0.3$ and checking
 whether the matched trigger object satisfies the trigger requirements.
 The requirements on the probe depend on the particular measurement being made. 
 The three measurements of identification, isolation and trigger efficiency are 
-factorised and performed sequentially such that the probe requirements for one 
+performed sequentially such that the probe requirements for one 
 measurement are the same as those for a passing probe in the previous 
-measurement. When measuring the identification efficiency, the probe is taken 
+measurement. This is done because the overall efficiency is given by the 
+product of conditional probabilities:
+\begin{equation}
+\varepsilon_{\mathrm{ID,iso,trig}} = \varepsilon_{\mathrm{ID}} ~ 
+\varepsilon_{\mathrm{iso|ID}} ~ \varepsilon_{\mathrm{trig|ID,iso}} \, .
+\label{eqn:muoneff}
+\end{equation}
+When measuring the identification efficiency, the probe is taken 
 as any reconstructed track, and the passing requirement is that in satisfies 
 the muon quality criteria of Sec.~\ref{sec:analysis-physicsobjects} except for 
 the 
@@ -2003,15 +2052,63 @@ with correction factors of about 0.98.
 In the \mmj control region, the trigger efficiency is higher, as the 
 probability to trigger on at least one muon is $\approx 1-(1-0.9)(1-0.9) = 
 99\%$.
-The correction factors are then used to weight the simulated events in the muon 
-control regions.
+%The correction factors are then used to weight the simulated events in the 
+%%%muon control regions.
 %need to describe how trigger SFs are applied to double muon CR.
 %assumes indep? yes
 % this is wrong (apply DATA effs):
 %https://github.com/CMSRA1/AlphaTools/blob/v1.10.x/analysis/Producers/WeightSFLeptonEtaPtCRMuons.py#L153
 % SF should be 1-(1-effD1)*(1-effD2) / 1-(1-effM1)*(1-effM2)
 
+The efficiencies and correction factors are then propagated to the simulated 
+events as follows. The expected number of events in the \mj control region 
+according to the simulation, ignoring the normalisation due to integrated 
+luminosity and cross section, is given by:
+\begin{equation}
+N_{\mu\mathrm{+jets}} = \sum a_\mu \varepsilon_\mathrm{ID}^\mu 
+\varepsilon_\mathrm{iso}^\mu \varepsilon_\mathrm{trig}^\mu \, ,
+\end{equation}
+where the sum runs over all simulated \wlj and \ttbar events that contain one 
+generator-level muon satisfy the \mj control region 
+selections except those relating to the muon acceptance, identification, 
+isolation and 
+trigger. The acceptance term $a_\mu$ is either one if the muon satisfies the 
+\pt and $\eta$ acceptance requirements, or zero if it does not. The efficiency 
+terms are conditional on one another as 
+defined in Eq.~\ref{eqn:muoneff}, and their values depend on the muon's \pt and 
+$\eta$. Similarly, the number of events in the \mmj control region is given by:
+\begin{equation}
+N_{\mu\mu\mathrm{+jets}} = \sum (a_{\mu_1} a_{\mu_2}) 
+(\varepsilon_\mathrm{ID}^{\mu_1} \varepsilon_\mathrm{ID}^{\mu_2}) 
+(\varepsilon_\mathrm{iso}^{\mu_1} \varepsilon_\mathrm{iso}^{\mu_2}) 
+[1 - (1-\varepsilon_\mathrm{trig}^{\mu_1}) 
+(1-\varepsilon_\mathrm{trig}^{\mu_2})] \, ,
+\end{equation}
+where the sum is now over all simulated \zmmj and \ttbar events that have two 
+generator-level muons and satisfy the \mmj control region 
+selections except those relating to the muon acceptance, identification, 
+isolation and 
+trigger. The number of lost lepton background events in the signal region is 
+given by:
+\begin{equation}
+N_{\mathrm{signal}} = \sum \left[ (1-a_\mu) + a_\mu (1- 
+\varepsilon_\mathrm{ID}^\mu) + a_\mu \varepsilon_\mathrm{ID}^\mu 
+(1-\varepsilon_\mathrm{iso}^\mu) + a_\mu \varepsilon_\mathrm{ID}^\mu 
+\varepsilon_\mathrm{iso}^\mu (1-\varepsilon_\mathrm{trig}^\mu) \right] \, ,
+\end{equation}
+where the sum runs over all simulated \wlj and \ttbar events that contain one 
+generator-level muon or electron and satisfy the signal region selections 
+except those relating to the lepton acceptance, identification, isolation and 
+trigger. The 
+efficiencies in these three equations are scaled by the data-to-simulation 
+correction factors derived from the tag-and-probe method to obtain the 
+corrected number of leptonic standard model events in the signal and control 
+regions. 
+
+%%% ignoring tau - not relevant, we don't select or veto them
+
 \subsection{Trigger}
+\label{sec:analysis-mccorrections-trigger}
 Unlike the muon triggers, the signal region triggers are not emulated in the 
 simulation. Instead of determining data-to-simulation correction factors, the 
 trigger efficiencies measured in data as a function of \scalht and \mht using 
@@ -2020,22 +2117,21 @@ are themselves applied as corrections. As seen in
 Fig.~\ref{fig:trigger-eff}, these can be as low as 90\% at low \mht, but 
 are close to unity for $\mht>300$~GeV.
 
-\subsection{Jet energy scale}
-TODO?
-Lepton veto?
-
 %\subsection{NLO precision of V+jets production}
 \subsection{Theoretical calculation of V+jets production}
+\label{sec:analysis-mccorrections-nlo}
 %2 plots?
 %Electroweak corrections play an especially important role in the context of BSM
 %searches, due to the presence of large EW Sudakov logarithms at the TeV scale
 As mentioned in Sec.~\ref{sec:analysis-samples-mc}, the simulation samples for 
 the vector boson production processes, namely \zj and \wj, are generated at 
 leading order, as this allows a larger number of events to be simulated. 
-The samples are corrected for missing higher orders as a function of the 
+The samples are corrected for missing higher order terms in the matrix element 
+calculations as a function of the 
 boson's transverse momentum. This is done by deriving NLO QCD correction 
 factors using \textsc{Madgraph5}, and NLO electroweak correction factors from 
-theoretical calculations~\cite{nlo,nlo}. The combined NLO QCD+EW corrections 
+theoretical calculations~\cite{monojet36fb}. The combined NLO QCD+EW 
+corrections 
 range from approximately 1.4 at a boson \pt of 200~GeV to 0.9 at 800~GeV, for 
 both the \zj and \wj processes.
 % see bosonptsystematics slides - bulk is boson pt 200, tail is 800
@@ -2049,6 +2145,7 @@ both the \zj and \wj processes.
 %%electroweak (EW) corrections extracted from theoretical calculations
 
 \subsection{Initial state radiation in \ttbar events}
+\label{sec:analysis-mccorrections-nisr}
 % NO TOP PT REWEIGHTING! because for 8 TeV
 \begin{comment}
 https://twiki.cern.ch/twiki/bin/viewauth/CMS/SUSRecommendationsMoriond17
@@ -2074,6 +2171,7 @@ number of ISR jets in an event, and take on values between 0.92 and 0.51 for an
 ISR multiplicity of 1 and 6, respectively.
 
 \subsection{Cross-sections}
+\label{sec:analysis-mccorrections-sidebandcorrs}
 %correction to finite precision of xs calculation.
 Although the dominant standard model background processes are normalised using 
 the most accurate cross section calculations available (using NLO or NNLO 
@@ -2163,6 +2261,7 @@ SM process & Sideband region & Correction factor \\
 %Signal (maybe later): nISR, gen met
 
 \subsection{Statistical precision at large \nb}
+\label{sec:analysis-btagformulamethod}
 %b-tag formula method
 %1-2 pages.
 %See Burton. AN Sec 4.4.
@@ -2247,9 +2346,9 @@ b^\mathrm{tag}$, $n_\mathrm c^\mathrm{tag}$, $n_\mathrm l^\mathrm{tag}$)
 realisation, contributes to the estimation of the yield in multiple \nb bins.
 %eff uses info from all simulation events, and each event contributes to 
 %multiple bins rather than just one particular realisation.
-\textbf{The statistical uncertainties are found to be x times smaller than 
-those 
-obtained directly from the simulated events.. in nb 3, 4... TODO}
+The statistical uncertainties in the highest \nb bins are found to be 
+approximately three times smaller than those obtained directly from the 
+simulated events.
 As a means of validation, it is checked that the yields estimated with this 
 method are consistent with those obtained directly from simulation.
 
@@ -2274,10 +2373,10 @@ introduce a bias in the background estimation due to imperfect modelling. A
 data-driven approach is therefore utilised which combines simulated events and 
 control region data to perform a more accurate estimation.
 
-This section describes the methods of background estimation for the electroweak 
-processes, which involves an estimation per \njnbht bin and another one for the 
-\mht bins within each \njnbht bin. The estimation of the much smaller QCD 
-background will be discussed in Sec.~\ref{sec:analysis-estimation-qcd}.
+This section describes the methods of background estimation for the processes 
+with genuine \met, which involves an estimation per \njnbht bin and another one 
+for the \mht bins within each \njnbht bin. The estimation of the much smaller 
+QCD background will be discussed in Sec.~\ref{sec:analysis-estimation-qcd}.
 
 \subsection{The \njet, \nb and \scalht dimensions}
 \label{sec:analysis-estimation-njnbht}
@@ -2305,10 +2404,9 @@ $N_\mathrm{signal}^\mathrm{sim}\njnbht$ by:
 \frac{N_\mathrm{signal}^\mathrm{sim}\njnbht}{N_\mathrm{control}^\mathrm{sim}\njnbht}
  N_\mathrm{control}^\mathrm{data}\njnbht \, .
 \end{equation}
-A special case of this formula applies for the \znnj process in the $\nb=1, 2, 
+A special case of this formula applies to the \znnj process in the $\nb=1, 2, 
 3$~and~$\ge4$ bins, which is estimated in each of these bins using the $\nb \ge 
 1$ bin in the \mmj control region.
-\textbf{TODO: nb validation.}
 
 The extrapolation from the control region to the signal region is performed via 
 the simulation-based ratio of yields in the above equation, referred to as a 
@@ -2324,10 +2422,19 @@ between the signal and control region. For instance, the Z boson's branching
 ratio between neutrinos and muons is 9, and unlike the weakly interacting 
 neutrinos, the muons are subject to acceptance and identification requirements. 
 The transfer factor also accounts for the different kinematic selections, 
-namely on \alphat and \bdphi, which are not used in the control regions.
+namely on \alphat and \bdphi, which are not used in the control regions. 
+The transfer factors used in the estimations of the \ttw background from the 
+\mj control region and the \znnj background from the \mmj control region are 
+denoted as \Tmutottw and \Tmumutoz, respectively.
 
-\textbf{TODO give size of TFs? Put 2 plots here or in appendix. See comments 
-and answers from Phil or whatevs.}
+%\textbf{TODO give size of TFs? Put 2 plots here or in appendix. See comments 
+%and answers from Phil or whatevs. Describe values/trends of TFs.}
+%ONLY IF YOU UNDERSTAND THIS.
+%\begin{figure}[t]
+%\subfloat{\includegraphics[width=0.8\textwidth]{figs/analysis/transferfactors/tf_mu_Ttw_2d_nominalUp}}\\
+%\subfloat{\includegraphics[width=0.8\textwidth]{figs/analysis/transferfactors/tf_mumu_Zinv_2d_nominalUp}}\\
+%\caption{transfer factors (top) and (bottom) }
+%\end{figure}
 
 Equivalently, the estimation in Eq.~\ref{eqn:estimation} can also be viewed as 
 a way of correcting the number of events obtained from the simulation according 
@@ -2344,7 +2451,15 @@ bin of the control region is likely to be similar to that in the corresponding
 bin in the signal region.
 % see njet discrepancy argument in adam
 
-The transfer factors, and therefore the background estimations, are robust 
+%Show nb extrapolation validation (AN) or just summarise briefly in couple of 
+%sentences (similar to MHT validation).
+Although the the \mmj control region is binned more inclusively in the \nb 
+variable than the signal region (which for $\nb \ge 1$ is equivalent to taking 
+the shape of the \nb distribution directly from simulation), it is checked that 
+this does not bias the background estimation in a similar way as the validation 
+of the \mht dimension, which will be discussed in the next section.
+
+The transfer factors, and therefore the background estimates, are robust 
 against many sources of systematic effects relating to kinematic mismodelling 
 and theoretical uncertainties, 
 as these cancel out in the transfer factor ratio to a large extent.
@@ -2360,74 +2475,613 @@ Sec.~\ref{sec:analysis-systematics}.
 \subsection{The \mht dimension}
 \label{sec:analysis-estimation-mht}
 %2 pages
+%If it helps (to give intro), see AN and matt's mht categorisation sections.
 
-If it helps (to give intro), see AN and matt's mht categorisation sections.
+The transfer factor method just described is used to estimate the expected 
+number of background events in each \njnbht bin, inclusive with respect to 
+\mht. 
+The method could be applied to the estimation of each \njnbhtmht bin; however, 
+the additional binning in the \mht dimension that would be required in the 
+control regions would greatly reduce the number of events in each control 
+region bin (the `curse of dimensionality'). This would cause the statistical 
+uncertainty in the estimated background to be too large and degrade the 
+sensitivity of the search. 
+Instead, the number of background events in each \mht bin within a given 
+\njnbht bin is estimated according to the \mht distribution obtained directly 
+from simulation. 
+In other words, the \textit{shape} of the \mht distribution in each \njnbht is 
+taken from simulation, while the \textit{normalisation} of the distribution is 
+obtained via the transfer factor method.
+%instead of predicted from CRs via transfer factors
+%Take templates because don't want to bin CRs too finely (lose statistical 
+%power - curse of dimensionality).
 
-Take templates because don't want to bin CRs too finely (lose statistical power 
-- curse of dimensionality).
-CRs not binned in mht.
+It is important to assess whether there is a potential bias in the background 
+estimation due to the direct use of simulated events.
+This is done by comparing the \mht distributions in every \njnbht bin between 
+data and simulation in the two muon control regions. Only the shapes are 
+compared, as the normalisation is determined using the data-driven transfer 
+factor method. If the simulation's modelling of the \mht shape is reasonable, 
+the ratio of events between data and simulation in each \mht bin is expected to 
+be unity.
+\textbf{TODO: explain scale anchoring?}
+%Validation: Check data MC ratio is flat in CRs.
 
-Validation: Check data MC ratio is flat in CRs. Assign syst as described later 
-in Sec X.
+A linear model is fit to the data-to-simulation ratio versus \mht using a 
+$\chi^2$ minimisation procedure, and it is checked that the estimated value of 
+the linear parameter is statistically compatible with zero. This is done for 
+all \njnbht bins by computing the z-score, which is given by the value of the 
+linear parameter divided by its uncertainty. The result of the fit for two 
+example \njnbht bins is shown in Fig.~\ref{fig:mhtvalidation-fits}. 
+Figure~\ref{fig:mhtvalidation-pulls} shows the distribution of the linear 
+parameter's z-score over all \njnbht bins. 
+\textbf{FIXME: It can be seen that the mean of this distribution is close to 
+zero, contained within 3 sigma, gaussian distributed.}
+%Show example fit.
+%Show distribution of pulls(t/z values)/pvalues. check mean is consistent with 
+%0.
+Performing the background estimation in the \mht dimension using the 
+distributions obtained directly from simulation is therefore considered valid.
+
+\begin{figure}
+MHT FITS (two example plots)
+\caption{mht fits}
+\label{fig:mhtvalidation-fits}
+\end{figure}
+
+\begin{figure}
+MHT PULLS (two plots - mj and mmj)
+\caption{mht pulls}
+\label{fig:mhtvalidation-pulls}
+\end{figure}
+
+The uncertainties on the linear fits are used to assign systematic 
+uncertainties on these simulated \mht distributions, as will be discussed in 
+Sec.~\ref{sec:analysis-systematics-mht}.
 
 \section{Estimation of QCD background processes}
 \label{sec:analysis-estimation-qcd}
-2 pages
+%2 pages
+As discussed in Sec.~\ref{sec:analysis-qcdrejection}, the QCD background is 
+very difficult to estimate accurately, and so a choice is made to reduce this 
+background to a very small level by means of dedicated variables such as 
+\alphat and \bdphi. In this way, a large uncertainty on a small QCD 
+contribution does not have a large negative impact on the search's sensitivity 
+to new physics. 
 
-Method.
+The residual QCD background is estimated in a data-driven way using the 
+hadronic control regions, which are enriched in QCD events, in a similar way as 
+the electroweak background processes. The three hadronic control regions 
+consist of three signal region sidebands with respect to the \mhtmet and \bdphi 
+variables, as well as a `double sideband' in which the requirements on both 
+\mhtmet and \bdphi are inverted. These were summarised in 
+Sec.~\ref{sec:analysis-eventselection-qcdsidebands}. The estimated QCD yields 
+are checked to be consistent between the three sidebands, and the final 
+estimate is taken as the average of all three weighted by their uncertainties.
 
-Validation.
+The QCD background estimation is performed in a similar way as the 
+electroweak background estimation, namely via the transfer factor method 
+described in Sec.~\ref{sec:analysis-estimation-ewk}. In this case, because of 
+the statistical limitation of the QCD simulation samples, only the 
+normalisation per \njht bin, rather than per \njnbht bin, is estimated from the 
+control regions. The \nbmht dimension is treated differently, as will be 
+discussed later in this section. Analogously to Eq.~\ref{eqn:estimation}, the 
+transfer factor equation is given by:
+%TQCD transfer factor.
+\begin{equation}
+\hat{N}_\mathrm{signal}\njht = 
+\frac{N_\mathrm{signal}^\mathrm{sim}\njht}{N_\mathrm{control}^\mathrm{sim}\njht}
+\hat{N}_\mathrm{control}^\mathrm{data}\njht \, .
+\end{equation}
+where $N_\mathrm{signal}^\mathrm{sim}\njht$ and 
+$N_\mathrm{control}^\mathrm{sim}\njht$ are the number of simulated QCD events 
+in bin \njht in the signal 
+region and sideband, and $\hat{N}_\mathrm{control}^\mathrm{data}\njht$ is the 
+estimated number of QCD events in the same 
+sideband bin in data. There is a non-negligible contribution from electroweak 
+processes in the sideband, and so instead of using the total number of events 
+in the hadronic control region (as in Eq.~\ref{eqn:estimation}), only the 
+number of events from QCD processes is used. This is done by estimating the 
+electroweak background in the hadronic sideband via sidebands of the two muon 
+control regions, in exactly the same way as the electroweak background 
+estimation is performed in the signal region via the muon control regions 
+(Sec.~\ref{sec:analysis-estimation-ewk}), accounting for the systematic 
+uncertainties that will be discussed in Sec.~\ref{sec:analysis-systematics}. 
+This is subtracted from the total 
+number of events observed in the hadronic sideband to give an estimate of the 
+number of QCD events $\hat{N}_\mathrm{control}^\mathrm{data}\njht$.
 
-Plot of estimated yields per bin.
+The results of the QCD background estimation procedure is shown in 
+Fig.~\ref{fig:qcdestimation}. It can be seen that the number of QCD events in 
+each \njht bin of the signal region is estimated to be very small, and the 
+contribution is less than 1\% of the total background composition in most bins 
+of the signal region.
 
-\section{Systematic uncertainties on background estimation}
-\label{sec:analysis-systematics}.
+%Plot of estimated yields and qcd/ewk ratio per bin.
+\begin{figure}[!h]
+\centering
+\subfloat{\includegraphics[width=0.7\textwidth]{figs/analysis/meanPredQcdYields}}
+ \\
+\subfloat{\includegraphics[width=0.7\textwidth]{figs/analysis/meanPredQcdDivEwk}}
+ \\
+\caption{The estimated number of QCD events in each \njht bin of the signal 
+region (top), and the corresponding ratio of expected QCD and electroweak 
+events (bottom).}
+\label{fig:qcdestimation}
+\end{figure}
 
-These are explained below and also summarised, with representative magnitudes, 
-in the big summary table of systs.
-
-(don't know where to put it)
-Show nb extrapolation validation (AN) or just summarise briefly in couple of 
-sentences (similar to MHT validation).
-
-Formula systematics.
-
-\subsection{MC-based}
-\label{sec:analysis-systematics-mc}
-3-4 pages (maybe 2 pages just of plots).
-
-Known theoretical and experimental uncertainties.
-Largely cancel out in the TF ratio.
-
-Refer to Section of corrections to simulation. These are the associated 
+Within each \njht bin, the shape of the distribution of events across \nb and 
+\mht is taken directly from the simulation of the electroweak processes. This 
+is chosen instead of the QCD simulation as the statistical power of the 
+electroweak simulation is much larger. It is checked that the electroweak 
+\nbmht distribution is consistent with the QCD distribution within 
 uncertainties.
 
-Pileup, JEC, b-tagging, lepton, photon, trigger, top pt, W/tt, NLO, ttbar nISR.
+%Validation.
 
-Example 2D plots of variations in the bins.
+%QCD: An adequate level of agreement is found between the three independent 
+%estimates.
+TODO 100\% uncertainty uncorrelated across njht. (likelihood section)
 
-Efficiencies then applied to simulation as a correction to match data and a 
-systematic uncertainty is assigned based on differences between electron and 
-muon reference trigger, see Sections corrections and systematics.
 
-boson pt NLO syst 100\% of correction.
+\section{Systematic uncertainties on background estimation}
+\label{sec:analysis-systematics}
+The electroweak background estimation procedure is subject to both statistical 
+and 
+systematic uncertainties. This section describes the various sources of 
+systematic uncertainty and the methods used to estimate the size of these 
+uncertainties and their effect on the background estimates. The uncertainties 
+are then incorporated into the statistical model employed to determine the 
+sensitivity of the search to BSM physics, as will be explained in 
+Sec.~\ref{sec:results-likelihoodmodel}.
 
-\subsection{Closure tests}
+The systematic uncertainties on the electroweak background estimates are 
+broadly encoded in one of two ways -- as uncertainties on the transfer factors 
+which determine the number of events in each \njnbht bin, and uncertainties on 
+how these events are distributed across the corresponding \mht bins. 
+
+The systematic uncertainties on the transfer factors are determined in two 
+ways. The first concerns theoretical and experimental sources of uncertainty on 
+the corrections described in Sec.~\ref{sec:analysis-mccorrections} that are 
+applied to the simulation. The second concerns potential sources of 
+bias that may arise in the background estimation due to different selections in 
+the signal and control regions. 
+
+\textbf{[FIXME - probably better put correlation scheme stuff in likelihood 
+section]}
+Each source of uncertainty results in an uncertainty on the number of events of 
+a given background process in each bin of the search. The correlations of the 
+uncertainties between bins are included in the statistical model and are 
+usually chosen to be either 
+0 (uncorrelated) or 1 (perfectly correlated), for simplicity. As a simple 
+example, a correlation of 1 between two bins, each with a (different) expected 
+number of event counts and associated uncertainty, means that if the counts in 
+one bin are increased by one standard deviation, the counts in the other bin 
+are expected to also increase by one standard deviation.
+
+All of these uncertainties are discussed in the following sub-sections
+They are summarised, along with their representative sizes and correlation 
+scheme, in Tab.~\ref{tab:systs}.
+
+%maybe add stat unc (1-50\%?), qcd syst, mht syst (anything else?)
+\begin{table}[t]
+\centering
+\begin{tabular}{ccc}
+\hline
+Source of uncertainty & \multicolumn{2}{c}{Uncertainty on transfer factor (\%)} 
+\\   
+& \Tmutottw & \Tmumutoz \\
+\hline
+Simulation variations & & \\
+\hline
+Pileup & 0.6-3.8 & 2.3-2.8 \\
+Jet energy scale & 3.4-5.5 & 5.3-8.0 \\
+b-tagging (heavy quark) & 0.4-0.6 & 0.3-0.6 \\
+b-tagging (light quark) & 0.1-1.4 & 0.2-1.8 \\
+Lepton selection & 5 & 2 \\
+Trigger & 0.0-3.1 & 0.0-2.0 \\
+ISR & 0.8-1.1 & 0.5-1.0 \\
+QCD+EW NLO & 0.5-5.4 & 2.2-14.0 \\
+Cross section (\wj) & 0.2-1.4 & --- \\
+Cross section (\ttbar) & 0.0-1.0 & 0.0-0.8 \\
+\hline
+Closure tests & & \\
+\hline
+\alphat extrapolation & 2.7-7.6 & 3.3-9.4 \\
+\bdphi extrapolation & 2.1-20.0 & 2.7-22.0 \\
+W$^+$/W$^-$ extrapolation & 1.2-6.6 & --- \\
+\hline
+\end{tabular}
+\caption{Summary of systematic uncertainties on the \Tmutottw and \Tmumutoz 
+transfer factors, derived from variations of the data-to-simulation correction 
+factors (Sec.~\ref{sec:analysis-systematics-mc}) and data-driven closure tests 
+(Sec.~\ref{sec:analysis-systematics-data}). The quoted ranges correspond to the 
+$\pm1\sigma$ quantiles of the transfer factor changes across all \njnbht bins.}
+\label{tab:systs}
+\end{table}
+
+\subsection{Uncertainties derived from variations in simulation}
+\label{sec:analysis-systematics-mc}
+%3-4 pages (maybe 2 pages just of plots).
+The corrections to the simulation described in 
+Sec.~\ref{sec:analysis-mccorrections} have uncertainties associated with them 
+based on the procedures in which they are derived. The effect of these 
+uncertainties is considered both on the transfer 
+factors, which provide the expected normalisation of the backgrounds in each 
+\njnbht bin, and the modelling of the \mht distribution within each of these 
+bins. This section focusses on the transfer factors, while the effect on the 
+\mht shape is discussed in Sec.~\ref{sec:analysis-systematics-mht}.
+
+In order to determine systematic uncertainties on the transfer factors, the 
+correction factors are varied in turn from their nominal values by one standard 
+deviation up and down, according to their associated uncertainties. The number 
+of simulated events in the signal and control regions is then re-computed under 
+both variations, and the resulting changes in the transfer factors are taken as 
+systematic uncertainties on the transfer factors. This is done for both the 
+\Tmutottw and \Tmumutoz transfer factors, in every \njnbht bin. 
+
+An example of this procedure is 
+shown in Fig.~\ref{fig:tfvariations}, which shows the relative change 
+of the transfer factors under variations of the pileup corrections. 
+The effect on the transfer factors due to the other sources of systematic 
+uncertainty is shown in App.~\ref{app:tfvariations}.
+The uncertainties associated with each set of simulation corrections will be  
+discussed further in this section.
+
+\begin{figure}[h!]
+\subfloat{\includegraphics[width=0.5\textwidth]{figs/analysis/transferfactors/tfratio_mu_Ttw_2d_puWeightUp}}~
+\subfloat{\includegraphics[width=0.5\textwidth]{figs/analysis/transferfactors/tfratio_mu_Ttw_2d_puWeightDown}}\\
+\subfloat{\includegraphics[width=0.5\textwidth]{figs/analysis/transferfactors/tfratio_mumu_Zinv_2d_puWeightUp}}~
+\subfloat{\includegraphics[width=0.5\textwidth]{figs/analysis/transferfactors/tfratio_mumu_Zinv_2d_puWeightDown}}\\
+\caption{The ratio of the \Tmutottw (top) and \Tmumutoz (bottom) transfer 
+factors in each \njnbht bin when varying the pileup correction factors by 
+$+1\sigma$ (left) and $-1\sigma$ (right) with respect to their nominal values.}
+\label{fig:tfvariations}
+\end{figure}
+
+The effect on the transfer factors is usually small, at the level of a few 
+percent change in their value. This is because the kinematics and background 
+composition in equivalent bins of the control and signal region are similar, 
+and so the change of the simulation yields under each variation is also 
+similar, which leads to an almost complete cancellation in the ratio of the 
+transfer factor. The changes can be larger than 10\% in certain bins of the 
+search's parameter space that are statistically more limited.
+
+FIXME after written likelihood section: copied from AN: These sources of 
+uncertainty are each assumed to 
+originate from a unique underlying source
+1162 and so the effect of each source is varied assuming a fully correlated 
+behaviour across the full
+1163 phase space of the signal and control regions.
+
+%small because cancel out . Largely cancel out in the TF ratio.
+%Known theoretical and experimental uncertainties.
+
+\subsubsection{Pileup}
+Events in the simulation are weighted to correct the pileup distribution as 
+described in Sec.~\ref{sec:analysis-mccorrections-pileup}. The measured 
+inelastic proton-proton cross section of 63~mb has an associated uncertainty of 
+5\%. The pileup distribution in data is therefore also constructed using a 
+cross section of 66.15~mb and 59.85~mb, and the pileup weights are re-derived 
+for both variations.
+
+The resulting changes in the transfer factors are typically in the range 
+0.5~-~4\% across the \njnbht bins. This is shown in 
+Fig.~\ref{fig:tfvariations-pileup}
+
+\subsubsection{Jet energy scale}
+The energies of jets are corrected as a function of their transverse momentum 
+and pseudorapidity as described in 
+Secs.~\ref{sec:detector-jec}~and~\ref{sec:analysis-mccorrections-jec}. 
+\textbf{TODO: describe where JEC uncertainty comes from}
+
+When varying the jet energies in simulation by 1$\sigma$ up and down, the 
+values of the \Tmutottw and \Tmumutoz transfer factors are seen to change by 
+approximately 3~-~8\% across the \njnbht bins.
+This is shown in Fig.~\ref{fig:tfvariations-jec}.
+
+%Adam/AN: As the HT and jet multiplicity binning is mirrored in signal and 
+%control regions, the effect of jet energy scale on the TFs is expected to be 
+%small. However, the jet energy scale can still have an effect due to jets 
+%moving in and out of acceptance (above and below 40 GeV
+
+\subsubsection{b-tagging}
+Events in the simulation are weighted to correct for differences in the 
+b-tagging efficiency and mistagging probability with respect to data, as 
+described in Sec.~\ref{sec:analysis-mccorrections-btagging}. The measurements 
+of the tagging probabilities for bottom and charm quarks are correlated\textbf{ 
+[TODO: 
+how/what does this mean]}, and so their uncertainties are varied in 
+conjunction. 
+The uncertainties on the correction factors for light flavour quarks are 
+considered separately.
+
+The changes in the values of the transfer factors under variations of the 
+uncertainties on both the heavy and light flavour b-tagging probabilities are 
+shown in 
+Figs.~\ref{fig:tfvariations-btagging-heavy}~and~\ref{fig:tfvariations-bitagging-light}.
+ These are typically quite small, between 0~-~2\%.  
+
+\subsubsection{Lepton identification, isolation and triggering}
+The efficiencies of the identification, isolation and trigger requirements for 
+muons and electrons are corrected using the tag-and-probe method discussed in 
+Sec.~\ref{sec:analysis-mccorrections-muonsf}. The uncertainties associated with 
+these correction factors are varied by $\pm1\sigma$ in both the signal and 
+control regions and the transfer factors are recomputed. 
+
+The changes of the transfer factors are found to be approximately 2\% for 
+\Tmumutoz and 5\% for \Tmutottw across the \njnbht parameter space. The change 
+is larger in the latter case as the lepton efficiencies have an opposite effect 
+in the signal region and \mj control region. For instance, if the muon 
+efficiency is increased, the number of events in the \mj control region 
+increases while the number of \ttw events in the signal region decreases due to 
+a more efficient vetoing of leptonic events. On the other hand, while the 
+yields in the \mmj control region increase, the numerator of the \Tmumutoz 
+transfer factor is unaffected as the lepton efficiency is irrelevant for the 
+\znnj process.
+
+%veto anticorrelated between sr and cr
+%The scale factors are near-unity and their 1245 uncertainties are at the 
+%%%percent level.
+
+\subsubsection{Trigger}
+%Efficiencies then applied to simulation as a correction to match data and a 
+%systematic uncertainty is assigned based on differences between electron and 
+%muon reference trigger, see Sections corrections and systematics.
+As mentioned in Sec.~\ref{sec:analysis-mccorrections-trigger}, simulated events 
+in the signal region are corrected to account for the efficiency of the 
+combined suite of \scalht-\alphat, \met-\mht, and pure \scalht triggers. The 
+nominal values of the correction factors are taken from the efficiencies 
+measured with the electron reference sample. The differences with respect to 
+the efficiencies measured with the muon reference sample are assigned as 
+systematic uncertainties on the correction factors. 
+
+The differences are around 
+5\% in the turn-on region (\mht$\approx200$~GeV) and are practically zero in 
+the efficiency plateau (\mht$>300$~GeV). 
+As these corrections are only relevant for events in the signal region and not 
+in the control regions, the resulting changes of the transfer factors are also 
+in this range, as shown in Fig.~\ref{fig:tfvariations-trigger}. 
+
+\subsubsection{Theoretical calculation of V+jets production}
+The \zj and \wj simulation samples generated at leading order are corrected for 
+NLO effects as a function of boson \pt, as discussed in 
+Sec.~\ref{sec:analysis-mccorrections-nlo}.
+These correction factors are assigned a conservative uncertainty given by 
+%the magnitude of the correction itself. 
+the difference of the correction from unity.
+%For instance, a correction factor of 1.1 
+%(or similarly, 0.9), is assigned a 10\% uncertainty. 
+This is defined such that a variation of $-1\sigma$ 
+is equivalent to not applying such corrections, and a $+1\sigma$ is equivalent 
+to applying them twice.
+
+The effect on the transfer factors is found to be small at low values of 
+\scalht. At high \scalht, they can be smaller than the equivalent transfer 
+factors without NLO corrections by up to $\sim10\%$, as seen in 
+Fig.~\ref{fig:tfvariations-nlo}.
+This is due to a larger Lorentz boost that is implicitly imposed 
+on the bosons by the $\bdphi>0.5$ requirement in the signal region compared to 
+the control regions in which such requirement is not made. Thus, because the 
+NLO correction factors are decreasing with boson \pt, events in the 
+signal region are typically subjected to slightly smaller corrections.
+%. Theuncertainties in the Hmiss1206 T dimension can be as large as 30%.
+
+% NOTE: NNLO xs kfactors not used (neither when applying NLO nor when -1sigma)
+%https://github.com/CMSRA1/AlphaTools/commit/b0f7985b724fa839be92bcb84d0276ee82b7703d
+
+\subsubsection{Initial state radiation in \ttbar events}
+Uncertainties in the correction derived to improve the distribution of the 
+number of ISR jets, described in Sec.~\ref{sec:analysis-mccorrections-nisr}, 
+are also considered. The correction factors are assigned an uncertainty given 
+by half the difference of the correction from unity.
+
+Although the uncertainties on the correction factors are relatively large, the 
+effect on the transfer factors is small, at the level of 1\%, as shown in 
+Fig.~\ref{fig:tfvariations-nisr}. This is expected as the signal and control 
+regions are categorised identically in the number of jets, which leads to a 
+cancellation in the transfer factors.
+%Fig. 87 (App. E) show the effect on the transfer factors as a function of the 
+%various 1215 discriminating variables. Uncertainties are in typically at the 
+%%%percent level
+
+\subsubsection{Cross sections}
+%wtt admixture
+The cross sections of the main standard model background processes are 
+corrected according to the \mht sideband method described in 
+Sec.~\ref{sec:analysis-mccorrections-sidebandcorrs}. Given a similar background 
+composition between the signal and control regions, these are expected to have 
+a small effect on the transfer factors. The \Tmutottw transfer factors are 
+potentially most sensitive to uncertainties in the cross sections in bins in 
+which there is a mixture of \wlj and \ttbar events, as the relative composition 
+of each process may be different in the signal and control regions due to 
+different kinematic selections (\alphat, \bdphi, \mt). It is checked whether 
+the transfer factors are indeed sensitive to this by varying the \wj and \ttbar 
+cross sections in turn by twice their uncertainties as measured by the CMS 
+experiment \textbf{[TODO: W 1.08, tt 1.04 - reference?]}. The changes in the 
+transfer 
+factors are then assigned as systematic uncertainties on their values.
+%https://github.com/CMSRA1/AlphaTools/blob/v1.10.x/analysis/Producers/WeightXsVariations.py
+
+The variations on the \Tmutottw transfer factors is shown in 
+Figs.\ref{fig:tfvariations-xsw}~and~\ref{fig:tfvariations-xstt} as a function 
+of \njnbht. The changes are found to be relatively small, with values between 
+0-2\%.
+
+%\subsubsection{other}
+%Expected QCD background
+%not subsubsec?
+%maybe just put in qcd estimation sec.
+%previous sections are for EWK background.
+%formula syst?
+
+\subsection{Uncertainties derived from data-driven closure tests}
 \label{sec:analysis-systematics-data}
-2-3 pages.
+%2-3 pages.
+Further sources of systematic uncertainty on the transfer factors are 
+considered in addition to those related to the data-to-simulation correction 
+factors described in the previous section. The transfer factors may be biased 
+as a result of different kinematic selections in the signal and control 
+regions, as well as slightly different background compositions. The transfer 
+factors are probed for potential bias via a series of \textit{closure tests}, 
+in which a control (sub-)region is used to estimate the number of events in 
+another control (sub-)region rather than the signal region.
+%Probe additional sources of systematics.
+% due to extrapolations made in the background estimation and 
 
-Probe additional sources of systematics.
+In an analogous way to the signal region background estimation 
+(Eq.~\ref{eqn:estimation}), the number of observed events in a control 
+sub-sample A is used to estimate the number of events in a control sub-sample 
+B via a transfer factor involving the corresponding event yields in simulation:
+\begin{equation}
+\label{eqn:closuretest}
+\hat{N}_\mathrm{B} = 
+\frac{N_\mathrm{B}^\mathrm{sim}}{N_\mathrm{A}^\mathrm{sim}}
+N_\mathrm{A}^\mathrm{data} \, .
+\end{equation}
+The estimated number of events is then compared to the observed number of 
+events in control sub-region B, and the level 
+of closure (or rather, non-closure) is measured by the quantity:
+\begin{equation}
+C(\mathrm{A}\rightarrow\mathrm{B}) = \frac{N_\mathrm{B}^\mathrm{data} - 
+\hat{N}_\mathrm{B}}{\hat{N}_\mathrm{B}} \, .
+\end{equation}
+The deviation of this quantity from zero, with its uncertainty added in 
+quadrature, is then assigned as a systematic uncertainty on the relevant 
+transfer factor. The closure tests are performed, in turn, as a function of 
+\scalht and \njet. The various closure tests employed to probe different 
+sources of potential bias are discussed in this section.
 
-Define method.
+To avoid double counting the uncertainties due to the simulation correction 
+factors and thereby inflating the systematic uncertainties derived from the 
+closure tests, the estimation in Eq.~\ref{eqn:closuretest} is performed via a 
+maximum likelihood fit, similar to the one that will be discussed in 
+Sec.~\ref{sec:results-likelihoodmodel}, in which the data-to-simulation 
+correction factor uncertainties are included.
 
-Go through each test (there's not many now) and describe what it's probing: 
-extrapolation in alphat and bdphi, W polarisation, SITV.
+TODO: correlation scheme here or in likelihood model section?
+Adam: Since
+the uncertainties derived with this approach are statistical in nature, these 
+systematics
+are considered uncorrelated in each HT bin and event topology category.
+Matt: They
+are considered as uncorrelated per HT and jet topology (monojet and asymmetric
+topologies are correlated) and correlated in other categorisations.
 
-Closure plots.
+\subsubsection{Extrapolation in the \alphat and \bdphi requirements}
+Unlike in the signal region, no requirements are made on the \alphat and \bdphi 
+variables on events in the muon control regions. A mismodelling of these 
+variables in the simulation may therefore introduce a bias in the transfer 
+factors.
+%because TFs account for differences in acceptance, branching ratio etc.
 
-\subsection{MHT templates}
-2 pages. See Matt and old ANs.
+To test this, closure tests are performed in which events in the \mj control 
+region with values of \alphat (\bdphi) below a certain threshold are used to 
+estimate the number of events in the \mj control region with values of \alphat 
+(\bdphi) larger than the same threshold. The thresholds are chosen according to 
+the \bdphi and \scalht-dependent selections mentioned in 
+Sec.~\ref{sec:analysis-eventselection}. The test is performed in the \mj 
+control region as it is statistically more powerful than the \mmj control 
+region.
 
-Derivation of uncertainties. Vs njet and ht.
+The results of these closure tests are shown in Fig.~\ref{fig:closuretests}. 
+The resulting systematic uncertainties are found to be in the range 
+$\sim$3-10\%. These uncertainties are assigned to both the \Tmutottw and 
+\Tmumutoz transfer factors. To avoid double counting the \alphat and \bdphi 
+uncertainties as the variables are somewhat correlated, the systematic 
+uncertainties are taken from the \alphat closure test for the $\scalht<900$~GeV 
+bins and from the \bdphi closure test for the $\scalht>900$~GeV bin.
 
-Plot illustrating size of uncertainty in each bin.
+\subsubsection{Extrapolation in the W$^+$/W$^-$ proportion}
+% leptons/neutrinos must be LH, anti-leptons/anti-neutrinos RH
+% wiki: Only left-handed fermions participate in the weak interaction
+% lol Adam and AN are wrong
+W bosons produced at a proton-proton collider are predominantly left-handed, 
+with a polarisation fraction of up to 70\% at large transverse 
+momenta~\cite{wpol11}. Owing to both the left-handed nature of the weak 
+interaction and angular momentum conservation, this means that a leptonic W$^+$ 
+decay results in a neutrino travelling in the same direction as the W boson and 
+a lepton travelling in the opposite direction. In a W$^-$ decay, the directions 
+of the (anti-)neutrino and lepton are reversed. 
+The neutrino (lepton) therefore has a larger Lorentz boost in a W$^+$ (W$^-$) 
+decay than in a W$^-$ (W$^+$) decay.
+As the acceptance of the \mj control region to W events relies more on the muon 
+\pt, while the signal region relies more on the missing energy, this leads to a 
+larger W$^+$/W$^-$ fraction in the signal region than in the \mj control region.
+
+To test whether this introduces a bias in the \Tmutottw transfer factor, a 
+closure test is performed within the \mj control region in which a sample of 
+W$^+$ events is used to estimate the number of W$^-$ events.
+The results of this closure test are shown in Fig.~\ref{fig:closuretests}. The 
+level of closure and the resulting systematic uncertainties assigned to the 
+\Tmutottw transfer factor are around $\sim$1-5\%.
+%alphat/bdphi syst applied to both TFs, polarisation only relevant for mu2ttw 
+%TF.
+
+%\subsubsection{SITV?}
+%FIXME: Probably leave out unless you have time to understand it.
+
+\begin{figure}[t]
+\subfloat{\includegraphics[width=0.5\textwidth]{figs/analysis/closuretests/AlphaT/SingleMu_alphaTExtrapolation_ht}}~~
+\subfloat{\includegraphics[width=0.5\textwidth]{figs/analysis/closuretests/AlphaT/SingleMu_alphaTExtrapolation_nJet}}\\
+\subfloat{\includegraphics[width=0.5\textwidth]{figs/analysis/closuretests/bDPhi/SingleMu_bdphiExtrapolation_ht}}~~
+\subfloat{\includegraphics[width=0.5\textwidth]{figs/analysis/closuretests/bDPhi/SingleMu_bdphiExtrapolation_nJet}}\\
+\subfloat{\includegraphics[width=0.5\textwidth]{figs/analysis/closuretests/WPol/SingleMuPlus_to_SingleMuMinus_ht}}~~
+\subfloat{\includegraphics[width=0.5\textwidth]{figs/analysis/closuretests/WPol/SingleMuPlus_to_SingleMuMinus_nJet}}\\
+\caption{Closure tests relating to extrapolations in \alphat (top), \bdphi 
+(middle), and W boson polarisation (bottom),  as a function of \scalht (left) 
+and \njet (right). The level of closure obtained via a maximum likelihood 
+method is indicated by the open circles. The blue lines represent the resulting 
+systematic uncertainties that are assigned to the relevant transfer factors. A 
+linear fit is also shown.}
+\label{fig:closuretests}
+\end{figure}
+
+
+\subsection{Uncertainties on the \mht distribution}
+\label{sec:analysis-systematics-mht}
+%2 pages. See Matt and old ANs.
+The expected distribution of electroweak background events in the \mht variable 
+is taken directly from the simulation, as described in 
+Sec.~\ref{sec:analysis-estimation-mht}. This was validated by checking that the 
+ratio of the normalised distribution between data and simulation in the muon 
+control 
+regions is statistically compatible with unity. Specifically, the best-fit 
+value of a linear parameter is checked to be consistent with zero across all 
+\njnbht bins in each of the \mj and \mmj control regions.
+
+%The \mht distribution obtained from simulation will be referred to as the 
+%nominal \mht distribution or shape. 
+A systematic uncertainty is assigned to the \mht distribution obtained from 
+simulation, also referred to as the  
+nominal \mht distribution or shape, to account for uncertainties in the 
+simulation modelling. The 
+value of the fitted linear parameter, together with its uncertainty added in 
+quadrature, is used to vary the nominal \mht shape and derive two alternative 
+distributions. These are then encoded in the statistical model of the search as 
+\pmonesigma systematic uncertainties, as will be described in 
+Sec.~\ref{sec:results-likelihoodmodel}. The uncertainties derived from the \mj 
+control region are assigned to the \mht distribution of the \ttw background 
+process, while those derived from the \mmj control region are assigned to the 
+\znnj process.
+
+correlation in njet and ht (see AN p50).
+
+The alternative \mht shapes typically result in an uncertainty on the number of 
+background events in the final \mht bin within each \njnbht category that is in 
+the range 5-20\%.
+\begin{figure}
+TODO	Plot illustrating size of uncertainty in each bin. ?
+\end{figure}
+
+In addition to the uncertainties derived from the linear fit to the 
+data-to-simulation ratio, all of the sources of systematic uncertainty 
+associated with the simulation correction factors described in 
+Sec.~\ref{sec:analysis-mccorrections} and applied to the transfer factors in 
+Sec.~\ref{sec:analysis-systematics-mc} are also considered for the \mht 
+modelling. This is done by varying each uncertainty in turn by \pmonesigma 
+and deriving further alternative \mht distributions (two for each source of 
+uncertainty). In general, these uncertainties are sub-dominant compared to 
+those derived from the linear fit.
+%also consider MC variations - go over effects on mht shape??.. (see NLO sec in 
+%AN) (no cancellation as with TFs)
