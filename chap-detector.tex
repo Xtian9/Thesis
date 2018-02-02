@@ -19,11 +19,14 @@ Bunch spacing, number of bunches, number of protons per bunch (Marco-Andrea
 table).
 ATLAS, CMS, LHCb, ALICE.
 Accelerator complex: hydrogen, LINAC, PS, SPS, etc (show diagram).
-Centre of mass energy. Pileup (formula/estimate using inelastic xs?). 
+Centre of mass energy. 
+Pileup (formula/estimate using inelastic xs?). Minimum bias.
 
 Diagram of accelerator complex.
 
 History of Run1, shutdown, Run 2. Amount of data delivered.
+
+Describe run, fill, lumi section, instantaneous luminosity values.
 
 \section{The Compact Muon Solenoid}
 
@@ -114,6 +117,7 @@ Computing tiers.
 Not sure yet. Look at Adam, Matt, Jad.
 
 \section{Event reconstruction}
+\label{sec:detector-reconstruction}
 
 Intro: need to put together the things observed in the detector to reconstruct 
 the objects.
@@ -183,9 +187,15 @@ Inputs are PF candidates. Pileup subtraction (not just here but for all
 objects).
 
 \subsubsection{Correcting the energy of jets}
+\label{sec:detector-jecs}
+JECs. JER?
 
 \subsubsection{b-tagging}
+\label{sec:detector-btagging}
 Identification of jets originating from bottom quarks.
+
+see btagging CMSDAS Introduction.pdf
+eg slide 11 how eff varies with pt and eta, ROC curves, etc.
 
 \subsection{Energy sums and missing energy}
 
@@ -200,6 +210,15 @@ analysis in intro chapter).
 
 Type-1 corrections.
 
+
+\section{Simulation}
+\label{sec:detector-simulation}
+
+\textsc{MadGraph5}~\cite{madgraph}
+\textsc{powheg}~\cite{powheg}
+\textsc{pythia8}~\cite{pythia}
+\textsc{geant4}~\cite{geant}
+\begin{comment}
 \section{Data sets}
 
 See Nick. MA has this in the analysis chapter.
@@ -226,3 +245,4 @@ mentioned in simplified models section.
 See paper.
 
 Describe weights and xs/lumi normalisation?
+\end{comment}
