@@ -192,12 +192,10 @@ are summarised in Tab.~\ref{tab:jet-id}.
 % num constituents > 1 --> shouldn't have isolated leptons being jets??
 
 \begin{table}[ht!]
-\caption{Quality requirements imposed on the constituents of jets.}
 %FIXME: Table: jet ID requirements (have 3 columns for each eta region, merge 
 %columns if applies to more than one, dash if not applied).
 %Do similar ID table for other objects? Ideally not (I haven't worked on it), 
 %but yes if you need to fill up space.}
-\label{tab:jet-id}
 \centering
 \begin{tabular}{ ccc }
 Variable & Requirement & \\ \hline
@@ -213,6 +211,8 @@ Number of charged constituents & $>0$ & (only for $|\eta| < 2.4$) \\
 Neutral electromagnetic energy fraction & $<0.90$ &  \\
 Number of neutral constituents & $>10$ &  \\
 \end{tabular}
+\caption{Quality requirements imposed on the constituents of jets.}
+\label{tab:jet-id}
 \end{table}
 
 %b-tagging medium working point CSVv2IVF.
@@ -1801,11 +1801,12 @@ will be discussed in Sec.~\ref{sec:results-limits}.
 Based on simulation, the estimated number of events of a given process with 
 cross-section $\sigma$ is given by:
 \begin{equation}
-\hat{n}_\mathrm{sim} = \sigma L \frac{N_{\mathrm{pass}}}{N_{\mathrm{gen}}}
+\hat{n}_\mathrm{sim} = \sigma L_\mathrm{int} 
+\frac{N_{\mathrm{pass}}}{N_{\mathrm{gen}}}
 \end{equation}
-where $L$ is the integrated luminosity, $N_{\mathrm{gen}}$ is the number of 
-events generated, and $N_{\mathrm{pass}}$ is the number of events that pass the 
-analysis selections.
+where $L_\mathrm{int}$ is the integrated luminosity, $N_{\mathrm{gen}}$ is the 
+number of events generated, and $N_{\mathrm{pass}}$ is the number of events 
+that pass the analysis selections.
 
 
 \section{Corrections to simulation}
@@ -2601,9 +2602,11 @@ distributions obtained directly from simulation is therefore considered valid.
 \begin{figure}[!h]
 \centering
 \subfloat[$\njet=4, \nb=2, 
-\scalht=$~600-750~GeV]{\includegraphics[width=0.49\textwidth]{figs/analysis/mht_eq2b_eq4j_ht_600_800_SingleMu_Graph}}
+\scalht=$~600-750~GeV 
+(\mj)]{\includegraphics[width=0.49\textwidth]{figs/analysis/mht_eq2b_eq4j_ht_600_800_SingleMu_Graph}}
 \subfloat[$\njet=2, \nb=1, 
-\scalht=$~400-500~GeV]{\includegraphics[width=0.49\textwidth]{figs/analysis/mht_eq1b_eq2j_ht_400_500_SinglePhoton_Graph}}
+\scalht=$~400-500~GeV 
+(\mmj)]{\includegraphics[width=0.49\textwidth]{figs/analysis/mht_eq1b_eq2j_ht_400_500_SinglePhoton_Graph}}
 \caption{The data-to-simulation ratio of event counts as a function of \mht for 
 two example \njnbht categories, along with the fit of a linear (and constant) 
 function.}
