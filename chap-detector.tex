@@ -1,7 +1,7 @@
 \chapter{Experimental setup}
 \label{chap:detector}
 %20-25 pages.
-Intro to chapter.
+TODO Intro to chapter.
 
 \section{The Large Hadron Collider}
 %CERN and LHC. Franco-Swiss border. 26 km. 100m underground. 
@@ -153,8 +153,9 @@ TODO: one sentence on trigger and daq (see adam).
 
 %Coordinate system. Pseudorapidity. Cylindrical radius r.
 % phi measured from x axis
-A right-handed coordinate system is defined with the origin at the interaction 
-point. The $x$-axis lies horizontally towards the centre of the LHC ring, the 
+A right-handed coordinate system is defined with the origin at the centre of 
+the detector (which is approximately the interaction point). The $x$-axis lies 
+horizontally towards the centre of the LHC ring, the 
 $y$-axis points vertically upwards, and the $z$-axis points along the beam 
 direction. An azimuthal angle $\phi$ is defined that lies in the transverse 
 $x$-$y$ plane. The cylindrical radial coordinate is labelled $r$. A polar angle 
@@ -179,8 +180,7 @@ cathode strip chambers along with resistive plate chambers to provide a fast
 trigger response.
 \end{comment}
 
-TODO (maybe) Give extent (in radius) occupied by each subdetector as you go 
-along.
+%(maybe) Give extent (in radius) occupied by each subdetector as you go along.
 
 \subsection{Tracker}
 %How tracker works, ie electron-hole pairs (see Adam and MSci report).
@@ -201,6 +201,17 @@ silicon pixels and 9.6 million silicon strips covering an area of about
 200~m$^2$. The arrangement of tracker modules is illustrated in 
 Fig.~\ref{fig:tracker}.
 
+%Diagram of layout.
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.8\linewidth]{figs/detector/tracker}
+	\end{center}
+	\caption{Schematic cross-sectional view (in the $r$-$z$ plane) of the CMS 
+		tracker~\cite{cms}. The tracker modules are indicated by the black line 
+		segments.}
+	\label{fig:tracker}
+\end{figure}
+
 The pixel detector comprises 3 barrel layers and 2 endcap layers. Each pixel is 
 $100~\micro\metre\times150~\micro\metre$ in size. The spatial 
 resolution is approximately $10~\micro\metre$ in the {$r$-$\phi$} plane and 
@@ -219,84 +230,229 @@ The tracker is able to record a hit of a charged particle with $\pt>1$~GeV with
 an efficiency of over 99\%. The transverse momentum resolution 
 $\frac{\Delta\pt}{\pt}$ is approximately 2\% for particles with $\pt = 100$~GeV.
 
+\subsection{Electromagnetic calorimeter}
+%Designed to detect electrons and photons. Lead tungstate crystals.
+%EB. EE. Preshower.
 %Diagram of layout.
+%How ECAL works (ECAL shower, bremmstrahlung and pair production - see Adam and 
+%APP MSci course.)
+%excite atoms, when de-excite emit scintillation light (blue), light hits 
+%silicon 
+%photodiodes which emits electrons (photoelectric effect) which is measured as 
+%a current
+%Resolution formula (a+b+c).
+
+%% http://iopscience.iop.org/article/10.1088/1748-0221/9/02/C02008/pdf
+%http://cms.web.cern.ch/news/crystal-calorimeter
+%see explanation of avalanche photodiodes and vacuum phototriodes
+
+The CMS ECAL consists of over 75,000 lead tungstate (PbWO$_4$) crystals. These 
+are distributed in the ECAL Barrel (EB) and ECAL Endcap (EC), which cover the 
+pseudorapidity ranges of $\etaabs<1.48$ and $1.48 < \etaabs < 3$ 
+respectively. The ECAL is illustrated in Fig.~\ref{fig:ecal}. 
+The energy resolution $\frac{\Delta E}{E}$ of the ECAL is approximately 0.3\% 
+for high energy electrons.
+
+% sandro: supermodules (red line i think), modules (4), submodules (5x2)
 \begin{figure}
-\begin{center}
-\includegraphics[width=0.8\linewidth]{figs/detector/tracker}
-\end{center}
-\caption{Schematic cross-sectional view (in the $r$-$z$ plane) of the CMS 
-tracker~\cite{cms}. The tracker modules are indicated by the black line 
-segments.}
-\label{fig:tracker}
+	\begin{center}
+		\includegraphics[width=0.7\linewidth]{figs/detector/ecal}
+	\end{center}
+	\caption{Schematic cross-sectional view (in the $r$-$z$ plane) of the CMS 
+		electromagnetic calorimeter, showing the arrangement of crystals in the 
+		barrel, 
+		endcap and preshower~\cite{cms}.}
+	\label{fig:ecal}
 \end{figure}
 
-\subsection{Electromagnetic calorimeter}
+The crystals in the barrel have a front-face size of 
+$22\milli\metre \times 22\milli\metre$ and a length of 23~cm. The scintillation 
+light produced by the electromagnetic showers is collected by silicon 
+avalanche photodiodes in the barrel and vacuum phototriodes in the endcaps that 
+are glued to the ends of the crystals.
+% amplification/gain of 50
 
-Designed to detect electrons and photons. Lead tungstate crystals.
-
-EB. EE. Preshower.
-
-Diagram of layout.
-
-How ECAL works (ECAL shower, bremmstrahlung and pair production - see Adam and 
-APP MSci course.)
-
-Resolution formula (a+b+c).
+The ECAL Preshower (ES) detector is placed in front of the endcaps. It is 
+composed of two alternating layers of lead radiator and silicon strip sensors 
+and helps to distinguish between prompt photons and photons produced in the 
+decays of neutral pions.%~\cite{cms}.
 
 \subsection{Hadronic calorimeter}
+%Designed to detect hadrons/jets. Brass and scintillating plastic. Photodiodes. 
+%HF. Fibres.
+%HB. HE. HO. HF
+%Diagram of layout.
+%How HCAL works (hadronic showers produce scintillation light - see Adam and 
+%APP MSci course.)
+%Resolution formula.
 
-Designed to detect hadrons/jets. Brass and scintillating plastic. Photodiodes. 
-HF. Fibres.
+%% http://cms.web.cern.ch/news/hadron-calorimeter
 
-HB. HE. HO. HF
+The CMS HCAL is a sampling calorimeter consisting of alternating layers of 
+brass absorber and plastic scintillator. The scinitillation light is collected 
+by hybrid photodiodes. The HCAL is divided into the HCAL Barrel (HB), which 
+covers the central region of $\etaabs < 1.4$, the HCAL Endcap (HE), covering 
+the pseudorapidity range $1.3 < \etaabs < 3$, the Outer HCAL (HO), which is 
+located in the barrel region behind the solenoid magnet, and the 
+Forward HCAL (HF) which covers the forward region $3 < \etaabs < 5$ and is 
+placed at a distance in $z$ from the interaction point of about 11~m. 
 
-Diagram of layout.
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.7\linewidth]{figs/detector/hcal}
+	\end{center}
+	\caption{One quarter cross-sectional view (in the $r$-$z$ plane) of the CMS 
+		detector, showing the location of the hadronic calorimeter barrel (HB), 
+		endcap 
+		(HE), outer (HO), and forward (HF) regions~\cite{cms}.}
+	\label{fig:hcal}
+\end{figure}
 
-How HCAL works (hadronic showers produce scintillation light - see Adam and APP 
-MSci course.)
+The calorimeter cells in the HB have dimensions of $\Delta\eta\Delta\phi = 
+0.087 \times 0.087$. % sizes varies with eta (gets larger)
+The purpose of the HO is to capture hadronic showers that leak past the HB, 
+increasing its effective thickness to over 10 interaction lengths. 
+% HO increases interaction length of HB from 5-10 to 11
+The HF is designed to capture very forward particles and, due to the increased 
+particle fluxes in this region, is instead made of steel absorber and quartz 
+fibers. In this case hadronic showers produce Cerenkov radiation that is 
+detected by photomultiplier tubes. 
+% quartz more radiation resistant than plastic
 
-Resolution formula.
-
-\subsection{Muon system}
-
-Adam: As muons are heavier than electrons, they are minimally ionising and lose 
-little energy through bremsstrahlung. They therefore mostly pass through the 
-ECAL and HCAL. As muons are a key component of many electroweak decays, CMS has 
-a dedicated muon system interleaved with the iron return yoke surrounding the 
-solenoid.
- 
-DT (MB), CSC (ME), RPC.
-
-Diagram of layout.
-
-Momentum resolution 1\%.
+The energy resolution of the ECAL and HCAL combined has been measured in a test 
+beam and can be parameterised as~\cite{calo-resolution}:
+\begin{equation}
+\left(\frac{\Delta E}{E}\right)^2 = \left(\frac{84.7\%}{\sqrt{E}}\right)^2 + 
+(7.4\%)^2 \, ,
+\end{equation}
+where $E$ is the energy of the incident particle in units of GeV.
 
 \subsection{Magnet}
+%Just one or two short paragraphs.
+%See Marco-Andrea, Citron, Baber, Pesaresi.
+The CMS magnet is a superconducting solenoid magnet producing a 3.8~T magnetic 
+field. It is made of niobium-titanium and has a length of 12.9~m and a diameter 
+of 6~m. A high magnetic field strength was chosen to provide a good charge 
+identification and transverse momentum resolution even for very energetic 
+charged particles. The return yoke of the magnet is made of steel and is 
+interleaved with the muon chambers.
 
-Just one or two short paragraphs.
-See Marco-Andrea, Citron, Baber.
+%The superconducting coil rests inside a vacuum chamber and is cooled to 4.5K 
+%using liquid helium
+
+%Citron: The design specifications of the solenoid magnet are driven by the 
+%desire to unambiguously determine the sign of muons with momentum ∼ 1 TeV. 
+%This %requires a resolution of 10\% at p = 1TeV.
+
+%purpose (bend tracks, expecially high momentum)
+%size, 3.8 T, superconducting magnet, niobium-titanium
+%return yoke (purpose see below plus stop punch through hadrons)
+
+%The operating field was scaled down to 3.8 T instead of the full design 
+%strength in order to maximize longevity
+%The operating current for 3.8 T is 18,160 A, giving a stored energy of 2.3 GJ.
+% superconducting = can carry larger currents and therefore large mag field
+
+%return yoke: 12-sided iron structure that surrounds the magnet coils and 
+%contains and %guides the field
+% Pes: return and containment of the magnetic field
+% return flux is 1.8 T
+
+\subsection{Muon system}
+%Adam: As muons are heavier than electrons, they are minimally ionising and 
+%lose little energy through bremsstrahlung. They therefore mostly pass through 
+%the ECAL and HCAL. As muons are a key component of many electroweak decays, 
+%CMS %has a dedicated muon system interleaved with the iron return yoke 
+%%surrounding %the solenoid.
+%DT (MB), CSC (ME), RPC.
+%Diagram of layout.
+%Momentum resolution with tracker 1\%.
+% keep it short/concise (Citron, MA)
+The CMS muon system employs three types of gaseous ionisation detectors, that 
+are placed in layers interleaved with the magnet return yoke. It consists of 
+the Muon Barrel (MB), covering the pseudorapidity range $\etaabs < 
+1.2$, and the Muon Endcap (ME), covering the range $0.9 < \etaabs < 2.4$. The 
+layout of the muon system is illustrated in Fig.~\ref{fig:muondet}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{figs/detector/muondet}
+\end{center}
+\caption{One quarter cross-sectional view (in the $r$-$z$ plane) of the CMS 
+muon system, showing the location of the drift tube (DT), cathode strip chamber 
+(CSC) and resistive plate chamber (RPC) subsystems~\cite{cms}.}
+\label{fig:muondet}
+\end{figure}
+
+The barrel region is made up of drift tubes (DT). Cathode strip chambers (CSC) 
+instrument the endcaps where particle fluxes are higher. Resistive plate 
+chambers (RPC) are used in both the barrel and endcap regions for redundancy. 
+These have a coarser spatial resolution than DTs and CSCs but provide a faster 
+temporal resolution, which is beneficial for triggering purposes and for a 
+precise bunch crossing determination.
+
+%The muon momentum is measured in the inner tracker and in the return flux; the 
+%muon momentum resolution of the combined measurement is 1\% for |eta| < 0.8 
+%and pT = 10 GeV (pT/pT = 4% for pT = 1 TeV). The resolution is degraded in the 
+%%endcap regions (2-10%).
+The transverse momentum of muons is measured via a combination of the muon 
+system and the tracker. The momentum resolution $\frac{\Delta\pt}{\pt}$ of the 
+combined measurement is approximately 1\% (4\%) in the region $\etaabs<0.8$ for 
+muons with a transverse momentum of 10~(1000)~GeV.
 
 \subsection{Trigger and data acquisition}
+%40 MHz. L1 trigger. HLT.
+% 1 MB per event -> 40 TB per second
+The crossing of proton bunches at the LHC occurs at a rate of 40~MHz. This 
+results in a potentially large amount of data that is not computationally 
+feasible to process and store. In any case, the majority of collisions consist 
+of QCD soft scattering processes rather than electroweak or BSM processes and 
+can largely be discarded. A two-level triggering system is employed in the CMS 
+experiment, consisting of a hardware-based Level 1 (L1) trigger (L1T) and a 
+software-based High Level (HL) Trigger (HLT), to select events of interest such 
+as those containing a large amount of missing energy or particles with large 
+transverse momentum, and reduce the data rate to a more manageable $\sim$1~kHz.
 
-% https://cms.cern/detector/computing-grid
+%reduce granularity/resolution information
+% hardware (FPGAs)
+The Level 1 trigger is based on custom electronic systems and reduces the event 
+rate to 100~kHz. To meet the latency budget of $3.2~\micro\second$, it employs 
+coarse information from the calorimeters and muon detectors and simplified 
+reconstruction algorithms. The L1T consists of an L1 calorimeter trigger which 
+reconstructs electrons, photons, jets and missing transverse energy, and an L1 
+muon trigger which reconstructs muons. These objects are passed to the L1 
+Global Trigger which makes a decision to pass the event to the HLT based on 
+whether the objects satisfy certain requirements on quantities such as the 
+transverse momentum.
 
-40 MHz.
+% several thousand CPUs
+% L1 to HLT via fibre optic cables
+% software (C++)
+Events that are accepted by the L1T are passed to the high level trigger, which 
+reduces the data rate down to $\sim$1~kHz. The HLT consists of a large farm of 
+processors located at ground level. It uses full-granularity data from all 
+subdetectors, including the tracker, to reconstruct objects with a performance 
+that is close to that offline. The HLT is discussed further in 
+Sec.~\ref{sec:analysis-trigger}.
 
-L1 trigger.
-
-HLT.
+%The GRID computing infrastructure allows the offline reconstruction and 
+%processing to be distributed to dedicated computing sites across the globe
+Events that are accepted by the HLT are reconstructed and stored using the 
+Worldwide LHC Computing Grid (WLCG), a distributed computing system making use 
+of a tier hierarchy~\cite{grid}. This allows the data (and simulation samples) 
+to be processed, stored and analysed at multiple sites across the world.
 
 %\subsection{Software and computing}
 % CMSSW
-Computing tiers.
+%Computing tiers.
+% https://cms.cern/detector/computing-grid
 
-\subsubsection{L1 trigger upgrade and my service work?}
-
-Not sure yet. Look at Adam, Matt, Jad.
+%\subsubsection{L1 trigger upgrade and my service work?}
+%Not sure yet. Look at Adam, Matt, Jad.
 
 \section{Event reconstruction}
 \label{sec:detector-reconstruction}
-
+\begin{comment}
 Intro: need to put together the things observed in the detector to reconstruct 
 the objects.
 
@@ -308,17 +464,16 @@ MC corrections (JECs, PU, btagging, lepton ID, etc.).
 
 Mention objects/working points used in analysis as you go along. Maybe summary 
 table like Matt. Actually maybe include this in analysis chapter (see Adam).
+\end{comment}
+TODO need to put together the things observed in the detector to reconstruct 
+the objects.
 
 \subsection{Tracks and vertices}
-
-Combinatorial track finder (CTF), Kalman filter.
-
-Primary vertex. PU vertices. Secondary/displaced vertices (b quarks) found in 
-subsequent levels of reconstruction.
-
-Efficiencies.
-
-Isolated tracks? (when talking about analysis objects).
+%Combinatorial track finder (CTF), Kalman filter.
+%Primary vertex. PU vertices. Secondary/displaced vertices (b quarks) found in 
+%subsequent levels of reconstruction.
+%Efficiencies.
+%Isolated tracks? (when talking about analysis objects).
 
 \subsection{Electrons and photons}
 %\subsubsection{Tag and probe/corrections}
