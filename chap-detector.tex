@@ -1,7 +1,10 @@
 \chapter{Experimental setup}
 \label{chap:detector}
 %20-25 pages.
-TODO Intro to chapter.
+This chapter provides a description of the various components of the Large 
+Hadron Collider and the CMS detector. The techniques employed to reconstruct 
+the particles that are produced in the proton collisions are discussed, as well 
+as the event simulation method.
 
 \section{The Large Hadron Collider}
 %CERN and LHC. Franco-Swiss border. 26 km. 100m underground. 
@@ -657,6 +660,7 @@ GSF track, whereas photons are identified via unmatched superclusters.
 %%charged hadrons, 25% photons and 10% neutral hadrons.
 
 % emission of soft gluon occurs 
+% fragments = showers (emits soft qcd radiation)
 Due to the nature of the strong force, when a quark or gluon is produced it 
 immediately fragments and hadronises, leading to a collimated spray of hadrons 
 known as a \textit{jet}. In this search, jets are reconstructed by clustering 
@@ -829,7 +833,8 @@ in the first bin, which contains the underflow entries.}
 %Define pileup subtraction - effective rho area, delta beta?
 % CAREFUL: OVERLAP WITH phys obj SECTION IN ANALYSIS CHAPTER?
 It is often important to identify \textit{prompt} leptons and photons, which 
-are produced at the primary interaction vertex, as opposed to non-prompt 
+are produced in the hard process, %at the primary interaction vertex, 
+as opposed to non-prompt 
 particles that are the products of in-flight decays within jets. 
 % basically whether from hard scatter process or decay of random hadron in jet
 This is 
@@ -866,6 +871,9 @@ density of all neutral particles measured across the entire detector.
 %by a factor that takes into account the dependence of the pileup transverse 
 %energy density on pseudorapidity. The effective areas have been determined in 
 %gamma + jet events.
+
+% eff area = see sandro p85
+% Baber calls it "footprint"
 
 %baber p84-85
 %run1: median(pt/A) of all kt jets (which cluster all soft stuff) 
@@ -927,20 +935,102 @@ jets' transverse momenta:
 
 \section{Simulation}
 \label{sec:detector-simulation}
+%see 9M report
+%methods of Monte Carlo event generation, hadronisation and detector simulation 
+% very useful wiki (see highlights): 
+%http://www.scholarpedia.org/article/Parton_shower_Monte_Carlo_event_generators
+% also Sandro very detailed
+% https://arxiv.org/pdf/1101.2599.pdf (generic MC simulation process)
+% maltoni1 MC.pdf
+% sandro p42 for minimum bias vs underlying event
 
-\textsc{MadGraph5}~\cite{madgraph}
-\textsc{powheg}~\cite{powheg}
-\textsc{pythia8}~\cite{pythia}
-\textsc{geant4}~\cite{geant}
+%motivation
+The simulation of background and signal processes is an important aspect of a 
+search for new physics. The Monte Carlo (MC) method forms the basis of the 
+simulation process.
+
+%hard scatter, ME, PDF, NLO
+%The Matrix Element (ME) method is based on the exact calculation of the matrix 
+%elements and corresponds to the order-by-order calculation of Feynman diagrams 
+%in perturbative QCD
+%The state-of-the-art in the field of matrix element calculation is NLO, with 
+%all the virtual loop corrections included. Loop calculations are complex and 
+%they are available for a limited number of processes. For this reason 
+%tree-level matrix element calculations still play an important role in the 
+%simulation of events produced at hadron colliders
+The first step is the generation of the hard scattering, in which constituents 
+of the colliding protons interact and produce the outgoing particles. This is 
+accomplished with MC event generators such as 
+\textsc{MadGraph}~\cite{madgraph} and \textsc{powheg}~\cite{powheg}. 
+The momenta of the colliding partons are sampled from a parton distribution 
+function (PDF). 
+%These distributions have been measured at lower energies and in other 
+%processes and are evolved to higher scales using the QCD evolution equations 
+%for parton densities
+The generator also calculates, based on the Feynman diagrams of the desired 
+process up to a certain order in perturbative QCD, the corresponding matrix 
+elements and differential cross section. The final state particles are then 
+generated according to the incoming parton momenta and the differential cross 
+section.
+
+%fragmentation/showering and hadronisation
+%The hard subprocess, by definition, involves large momentum transfers and 
+%therefore the partons involved in it are violently accelerated. Just as 
+%accelerated electric charges emit QED radiation (photons), the accelerated 
+%coloured partons will emit QCD radiation in the form of gluons. Unlike the 
+%uncharged photons, the gluons themselves carry colour charges and can 
+%therefore emit further radiation, leading to parton showers.
+%The parton cascade is evolved down to a certain virtuality, of the order of 1 
+%GeV2. After that, non perturbative effects take place and the hadronization is 
+%applied.
+%An initial-state shower is one that develops on an incoming parton of the hard 
+%subprocess, of which there are two at a hadron collider. 
+% quarks and gluons can radiate gluons, gluons can also produce qqbar pair
+% hadronization process cannot be described in perturbative QCD.
+%Baber: In fragmentation, a simulation of the splitting of the partons from the 
+%hard scatter is performed, with the emission of soft quarks and gluons 
+%continuing until the cut-off scale of QCD, ΛQCD∼ 200MeV, where calculations 
+%become non-perturbative.
+%(see pdf) Fragmentation functions describe how the color-carrying quarks and 
+%gluons transform into color-neutral particles such as hadrons or photons.
+The next step is the simulation of parton showers, that is additional QCD 
+radiation emitted by the involved quarks and gluons, and the subsequent 
+hadronisation in which colourless hadrons are formed according to the Lund 
+string model. Any unstable particles in the event are then decayed. The 
+showering, hadronisation and decay processes are performed with 
+\textsc{pythia8}~\cite{pythia}.
+
+%In addition to the hard scattering, a simulation of the underlying event, 
+%multi-partonic interactions of the proton remnants, is also performed. 
+%(additional parton collisions within the same protons)
+
+%pileup, ootpu
+Additional soft interactions are overlayed in each generated event to account 
+for pileup. The effects from up to 12 preceding and subsequent bunch crossings 
+(out-of-time pileup) are also included.
+
+%material interaction
+%The passage of the resulting particles through the CMS detector and their 
+%interactions with the detector material (through ionisation and scattering) is 
+%simulated with the GEANT4 tool-kit
+%Finally, the response of each sub-detector, the electronics and the trigger 
+%are emulated, and all energy deposits in the event are reconstructed as 
+%physics objects.
+Finally, the interactions of the resulting particles with the CMS detector 
+(such as through ionisation and scattering) are simulated with 
+\textsc{geant4}~\cite{geant}. The response of each subdetector, the electronics 
+and the trigger are also emulated. The reconstruction methods described in 
+Sec.~\ref{sec:detector-reconstruction} can then be applied as with real data.
+% leads to energy loss https://en.wikipedia.org/wiki/Bethe_formula
 
 \begin{comment}
-\section{Data sets}
+{Data sets}
 
 See Nick. MA has this in the analysis chapter.
 We use data collected by the CMS during certain runs, plus simulated data of 
 background and signal processes.
 
-\subsection{Collected data}
+{Collected data}
 
 35.9 fb-1. 2016. (This would be mentioned in the intro anyway).
 Show lumi delivered/collected vs time.
@@ -950,7 +1040,7 @@ SR and Muon CRs.
 Maybe keep this chapter general, just have section on MC simulation, and 
 mention which specific data and MC samples elsewhere.
 
-\subsection{Monte Carlo simulation}
+{Monte Carlo simulation}
 
 Description of madgraph, pythia, GEANT.
 
