@@ -169,9 +169,11 @@ either select events or veto them.}
 
 \subsection*{Jets}
 
-Jets are reconstructed by clustering Particle Flow candidates using the \antikt 
-algorithm with a distance parameter of $0.4$. Charged PF candidates that 
-originate from pileup vertices are not included. The four-momentum of a jet is 
+Jets are reconstructed by clustering Particle Flow particles using the \antikt 
+algorithm with a distance parameter of $0.4$.
+% (see Sec.~\ref{sec:detector-jets}). 
+%Charged particles that originate from pileup vertices are not included. 
+The four-momentum of a jet is 
 defined to be the vector sum of the four-momenta of all clustered constituents. 
 Corrections to the energies of the resulting jets are applied as described in 
 Sec.~\ref{sec:detector-jecs}.
@@ -235,11 +237,15 @@ jets originating from pileup vertices.
 
 The muons considered for event vetoing in the signal region are required to be 
 reconstructed as either global or tracker muons. The efficiency for this is 
-$\sim98$\%. The contribution to the muon energy from pileup tracks is 
-subtracted using the effective area correction. A mini-isolation requirement of 
+$\sim98$\%. 
+%The contribution to the muon energy from pileup tracks is subtracted using the 
+%effective area correction. 
+A mini-isolation requirement of 
 \miniiso~$ < 0.2$ is imposed that aids in identifying muons from the decays of 
 boosted top quarks.
 
+%don't want non-prompt (produced from the in-flight decays of hadrons, taus or 
+%heavy quarks) and to reject fakes caused by the punch through of hadronic
 In the control regions, global muons are selected. Additional quality criteria 
 are required in order to enhance the purity of prompt W and Z boson decays. 
 These include a minimum goodness of fit of the corresponding track, and a 
@@ -250,8 +256,9 @@ minimum number of hits in the
 tracker is required to provide an accurate measurement of the momentum. The 
 muon track is also required to be compatible with having originated from the 
 primary vertex -- this suppresses the potential background from cosmic muons 
-and muons produced at a pileup vertex. The effective area pileup correction is 
-applied. The relative isolation quantity is required to be \reliso~$ < 0.15$. 
+and muons produced at a pileup vertex. 
+%The effective area pileup correction is applied. 
+The relative isolation quantity is required to be \reliso~$ < 0.15$. 
 %\textbf{The mini-isolation algorithm is not employed in the control regions 
 %\textbf{because of [fixme] QCD and trigger efficiency???}}
 % also suppress muons from decays in flight (from heavy quarks)
@@ -295,8 +302,8 @@ electromagnetic shower. The shape of the shower as measured by the distribution
 of energy deposits in the ECAL crystals is used as a further discriminator. 
 %\textbf{todo: What is sigmaietaieta!!}
 The photon identification efficiency following these requirements is 
-$\sim$71\%. The effects of pileup are mitigated using the effective area 
-corrections.
+$\sim$71\%. 
+%The effects of pileup are mitigated using the effective area corrections.
 %Photons are identified using the following quality criteria, with an 
 %efficiency of $\sim 71$\%.
 %separate for barrel and endcap
@@ -314,7 +321,6 @@ to veto such events.
 % https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedPhotonIdentificationRun2
 % cuts on H/E, sigmaietaieta, CH/NH/pho isolation, electron safe conversion veto
 \subsection*{Electrons}
-
 %% page 27 etc https://arxiv.org/pdf/1502.02701.pdf  
 %%https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2
 % paper: Several strategies are used in CMS to identify prompt isolated 
@@ -334,20 +340,19 @@ effective at %rejecting
 avoiding spurious electrons (such as jets misidentified as 
 electrons) and electrons produced from photon conversions. % and electrons from 
 %semi-leptonic decays of heavy quarks.
-Effective area pileup corrections and a mini-isolation requirement of 
-\miniiso~$<0.1$ are applied.
+%Effective area pileup corrections and a
+A mini-isolation requirement of \miniiso~$<0.1$ is applied.
 
 Events in the signal region are vetoed if they contain 
 electrons with $\pt>10$~GeV and $\etaabs<2.4$.
 %pt 10 eta 2.5
 
 \subsection*{Isolated tracks}
-
 Events containing isolated tracks are vetoed in the signal and control regions 
 as discussed in Sec.~\ref{sec:analysis-eventselection}. An isolated track is 
 defined to be a 
-charged PF candidate that originates from the primary vertex and has a relative 
-isolation (computed with respect to other charged PF candidates within a cone 
+charged PF particle that originates from the primary vertex and has a relative 
+isolation (computed with respect to other charged particles within a cone 
 of size \DR$=0.3$) of \reliso~$ < 0.1$.
 %\textbf{[todo: How many hits in tracker?]}
 
@@ -356,21 +361,27 @@ an isolated track with $\pt>10$~GeV and $\etaabs<2.4$.
 %pt 10, eta 2.4  (eta is basically extent of tracker)
 
 \subsection*{Energy sums}
+The missing energy and jet energy sums are defined in 
+Sec.~\ref{sec:detector-energysums}. 
+The \scalht and \MHT variables are computed using all jets in the event 
+satisfying \pt~$>40$~GeV and \etaabs~$<2.4$.
+The missing transverse energy \met is used in the definition of the \mt and 
+\mhtmet variables as described in 
+Secs.~\ref{sec:analysis-eventselection}~and~\ref{sec:analysis-qcdrejection}.
 
-The \scalht and \MHT variables are defined, respectively, as the scalar sum and 
-the magnitude of the negative vector sum of the transverse energy of all jets 
-in the event satisfying \pt~$>40$~GeV and \etaabs~$<2.4$.
+%The \scalht and \MHT variables are defined, respectively, as the scalar sum 
+%and the magnitude of the negative vector sum of the transverse energy of all 
+%jets in the event satisfying \pt~$>40$~GeV and \etaabs~$<2.4$.
 % are they defined with pt or et of jets?
 % Quick definition of HT, MHT, MET (eg scalar sum of jet energies), already 
 %have more mathematical definition in detector chapter.
 % HT and MHT computed using jets as described above.
 
-The missing transverse energy \met is computed as the magnitude of the negative 
-vector sum of the transverse energy of all PF candidates in the event. 
-The jet energy corrections described in Sec.X are propagated as a correction to 
-the \met value [FIXME]. This variable is used in the definition of the \mt and 
-\mhtmet variables as described in 
-Secs.~\ref{sec:analysis-eventselection}~and~\ref{sec:analysis-qcdrejection}.
+%The missing transverse energy \met is computed as the magnitude of the 
+%negative vector sum of the transverse energy of all PF particles in the event. 
+%This variable is used in the definition of the \mt and \mhtmet variables as 
+%described in 
+%Secs.~\ref{sec:analysis-eventselection}~and~\ref{sec:analysis-qcdrejection}.
 %type 1 corrections
 % any pt requirement on PF cands?
 
@@ -420,8 +431,21 @@ parameter space, while simultaneously maintaining a reasonable trigger rate and
 efficiency. The trigger strategy will be discussed further in 
 Sec.~\ref{sec:analysis-trigger}.
 
-%[TODO] Primary vertex selection? MC and AE have it in MET filter section. See 
+%Primary vertex selection? MC and AE have it in MET filter section. See 
 %vertex skimmer in heppy - "good vertex".
+% Dunne: events are required to have a real vertex, which has ndof > 4 and a 
+%maximum displacement in the z-direction (xy-plane) direction from the centre 
+%of the detector of 24 cm (2 cm).
+%• a minimum number of degrees of freedom: ndof > 4
+%• the collision to occur with |z| < 24 cm such that the primary vertex is near 
+%the interaction point in the longitudinal direction
+%• the collision to occur within a radial distance of |dxy| < 2 cm from the 
+%beamline
+At least one good quality vertex is required to be reconstructed in the event. 
+This is defined by a vertex with a minimum number of associated tracks and with 
+tracks that have a high probability of belonging to that vertex. The vertex is 
+also required to be within a longitudinal and radial distance from the centre 
+of the detector of 24~cm and 2~cm, respectively.
 
 %MET filters (bullet list).
 Missing energy is not only caused by undetectable or misreconstructed particles 
@@ -775,7 +799,7 @@ First it is instructive to consider the \dphimin variable, which is the minimum
 jet and the missing transverse jet energy vector:
 \begin{equation}
 \Delta\phi_{\mathrm{min}} = \mathrm{min}~\Delta\phi\left(\bm{p}_{\mathrm 
-T}^{j_i},\bm{\cancel{H}_\mathrm{T}}\right).
+T}^{j_i},\bm{\cancel{H}}_\mathrm{T}\right).
 \end{equation}
 If a jet's energy in the final state is under-measured, the missing energy 
 vector is collinear with the jet direction, and so \dphimin is zero, whereas 
@@ -1578,11 +1602,15 @@ When using lepton reference triggers to measure efficiencies, one must account
 for differences in the treatment of leptons in the L1T, the HLT, and offline. 
 As muons deposit a negligible amount of energy in the calorimeters, they are 
 not reconstructed as jets in the L1T and HLT prefilter, whereas electrons are. 
-Offline, both electrons and muons are initially reconstructed as jets by the 
-Particle Flow
-algorithm which clusters all PF candidates. These `fake' jets are then removed 
-from the event if they are close to an isolated lepton, in a process known as 
-\textit{cross-cleaning}. At the HLT, which also utilises PF reconstruction, 
+%Offline, both electrons and muons are initially reconstructed as jets by the 
+%Particle Flow
+%algorithm which clusters all PF particles. These `fake' jets are then removed 
+%from the event if they are close to an isolated lepton, in a process known as 
+%\textit{cross-cleaning}. 
+Offline, both electrons and muons are initially reconstructed as Particle Flow 
+jets, but these `fake' jets are then removed from the event 
+by the cross-cleaning procedure described in Sec.~\ref{sec:detector-jets}.
+At the HLT, which also utilises PF reconstruction, 
 cross-cleaning of muons is only employed by the \met-\mht triggers.
 % but not for the \scalht and \scalht-\alphat triggers. 
 Cross-cleaning of electrons is not performed for any of the HL triggers.
@@ -1859,7 +1887,8 @@ distribution is also shown.}
 %TODO. Jet energy response/scale. 
 The energies of jets are corrected as described in 
 Sec.~\ref{sec:detector-jecs}. 
-In this case, this does not involve a reweighting of the simulated events.
+In this case, the corrections are applied on a jet-by-jet basis and so this 
+does not involve a reweighting of the simulated events.
 
 \subsection{b-tagging}
 \label{sec:analysis-mccorrections-btagging}

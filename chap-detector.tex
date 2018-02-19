@@ -465,84 +465,465 @@ MC corrections (JECs, PU, btagging, lepton ID, etc.).
 Mention objects/working points used in analysis as you go along. Maybe summary 
 table like Matt. Actually maybe include this in analysis chapter (see Adam).
 \end{comment}
-TODO need to put together the things observed in the detector to reconstruct 
-the objects.
+%need to put together the things observed in the detector to reconstruct the 
+%objects.
+The hits and energy deposits in the CMS subdetectors need to be combined in 
+order to reconstruct and identify all physics objects in an event such as 
+electrons, muons, photons, hadrons, jets and missing energy. The event content 
+can then be analysed further for the purpose of, for example, a search for BSM 
+physics, as will be discussed in Chap.~\ref{chap:analysis}. The various 
+reconstruction and identification algorithms are described in this section.
+
+\subsection{Particle flow algorithm}
+%Need to decide where to put this. Not clear on the connection between object 
+%reconstruction and particle flow.
+%Resources: Particle Flow paper, Particle Flow summary.
+Electrons, photons, muons, charged hadrons and neutral hadrons are all 
+reconstructed by the Particle Flow (PF) algorithm by combining information from 
+all subdetectors~\cite{particleflow17}. 
+
+First, tracks in the inner tracker and 
+in the muon system are reconstructed, and energy deposits in the calorimeter 
+cells are grouped into clusters. Muons are identified by matching tracks in the 
+inner tracker and in the muon system. 
+%These are removed for subsequent steps.
+Electrons are then identified by matching inner tracks with compatible energy 
+clusters in the ECAL. Charged hadrons are similarly identified through the 
+matching of tracks with HCAL clusters.
+%AE: Electrons and hadrons are typically differentiated based on the proportion
+%of energy they deposit in the ECAL or HCAL
+Finally, photons are identified by energy deposits in the ECAL that are not 
+matched to any tracks, and neutral hadrons are similarly identified by 
+unmatched HCAL clusters.
+
+More details on the reconstruction of each of these objects are provided in the 
+following sections. These \textit{PF candidates} then form the basis for the 
+reconstruction of jets and missing energy.
+
+%maybe make tracks, electronsandphotons, muons subsubsections.
 
 \subsection{Tracks and vertices}
+
+% TODO maybe shorten this section given all other object reco sections are 
+%quite short
+
 %Combinatorial track finder (CTF), Kalman filter.
 %Primary vertex. PU vertices. Secondary/displaced vertices (b quarks) found in 
 %subsequent levels of reconstruction.
 %Efficiencies.
 %Isolated tracks? (when talking about analysis objects).
+The trajectories of charged particles in the tracker are reconstructed using 
+the Combinatorial Track Finder (CTF) algorithm~\cite{track-vertex}. 
+A similar procedure is followed to reconstruct tracks in the muon system.
+The algorithm starts by forming initial track candidates, or \textit{seeds}, 
+based on 
+combinations of two or three hits in the inner layers of the tracker. A seed 
+defines an initial estimate of a particle's helical trajectory and is required 
+to be compatible with originating from the collision region. Using a Kalman 
+filter, compatible hits from successive tracker layers are added to the track 
+and the trajectory parameters are updated at each layer. Another Kalman filter 
+is then used to fit the final sequence of hits and smooth the estimated 
+trajectory. 
+%to account for a potential in the beam spot constraint imposed on the seeds
+Finally, various quality criteria are imposed on the reconstructed 
+tracks, such as a minimum on the number of layers that have hits and the 
+$\chi^2$ value of the fit, to discard fake and duplicate tracks. The whole 
+process is repeated six times, with the hits associated with reconstructed 
+tracks removed in subsequent iterations. The track finding efficiency of the 
+CFT algorithm is approximately 95\% for pions with $\pt>100$~GeV travelling 
+through the barrel region, and almost 100\% for muons.
+%As muons do not undergo nuclear interactions with the tracking detector, they 
+%are reconstructed with near full efficiency across the entire tracking 
+%detector.
+
+% two tracks are duplicate if share >19 percent of hits
+
+% Kalman filter accounts for uncertainties such as due to energy loss (brems) 
+%or multiple scattering
+
+%This algorithm follows an iterative tracking process in which a collection of 
+%tracks is built up over six iterations of the reconstruction procedure.
+% first iteration will find easy tracks such as high pt and close to 
+%interaction point, further iterations find harder tracks such as low pt and 
+%far from beam spot
+
+The reconstructed tracks are then clustered to identify the locations of the 
+various proton-proton interactions, known as interaction 
+vertices~\cite{track-vertex}. This is done using a deterministic annealing 
+algorithm. For a given cluster of tracks, the position of the associated vertex 
+is then estimated by means of an adaptive vertex fitter.
+% DA: see description on page 46 of vertex and tracking paper
+The location of the \textit{hard scatter}, referred to as the \textit{primary 
+vertex}, is defined by the vertex with the largest sum of the squared 
+transverse momenta of the associated tracks. The other vertices are attributed 
+to pileup. Secondary vertices from the decays of long-lived particles such as 
+b-hadrons may be identified in further reconstruction steps.
+%hard scatter: “Hard” means large momentum transfereither a violent scatter or 
+%creation of a system of large mass
+
+%The efficiency increases to close to 99.9% for events with ≥ 3 tracks. The 
+%%vertex resolution reaches ∼10 μm in x, y and ∼15 μm in z with > 40 
+%%reconstructed tracks.
+
+\subsection{Muons}
+%Global and tracker muons.
+%%% AN-2008/097 
+%%% https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookMuonAnalysis
+Two different approaches are followed to reconstruct muons. The first is an 
+outside-in algorithm that begins with a track in the muon system and attempts 
+to match it with a compatible track in the inner tracker. If a match is found, 
+a fit to the hits in both detectors is performed using a Kalman filter to 
+determine the muon's trajectory. Muons that are reconstructed in this way are 
+called \textit{global muons}. The second approach is an inside-out algorithm 
+that begins with a track in the tracker and extrapolates it and attempts to 
+find at least one compatible hit in the muon system. These tracks are referred 
+to as \textit{tracker muons}.
+%The second approach considers all tracker tracks to be potential muons and
+%extrapolates those tracks to the calorimeters and the muon system; if at least
+%one muon segment corresponds to the extrapol
+
+The tracker muon algorithm is particularly useful for reconstructing muons with 
+low transverse momentum ($\pt \lesssim 5$~GeV) as these often do not leave 
+enough hits in the muon system to be reconstructed as muon tracks. The global 
+muon algorithm, on the other hand, provides an improved momentum resolution 
+for high \pt muons as hits over a larger range are employed and the full 
+bending power of the CMS magnetic field is taken advantage of.
 
 \subsection{Electrons and photons}
 %\subsubsection{Tag and probe/corrections}
+%build clusters (narrow in eta, wide in phi because of brem/conversion)
+%gsf tracking for electrons because of brem
+%match clusters with tracks, no track for pho
+Interactions with the tracker material cause electrons to lose energy via 
+bremsstrahlung radiation and photons to convert into electron-positron pairs. 
+This leads to electromagnetic showers in the ECAL that tend to be spread out 
+(in the case of electrons, the energy deposits are narrow in $\eta$ and wide in 
+$\phi$). The energy deposits in the ECAL crystals that are within a certain 
+window in $\eta$ and $\phi$ of a local maximum seed crystal are aggregated to 
+form \textit{superclusters}. 
+% see diagram in Citron
+Instead of using a Kalman filter, the electron trajectories in the tracker are 
+reconstructed using a Gaussian Sum Filter (GSF) algorithm, which is able to 
+account for large energy losses due to bremsstrahlung radiation~\cite{gsf}. 
+Electrons are then identified by an ECAL supercluster that is compatible with a 
+GSF track, whereas photons are identified via unmatched superclusters.
 
-\subsection{Muons}
+%http://www-library.desy.de/preparch/desy/proc/proc10-04/P16.pdf
 
-Global and tracker muons.
+%https://en.wikipedia.org/wiki/Bremsstrahlung
+%https://en.wikipedia.org/wiki/Synchrotron_radiation
+%https://en.wikipedia.org/wiki/Pair_production
 
-Define relative and mini-isolation.
-Define pileup subtraction - effective rho area, delta beta?
-(have a dedicate section like adam)
+%% electrons lose on average 33% of energy before reaching ECAL
+%% around 50% of photon convert before reaching ECAL
 
-% page 27 https://arxiv.org/pdf/1502.02702.pdf
-rho*Aeff, where rho is the median of the transverse energy density per unit 
-area in 
-the event [26] and Aeff is the area of the isolation region weighted by a 
-factor that takes into account the dependence of the pileup transverse energy 
-density on pseudorapidity. The effective areas have been determined in gamma + 
-jet events.
+%in barrel: find local 5x1 maximum, then cluster with other 5x1 dominoes 
+%looking in a phi window of pm17 crystals.
 
-\subsection{Particle flow algorithm}
-Need to decide where to put this. Not clear on the connection between object 
-reconstruction and particle flow.
-Resources: Particle Flow paper, Particle Flow summary.
+%These reconstructed superclusters are used in the reconstruction of all
+%electrons and photons in the event
 
-The tracks are extrapolated through the calorimeters, if they fall within the 
-boundaries of one or several clusters, the clusters are associated to the 
-track. The set of track and cluster(s) constitute a charged hadron and the 
-building bricks are not considered anymore in the rest of the algorithm. The 
-muons are identified beforehand so that their track does not give rise to a 
-charged hadron. The electrons are more difficult to deal with. Indeed, due to 
-the frequent Bremsstrahlung photon emission, a specific track reconstruction [3]
-is needed as well as a dedicated treatment to properly attach the photon 
-clusters to the electron and avoid energy double counting. Once all the tracks 
-are treated, the remaining clusters result in photons in case of the 
-electromagnetic calorimeter (ECAL) and neutral hadrons in the hadron 
-calorimeter (HCAL). Once all the deposits
+%photons is measured best using the energy contained in a 5 × 5 crystal matrix 
+%around the seed crystal, corrected for the lateral leakage correction f(η) and 
+%for module border effects
+
+%bremsstrahlung, which has a non-Gaussian loss distribution.
+%As the Kalman filter that is used in track reconstruction assumes Gaussian 
+%%%energy losses, another specialist track reconstruction for electrons is 
+%%employed
+
+%Hits in both the first and second layers compatible with a supercluster are 
+%%%then used as seeds for dedicated electron track reconstruction, performed 
+%%%%using a Gaussian sum filter (GSF) algorithm [80], which performs better 
+%%%%than a 
+%%%%%Kalman Filter for tracks with significant energy loss.
 
 \subsection{Jets}
+\label{sec:detector-jets}
+%Briefly describe what a jet is (hadronisation, tight cone of particles [MA]).
+%antikt algorithm. Infrared and collinear safe.
+%Inputs are PF candidates. Pileup subtraction (not just here but for all 
+%objects).
 
-Briefly describe what a jet is (hadronisation, tight cone of particles [MA]).
-antikt algorithm. Infrared and collinear safe.
-Inputs are PF candidates. Pileup subtraction (not just here but for all 
-objects).
+% if you need refresher in understanding algorithm, see sandro p100
 
-\subsubsection{Correcting the energy of jets}
+%references: towards jetography
+% antikt: http://iopscience.iop.org/article/10.1088/1126-6708/2008/04/063/pdf
+
+% see example of infrared and collinear unsafety
+% https://arxiv.org/pdf/hep-ex/0005012.pdf
+
+% in the central region, typically have a fractional composition of: 65% 
+%%charged hadrons, 25% photons and 10% neutral hadrons.
+
+% emission of soft gluon occurs 
+Due to the nature of the strong force, when a quark or gluon is produced it 
+immediately fragments and hadronises, leading to a collimated spray of hadrons 
+known as a \textit{jet}. In this search, jets are reconstructed by clustering 
+Particle Flow particles using the \antikt sequential recombination 
+algorithm~\cite{antikt}. This algorithm is both infrared safe and collinear 
+safe, 
+meaning that the set of reconstructed jets remains unchanged in the case of a 
+soft gluon emission or a splitting of a gluon into two collinear gluons. 
+%jets can undergo soft gluon radiation of arbitrarily low energy gluons with a 
+%high probability.
+
+A sequential recombination algorithm is based on a distance between pairs of 
+particles $d_{ij}$ and between particles and the beamline $d_{iB}$. These are 
+defined for the \antikt algorithm as:
+\begin{equation}
+d_{ij} = \mathrm{min} \left( \frac{1}{\pt_i^2}, \frac{1}{\pt_j^2} \right) 
+\frac{\Delta R_{ij}^2}{R^2}
+\end{equation}
+\begin{equation}
+d_{iB} = \frac{1}{\pt_i^2}
+\end{equation}
+where $\pt_i$ is the transverse momentum of particle $i$, 
+$\Delta R_{ij}=\sqrt{(\eta_i - \eta_j)^2 + (\phi_i - \phi_j)^2}$ is the 
+distance between particles $i$ and $j$ in the {$\eta$-$\phi$} plane, and 
+$R=0.4$ defines the radius of the jet in the {$\eta$-$\phi$} space.
+
+The algorithm begins by computing all distances $d_{ij}$ and $d_{iB}$. If one 
+of the $d_{ij}$ is the smallest distance of all, particles $i$ and $j$ are 
+combined into a new particle (or pseudo-jet) by taking the vector sum of their 
+momenta. 
+If instead one of the $d_{iB}$ is the smallest distance, particle $i$ is 
+classified as a jet and removed from subsequent steps. The process is then 
+repeated (starting again by recomputing all distances) until no particles 
+remain.
+
+%Adam: R = 0.4 is often chosen as it contains the hadronic showers of most 
+%%%quarks and gluons produced in 13 − 14 TeV proton collisions, while remaining 
+%%%%insensitive to contamination from PU.
+% "combining" particles means summing their three-momenta
+
+%For the kT algorithm the exponent is chosen as p = 1, which results in jets 
+%being clustered initially from the softest pseudojets to successively harder 
+%pseudojets. The anti−kT clustering algorithm utilises a negative exponent p = 
+%−1 which has the converse behaviour, clustering first the hardest pseudojets 
+%to %progressively softer pseudojets. A special case with p = 0 is used in the 
+%Cambridge/Aachen algorithm, in which case only the distance information 
+%between %the pseudojets is utilised which is of interest in the clustering of 
+%%boosted %jets. Jet clustering within CMS is primarily performed by the 
+%%%anti−kT 
+%algorithm %due to its greater resilience to pileup and tendency to cluster 
+%%circular jets.
+
+As the jet reconstruction algorithm clusters all PF particles, isolated leptons 
+and photons may be classified as jets. To avoid this, a \textit{cross-cleaning} 
+procedure is performed in which reconstructed jets that are within $\Delta R < 
+0.4$ of an isolated muon, electron or photon (isolation will be defined in 
+Sec.~\ref{sec:detector-isolation}) are excluded from the event.
+
+\subsubsection{Jet energy corrections}
 \label{sec:detector-jecs}
-JECs. JER?
+%JECs. JER? applied to both data and mc
+% https://arxiv.org/pdf/1607.03663.pdf
+% https://arxiv.org/pdf/1107.4277.pdf
+%https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetEnergyScale#Documents_and_Analysis
+%https://twiki.cern.ch/twiki/bin/view/CMS/IntroToJEC
+% see also Dunne 1st year report
+The energies of reconstructed jets typically differ from the true energy of the 
+original quark or gluon due to a non-uniform and imperfect resolution of the 
+detector. The measured transverse momentum of a jet 
+$p_{\mathrm{T}}^{\mathrm{raw}}$ is corrected to account for this via a sequence 
+of multiplicative correction factors (the output of each step is the input to 
+the next) according to~\cite{jec}:
+\begin{equation}
+p_{\mathrm{T}}^{\mathrm{corr}} =  p_{\mathrm{T}}^{\mathrm{raw}} 
+C_{\mathrm{offset}} C_{\mathrm{sim}} C_{\mathrm{rel}} C_{\mathrm{abs}} 
+\end{equation}
+%\begin{equation}
+%p_{\mathrm{T}}^{\mathrm{corr}} =  p_{\mathrm{T}}^{\mathrm{raw}} 
+%C_{\mathrm{offset}}(p_{\mathrm{T}}^{\mathrm{raw}}) C_{\mathrm{sim}} 
+%(p_{\mathrm{T}}', \eta) C_{\mathrm{rel}} (\eta) C_{\mathrm{abs}} 
+%(p_{\mathrm{T}}'')
+%\end{equation}
+The first correction is an offset correction $C_{\mathrm{offset}}$ that 
+subtracts the energy contributions from electronics noise and particles 
+originating from pileup vertices. 
+% CHS, rho-area
+% CHS + offset = double counting?
+The second is a correction derived from simulation $C_{\mathrm{sim}}$ and is 
+given by the ratio of reconstructed and generator-level jet \pt. It is derived 
+as a function of \pt and $\eta$. 
+% MC correction removes the bulk of the non-uniformity in η and the 
+%non-linearity in pT
+The third and fourth components are the relative and absolute corrections, 
+$C_{\mathrm{rel}}$ and $C_{\mathrm{abs}}$, that are used to correct for 
+remaining small discrepancies in the jet energies measured in data as a 
+function of $\eta$ and \pt, respectively. 
+% are applied only in data and 
+The overall correction factor (given by the product of the four correction 
+terms) is found to be in the range of 1-1.1 (depending on $\eta$) for jets with 
+transverse momentum $\pt=100$~GeV.
+% vs eta: kinda flat with spikes at eta=2 (transition region)
 
 \subsubsection{b-tagging}
 \label{sec:detector-btagging}
-Identification of jets originating from bottom quarks.
+%Identification of jets originating from bottom quarks.
+%see btagging CMSDAS Introduction.pdf
+%eg slide 11 how eff varies with pt and eta, ROC curves, etc.
+%put a plot.
 
-see btagging CMSDAS Introduction.pdf
-eg slide 11 how eff varies with pt and eta, ROC curves, etc.
+% btagging paper 17...pdf (latest BTV 36fb paper)
+%https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookBTagging
+%https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideCMSDataAnalysisSchoolBTaggingExercise
 
-\subsection{Energy sums and missing energy}
+% sec 4.3 describes briefly secondary vertex reconstruction algos (IVF)
+%https://arxiv.org/pdf/1712.07158.pdf
 
-Define HT, MHT and MET. At some point (maybe near the beginning) explain why we 
-use  the transverse plane (initial momentum is zero, whereas it isn't in the 
-longitudinal plane).
+%specifically a feed-forward multilayer perceptron with one hidden layer
 
-Neutrinos do not interact in particle detectors, and therefore escape 
-undetected. Their presence can be inferred by the momentum imbalance of the 
-visible particles in an event. (this should be mentioned in overview of 
-analysis in intro chapter).
+%Adam: In a wide range of SUSY models the decay via top quarks is favoured over 
+%%%other, lighter quarks
+% also DM+tt/bb
+% also ttbar background
+A number of BSM models include the associated production of, or decays to, top 
+and bottom quarks. It is therefore advantageous to able to identify jets that 
+originate from a bottom quark, a process known as \textit{b-tagging}.
 
-Type-1 corrections.
+%long lifetime: τ≈1.5 ps, cτ≈450 μm, γβcτ≈1.8 mm @ 20 GeV
+%large mass: ~5 GeV
+%high track multiplicity: ~4–5
+%tau=1.5ps travel betagammactau 1.8mm
+% c lifetiem: 1 ps
+Hadrons containing bottom quarks have a lifetime of about 1.5~ps, and therefore 
+travel a few millimetres before decaying. This can be observed experimentally 
+as a jet containing several tracks that originate from a \textit{secondary 
+vertex} that is displaced from the primary vertex.
 
+% impact parameter, which is defined as the distance between the primary vertex 
+%and the tracks at their points of closest approach
+% example variables: SV 2D flight distance, SV mas, number of SVs, 3D IP of 
+%first four tracks, track pt, distances between tracks and jet axis
+% CSV doesn't need there to be a SV (have other variables)
+The Combined Secondary Vertex (CSV) algorithm is employed to perform 
+b-tagging~\cite{btagging}. It consists of an artificial neural network taking a 
+number of input variables related to the secondary vertex (such as the 
+displacement and invariant mass) and the displaced tracks (such as the impact 
+parameters). The output discriminator of the neural network is a value between 
+0 and 1 which can be thought of as the probability that the given jet 
+originates from a bottom quark. Figure~\ref{fig:btagcsv} demonstrates the 
+ability of the algorithm to discriminate between jets originating from b quarks 
+and jets originating from gluons or u, d, s or c quarks. A threshold for the 
+discriminator value may be chosen according to the desired b-tagging efficiency 
+and fake rate.
+% at least two tracks per jet required
+% if two tracks compatible with K-short meson reject (lifetime ~10 ps)
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{figs/detector/btagcsv}
+\end{center}
+\caption{Distribution of the discriminator value of the CSV b-tagging algorithm 
+for jets of different flavours in simulated \ttbar events~\cite{btagging}. Jets 
+without at least two tracks are assigned a default value of -1 and are included 
+in the first bin, which contains the underflow entries.}
+\label{fig:btagcsv}
+\end{figure}
+
+\subsection{Isolation}%, pileup subtraction and jet cross-cleaning}
+\label{sec:detector-isolation}
+%Define relative and mini-isolation.
+%Define pileup subtraction - effective rho area, delta beta?
+% CAREFUL: OVERLAP WITH phys obj SECTION IN ANALYSIS CHAPTER?
+It is often important to identify \textit{prompt} leptons and photons, which 
+are produced at the primary interaction vertex, as opposed to non-prompt 
+particles that are the products of in-flight decays within jets. 
+% basically whether from hard scatter process or decay of random hadron in jet
+This is 
+accomplished by measuring the \textit{isolation}, which is a measure of the 
+activity around a particle. The isolation of a particle is defined as the ratio 
+of the total transverse momentum of other particles within a certain distance 
+$\Delta R$, and the transverse momentum of the particle itself. A particle is 
+considered to be isolated if its isolation value is below a certain threshold.
+
+In this search, two types of isolation are utilised, which differ in the size 
+of the isolation cone $\Delta R$. One is referred to as \textit{relative 
+isolation} \reliso, in which a fixed cone size of $\Delta R = 0.3$ is used. The 
+other is \textit{mini-isolation} \miniiso, in which the cone size depends on 
+the momentum of the particle, varying from $\Delta R = 0.2$ for $\pt < 50$~GeV 
+to $\Delta R = 0.05$ for $\pt > 200$~GeV. This improves the efficiency of 
+identifying energetic leptons from the decays of highly boosted particles such 
+as top quarks. 
+% and W bosons? if W and "+jets" are close
+% but higher fake rate (remember we saw more qcd)
+
+The total energy contained within the isolation cone (the numerator of the 
+isolation variable) must be corrected to account for pileup, which would 
+otherwise falsely increase the isolation value and lead to a loss in 
+identification efficiency. This is done by ignoring charged particles that 
+don't originate from the primary vertex, and subtracting the neutral pileup 
+contribution, which is estimated as $\rho \Delta R$, where $\rho$ is the energy 
+density of all neutral particles measured across the entire detector.
+%charged hadrons identified as originating from the primary vertex, neutral 
+%hadrons, and photons.
+
+% page 27 https://arxiv.org/pdf/1502.02702.pdf
+%rho*Aeff, where rho is the median of the transverse energy density per unit 
+%area in the event [26] and Aeff is the area of the isolation region weighted 
+%by a factor that takes into account the dependence of the pileup transverse 
+%energy density on pseudorapidity. The effective areas have been determined in 
+%gamma + jet events.
+
+%baber p84-85
+%run1: median(pt/A) of all kt jets (which cluster all soft stuff) 
+%https://arxiv.org/pdf/0707.1378.pdf
+%run2: median energy density of PF candidates within grid of cells with length 
+%0.55
+%rho subtraction: shouldn't subtract charged pileup particles? - i guess just 
+%sum up energies of neutral particles - yes (see Baber and Citron)
+
+\subsection{Energy sums}
+\label{sec:detector-energysums}
+%CAREFUL: OVERLAP WITH ENERGY SUMS SECTION IN ANALYSIS CHAPTER?
+%Define HT, MHT and MET. At some point (maybe near the beginning) explain why 
+%we use  the transverse plane (initial momentum is zero, whereas it isn't in 
+%the longitudinal plane).
+%Neutrinos do not interact in particle detectors, and therefore escape 
+%undetected. Their presence can be inferred by the momentum imbalance of the 
+%visible particles in an event.
+The production of massive supersymmetric 
+particles results in a large transfer of energy to final state particles. 
+In addition, weakly interacting particles such as the LSP cannot be detected 
+directly, but their presence can be inferred by the transverse momentum 
+imbalance of the observed particles. The total energy and missing energy in an 
+event are therefore useful variables in characterising BSM processes. 
+
+A measure of the transverse momentum of the invisible system in an event is 
+provided by the negative vector sum of the transverse momenta of all Particle 
+Flow particles in the event, known as the \textit{missing transverse momentum} 
+or \textit{missing transverse energy}:
+\begin{equation}
+\bm{\cancel{E}}_\mathrm{T} = - \sum_{\mathrm{particles}} \bm{p}_\mathrm{T} \, .
+\end{equation}
+%Type-1 corrections.
+% see MA for type-0 (pileup)
+%METcorr = MET + Sum(jet pt) - Sum(jet pt corr)
+%basically remove original jet pt (which is equal to sum of constituents pt) 
+%%%and include corrected jet pt
+% or in other words, you can scale all constituents pt by same jet energy 
+%correction
+%The jet energy corrections described in Sec.X are propagated as a correction 
+%to the \met value 
+This is calculated after the application of the jet energy corrections 
+described in Sec.~\ref{sec:detector-jecs}.
+
+%Adam: energy sums that take only jets as input,
+%which are typically better understood and calibrated than each unclustered PF 
+%%%candidate.
+%To gain a measure of the scale of hadronic energy in an event, the HT variable
+A similar quantity that is based only on the jets in the event can be defined 
+as:
+\begin{equation}
+\bm{\cancel{H}}_\mathrm{T} = - \sum_{\mathrm{jets}} \bm{p}_\mathrm{T} \, .
+\end{equation}
+The scale of hadronic energy in an event is measured by the scalar sum of the 
+jets' transverse momenta:
+\begin{equation}
+\scalht = \sum_{\mathrm{jets}} |\bm{p}_\mathrm{T}| \, .
+\end{equation}
 
 \section{Simulation}
 \label{sec:detector-simulation}
