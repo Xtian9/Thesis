@@ -24,7 +24,8 @@ sections of long-lived SUSY models.
 \section{Characterisation of long-lived gluino models}
 
 The expected binned event yields for six representative simplified models of 
-Split SUSY are shown in Fig.~\ref{fig:T1qqqqLL_MR}, along with the expected 
+split supersymmetry are shown in Fig.~\ref{fig:T1qqqqLL_MR}, along with the 
+expected 
 standard model background (as determined using the method described in 
 Sec.~\ref{sec:results-results}). An aggregated version of the nominal binning 
 scheme (Sec.~\ref{sec:analysis-binning}) is used for ease of presentation. The 
@@ -100,7 +101,7 @@ GeV)]{\includegraphics[width=0.49\textwidth]{figs/results/SMS-T1qqqqLL_ctau_1000
 \subfloat[(100000 mm, 1000 GeV, 
 900 
 GeV)]{\includegraphics[width=0.49\textwidth]{figs/results/SMS-T1qqqqLL_ctau_100000_mGluino-1000_mLSP-900_25ns_all_full-fit-sig}}\\
-\caption{Expected signal events for Split SUSY simplified models with a range 
+\caption{Expected signal events for split SUSY simplified models with a range 
 of values of ($\ctau$, $\mglu$, $\mlsp$), overlaid on the expected standard 
 model background counts, using an aggregated binning scheme.}
 \label{fig:T1qqqqLL_MR}
@@ -626,9 +627,9 @@ $\mu_s^{95\%}$.
 %chapter), don't call it t1qqqqll
 %set limits in mass plane for various ctau - for each mass calculate mu limit, 
 %then exclusion contours are where mu=1.
-Simplified models of Split SUSY are simulated with a range of gluino and LSP 
-masses for various gluino lifetimes from $1~\micro\metre$ to 100~m, in addition 
-to a 
+Simplified models of split SUSY are simulated with a range of gluino and LSP 
+masses for various gluino lifetimes from $\ctau = 1~\micro\metre$ to 100~m, in 
+addition to a 
 promptly decaying and metastable gluino. An upper limit on the signal strength 
 (and cross section) of each model is computed. These limits are presented in 
 the ($\mglu$, $\mlsp$) plane for each simulated value of $\ctau$ in 
@@ -638,8 +639,10 @@ strength of $\mu_s^{95\%} < 1$.
 Both the expected and observed excluded regions are shown, with experimental 
 uncertainties and uncertainties on the theoretical cross sections indicated. 
 The excluded mass regions for each value of $\ctau$ are summarised in 
-Fig.~\ref{fig:limits-summary}.
+Fig.~\ref{fig:limits-summary}. 
 %summarise highest excluded mass in table?
+Finally, the limits in the {$\mglu$-$\ctau$} plane, for fixed $\mlsp=100$~GeV 
+and for $\mglu - \mlsp = 100$~GeV, are shown in Fig.~\ref{fig:limits-vsctau}
 
 %all 11 individual limit plots.
 %shown with 1 and 2 sigma experimental uncertainties on expected, and 
@@ -676,7 +679,7 @@ sensitivity is independent of the LSP mass.
 The observed exclusion regions are found to be $\sim$1-2$\sigma$ weaker than 
 the expected ones for most of the models considered. This difference is due to 
 slight upward fluctuations in the observed events across several categories in 
-the signal region.
+the signal region that signal events are expected to occupy.
 %in particular in the $\nb \ge 1$ categories. 
 %\textbf{This suggests we are close to confirming the existence of 
 %%%supersymmetry. In particular, it seems that SUSY exists in a superposition 
@@ -687,7 +690,7 @@ the signal region.
 %don't simulate interactions, but the effect has been checked for couple of 
 %pball models - negligible except for large lifetimes when get muons and 
 %isolated tracks and limits degrade by only 50-100 GeV.
-As mentioned in Sec.~\ref{sec:analysis-samples-mc}, the results for the Split 
+As mentioned in Sec.~\ref{sec:analysis-samples-mc}, the results for the split 
 SUSY models have been obtained assuming no interactions of the R-hadrons with 
 the detector material. Nevertheless, the effect of matter interactions has been 
 checked. A 
@@ -717,15 +720,28 @@ due to the inclusive nature of the search, with low thresholds on kinematic
 variables such as \scalht and \njet, and an acceptance to jets from ISR.
 % also partly b-tagging
 In particular, this search provides coverage that is complementary to dedicated 
-searches at the LHC for models with $\ctau \lesssim 1$~cm or a metastable 
-gluino, as well as models with a very compressed mass spectrum.
+searches at the LHC (mentioned in Sec.~\ref{sec:theory-status}) for models with 
+$\ctau \lesssim 1$~cm ($\tau \lesssim 10$~ps). This is because dedicated 
+techniques require a minimum decay length. 
+%%%or a metastable gluino, % this is true for stopped search or non-interacting 
+%LLP, but there's hscp...
+%%%as well as models with a very compressed mass spectrum.
+It is also complementary for models with a very compressed mass spectrum and a 
+decay length within the scale of the detector, as in this case dedicated 
+techniques require a sufficiently large mass difference such that the decay 
+products can be reconstructed.
 %This is beacause dedicated searches need a minimum decay length;
 % if lifetime too long then doesn't decay inside detector or within lhc run
 % if compressed can't see decay products
-This is because dedicated techniques require a minimum decay length and a decay 
-that occurs within the detector and within the time frame of an LHC run, as 
-well as a sufficiently large mass difference such that the decay products can 
-be reconstructed.
+%This is because dedicated techniques require a minimum decay length and a 
+%decay that occurs within the detector and within the time frame of an LHC run, 
+%as well as a sufficiently large mass difference such that the decay products 
+%can be reconstructed.
+
+%%% for you reference: rob 170918_LL_IC_CMS slide 14 cartoon summary limit plot
+
+% note that dedicated searches don't show compressed (smallest is deltam 100 in 
+%atlas disp verts)
 
 \clearpage
 \begin{figure}[!t]
@@ -736,7 +752,7 @@ be reconstructed.
 \includegraphics[width=0.49\textwidth]{figs/results/T1qqqqLL0p1XSEC}
 \caption{Observed upper limit in cross section at 95\% confidence level 
 (indicated by the colour scale) as a function of the \gluino~and 
-\neutralino~masses for the Split SUSY simplified models. Each subfigure 
+\neutralino~masses for the split SUSY simplified models. Each subfigure 
 represents a different gluino lifetime. The thick (thin) black line indicates 
 the observed excluded region assuming the nominal ($\pm1\sigma$ in theoretical 
 cross section uncertainty) production cross section. The red dashed (dashed and 
@@ -752,7 +768,7 @@ uncertainty) expected excluded region.}
 \includegraphics[width=0.49\textwidth]{figs/results/T1qqqqLL1000XSEC}
 \caption{Observed upper limit in cross section at 95\% confidence level 
 (indicated by the colour scale) as a function of the \gluino~and 
-\neutralino~masses for the Split SUSY simplified models. Each subfigure 
+\neutralino~masses for the split SUSY simplified models. Each subfigure 
 represents a different gluino lifetime. The thick (thin) black line indicates 
 the observed excluded region assuming the nominal ($\pm1\sigma$ in theoretical 
 cross section uncertainty) production cross section. The red dashed (dashed and 
@@ -767,7 +783,7 @@ uncertainty) expected excluded region.}
 \includegraphics[width=0.49\textwidth]{figs/results/T1qqqqLLStableXSEC}
 \caption{Observed upper limit in cross section at 95\% confidence level 
 (indicated by the colour scale) as a function of the \gluino~and 
-\neutralino~masses for the Split SUSY simplified models. Each subfigure 
+\neutralino~masses for the slit SUSY simplified models. Each subfigure 
 represents a different gluino lifetime. The thick (thin) black line indicates 
 the observed excluded region assuming the nominal ($\pm1\sigma$ in theoretical 
 cross section uncertainty) production cross section. The red dashed (dashed and 
@@ -780,11 +796,19 @@ uncertainty) expected excluded region.}
 \includegraphics[width=0.8\textwidth]{figs/results/T1qqqqLLSummary}
 \caption{Summary of observed and expected excluded regions at 95\% confidence 
 level as a function of the \gluino~and \neutralino~masses for various gluino 
-lifetimes for the Split SUSY simplified models.}
+lifetimes for the split SUSY simplified models.}
 %\textbf{maybe just observed contours}}
 \label{fig:limits-summary} 
 \end{figure}
 
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{figs/results/limits_ra1}
+\caption{Observed and expected lower limit at 95\% confidence level on $\mglu$ 
+as a function of the gluino's lifetime for fixed $\mlsp=100$~GeV and for $\mglu 
+- \mlsp = 100$~GeV. The cases of a prompt and metastable gluino are also 
+indicated.}
+\label{fig:limits-vsctau}
+\end{figure}
 \begin{comment}
 Chapter 5 – Results and interpretations (30%)
 statistics section:
