@@ -13,8 +13,8 @@ The LHC at CERN is a circular accelerator and collider of protons (and lead
 ions). It is 27~kilometres in circumference, and is situated on the border 
 between France and Switzerland near Geneva, approximately 100~metres 
 underground. It was designed to investigate the standard model and search for 
-new physics. The Higgs boson was successfully discovered at the LHC in 
-2012~\cite{higgs-cms,higgs-atlas}.
+new physics. %The Higgs boson was successfully discovered at the LHC in 
+%2012~\cite{higgs-cms,higgs-atlas}.
 
 \begin{figure}
 \centering
@@ -860,10 +860,19 @@ isolation variable) must be corrected to account for pileup, which would
 otherwise falsely increase the isolation value and lead to a loss in 
 identification efficiency. This is done by ignoring charged particles that 
 don't originate from the primary vertex, and subtracting the neutral pileup 
-contribution, which is estimated as $\rho \Delta R$, where $\rho$ is the energy 
-density of all neutral particles measured across the entire detector.
+contribution, which is estimated as $\rho \Delta R$, where $\rho$ is the 
+average transverse energy density of all neutral particles in the event 
+measured across the entire detector.
+%"density is "per unit area", "area" being in eta-phi space
 %charged hadrons identified as originating from the primary vertex, neutral 
 %hadrons, and photons.
+% SANDRO p93
+% The rho value has units of ET /area: in order to derive an isolation 
+%correction, it must be multiplied times the geometrical area of the isolation 
+%cone but this computation is complicated by the detector geometry. An eective 
+%area Ae f f is defined as the slope of a linear fit of the average isolation 
+%of photon objects versus rho, excluding veto regions. A detailed description 
+%of that method will be provided in Section 3.3.3
 
 % page 27 https://arxiv.org/pdf/1502.02702.pdf
 %rho*Aeff, where rho is the median of the transverse energy density per unit 

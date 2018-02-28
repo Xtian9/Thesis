@@ -42,8 +42,8 @@ in certain standard model processes. Neutrinos (produced in the decays of Z and
 W bosons, for example) are also weakly interacting and undetectable at CMS. It 
 is also possible for particles to be over or under-measured, thereby 
 introducing a ``fake'' momentum imbalance. This type of background arising from 
-energy mismeasurements is suppressed as much as possible (to <1\% of the total 
-background) using dedicated variables. % the variables described in 
+energy mismeasurements is suppressed as much as possible (to $<1\%$ of the 
+total background) using dedicated variables. % the variables described in 
 %Sec.~\ref{sec:analysis-qcdrejection}. 
 The remaining standard 
 model background (that involving neutrinos) must be estimated as precisely as 
@@ -71,8 +71,9 @@ employed in the background estimation.%s as described in
 %inclusiveness
 %The ways in which a WIMP/BSM signature can manifest are numerous
 
-Similar searches for supersymmetry have been performed in Runs 1 and 2 of the 
-LHC, at centre of mass energies of 7, 8 and 13~TeV, and for a range of 
+Similar searches for supersymmetry have previously been performed %in Runs 1 
+%and 2 of the 
+at the LHC, at centre of mass energies of 7, 8 and 13~TeV, and for a range of 
 integrated luminosities. These can be found in 
 Refs.~\cite{alphat1,alphat2,alphat3,alphat4,alphat5}. These 
 searches are used as a basis for the analysis described in this thesis, which 
@@ -1792,8 +1793,8 @@ precision.%~\cite{adam-lots}.
 %\textbf{todo no need to mention pythia hadronisation and geant here?}
 
 The SUSY %and DM 
-simplified models are generated with \textsc{MadGraph5}. For each 
-model, various masses and lifetimes of the relevant particles are generated. 
+simplified models are generated with \textsc{MadGraph5}. A number of samples 
+with varying masses and lifetimes of the relevant particles are generated. 
 This allows for the sensitivity of the search to be explored as a function of 
 these variables.
 The model with a promptly-decaying gluino is simulated via a 
@@ -1808,13 +1809,20 @@ accuracy~\cite{fastsim}.
 The formation of R-hadrons through the hadronisation of gluinos is described by 
 \textsc{pythia8}. The hadronisation process is assumed to yield predominantly 
 meson-like ($\gluino$q$\bar{\mathrm q}$) and baryon-like ($\gluino$qqq) states, 
-as well as glueball-like ($\gluino$g) states with probability 10\%. The 
-interaction of R-hadrons with the detector material is simulated with 
+as well as glueball-like ($\gluino$g) states with probability 10\%. 
+Approximately one half of these R-hadrons are charged and half are uncharged. 
+The interaction of R-hadrons with the detector material is simulated with 
 \textsc{geant} using the model developed in 
 Refs.~\cite{cloudmodel1,cloudmodel2}. 
+% approximately 50-50 charged-uncharged (can also change charge as it traverses)
+%In this  model, R-hadrons are treated as supersymmetric particles surrounded 
+%by a cloud of loosely bounded quarks or gluons.
+% see atlas disp verts p5 for r-hadron and matter interaction description and 
+%references
 However, the results presented in Chap.~\ref{chap:results} do not include the 
 model-dependent interactions of R-hadrons. The effect of these interactions 
 will be discussed in Sec.~\ref{sec:results-limits}.
+% see stopped LLPs and hscp 
 %Studies 341 with alternative values for parameters that influence the 
 %hadronization of the gluino, such as 342 Pgeg = 50\%, indicate a minimal 
 %influence on the event topology and kinematical variables for 343 the models 
