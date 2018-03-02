@@ -195,7 +195,7 @@ are summarised in Tab.~\ref{tab:jet-id}.
 % num constituents > 1 --> shouldn't have isolated leptons being jets??
 
 \begin{table}[ht!]
-%FIXME: Table: jet ID requirements (have 3 columns for each eta region, merge 
+%: Table: jet ID requirements (have 3 columns for each eta region, merge 
 %columns if applies to more than one, dash if not applied).
 %Do similar ID table for other objects? Ideally not (I haven't worked on it), 
 %but yes if you need to fill up space.}
@@ -609,7 +609,7 @@ of magnitude larger than other standard model processes. The final
 state consists of two or more jets, and there is no intrinsic missing energy 
 (except in the case of heavy flavour QCD, as discussed below). However, issues 
 with the detector or inaccuracies in the reconstruction 
-%[fixme: tails of Gaussian resolution] 
+%[ tails of Gaussian resolution] 
 can cause the event to appear 
 unbalanced in transverse momentum, thereby introducing fake \met. Although 
 these effects are not very common, when coupled with the large QCD production 
@@ -682,7 +682,7 @@ thresholds are chosen such that the QCD background forms no more than $\sim$1\%
 of the total standard model background in the signal region. This choice is 
 motivated by the difficulty in estimating this type of background accurately 
 and precisely. The difficulty arises from the lack of precise high-order 
-%[fixme: high order?] 
+%[high order?] 
 theoretical calculations on the production cross section and kinematic 
 properties. 
 In addition, because of the large cross section and computing limitations, the 
@@ -701,7 +701,7 @@ negligible impact on the sensitivity.
 %simulation and requires lots of MC stat. Prefer conservative unc on small 
 %contribution than trying to estimate large contribution.
 
-%[todo] If have time make diagrams illustrating alphat and bdphi.
+%If have time make diagrams illustrating alphat and bdphi.
 
 \subsection{The \alphat variable}
 
@@ -724,7 +724,7 @@ most energetic jet, and
 $\bm{p}_\mathrm{T}^{j_i} = (p_x^{j_i}, p_y^{j_i})$ is its 
 transverse momentum vector, $p_x^{j_i}$ and $p_y^{j_i}$ being the $x$ and $y$ 
 components, respectively. 
-%[FIXME - already defined in MHT definition?]
+%[ already defined in MHT definition?]
 
 To illustrate how the \alphat variable works, one can assume the mass of the 
 jets to be much smaller than their momenta (so that $E_\mathrm T \approx 
@@ -779,13 +779,16 @@ mismeasurement or there are several jets below the \pt threshold.
 
 \begin{figure}[t!]
 \begin{center}
-\includegraphics[width=0.7\linewidth]{figs/analysis/propaganda_alphat}
+\includegraphics[width=0.7\linewidth]{figs/analysis/propaganda_alphat_180210}
 \caption{The distribution of the \alphat variable in data and simulation for 
 events satisfying the signal region selections 
-(Sec.~\ref{sec:analysis-eventselection}) except the \alphat requirement. The 
+(Sec.~\ref{sec:analysis-eventselection}) except the \alphat requirement, plus 
+the additional requirements $\njet \geq 2$, $p_{\mathrm{T}}^{j_2} > 
+100$~GeV, and $\scalht > 900$~GeV. The 
 ability of the variable to effectively discriminate between QCD processes and 
 processes with genuine missing energy is evidenced by the sharp edge at $0.5$.} 
-%[fixme: actually, presel left full sel right]}
+% hatches are stat uncs; last bin is overflow
+%[: actually, presel left full sel right]}
 \label{fig:alphat}
 \end{center}
 \end{figure}
@@ -838,10 +841,12 @@ collinear with any jet.
 
 \begin{figure}[t!]
 \begin{center}
-\includegraphics[width=0.7\linewidth]{figs/analysis/propaganda_bdphi}
+\includegraphics[width=0.7\linewidth]{figs/analysis/propaganda_bdphi_180210}
 \caption{The distribution of the \bdphi variable in data and simulation for 
 events satisfying the signal region selections 
-(Sec.~\ref{sec:analysis-eventselection}) except the \bdphi requirement. The 
+(Sec.~\ref{sec:analysis-eventselection}) except the \bdphi requirement, plus 
+the additional requirements $\njet \geq 2$, $p_{\mathrm{T}}^{j_2} > 
+100$~GeV, and $\scalht > 900$~GeV. The 
 ability 
 of the variable to effectively discriminate between QCD processes and processes 
 with genuine missing energy is evidenced by the cluster of QCD events close to 
@@ -880,8 +885,8 @@ events satisfying the signal region selections
 ability of the variable to effectively discriminate between QCD processes and 
 processes with genuine missing energy is evidenced by the population of QCD 
 events above $1.25$, while processes with genuine \met have values more 
-consistent with unity. [FIXME: remove ratio plot and fix axis label? Update to 
-36fb]}
+consistent with unity.}
+% [FIXME: remove ratio plot and fix axis label? Update to 36fb]}
 \label{fig:mhtmet}
 \end{center}
 \end{figure}
@@ -1068,7 +1073,7 @@ is a proxy for the neutrino) is required to be compatible with the W mass with
 $30 < M_{\mathrm{T}}(\mu,\met) < 125$~GeV. The transverse mass must be used 
 rather than the invariant mass as the 
 z-component of the missing momentum is unknown.
-%[fixme: not sure if this last sentence is needed or is already 
+%[ not sure if this last sentence is needed or is already 
 %obvious/mentioned previously]. 
 
 All of these 
@@ -1137,7 +1142,7 @@ $\mhtmet < 1.25$ & \bdphi sideband & Signal region \\
 \end{table}
 
 %\subsubsection{\mj and \mmj \mht sidebands}
-%\textbf{todo: also two MHT sidebands for sideband corrs. 
+%\textbf{also two MHT sidebands for sideband corrs. 
 %also mhtmet and bdphi 
 %muon sidebands for qcd.}
 
@@ -1274,7 +1279,7 @@ supersymmetry in which the decays occur outside of the detector, as the
 identification of these events relies on the initial state radiation.
 %targeting many models of dark matter production, which are also identified to 
 %a large extent via additional radiation recoiling against the invisible system.
-%\textbf{[todo] LL SUSY: monojet. SL (short-lived) DM: multijet.}
+%\textbf{ LL SUSY: monojet. SL (short-lived) DM: multijet.}
 
 Events are categorised according to the number of jets in the final state and 
 the jet topology. The seven categories employed are $\njet = 1$, $\geq2a$, 3, 
@@ -1332,7 +1337,7 @@ high \nb, the largest \nb bin employed in this control region is $\nb \geq 1$.
 
 The signal region is additionally categorised according to \mht. This helps to 
 further separate the background and signal, as signal processes 
-%todo (in particular DM and compressed SUSY models), 
+%(in particular DM and compressed SUSY models), 
 tend to have values of \mht closer to \scalht.
 % see matt
 
@@ -1544,7 +1549,7 @@ Prior to the HLT, events are filtered by the Level 1 trigger. Each HL trigger
 is preceded, or \textit{seeded}, by a particular L1 trigger. The L1 seeds for 
 the HL triggers employed in this search consist of requirements on \scalht, 
 \met and muon \pt, as summarised in Tab.~\ref{tab:triggers}. 
-%[todo] thresholds kept relatively low thanks to L1 upgrade.
+% thresholds kept relatively low thanks to L1 upgrade.
 %L1 seeds. Give rough range (started at 80 ended at 120 or whatev)
 %alphat htt or etm
 %ht htt
@@ -1750,7 +1755,7 @@ It is the certified 35.9~\ifb of data that form the basis of the search. The
 data sets that are analysed correspond to those collected by the triggers 
 described in Sec.~\ref{sec:analysis-trigger}.
 %The uncertainty on the certified integrated luminosity is 2.x\%
-%\textbf{todo: lumi uncertainty and reference (or just leave for corrections 
+%\textbf{lumi uncertainty and reference (or just leave for corrections 
 %section).}
 %Each family of triggers collects a subset of these data, and these are stored 
 %as separate files which can then be processed further and analysed.
@@ -1790,7 +1795,7 @@ production channels. The diboson background is generated with
 While events are generated at LO or NLO, the cross sections of most of the main 
 background processes are computed at next-to-next-to-leading order (NNLO) 
 precision.%~\cite{adam-lots}.
-%\textbf{todo no need to mention pythia hadronisation and geant here?}
+%\textbf{no need to mention pythia hadronisation and geant here?}
 
 The SUSY %and DM 
 simplified models are generated with \textsc{MadGraph5}. A number of samples 
@@ -1892,7 +1897,6 @@ distribution is also shown.}
 
 \subsection{Jet energy}
 \label{sec:analysis-mccorrections-jec}
-%TODO. Jet energy response/scale. 
 The energies of jets are corrected as described in 
 Sec.~\ref{sec:detector-jecs}. 
 In this case, the corrections are applied on a jet-by-jet basis and so this 
@@ -3164,7 +3168,7 @@ The alternative \mht shapes typically result in an uncertainty on the number of
 background events in the final \mht bin within each \njnbht category that is in 
 the range 5-20\%.
 %\begin{figure}
-%TODO	Plot illustrating size of uncertainty in each bin. ?
+%todo Plot illustrating size of uncertainty in each bin. ?
 %\end{figure}
 
 In addition to the uncertainties derived from the linear fit to the 
