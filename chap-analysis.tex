@@ -22,8 +22,9 @@ particle. %This will be the focus of the interpretation.
 %through the detector without interacting %undetected
 % this whole paragraph might need to go somewhere else (maybe intro or chap2)
 In the proton-proton collisions, the net momentum of the colliding partons in 
-the plane transverse to the beam direction is effectively zero, whereas the 
-longitudinal momentum is not necessarily so. In order to conserve momentum, the 
+the plane transverse to the beam direction is effectively zero (this is not 
+necessarily the case in the longitudinal direction). In order to conserve 
+momentum, the 
 outgoing particles produced in the collision must therefore have an overall 
 transverse momentum of zero. As WIMPs do not interact with the detector 
 material, the measured net transverse momentum in the event will be non-zero. 
@@ -83,7 +84,7 @@ analysis for the higher centre of mass energy and larger amount of data
 collected. In addition, the interpretation in the context of %s in dark matter 
 %and 
 long-lived particles % described in Chap.~\ref{chap:results} 
-is a novelty to this search.
+is a novelty for this search.
 
 %has ptmiss been defined?
 
@@ -135,7 +136,8 @@ can be tuned
 in order to provide a desired balance between identification efficiency and 
 fake rate. Jets and energy sums form a key component in the search and are 
 required in both the signal and control regions. Electrons, photons and 
-isolated tracks are vetoed in both the signal and regions. Muons are vetoed in 
+isolated tracks are vetoed in both the signal and control regions. Muons are 
+vetoed in 
 the signal region and are required in the control regions. A summary of the 
 kinematic requirements discussed in this section on these physics objects is 
 provided in 
@@ -203,16 +205,16 @@ are summarised in Tab.~\ref{tab:jet-id}.
 \begin{tabular}{ ccc }
 Variable & Requirement & \\ \hline
 \multicolumn{3}{c}{$\etaabs < 3$} \\ \hline    
-Neutral hadron energy fraction & $<0.99$ &  \\
-Neutral electromagnetic energy fraction & $<0.99$ &  \\
 Number of constituents & $>1$ &  \\
-Charged hadron energy fraction & $>0$ & (only for $|\eta| < 2.4$) \\
-Charged electromagnetic energy fraction & $<0.99$ & (only for $|\eta| < 2.4$)\\
 Number of charged constituents & $>0$ & (only for $|\eta| < 2.4$) \\
+Charged hadron energy fraction & $>0$ & (only for $|\eta| < 2.4$) \\
+Neutral hadron energy fraction & $<0.99$ &  \\
+Charged electromagnetic energy fraction & $<0.99$ & (only for $|\eta| < 2.4$)\\
+Neutral electromagnetic energy fraction & $<0.99$ &  \\
 \hline
-\multicolumn{3}{c}{$|\eta| > 3.0$} \\ \hline        
-Neutral electromagnetic energy fraction & $<0.90$ &  \\
+\multicolumn{3}{c}{$|\eta| > 3$} \\ \hline        
 Number of neutral constituents & $>10$ &  \\
+Neutral electromagnetic energy fraction & $<0.90$ &  \\
 \end{tabular}
 \caption{Quality requirements imposed on the constituents of jets.}
 \label{tab:jet-id}
@@ -222,7 +224,7 @@ Number of neutral constituents & $>10$ &  \\
 Jets in the event are assigned a probability of having originated from a bottom 
 quark by the b-tagging %CSV 
 algorithm described in Sec.~\ref{sec:detector-btagging}. A jet in the analysis 
-is considered to be b-tagged if its probability is larger than $0.8484$. This 
+is considered to be b-tagged if its probability is larger than $0.848$. This 
 value results in a b-tagging efficiency of $\sim$60\%, as well as a mis-tagging 
 rate of $\sim$10\% for charm quarks and $\sim$1\% for up, down, strange, and 
 gluon quarks.
@@ -238,7 +240,7 @@ jets originating from pileup vertices.
 
 The muons considered for event vetoing in the signal region are required to be 
 reconstructed as either global or tracker muons. The efficiency for this is 
-$\sim98$\%. 
+$\sim$98\%. 
 %The contribution to the muon energy from pileup tracks is subtracted using the 
 %effective area correction. 
 A mini-isolation requirement of 
@@ -278,9 +280,9 @@ The relative isolation quantity is required to be \reliso~$ < 0.15$.
 %topology of top quark decays, in which the 633 muon’s trackmay be found close 
 %to the jet activity due to the boost of the parent top
 
-Muons in the control regions are required to satisfy $\pt>30$~GeV and 
-$\etaabs<2.1$, while events in the signal region are vetoed if they contain any 
-muons with $\pt>10$~GeV and $\etaabs<2.4$. 
+Muons in the control regions are required to satisfy {$\pt>30$~GeV} and 
+{$\etaabs<2.1$}, while events in the signal region are vetoed if they contain 
+any muons with {$\pt>10$~GeV} and {$\etaabs<2.4$}. 
 %\textbf{[todo: write/prepare/have explanation for why these thresholds]}
 %pt 10, eta 2.5 in SR veto. pt 30, eta 2.1 in CR selection.
 
@@ -358,7 +360,7 @@ of size \DR$=0.3$) of \reliso~$ < 0.1$.
 %\textbf{[todo: How many hits in tracker?]}
 
 Events in the signal region are vetoed if they contain 
-an isolated track with $\pt>10$~GeV and $\etaabs<2.4$.
+an isolated track with {$\pt>10$~GeV} and {$\etaabs<2.4$}.
 %pt 10, eta 2.4  (eta is basically extent of tracker)
 
 \subsection*{Energy sums}
@@ -368,7 +370,7 @@ The \scalht and \MHT variables are computed using all jets in the event
 satisfying \pt~$>40$~GeV and \etaabs~$<2.4$.
 The missing transverse energy \met is used in the definition of the \mt and 
 \mhtmet variables as described in 
-Secs.~\ref{sec:analysis-eventselection}~and~\ref{sec:analysis-qcdrejection}.
+Secs.~\ref{sec:analysis-qcdrejection}~and~\ref{sec:analysis-eventselection}.
 
 %The \scalht and \MHT variables are defined, respectively, as the scalar sum 
 %and the magnitude of the negative vector sum of the transverse energy of all 
@@ -814,7 +816,9 @@ However, if a jet's energy is over-measured, the missing energy vector points
 in the opposite direction to the jet and so \dphimin is not necessarily zero. 
 This limitation can be overcome by comparing the jet's direction with the 
 missing energy vector that does not consider the jet in the vector sum, 
-$\vec{\mht}^{j_i} = \vec{\mht} + \vec{p}_{\mathrm T}^{j_i}$. This is the 
+$\bm{\cancel{H}}_\mathrm{T}^{j_i} = \bm{\cancel{H}}_\mathrm{T} + 
+\bm{p}_{\mathrm T}^{j_i}$. This 
+is the 
 definition of the 
 \bdphi variable:
 \begin{equation}
@@ -832,7 +836,7 @@ The \bdphi variable is effective at capturing QCD events that contain a single
 mismeasurement or a neutrino produced by a heavy quark decay that is collinear 
 with a jet. It is less effective if a jet is severely mismeasured such 
 that it's \pt is below threshold, or if there are two or more mismeasured jets. 
-Both of these cases result in missing momentum that is not necessarily 
+Both of these cases result in missing momentum vector that is not necessarily 
 collinear with any jet.
 
 %captures single mismeasurements and heavy flavour
@@ -878,8 +882,8 @@ region of \mhtmet$>1.25$.
 
 \begin{figure}[t!]
 \begin{center}
-\includegraphics[width=0.7\linewidth]{figs/analysis/mhtmet}
-\caption{The distribution of the \mhtmet ratio in data and simulation for 
+\includegraphics[width=0.7\linewidth]{figs/analysis/mhtmet_180306}
+\caption{The distribution of the \mhtmet ratio in simulation for 
 events satisfying the signal region selections 
 (Sec.~\ref{sec:analysis-eventselection}) except the \mhtmet requirement. The 
 ability of the variable to effectively discriminate between QCD processes and 
@@ -962,13 +966,12 @@ control regions.} %topcaption
 
 The baseline selections in the signal region are chosen to ensure a hadronic 
 final state with significant energy and missing momentum that is characteristic 
-of the %DM and 
-SUSY models that are sought. As a reminder, these include minimum 
+of supersymmetry models. As a reminder, these include minimum 
 requirements on \scalht and \mht, and event vetoes on non-hadronic objects and 
 forward jets as well as spurious \met sources. However, a large number of QCD
 events remain that contain fake missing energy (or missing energy from heavy 
 quark decays). This background is suppressed to a very small level 
-($\lessapprox$1\% of the total standard model background) by imposing certain 
+($\lesssim1\%$ of the total standard model background) by imposing certain 
 requirements on the QCD-discriminating variables \alphat, \bdphi, and \mhtmet 
 described in the previous section.
 
@@ -1272,7 +1275,7 @@ The symmetric category captures many of the SUSY production scenarios in which
 the mass difference with respect to the LSP is large and the final state 
 contains several highly energetic jets. In the case of a small mass difference, 
 little kinetic energy is available for the decay products and so the acceptance 
-for these models, which relies more on ISR and FSR, is provided by the 
+for these models, which relies more on jets from ISR, is provided by the 
 asymmetric and monojet categories. 
 These categories are also useful at capturing models of long-lived 
 supersymmetry in which the decays occur outside of the detector, as the  
@@ -1287,7 +1290,7 @@ the jet topology. The seven categories employed are $\njet = 1$, $\geq2a$, 3,
 
 \subsection*{Categorisation by \scalht}
 
-The \scalht variable also provides a measure of the mass scale of a BSM physics 
+The \scalht variable provides a measure of the mass scale of a BSM physics 
 process and the corresponding hadronic activity in the event. Events are 
 categorised by \scalht as follows: four bins of width 50~GeV in the range 
 200-400~GeV, two bins of width 100~GeV in the range 400-600~GeV, four bins of 
@@ -1295,12 +1298,14 @@ width 150~GeV in the range 600-1200~GeV, and a final open bin
 $\scalht>1200$~GeV. 
 %For convenience, % easy of presentation/interpretation
 To maintain a manageable number of bins,
-these 11 bins are aggregated in the signal region to just 5: 200-400, 400-600, 
+these 11 bins are aggregated in the signal region to just five: 200-400, 
+400-600, 
 600-900, 900-1200, and $\geq1200$~GeV.
 
 The exact \scalht binning scheme depends on \njet and is included in 
 Tab.~\ref{tab:binning}. Because of the $\pt>40$~GeV threshold on jets, certain 
-low \scalht bins at high \njet are restricted or non-physical and are therefore 
+low \scalht bins at high \njet are kinematically restricted or non-physical and 
+are therefore 
 not considered. High \scalht bins at high \njet can be statistically limited 
 and are merged from above so that the corresponding bin in the control region 
 is well populated and the statistical uncertainty on the estimated background  
@@ -1313,7 +1318,7 @@ is not too large.
 \subsection*{Categorisation by \nb}
 
 The number of b-tagged jets is an effective discriminator for SUSY %and DM 
-models that involved the production of heavy quarks. The standard model 
+models that involve the production of heavy quarks. The standard model 
 background containing b-tagged jets is relatively smaller, and mainly comes 
 from \ttbar production, as well as some contribution from \wj and \zj in which 
 a jet is mistagged. Additional sensitivity is also found for long-lived 
@@ -1325,7 +1330,7 @@ Again, the exact binning scheme depends on \njet and is included in
 Tab.~\ref{tab:binning}.
 The largest \nb bin can be at most equal to \njet. Bins are also merged from 
 above according to the number of data counts in the \mj control region to 
-ensure that the backgrounds estimations do not suffer from large statistical 
+ensure that the background estimations do not suffer from large statistical 
 uncertainties.
 As the \mmj control region is somewhat statistically limited, especially at 
 high \nb, the largest \nb bin employed in this control region is $\nb \geq 1$.
@@ -1343,7 +1348,8 @@ tend to have values of \mht closer to \scalht.
 
 Events are categorised in \mht using up to four bins, that are aligned with the 
 boundaries of the \scalht bins: 200-400, 400-600, 600-900, $\geq1200$~GeV. In 
-this case, the value of \mht is bounded above by \scalht by construction. Bins 
+this case, the value of \mht (which is a vector sum) is bounded above by 
+\scalht (which is a scalar sum) by construction. Bins 
 are again merged from above 
 to ensure each bin is well populated by simulated events. %(see 
 %Sec.~\ref{sec:analysis-estimation-mht}). 
@@ -1400,7 +1406,8 @@ to be as low as possible while satisfying the rate constraint and ensuring a
 good selection efficiency for events in the signal region.
 The triggers make use of Particle Flow reconstruction, which is a 
 computationally intensive task as it involves the combination of information 
-from various sub-detectors. To help satisfy the timing constraint, loose 
+from various sub-detectors. A prefilter is utilised to help satisfy the timing 
+constraint, whereby loose 
 requirements are first made using simpler objects, such as jets reconstructed 
 using only the calorimeters, before proceeding with the PF reconstruction and 
 final trigger selections.
@@ -1413,10 +1420,11 @@ approximately one in every ten events that satisfy its requirements.
 
 Several versions of the same trigger are usually included in the HLT menu, each 
 with slightly different thresholds that are suited for different LHC running 
-conditions. As the instantaneous luminosity is increased throughout an LHC fill 
-and throughout the year, the lower threshold versions become prescaled or 
-disabled. To avoid large statistical uncertainties, only events collected by 
-unprescaled triggers are considered in the search.
+conditions. As the instantaneous luminosity of the LHC is increased throughout 
+the year, the lower threshold versions become prescaled or 
+disabled. Similarly, the lower thresholds become unprescaled as the luminosity 
+falls throughout an LHC fill. To avoid large statistical uncertainties, only 
+events collected by unprescaled triggers are considered in the search.
 
 \begin{comment}
 It is important to monitor the trigger rate and efficiency throughout an LHC 
@@ -1486,7 +1494,8 @@ $\met, \mht>(90,100,110,120)$ & $\met>(60,100)$ & (0.39,
 \hline
 $\scalht>(800,900)$ & $\scalht>(240,300)$ & (0.76, 0.24) \\
 \hline
-$\pt(\mu)>(22,24)$ & $\pt(\mu)>(18,22)$ & (0.80, 0.20) \\
+$p_{\mathrm{T}}^{\mu}>(22,24)$ & $p_{\mathrm{T}}^{\mu}>(18,22)$ & (0.80, 0.20) 
+\\
 \hline
 \end{tabular}
 \caption{List of L1 and HL triggers utilised in this search, grouped by 
@@ -1498,8 +1507,8 @@ control regions, while all other triggers listed are employed in the signal
 region and hadronic control regions.
 The \scalht-\alphat triggers also have a minimum requirement of 90~GeV on the 
 average \pt of the two leading jets, which did not change throughout run.
-Also provided is the fraction of the run for which a given trigger version was 
-the lowest-threshold unprescaled trigger.}
+Also provided is the fraction of the 2016 run for which a given trigger version 
+was the lowest-threshold unprescaled trigger.}
 \label{tab:triggers}
 \end{table}
 %Requirements/thresholds: Lumi Fraction collected. hline for every suite 
@@ -1642,7 +1651,8 @@ The trigger efficiency is measured using both electron and muon reference
 triggers as a function of \mht in bins of \scalht, 
 both corresponding to quantities computed offline. The efficiency in the 2016 
 data taking period is shown in Fig.~\ref{fig:trigger-eff}. The triggers have an 
-efficiency $>90$\% for $\mht>200$~GeV, and are practically fully efficient 
+efficiency of at least 90\% for $\mht>200$~GeV, and are practically fully 
+efficient 
 above 300~GeV. The discrepancy in the \textit{turn-on} region of the efficiency 
 curve between the muon and electron samples is attributed to differences in 
 cross-cleaning methods, and motivates a selection of $\mht>200$~GeV in the 
@@ -1679,9 +1689,11 @@ in this region.
 \subfloat[$\scalht > 900$~GeV]      
 {\includegraphics[width=0.29\textwidth]{figs/analysis/Trigger_Muon_HLT_AlphaTHT800MonoAll_MoM_all_900to999999_mht}}
 \\
-\caption{Efficiency of the HL trigger in the signal region as a function of 
+\caption{Efficiency of the logical disjunction of the HL triggers in the signal 
+region as a function of 
 offline \mht and \scalht, measured in a data sample collected by a single 
-electron (left) and single muon (right) trigger.}
+electron (left) and single muon (right) trigger. Note that only events with 
+$\mht>200$~GeV are selected for the signal region.}
 \label{fig:trigger-eff}
 \end{figure}
 
@@ -1800,7 +1812,7 @@ precision.%~\cite{adam-lots}.
 The SUSY %and DM 
 simplified models are generated with \textsc{MadGraph5}. A number of samples 
 with varying masses and lifetimes of the relevant particles are generated. 
-This allows for the sensitivity of the search to be explored as a function of 
+This allows the sensitivity of the search to be explored as a function of 
 these variables.
 The model with a promptly-decaying gluino is simulated via a 
 \textit{fast simulation} framework which employs a simplified detector geometry 
@@ -1811,13 +1823,14 @@ accuracy~\cite{fastsim}.
 
 %SUSY xs NLO+NLL (see Matt)
 
-The formation of R-hadrons through the hadronisation of gluinos is described by 
+The formation of R-hadrons through the hadronisation of long-lived gluinos is 
+described by 
 \textsc{pythia8}. The hadronisation process is assumed to yield predominantly 
 meson-like ($\gluino$q$\bar{\mathrm q}$) and baryon-like ($\gluino$qqq) states, 
 as well as glueball-like ($\gluino$g) states with probability 10\%. 
 Approximately one half of these R-hadrons are charged and half are uncharged. 
 The interaction of R-hadrons with the detector material is simulated with 
-\textsc{geant} using the model developed in 
+\textsc{geant4} using the model developed in 
 Refs.~\cite{cloudmodel1,cloudmodel2}. 
 % approximately 50-50 charged-uncharged (can also change charge as it traverses)
 %In this  model, R-hadrons are treated as supersymmetric particles surrounded 
@@ -1881,7 +1894,7 @@ given event in data is calculated from the average instantaneous luminosity
 measured in the corresponding luminosity section, together with the inelastic 
 proton-proton cross section (63~mb~\cite{inelasticxs-atlas13tev}). The 
 correction factors are given by the ratio of the pileup distributions in data 
-and simulation. These range between $\sim$0.8-1.2 in the bulk of the 
+and simulation. These range between $\sim$0.8-1.2 in the core of the 
 distribution. This is illustrated in Fig.~\ref{fig:puweights}. 
 % distributions are normalised to normalisation of MC conserved
 
@@ -2003,8 +2016,8 @@ method}~\cite{tagnprobe} as explained in the following.
 The tag-and-probe method takes advantage of a known mass resonance to identify 
 particles of a desired type and evaluate various efficiency measures such as 
 the ability to reconstruct or trigger such particles. In this case the 
-particles of interest are muons and they are identified via the Z boson 
-resonance. 
+particles of interest are muons (or electrons) and they are identified via the 
+Z boson resonance. 
 First, a muon that satisfies stringent quality criteria is selected and 
 labelled as the \textit{tag}. A second muon satisfying looser requirements, 
 labelled the \textit{probe}, is then paired with the tag if it is oppositely 
@@ -2021,25 +2034,48 @@ if it is paired with more than one probe.
 The tag-and-probe efficiency estimate is slightly biased to a lower value than 
 the true efficiency. This is because in events in which there is a tag and a 
 `passing' probe that does not also satisfy the tag requirements, the tag is not 
-counted towards the efficiency. However, the efficiency estimate is also biased 
-higher because the method does not count events in which neither muon is a tag, 
-as well as events in which the second muon does not even satisfy the probe 
-requirements. Overall, the estimated efficiency is typically within $\sim$1\% 
+counted towards the efficiency. 
+% the tag would've added "1" to the efficiency
+However, the efficiency estimate is also biased 
+higher because the method does not count events in which neither muon is a tag. 
+%, as well as events in which the second muon does not even satisfy the probe 
+%requirements. 
+Overall, the estimated efficiency is typically within $\sim$1\% 
 of the true efficiency, and the bias is expected to be negligible in the 
 data-to-simulation correction factors, as the bias largely cancels out in the 
 ratio.
-% difference tnp MINUS true = 1-2%
+% difference tnp MINUS true = 1-2% (but effs are high so difference is almost 
+%%the same as ratio: effTnp-effTrue/effTrue ~approx effTnp-effTrue)
 \begin{comment}
 bias. WHY NOT COUNT TAG AS PASSING PROBE? then would be biased higher because 
-not counting events where neither muon is tag.
+not counting events where neither muon is tag (you're only counting events in 
+which there is at least a tag so you'll always get one "1" in eff)
 actually not obvious which way biased - fact you select one tag biases up (not 
-counting when neither muon is tag) or second muon is not found/does not pass 
-probe, but fact you don't count tag in eff biases down, so cancels out?
+counting when neither muon is tag or second muon is not found/does not pass 
+probe), but fact you don't count tag in eff biases down, so cancels out?
 "true" MC eff can be found easily using gen level information - tells you bias 
 and could then correct for bias or cover with syst.
 AN-tnp shows 1-2 percent bias - which direction?
 BUT bias is in both data and MC so cancels out in SF!!! (as long as consistent)
 loose id: just global muon (no min hits in tracker/muon chambers, etc)
+
+% if second muon out of acceptance, don't care, simulation doesn't mismodel 
+%detector size
+% if second muon doesn't pass probe, don't care, because we are measuring eff 
+%*conditional* on previous step. This would only affect the first step (ID 
+%conditional on track) but just say we do actually have tracking eff 
+%corrections 
+%(derived separately - check how it's done) and eff is close to 100% anyway
+% if neither is tag, you simply don't make a measurement, not necessarily 
+%biased as depends on whether they are passing or failing probes
+
+% I tag, then check if other muon passes or not (unconditional), fine
+% If other muon also tag, I tag it, check if other muon passes (also uncond.)
+% If neither is tag, I check if muon passes or not conditional on not tag 
+%- we're not counting these events (see my diagram)
+
+% can remove bias by only tagging on positive charge muon, and probing the 
+%negative charge muon
 
 bias should be ~constant with pt
 even if eff is lower at low pt, this means you're more likely to get TP events 
@@ -2165,7 +2201,7 @@ of the isolation requirement varies between 90-99\% and the correction factors
 are around 0.99-1. The trigger efficiency is measured to be approximately 90\%, 
 with correction factors of about 0.98. 
 In the \mmj control region, the trigger efficiency is higher, as the 
-probability to trigger on at least one muon is $\approx 1-(1-0.9)(1-0.9) = 
+probability to trigger on at least one muon is $1-(1-0.9)(1-0.9) = 
 99\%$.
 %The correction factors are then used to weight the simulated events in the 
 %%%muon control regions.
@@ -2177,21 +2213,22 @@ probability to trigger on at least one muon is $\approx 1-(1-0.9)(1-0.9) =
 
 The efficiencies and correction factors are then propagated to the simulated 
 events as follows. The expected number of events in the \mj control region 
-according to the simulation, ignoring the normalisation due to integrated 
+according to the simulation, ignoring the normalisation due to the integrated 
 luminosity and cross section, is given by:
 \begin{equation}
 N_{\mu\mathrm{+jets}} = \sum a_\mu \varepsilon_\mathrm{ID}^\mu 
 \varepsilon_\mathrm{iso}^\mu \varepsilon_\mathrm{trig}^\mu \, ,
 \end{equation}
 where the sum runs over all simulated \wlj and \ttbar events that contain one 
-generator-level muon satisfy the \mj control region 
+generator-level muon satisfying the \mj control region 
 selections except those relating to the muon acceptance, identification, 
 isolation and 
-trigger. The acceptance term $a_\mu$ is either one if the muon satisfies the 
-\pt and $\eta$ acceptance requirements, or zero if it does not. The efficiency 
+trigger. The acceptance term $a_\mu$ is either 1 if the muon satisfies the 
+\pt and $\eta$ acceptance requirements, or 0 if it does not. The efficiency 
 terms are conditional on one another as 
 defined in Eq.~\ref{eqn:muoneff}, and their values depend on the muon's \pt and 
-$\eta$. Similarly, the number of events in the \mmj control region is given by:
+$\eta$. Similarly, the expected number of events in the \mmj control region is 
+given by:
 \begin{equation}
 N_{\mu\mu\mathrm{+jets}} = \sum (a_{\mu_1} a_{\mu_2}) 
 (\varepsilon_\mathrm{ID}^{\mu_1} \varepsilon_\mathrm{ID}^{\mu_2}) 
@@ -2203,16 +2240,17 @@ where the sum is now over all simulated \zmmj and \ttbar events that have two
 generator-level muons and satisfy the \mmj control region 
 selections except those relating to the muon acceptance, identification, 
 isolation and 
-trigger. The number of lost lepton background events in the signal region is 
-given by:
+trigger. The expected number of lost lepton background events in the signal 
+region is given by:
 \begin{equation}
-N_{\mathrm{signal}} = \sum \left[ (1-a_\mu) + a_\mu (1- 
-\varepsilon_\mathrm{ID}^\mu) + a_\mu \varepsilon_\mathrm{ID}^\mu 
-(1-\varepsilon_\mathrm{iso}^\mu) + a_\mu \varepsilon_\mathrm{ID}^\mu 
-\varepsilon_\mathrm{iso}^\mu (1-\varepsilon_\mathrm{trig}^\mu) \right] \, ,
+N_{\mathrm{signal}} = \sum \left[ (1-a_\ell) + a_\ell (1- 
+\varepsilon_\mathrm{ID}^\ell) + a_\ell \varepsilon_\mathrm{ID}^\ell 
+(1-\varepsilon_\mathrm{iso}^\ell) + a_\ell \varepsilon_\mathrm{ID}^\ell 
+\varepsilon_\mathrm{iso}^\ell (1-\varepsilon_\mathrm{trig}^\ell) \right] \, ,
 \end{equation}
 where the sum runs over all simulated \wlj and \ttbar events that contain one 
-generator-level muon or electron and satisfy the signal region selections 
+generator-level muon or electron (labelled $\ell$) and satisfy the signal 
+region selections 
 except those relating to the lepton acceptance, identification, isolation and 
 trigger. The 
 efficiencies in these three equations are scaled by the data-to-simulation 
@@ -2320,7 +2358,7 @@ these cross section corrections have a very small effect on the background
 estimations as they cancel out in the simulation-based transfer factor ratios 
 (explained in 
 Sec.~\ref{sec:analysis-estimation-njnbht}). However, this is not the case for 
-some of the tests that are used to derived systematic uncertainties (which will 
+some of the tests that are used to derive systematic uncertainties (which will 
 be described in Sec.~\ref{sec:analysis-systematics-data}) and so the lack of 
 corrections would unnecessarily inflate these uncertainties.
 
@@ -2346,7 +2384,8 @@ Z} \lambda_{\mathrm Z}^b + f_{\ttbar} \lambda_{\ttbar}^b\right)
 where the $\lambda^b$'s are the number of background events in an \njnbht bin 
 $b$ given by the simulation for a given standard model process, the $f$'s are 
 the cross section correction factors, the $\mathcal{U}$'s define a uniform 
-distribution for the correction parameters, and the $\mathcal{P}$'s define a 
+distribution (between 0 and an arbitrarily large value) for the correction 
+parameters, and the $\mathcal{P}$'s define a 
 Poisson distribution in each bin. 
 
 The cross section correction factors for the \zj, \wj and \ttbar processes are 
@@ -2414,15 +2453,15 @@ underlying jet flavours ($n_\mathrm b^\mathrm{gen}$, $n_\mathrm
 c^\mathrm{gen}$, $n_\mathrm l^\mathrm{gen}$), the probability of observing a 
 combination of b-tagged jets ($n_\mathrm b^\mathrm{tag}$, $n_\mathrm 
 c^\mathrm{tag}$, $n_\mathrm l^\mathrm{tag}$) is given by the product:
-\begin{equation}
+\begin{multline}
 P\left( n_\mathrm b^\mathrm{tag}, n_\mathrm c^\mathrm{tag}, n_\mathrm 
 l^\mathrm{tag} | n_\mathrm b^\mathrm{gen}, n_\mathrm c^\mathrm{gen}, n_\mathrm 
-l^\mathrm{gen} \right) = P\left(n_\mathrm b^\mathrm{tag}|n_\mathrm 
+l^\mathrm{gen} \right) \\ = P\left(n_\mathrm b^\mathrm{tag}|n_\mathrm 
 b^\mathrm{gen}, \varepsilon_\mathrm b\right) P\left(n_\mathrm 
 c^\mathrm{tag}|n_\mathrm c^\mathrm{gen}, \varepsilon_\mathrm c\right) 
 P\left(n_\mathrm l^\mathrm{tag}|n_\mathrm l^\mathrm{gen}, \varepsilon_\mathrm 
 l\right) \, .
-\end{equation}
+\end{multline}
 If there are $N\left(n_\mathrm b^\mathrm{gen}, n_\mathrm 
 c^\mathrm{gen}, n_\mathrm l^\mathrm{gen}\right)$ simulation events of a 
 particular process with such 
@@ -2430,16 +2469,16 @@ combination of underlying jet flavour, the number of these events that result
 in a combination of b-tagged jets ($n_\mathrm b^\mathrm{tag}$, $n_\mathrm 
 c^\mathrm{tag}$, $n_\mathrm l^\mathrm{tag}$) follows a binomial distribution 
 with the above probability, with an expected value of:
-\begin{equation}
+\begin{multline}
 E\left[N\left(n_\mathrm 
 b^\mathrm{tag}, n_\mathrm c^\mathrm{tag}, n_\mathrm l^\mathrm{tag} | n_\mathrm 
 b^\mathrm{gen}, n_\mathrm c^\mathrm{gen}, n_\mathrm l^\mathrm{gen}\right) 
-\right] = N\left(n_\mathrm 
+\right] \\ = N\left(n_\mathrm 
 b^\mathrm{gen}, n_\mathrm c^\mathrm{gen}, n_\mathrm l^\mathrm{gen}\right) 
 P\left( n_\mathrm b^\mathrm{tag}, n_\mathrm c^\mathrm{tag}, n_\mathrm 
 l^\mathrm{tag} | n_\mathrm b^\mathrm{gen}, n_\mathrm c^\mathrm{gen}, n_\mathrm 
 l^\mathrm{gen} \right) \, .
-\end{equation}
+\end{multline}
 The total expected number of events containing \nb b-tagged jets in a given 
 (\njet, \scalht, \mht) bin is then the 
 sum of this expected value over all combinations of underlying jet flavours 
@@ -2569,7 +2608,7 @@ bin in the signal region.
 
 %Show nb extrapolation validation (AN) or just summarise briefly in couple of 
 %sentences (similar to MHT validation).
-Although the the \mmj control region is binned more inclusively in the \nb 
+Although the \mmj control region is binned more inclusively in the \nb 
 variable than the signal region (which for $\nb \ge 1$ is equivalent to taking 
 the shape of the \nb distribution directly from simulation), it is checked that 
 this does not bias the background estimation in a similar way as the validation 
@@ -2790,7 +2829,7 @@ Source of uncertainty & \multicolumn{2}{c}{Uncertainty on transfer factor (\%)}
 Simulation variations & & \\
 \hline
 Pileup & 0.6-3.8 & 2.3-2.8 \\
-Jet energy scale & 3.4-5.5 & 5.3-8.0 \\
+Jet energy & 3.4-5.5 & 5.3-8.0 \\
 b-tagging (heavy quark) & 0.4-0.6 & 0.3-0.6 \\
 b-tagging (light quark) & 0.1-1.4 & 0.2-1.8 \\
 Lepton selection & 5 & 2 \\
@@ -2874,10 +2913,10 @@ cross section of 66.15~mb and 59.85~mb, and the pileup weights are re-derived
 for both variations.
 
 The resulting changes in the transfer factors are typically in the range 
-0.5~-~4\% across the \njnbht bins. This is shown in 
+0.5-4\% across the \njnbht bins. This is shown in 
 Fig.~\ref{fig:tfvariations-pileup}
 
-\subsubsection{Jet energy scale}
+\subsubsection{Jet energy}
 The energies of jets are corrected as a function of their transverse momentum 
 and pseudorapidity as described in 
 Secs.~\ref{sec:detector-jecs}~and~\ref{sec:analysis-mccorrections-jec}. 
@@ -2885,7 +2924,7 @@ Secs.~\ref{sec:detector-jecs}~and~\ref{sec:analysis-mccorrections-jec}.
 
 When varying the jet energy corrections in simulation by 1$\sigma$ up and down, 
 the values of the \Tmutottw and \Tmumutoz transfer factors are seen to change 
-by approximately 3~-~8\% across the \njnbht bins.
+by approximately 3-8\% across the \njnbht bins.
 This is shown in Fig.~\ref{fig:tfvariations-jec}.
 
 %Adam/AN: As the HT and jet multiplicity binning is mirrored in signal and 
@@ -2907,7 +2946,7 @@ The changes in the values of the transfer factors under variations of the
 uncertainties on both the heavy and light flavour b-tagging probabilities are 
 shown in 
 Figs.~\ref{fig:tfvariations-btagging-heavy}~and~\ref{fig:tfvariations-btagging-light}.
- These are typically quite small, between 0~-~2\%.  
+ These are typically quite small, between 0-2\%.  
 
 \subsubsection{Lepton identification, isolation and triggering}
 The efficiencies of the identification, isolation and trigger requirements for 
@@ -2919,13 +2958,15 @@ control regions and the transfer factors are recomputed.
 The changes of the transfer factors are found to be approximately 2\% for 
 \Tmumutoz and 5\% for \Tmutottw across the \njnbht parameter space. The change 
 is larger in the latter case as the lepton efficiencies have an opposite effect 
-in the signal region and \mj control region. For instance, if the muon 
+in the signal region and the \mj control region. For instance, if the muon 
+identification 
 efficiency is increased, the number of events in the \mj control region 
 increases while the number of \ttw events in the signal region decreases due to 
 a more efficient vetoing of leptonic events. On the other hand, while the 
 yields in the \mmj control region increase, the numerator of the \Tmumutoz 
 transfer factor is unaffected as the lepton efficiency is irrelevant for the 
 \znnj process.
+% note bit different for trigger - only affects CR yield not SR
 
 %veto anticorrelated between sr and cr
 %The scale factors are near-unity and their 1245 uncertainties are at the 
@@ -2965,7 +3006,7 @@ to applying them twice.
 
 The effect on the transfer factors is found to be small at low values of 
 \scalht. At high \scalht, they can be smaller than the equivalent transfer 
-factors without NLO corrections by up to $\sim10\%$, as seen in 
+factors without NLO corrections by up to $\sim$10\%, as seen in 
 Fig.~\ref{fig:tfvariations-nlo}.
 This is due to a larger Lorentz boost that is implicitly imposed 
 on the bosons by the $\bdphi>0.5$ requirement in the signal region compared to 
@@ -2978,7 +3019,7 @@ signal region are typically subjected to slightly smaller corrections.
 %https://github.com/CMSRA1/AlphaTools/commit/b0f7985b724fa839be92bcb84d0276ee82b7703d
 
 \subsubsection{Initial state radiation in \ttbar events}
-Uncertainties in the correction derived to improve the distribution of the 
+Uncertainties in the corrections derived to improve the distribution of the 
 number of ISR jets, described in Sec.~\ref{sec:analysis-mccorrections-nisr}, 
 are also considered. The correction factors are assigned an uncertainty given 
 by half the difference of the correction from unity.
@@ -3002,7 +3043,8 @@ a small effect on the transfer factors. The \Tmutottw transfer factors are
 potentially most sensitive to uncertainties in the cross sections in bins in 
 which there is a mixture of \wlj and \ttbar events, as the relative composition 
 of each process may be different in the signal and control regions due to 
-different kinematic selections (\alphat, \bdphi, \mt). It is checked whether 
+different kinematic selections on \alphat, \bdphi, and \mt. It is checked 
+whether 
 the transfer factors are indeed sensitive to this by varying the \wj and \ttbar 
 cross sections in turn by twice their uncertainties as measured by the CMS 
 experiment.
@@ -3078,7 +3120,7 @@ To test this, closure tests are performed in which events in the \mj control
 region with values of \alphat (\bdphi) below a certain threshold are used to 
 estimate the number of events in the \mj control region with values of \alphat 
 (\bdphi) larger than the same threshold. The thresholds are chosen according to 
-the \bdphi and \scalht-dependent selections mentioned in 
+the \bdphi and \scalht-dependent \alphat selections mentioned in 
 Sec.~\ref{sec:analysis-eventselection}. The test is performed in the \mj 
 control region as it is statistically more powerful than the \mmj control 
 region.
@@ -3086,10 +3128,15 @@ region.
 The results of these closure tests are shown in Fig.~\ref{fig:closuretests}. 
 The resulting systematic uncertainties are found to be in the range 
 $\sim$3-10\%. These uncertainties are assigned to both the \Tmutottw and 
-\Tmumutoz transfer factors. To avoid double counting the \alphat and \bdphi 
-uncertainties as the variables are somewhat correlated, the systematic 
-uncertainties are taken from the \alphat closure test for the $\scalht<900$~GeV 
-bins and from the \bdphi closure test for the $\scalht>900$~GeV bin.
+\Tmumutoz transfer factors. 
+%To avoid double counting the \alphat and \bdphi 
+%uncertainties as the variables are somewhat correlated, the systematic 
+%uncertainties are taken from the \alphat closure test for the 
+%$\scalht<900$~GeV bins and from the \bdphi closure test for the 
+%$\scalht>900$~GeV bins.
+% we don't actually do this - see nuisance plots (note more entries for bdphi 
+%because no alphat cuts/CTs for ht>900), also note these are fine ht bins, also 
+%note we have CTs to account for merged bins eg 400-inf and 600-inf
 
 \subsubsection{Extrapolation in the W$^+$/W$^-$ proportion}
 % leptons/neutrinos must be LH, anti-leptons/anti-neutrinos RH

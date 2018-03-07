@@ -44,7 +44,7 @@ gluino (given the detector's resolution, a decay length of $1~\micro\metre$ is
 considered 
 prompt-like) populate the higher \njet and \scalht categories. The jet 
 reconstruction efficiency decreases as the decay length of the gluino 
-increases. For decays occurring within the tracker ($10~\mathrm{m} \lesssim 
+increases. For decays occurring within the tracker ($10~\mathrm{cm} \lesssim 
 \ctau \lesssim 1~\mathrm{m}$) 
 fewer hits are available for the reconstruction. 
 Decays occurring within the calorimeters ($1~\mathrm{m} \lesssim \ctau \lesssim 
@@ -121,10 +121,10 @@ This includes uncertainties due to the corrections on the jet energy, pileup
 distribution, b-tagging efficiency, trigger efficiency, and ISR distribution. 
 The integrated luminosity of 35.9~\ifb is measured with an uncertainty of 
 2.5\%~\cite{lumi2016} which results in an additional uncertainty on the overall 
-number of signal events. The statical uncertainties due the limited number of 
-simulated events is also considered. Additional sources of uncertainty related 
-to displaced jets are discussed in the remainder of this section. A summary of 
-all sources of uncertainty and their typical sizes is shown in 
+number of signal events. The statical uncertainties due to the limited number 
+of simulated events are also considered. Additional sources of uncertainty 
+related to displaced jets are discussed in the remainder of this section. A 
+summary of all sources of uncertainty and their typical sizes is shown in 
 Tab.~\ref{tab:systs-signal} for various representative simplified models of 
 long-lived gluino production.
 
@@ -141,14 +141,14 @@ Source of uncertainty & (1800,200) & (1000,900) & (1800,200) &
 (1000,900) & (1000,200) & (1000,900) \\   
 \hline
 Pileup & 1-3 & 1-3 & 2-4 & 1-4 & 1-5 & 1-5 \\
-Jet energy scale & 3-9 & 4-14 & 3-9 & 4-17 & 4-9 & 2-12 \\
+Jet energy & 3-9 & 4-14 & 3-9 & 4-17 & 4-9 & 2-12 \\
 b-tagging & 0-1 & 0-1 & 17-59 & 10-41 & 0-1 & 0-1 \\
 %b-tagging (heavy quark) &  &  & & & & \\
 %b-tagging (light quark) &  &  & & & & \\
 %b-tagging (long-lived) & & & & & & \\
 Trigger & 3-4 & 0-2 & 2-4 & 0-2 & 0-4 & 0-1 \\
 ISR & 3-5 & 2-10 & 2-5 & 2-9 & 2-14 & 3-14 \\
-Luminosity & 2.6 & 2.6 & 2.6 & 2.6 & 2.6 & 2.6 \\
+Luminosity & 2.5 & 2.5 & 2.5 & 2.5 & 2.5 & 2.5 \\
 Stat. & 8-20 & 15-21 & 11-20 & 17-26 & 16-22 & 14-26 \\
 \hline
 \end{tabular}
@@ -168,12 +168,12 @@ across all \njnbhtmht bins.}
 The requirement of \chf~$<0.1$ on the most energetic jet of the event, 
 discussed in Sec.~\ref{sec:analysis-baselineselections}, reduces the selection 
 efficiency for models with $1~\mathrm{m} \lesssim \ctau \lesssim 
-10~\mathrm{m}$ to $\sim30\%$. This is because of the lack of reconstructed 
+10~\mathrm{m}$ to $\sim$30\%. This is because of the lack of reconstructed 
 charged particle tracks in the displaced jets that are produced inside the 
 calorimeters. 
 For the same reason, the veto on events containing a jet that fails the 
 identification requirements (which includes a minimum requirement on the 
-charged component of jets), has a selection efficiency of $\sim10\%$ for these 
+charged component of jets), has a selection efficiency of $\sim$10\% for these 
 models.
 Below and above this range in \ctau the efficiencies of the jet identification 
 and \chf requirements are close to 100\%.
@@ -193,7 +193,7 @@ appropriate systematic uncertainty is assigned.
 %%electron reference triggers as a function of mht)
 
 %b-tagging
-As seen in the previous section, jets with a displacement of $\sim1$~mm can be 
+As seen in the previous section, jets with a displacement of $\sim$1~mm can be 
 tagged by the b-tagging algorithm. This is because they have similar 
 displacements as b-quarks.
 The b-tagging efficiency for displaced jets is measured as a 
@@ -207,7 +207,7 @@ Fig.~\ref{fig:LL-btagging}.
 Three regions are identified as $d<0.1$~mm (small displacements), $d>10$~mm 
 (large displacements), and $0.1<d<10$~mm (``b-like'' displacements). In the 
 $0.1<d<10$~mm region, the b-tagging efficiency for displaced jets is 
-approximately 60\%, almost comparable to that for b-quarks ($\sim80$\%). The 
+approximately 60\%, almost comparable to that for b-quarks ($\sim$80\%). The 
 nominal b-tagging correction factors and uncertainties (described in 
 Sec.~\ref{sec:analysis-mccorrections-btagging}) are applied in the simulation 
 to jets with this range of displacements, together with an additional 
@@ -299,7 +299,7 @@ b_{\mathrm{QCD},\mu}^i +
 \mu_s s_\mu^i \theta_{s,\mu}^i \right) \, ,
 \end{equation}
 in which the small potential contributions from QCD and signal events are 
-accounted for (based on the simulation). 
+accounted for based on the simulation. 
 %where $n_\mu^i$ is the number of events observed in data in that bin, 
 %$b_\mu^i$ is the number of events expected based on simulation, 
 %$r_{\mathrm{W}}^i$ is the data-to-simulation correction ratio in the transfer 
@@ -368,7 +368,7 @@ extrapolated linearly beyond this. This ``morphing'' procedure is controlled by
 a Gaussian nuisance parameter, and is described in Ref.~\cite{templatemorphing}.
 %vertical template morphing
 %correlation in njet and ht (see AN p50).
-Two sets of uncertainties are derived on the \mht distributions, by performing 
+Uncertainties on the \mht distributions are derived by performing 
 the linear fits described in Sec.~\ref{sec:analysis-systematics-mht} 
 integrating over \scalht and \njet in turn. This results in two sets of  
 uncertainties that are correlated in \scalht and \njet, respectively, and are 
@@ -428,9 +428,10 @@ hypothesis ($\mu_s \ne 0$). First, it is instructive to compare the observed
 event counts in 
 data with those expected from the standard model. The expected standard model 
 background is obtained by performing the maximum likelihood fit under the 
-background-only hypothesis to the control regions only (i.~e.~the signal region 
+background-only hypothesis to the control regions only (i.e.\ the signal region 
 is excluded). This is essentially equivalent to the application of the transfer 
-factor equations (Sec.~\ref{sec:analysis-estimation-ewk}).
+factor equations (Sec.~\ref{sec:analysis-estimation-ewk}), accounting for 
+uncertainties.
 % except for nb extrapolation (otherwsie yes, saturated model and rate params 
 %equal data/mc
 
@@ -576,7 +577,7 @@ The incompatibility of a signal model with data can be assessed with the
 p-value:
 \begin{equation}
 \mathrm{CL}_{b+s}(\mu_s) = \int_{t(\mu_s)_{\mathrm{obs}}}^{\infty} 
-f(t(\mu_s)|\mu_s) \mathrm{d}t(\mu_s)
+f(t(\mu_s)|\mu_s) ~ \mathrm{d}t(\mu_s)
 \end{equation}
 where $f(t(\mu_s)|\mu_s)$ is the probability density of the test statistic 
 under the hypothesised signal strength $\mu_s$, and $t(\mu_s)_{\mathrm{obs}}$ 
@@ -587,7 +588,7 @@ $\mathrm{CL}_{b+s}$
 required, but also a good compatibility with the background-only model, as 
 determined by the probability:
 \begin{equation}
-\mathrm{CL}_{b}(\mu_s) = \int_{t(\mu_s)_{\mathrm{obs}}}^{\infty} f(t(\mu_s)|0) 
+\mathrm{CL}_{b}(\mu_s) = \int_{t(\mu_s)_{\mathrm{obs}}}^{\infty} f(t(\mu_s)|0)~ 
 \mathrm{d}t(\mu_s)
 \end{equation}
 where $f(t(\mu_s)|0)$ is the probability density of the test statistic under 
@@ -631,7 +632,7 @@ addition to a
 promptly decaying and metastable gluino. An upper limit on the signal strength 
 (and cross section) of each model is computed. These limits are presented in 
 the ($\mglu$, $\mlsp$) plane for each simulated value of $\ctau$ in 
-Figs.~\ref{fig:limits-individual-1}~-~\ref{fig:limits-individual-3}.
+Figs.~\ref{fig:limits-individual-1}-\ref{fig:limits-individual-3}.
 The excluded regions correspond to mass points with limits on their signal 
 strength of $\mu_s^{95\%} < 1$. 
 Both the expected and observed excluded regions are shown, with experimental 
@@ -639,8 +640,8 @@ uncertainties and uncertainties on the theoretical cross sections indicated.
 The excluded mass regions for each value of $\ctau$ are summarised in 
 Fig.~\ref{fig:limits-summary}. 
 %summarise highest excluded mass in table?
-Finally, the limits in the {$\mglu$-$\ctau$} plane, for fixed $\mlsp=100$~GeV 
-and for $\mglu - \mlsp = 100$~GeV, are shown in Fig.~\ref{fig:limits-vsctau}
+Finally, the limits in the ($\mglu$, $\ctau$) plane, for fixed $\mlsp=100$~GeV 
+and for $\mglu - \mlsp = 100$~GeV, are shown in Fig.~\ref{fig:limits-vsctau}.
 
 %all 11 individual limit plots.
 %shown with 1 and 2 sigma experimental uncertainties on expected, and 
@@ -655,8 +656,8 @@ For the model with a promptly decaying gluino, gluino and LSP masses of up to
 $\sim$1650~GeV and $\sim$900~GeV, respectively, are excluded. The excluded 
 regions for models with gluino lifetimes of $\ctau = 1, 10, 100~\micro\metre$ 
 are comparable to the prompt decay scenario. 
-A moderate improvement in sensitivity is found for models with $\ctau = 1, 
-10$~mm, with maximum excluded gluino and LSP masses of 1750~GeV and 1000~GeV, 
+A moderate improvement in sensitivity is found for models with $\ctau = 1$ and 
+10~mm, with maximum excluded gluino and LSP masses of 1750~GeV and 1000~GeV, 
 respectively. This is because these signal events occupy the high \nb 
 categories, and the amount of background is considerably smaller than in the 
 bins with no b-tagged jets. 
@@ -694,7 +695,7 @@ the detector material. Nevertheless, the effect of matter interactions has been
 checked. A 
 non-negligible fraction of R-hadrons that traverse the muon chambers 
 are identified as muons. Similarly, charged R-hadrons that decay near the 
-calorimeters may be reconstructed as single isolated tracks. This leads to a 
+calorimeters may be reconstructed as isolated tracks. This leads to a 
 reduction in acceptance for models with $\ctau \gtrsim 1$~m as a consequence of 
 the veto on events containing muons or isolated tracks.
 % When simulated using a cloud model of hadronisation 
@@ -718,7 +719,7 @@ due to the inclusive nature of the search, with low thresholds on kinematic
 variables such as \scalht and \njet, and an acceptance to jets from ISR.
 % also partly b-tagging
 In particular, this search provides coverage that is complementary to dedicated 
-searches at the LHC (mentioned in Sec.~\ref{sec:theory-status}) for models with 
+searches at the LHC (described in Sec.~\ref{sec:theory-status}) for models with 
 $\ctau \lesssim 1$~cm ($\tau \lesssim 10$~ps). This is because dedicated 
 techniques require a minimum decay length. 
 %%%or a metastable gluino, % this is true for stopped search or non-interacting 

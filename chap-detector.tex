@@ -75,7 +75,7 @@ interactions per bunch crossing (referred to as pileup) of $\sim$20.
 The total expected number of events of a process in a certain time $T$ is given 
 by:
 \begin{equation}
-N = \sigma \int_{0}^{T} L \mathrm d t = \sigma L_\mathrm{int} \, ,
+N = \sigma \int_{0}^{T} L ~ \mathrm d t = \sigma L_\mathrm{int} \, ,
 \end{equation}
 where the integral of the instantaneous luminosity over this time is called the 
 integrated luminosity $L_\mathrm{int}$, and is a measure of the amount of data 
@@ -109,7 +109,7 @@ Describe run, fill, lumi section, instantaneous luminosity values.
 %detector is 21 metres long, 15 metres wide and 15 metres high.
 The CMS detector is one of the two general purpose detectors at the LHC along 
 with ATLAS, and was designed with the main goal of searching for the Higgs 
-boson as well as new physics beyond the standard model. The detector is 
+boson as well as for new physics beyond the standard model. The detector is 
 cylindrical 
 and consists of several layers of subdetectors and a solenoid magnet that are 
 used to track, identify and measure the energy of particles such as electrons, 
@@ -206,6 +206,7 @@ that strip detectors can be used instead. There are a total of 66 million
 silicon pixels and 9.6 million silicon strips covering an area of about 
 200~m$^2$. The arrangement of tracker modules is illustrated in 
 Fig.~\ref{fig:tracker}.
+% pixel barrel has 3 layers at 4.4, 7.3 and 10.2 cm
 
 %Diagram of layout.
 \begin{figure}
@@ -254,7 +255,7 @@ $\frac{\Delta\pt}{\pt}$ is approximately 2\% for particles with $\pt = 100$~GeV.
 
 The CMS ECAL consists of over 75,000 lead tungstate (PbWO$_4$) crystals. These 
 are distributed in the ECAL Barrel (EB) and ECAL Endcap (EC), which cover the 
-pseudorapidity ranges of $\etaabs<1.48$ and $1.48 < \etaabs < 3$ 
+pseudorapidity ranges of $\etaabs<1.48$ and $1.48 < \etaabs < 3$, 
 respectively. The ECAL is illustrated in Fig.~\ref{fig:ecal}. 
 The energy resolution $\frac{\Delta E}{E}$ of the ECAL is approximately 0.3\% 
 for high energy electrons.
@@ -272,7 +273,8 @@ for high energy electrons.
 \end{figure}
 
 The crystals in the barrel have a front-face size of 
-$22\milli\metre \times 22\milli\metre$ and a length of 23~cm. The scintillation 
+$22~\milli\metre \times 22~\milli\metre$ and a length of 23~cm. The 
+scintillation 
 light produced by the electromagnetic showers is collected by silicon 
 avalanche photodiodes in the barrel and vacuum phototriodes in the endcaps that 
 are glued to the ends of the crystals.
@@ -503,7 +505,7 @@ matched to any tracks, and neutral hadrons are similarly identified by
 unmatched HCAL clusters.
 
 More details on the reconstruction of each of these objects are provided in the 
-following sections. These \textit{PF candidates} then form the basis for the 
+following sections. These \textit{PF particles} then form the basis for the 
 reconstruction of jets and missing energy.
 
 %maybe make tracks, electronsandphotons, muons subsubsections.
@@ -688,7 +690,7 @@ d_{iB} = \frac{1}{\pt_i^2}
 where $\pt_i$ is the transverse momentum of particle $i$, 
 $\Delta R_{ij}=\sqrt{(\eta_i - \eta_j)^2 + (\phi_i - \phi_j)^2}$ is the 
 distance between particles $i$ and $j$ in the {$\eta$-$\phi$} plane, and 
-$R=0.4$ defines the radius of the jet in the {$\eta$-$\phi$} space.
+$R=0.4$ defines the radius of the jet in {$\eta$-$\phi$} space.
 
 The algorithm begins by computing all distances $d_{ij}$ and $d_{iB}$. If one 
 of the $d_{ij}$ is the smallest distance of all, particles $i$ and $j$ are 
@@ -845,7 +847,7 @@ accomplished by measuring the \textit{isolation}, which is a measure of the
 activity around a particle. The isolation of a particle is defined as the ratio 
 of the total transverse momentum of other particles within a certain distance 
 $\Delta R$, and the transverse momentum of the particle itself. A particle is 
-considered to be isolated if its isolation value is below a certain threshold.
+considered to be isolated if its isolation value is below a defined threshold.
 
 In this search, two types of isolation are utilised, which differ in the size 
 of the isolation cone $\Delta R$. One is referred to as \textit{relative 
