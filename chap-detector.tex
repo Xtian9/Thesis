@@ -557,9 +557,10 @@ through the barrel region, and almost 100\% for muons.
 
 The reconstructed tracks are then clustered to identify the locations of the 
 various proton-proton interactions, known as interaction 
-vertices~\cite{track-vertex}. This is done using a deterministic annealing 
-algorithm. For a given cluster of tracks, the position of the associated vertex 
-is then estimated by means of an adaptive vertex fitter.
+vertices~\cite{track-vertex}. 
+%This is done using a deterministic annealing algorithm. For a given cluster of 
+%tracks, the position of the associated vertex is then estimated by means of an 
+%adaptive vertex fitter.
 % DA: see description on page 46 of vertex and tracking paper
 The location of the \textit{hard scatter}, referred to as the \textit{primary 
 vertex}, is defined by the vertex with the largest sum of the squared 
@@ -654,6 +655,14 @@ GSF track, whereas photons are identified via unmatched superclusters.
 %objects).
 
 % if you need refresher in understanding algorithm, see sandro p100
+% also jet section 6 in STFC notes
+% cone algorithm: start with seed and cluster everything within cone DR, then 
+%use this as the new seed and repeat until direction of cone is stable. 
+%Problems: how to define seed, can have overlaps (particle matched to more than 
+%one seed), not infrared safe (soft emission between two particles can lead to 
+%one big jet rather than two individual ones). Most popular cone algorithm is 
+%SISCone which avoids use of seeds and treats overlapping jets carefully and is 
+%infrared safe
 
 %references: towards jetography
 % antikt: http://iopscience.iop.org/article/10.1088/1126-6708/2008/04/063/pdf
@@ -666,6 +675,9 @@ GSF track, whereas photons are identified via unmatched superclusters.
 
 % emission of soft gluon occurs 
 % fragments = showers (emits soft qcd radiation)
+% fragmentation is the showering/breaking apart of quarks (string), 
+%hadronisation is the subsequent coming together of quarks to form 
+%energetically favourable colour-neutral states
 Due to the nature of the strong force, when a quark or gluon is produced it 
 immediately fragments and hadronises, leading to a collimated spray of hadrons 
 known as a \textit{jet}. In this search, jets are reconstructed by clustering 
@@ -676,6 +688,9 @@ meaning that the set of reconstructed jets remains unchanged in the case of a
 soft gluon emission or a splitting of a gluon into two collinear gluons. 
 %jets can undergo soft gluon radiation of arbitrarily low energy gluons with a 
 %high probability.
+
+% distance measure chosen is invariant under longitudinal boosts (along beam 
+%direction)
 
 A sequential recombination algorithm is based on a distance between pairs of 
 particles $d_{ij}$ and between particles and the beamline $d_{iB}$. These are 
@@ -704,7 +719,7 @@ remain.
 %Adam: R = 0.4 is often chosen as it contains the hadronic showers of most 
 %%%quarks and gluons produced in 13 − 14 TeV proton collisions, while remaining 
 %%%%insensitive to contamination from PU.
-% "combining" particles means summing their three-momenta
+% "combining" particles means summing their four-momenta ("E-scheme")
 
 %For the kT algorithm the exponent is chosen as p = 1, which results in jets 
 %being clustered initially from the softest pseudojets to successively harder 
@@ -717,6 +732,10 @@ remain.
 %%%anti−kT 
 %algorithm %due to its greater resilience to pileup and tendency to cluster 
 %%circular jets.
+% p=-1 takes hard particles (which dominate min function) and clusters soft 
+%stuff around it, whereas p=1 clusters soft stuff (which dominate min function) 
+%with itself preferentially. Sandro: the algorithm will tend to cluster soft 
+%particles with the hard ones instead of along themselves.
 
 As the jet reconstruction algorithm clusters all PF particles, isolated leptons 
 and photons may be classified as jets. To avoid this, a \textit{cross-cleaning} 
@@ -972,6 +991,9 @@ simulation process.
 %they are available for a limited number of processes. For this reason 
 %tree-level matrix element calculations still play an important role in the 
 %simulation of events produced at hadron colliders
+% feynman diagram -> matrix element (square gives prob) -> integrate over phase 
+%space to get cross section, or don't integrate completely to get differential 
+%xs (function of momentum and direction, which you can then MC-sample)
 The first step is the generation of the hard scattering, in which constituents 
 of the colliding protons interact and produce the outgoing particles. This is 
 accomplished with MC event generators such as 
@@ -982,7 +1004,7 @@ function (PDF).
 %processes and are evolved to higher scales using the QCD evolution equations 
 %for parton densities
 The generator also calculates, based on the Feynman diagrams of the desired 
-process up to a certain order in perturbative QCD, the corresponding matrix 
+process up to a certain perturbation order, the corresponding matrix 
 elements and differential cross section. The final state particles are then 
 generated according to the incoming parton momenta and the differential cross 
 section.
@@ -1001,7 +1023,7 @@ section.
 %subprocess, of which there are two at a hadron collider. 
 % quarks and gluons can radiate gluons, gluons can also produce qqbar pair
 % hadronization process cannot be described in perturbative QCD.
-%Baber: In fragmentation, a simulation of the splitting of the partons from the 
+%Baber: In ation, a simulation of the splitting of the partons from the 
 %hard scatter is performed, with the emission of soft quarks and gluons 
 %continuing until the cut-off scale of QCD, ΛQCD∼ 200MeV, where calculations 
 %become non-perturbative.

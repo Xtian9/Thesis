@@ -12,7 +12,8 @@ and missing energy are presented. The statistical model used to perform the
 background estimation and analyse the observed 35.9~\ifb of data is discussed. 
 No significant discrepancy is found between the data and the standard model 
 expectation. Upper limits are placed at a 95\% confidence level on the cross 
-sections of long-lived SUSY models. 
+sections of both the prompt and long-lived SUSY simplified models described in 
+Sec.~\ref{sec:theory-simplifiedmodels}. 
 
 %We will look at LL (Split SUSY simp models described in Sec X) first. Then 
 %signal systs. 
@@ -167,7 +168,7 @@ across all \njnbhtmht bins.}
 %odd jet/chf
 The requirement of \chf~$<0.1$ on the most energetic jet of the event, 
 discussed in Sec.~\ref{sec:analysis-baselineselections}, reduces the selection 
-efficiency for models with $1~\mathrm{m} \lesssim \ctau \lesssim 
+efficiency for T1qqqqLL models with $1~\mathrm{m} \lesssim \ctau \lesssim 
 10~\mathrm{m}$ to $\sim$30\%. This is because of the lack of reconstructed 
 charged particle tracks in the displaced jets that are produced inside the 
 calorimeters. 
@@ -299,7 +300,8 @@ b_{\mathrm{QCD},\mu}^i +
 \mu_s s_\mu^i \theta_{s,\mu}^i \right) \, ,
 \end{equation}
 in which the small potential contributions from QCD and signal events are 
-accounted for based on the simulation. 
+accounted for based on the simulation. The signal contamination is only 
+non-negligible for SUSY models containing top and bottom quarks. 
 %where $n_\mu^i$ is the number of events observed in data in that bin, 
 %$b_\mu^i$ is the number of events expected based on simulation, 
 %$r_{\mathrm{W}}^i$ is the data-to-simulation correction ratio in the transfer 
@@ -526,8 +528,9 @@ Given the good agreement between the observed data and the standard model
 expectation, with no significant excess above the number of expected events in 
 any bin, no evidence of new physics beyond the standard model is found. 
 Statistical hypothesis tests are carried out in order to assess the 
-incompatibility of the data with various models of long-lived supersymmetry. 
-Upper bounds are placed on their cross sections at a 95\% confidence level.
+incompatibility of the data with various models of both prompt and long-lived 
+supersymmetry. Upper bounds are placed on their cross sections at a 95\% 
+confidence level.
 %Upper limits 
 %exclusion
 %Given no excess, set limits.
@@ -619,6 +622,86 @@ $\mu_s^{95\%}$.
 %background-only hypothesis ($\mu_s=0$) and the background-plus-signal 
 %hypothesis ($\mu_s \ne 0$)
 
+Simplified models of supersymmetry are simulated with a range of gluino/squark 
+and LSP masses, and for a range of gluino lifetimes in the case of T1qqqqLL. An 
+upper limit on the signal strength (and cross section) of each mass point is 
+computed. The excluded region in the mass parameter space corresponds to mass 
+points with limits on their signal strength of $\mu_s^{95\%} < 1$. 
+
+\section{Limits on supersymmetry with prompt decays}
+
+Figure~\ref{fig:limits-sms} shows the excluded regions for the various 
+simplified model families involving the production and prompt decay of squarks 
+(T2 models) and gluinos (T1 models). Both the expected and observed limits are 
+shown. 
+
+% in summary, squarks over 1 TeV, gluinos almost 2 TeV, LSP 0.5 TeV (squarks) 
+%or 1 TeV (gluinos)
+Squark masses up to 1050, 1000 and 1325~GeV are excluded for bottom, top and 
+mass-degenerate light-flavour squarks, respectively. The corresponding lower 
+bounds on the LSP mass from squark decays are 500, 400 and 575~GeV. Gluino 
+masses up to 1900, 1650 and 1650~GeV are excluded for gluino decays via virtual 
+bottom, top and light-flavour squarks. The corresponding largest exclusions on 
+the LSP mass are 1150, 850 and 900~GeV.
+
+The largest excluded masses (according to the observed limits) of squarks, 
+gluinos and neutralinos are summarised in Tab.~\ref{tab:limits} for the prompt 
+SUSY models, as well as some of the long-lived SUSY models that will be 
+discussed in the next section.
+
+\begin{figure}%[!p]
+\centering
+\includegraphics[width=0.6\textwidth]{figs/results/squarkSUMMARY.pdf}\\
+\includegraphics[width=0.6\textwidth]{figs/results/gluinoAllSUMMARY.pdf}\\
+\caption{Observed and expected mass exclusions at 95\% confidence level 		
+(indicated by solid and dashed contours, respectively) for various families of 
+simplified models. The upper subfigure summarises the mass exclusions for five 
+model families that involve the direct pair production of squarks (T2bb, T2tt, 
+T2cc, T2qq\_8fold and T2qq\_1fold). The grey shaded region denotes T2tt models 
+that are not considered for interpretation. The lower subfigure includes three 
+models that involve the production and prompt decay of gluino pairs (T1bbbb, 
+T1tttt, and T1qqqq). A final scenario involves the production of gluinos that 
+are assumed to be metastable on the detector scale (T1qqqqLL).}
+\label{fig:limits-sms} 
+\end{figure}
+
+\begin{table}%[!h]
+	\centering
+	\begin{tabular}{ lcc }
+		\hline
+		Model family                    & \multicolumn{2}{c}{Best mass limit 
+		[GeV]} \\ [0.5ex]
+		\cline{2-3}
+		& Gluino or squark & \neutralino               \\ [0.5ex]
+		\hline
+		T2bb                            & 1050             & 
+		\phantom{1}500              \\
+		T2tt                            & 1000             & 
+		\phantom{1}400              \\
+		T2cc                            & \phantom{1}500        & 
+		\phantom{1}475              \\
+		T2qq\_8fold                     & 1325             & 
+		\phantom{1}575              \\
+		T2qq\_1fold                     & \phantom{1}675        & 
+		\phantom{1}350              \\
+		T1bbbb                          & 1900             & 
+		1150                   \\
+		T1tttt                          & 1650             & 
+		\phantom{1}850              \\
+		T1qqqq                          & 1650             & 
+		\phantom{1}900              \\
+		T1qqqqLL (metastable)    & \phantom{1}900        & 
+		\phantom{1}900                     \\
+		T1qqqqLL ($\ctau = 1$~mm) & 1750             & 
+		1000                   \\
+		\hline
+	\end{tabular}
+\caption{Summary of the observed largest excluded mass at 95\% confidence level 
+for the parent SUSY particle (gluino or squark) and the LSP (\neutralino), for 
+each family of simplified models.}
+\label{tab:limits}
+\end{table}
+
 
 \section{Limits on long-lived supersymmetry}
 \label{sec:results-limits}
@@ -626,16 +709,14 @@ $\mu_s^{95\%}$.
 %chapter), don't call it t1qqqqll
 %set limits in mass plane for various ctau - for each mass calculate mu limit, 
 %then exclusion contours are where mu=1.
-Simplified models of split SUSY are simulated with a range of gluino and LSP 
-masses for various gluino lifetimes from $\ctau = 1~\micro\metre$ to 100~m, in 
-addition to a 
-promptly decaying and metastable gluino. An upper limit on the signal strength 
-(and cross section) of each model is computed. These limits are presented in 
+Simplified models of split SUSY (T1qqqqLL) are simulated with a range of gluino 
+and LSP masses for various gluino lifetimes from $\ctau = 1~\micro\metre$ to 
+100~m, in addition to a 
+promptly decaying and metastable gluino. The prompt decay scenario is 
+equivalent to the T1qqqq model. The limits are presented in 
 the ($\mglu$, $\mlsp$) plane for each simulated value of $\ctau$ in 
 Figs.~\ref{fig:limits-individual-1}-\ref{fig:limits-individual-3}.
-The excluded regions correspond to mass points with limits on their signal 
-strength of $\mu_s^{95\%} < 1$. 
-Both the expected and observed excluded regions are shown, with experimental 
+Both the expected and observed exclusion regions are shown, with experimental 
 uncertainties and uncertainties on the theoretical cross sections indicated. 
 The excluded mass regions for each value of $\ctau$ are summarised in 
 Fig.~\ref{fig:limits-summary}. 
@@ -653,7 +734,8 @@ and for $\mglu - \mlsp = 100$~GeV, are shown in Fig.~\ref{fig:limits-vsctau}.
 %ctau-mass limit plane?
 
 For the model with a promptly decaying gluino, gluino and LSP masses of up to 
-$\sim$1650~GeV and $\sim$900~GeV, respectively, are excluded. The excluded 
+$\sim$1650~GeV and $\sim$900~GeV, respectively, are excluded, as seen in the 
+previous section for T1qqqq. The excluded 
 regions for models with gluino lifetimes of $\ctau = 1, 10, 100~\micro\metre$ 
 are comparable to the prompt decay scenario. 
 A moderate improvement in sensitivity is found for models with $\ctau = 1$ and 

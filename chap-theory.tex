@@ -284,7 +284,7 @@ baryon asymmetry.
 A theoretical concern with the standard model is a hierarchy problem relating 
 to the relatively small mass of the Higgs boson. The observable mass of the 
 Higgs boson is given by its bare mass plus higher order corrections from 
-fermion and scalar loops. These 
+fermion loops. These 
 corrections diverge quadratically with the cutoff scale, the energy scale up to 
 which the standard model is assumed to be valid, which is of order of the %GUT 
 %or    % definitely by Planck scale when gravity becomes strong
@@ -373,7 +373,7 @@ particles are given the same symbol as their SM partner with an added tilde.
 %in the Poincare group) external symmetry you may add and preserve interactions
 
 The minimal extension of the standard model is known as the Minimal 
-Supersymmetric Standard Model (MSSM)~\cite{mssm}. It contains 105 free 
+Supersymmetric Standard Model (MSSM)~\cite{mssm}. It contains over 100 free 
 parameters, compared to 19 in the standard model.
 %"minimal": the minimum number of new particle states and new interactions 
 %consistent with phenomenology
@@ -447,9 +447,9 @@ If the LSP is neutral and weakly interacting,
 it is therefore a viable candidate for dark matter. The LSP is usually assumed 
 to be the lightest neutralino \neutralino. 
 Supersymmetry is also able to alleviate the hierarchy problem in the standard 
-model. As the 
-contributions from fermions and scalars to the higher order corrections of the 
-Higgs mass have opposite signs, the quadratic divergence is cancelled out by 
+model. As the higher order correction of the Higgs mass receives contributions 
+of opposite sign from fermions and scalars, the quadratic divergence is 
+cancelled out by 
 the supersymmetric scalar partners of the standard model fermions. Due to 
 supersymmetry being a broken symmetry, there is still a residual logarithmic 
 divergence in the Higgs mass. Naturalness is achieved if the masses of 
@@ -627,13 +627,12 @@ or when the proton beam is not in operation.
 %(ps?). Gluinos form R-hadrons (so-called because of non-trivial R-parity) (can 
 %be mesons, baryons or gluinoballs). Can change charge through nuclear 
 %interactions.
-The results in this thesis will be interpreted in the context of split 
-supersymmetry~\cite{splitsusy1,splitsusy2}. Split SUSY is a model in which the 
+Split SUSY~\cite{splitsusy1,splitsusy2} is a model in which the 
 supersymmetry is broken at an energy scale much higher than the weak scale. 
 This results in the sfermions having masses much larger than the TeV scale 
 (beyond the kinematic reach of the LHC), while the gauginos remain relatively 
 light. % also scalar Higgs is low mass
-Split SUSY retains the appealing aspects of gauge coupling unification 
+Split supersymmetry retains the appealing aspects of gauge coupling unification 
 and a dark matter candidate, but abandons the hierarchy problem. This is 
 motivated by the recent constraints set by the LHC on natural SUSY (see 
 Sec.~\ref{sec:theory-status}).
@@ -652,7 +651,7 @@ The gluino eventually decays to
 a quark-antiquark pair and an LSP, leading to an experimental signature of 
 displaced jets and an imbalance in momentum. If sufficiently long-lived, the 
 gluino could also decay outside of the detector, in which case the displaced 
-jets would not be detected.
+jets would not be observed.
 
 %The gluino is the only colored particle at this low mass scale, and it can 
 %only decay through t-channel exchanges of a virtual squark.
@@ -686,21 +685,106 @@ therefore benchmarked and interpreted in a model-independent way using
 A simplified model considers only one production and decay mode, and a minimal 
 set of particles. This usually involves the pair production of an initial 
 particle, followed by a decay (or a cascade of decays via an intermediate 
-particle) to standard model particles and the LSP.
+particle) to standard model particles and the LSP (neutralino).
 %MA:A given complete model can, however, be decomposed into a number of 
 %simplified models and any limit on cross-sections on individual simplified 
 %models can be used (with some degree of interpolation) to provide limits on 
 %the original complete model.
 
-The simplified model used to interpret the results of this search consists of 
-the production of a pair of gluinos, which may be long-lived as in split 
-supersymmetry, with each gluino decaying (via a virtual light squark) to a pair 
-of light quarks and the LSP. 
+%paper: all other particles assumed much heavier to be produced directly
+
+%\begingroup
+%\renewcommand*{\arraystretch}{1.2}
+\begin{table}%[!t]
+	\centering
+	\begin{tabular}{ lll }
+		\hline
+		Model family
+		& Production and decay
+		& Additional 
+		assumptions                 \\
+		\hline
+		\multicolumn{3}{l}{\textbf{Production and prompt decay of squark 
+		pairs}}           \\
+		T2bb
+		& $\Pp\Pp \to \sbottom\asbottom$,
+		$\sbottom \to \mathrm{b}\neutralino$
+		& 
+		---                   \\
+		T2tt
+		& $\Pp\Pp \to \stopp\astop$,
+		$\stopp \to \mathrm{t}\neutralino$
+		& 
+		---                      \\
+		T2cc
+		& $\Pp\Pp \to \stopp\astop$,
+		$\stopp \to \mathrm{c}\neutralino$
+		& $m_{\,\stopp} - m_{\neutralino} < m_\mathrm{W}$      \\
+		T2qq\_8fold
+		& $\Pp\Pp \to \squark\asquark$,
+		$\squark \to \mathrm{q}\neutralino$
+		& $m_{\squark} = m_{\squark'}$,
+		$\squark = \{ \supp, \sdown, \sstrange, \scharm \}$       \\
+		T2qq\_1fold
+		& $\Pp\Pp \to \squark\asquark$,
+		$\squark \to \mathrm{q}\neutralino$
+		& $m_{\squark (\squark \neq \supp)} \gg m_{\supp}$ \\
+		\multicolumn{3}{l}{\textbf{Production and prompt decay of gluino 
+		pairs}}           \\
+		T1bbbb
+		& $\Pp\Pp \to \PSg\PSg$,
+		$\PSg\to \bar{\mathrm{b}}\sbottom^* \to 
+		\bar{\mathrm{b}}\mathrm{b}\neutralino$
+		& $m_{\sbottom} \gg m_{\PSg}$              \\
+		T1tttt
+		& $\Pp\Pp \to \PSg\PSg$,
+		$\PSg\to \bar{\mathrm{t}}\stopp^* \to 
+		\bar{\mathrm{t}}\mathrm{t}\neutralino$
+		& $m_{\stopp} \gg m_{\PSg}$           	\\                         
+		T1qqqq
+		& $\Pp\Pp \to \PSg\PSg$,
+		$\PSg\to \bar{\mathrm{q}}\squark^* \to 
+		\bar{\mathrm{q}}\mathrm{q}\neutralino$
+		& $m_{\squark} \gg m_{\PSg}$      \\                           
+		\multicolumn{3}{l}{\textbf{Production and decay of long-lived gluino 
+		pairs}}       \\
+		T1qqqqLL
+		& $\Pp\Pp \to \PSg\PSg$,
+		$\PSg\to \bar{\mathrm{q}}\squark^* \to
+		\bar{\mathrm{q}}\mathrm{q}\neutralino$
+		& $m_{\squark} \gg m_{\PSg}$, $\PSg$ long-lived    \\
+		\hline
+	\end{tabular}
+\caption{Summary of the simplified SUSY models used to interpret the result of 
+this search.} 
+\label{tab:sms}
+\end{table}
+%\endgroup 
+
+%T2qq: Two scenarios are considered for LF squarks: one with an eightfold mass 
+%degeneracy for qeL and qeR with qe = fue, de,es,ecg and the other with just a 
+%single 464 light squark (ueL)
+The results of this search are interpreted using a total of nine families of 
+simplified models, as summarised in Tab.~\ref{tab:sms}. The model parameters 
+are the masses of the parent particle (gluino or squark) and the LSP. The 
+so-called T2 
+models (T2qq, T2bb, T2tt, T2cc) involve the production of a pair of squarks 
+(bottom, top or light-flavour squarks) with the subsequent decay to standard 
+model quarks. Two versions of T2qq are considered, one in which all first and 
+second generation squark 
+masses are degenerate (T2qq\_8fold), and one in which only the up squark is 
+light enough to be produced directly (T2qq\_1fold). 
+The T1 models (T1qqqq, T1bbbb, T1tttt) involve the pair production of gluinos 
+with subsequent three-body decays to quarks via a virtual squark. 
+Finally, a long-lived version of T1qqqq (T1qqqqLL) is used to interpret the 
+results in the context of split supersymmetry. This consists of the production 
+of a pair of long-lived gluinos, with each gluino decaying (via a virtual light 
+squark) to a pair of light quarks and the LSP. 
 %T1qqqq and T1qqqqLL (split SUSY): here consider (long-lived) gluino pair 
 %production, each decays to two (light) quarks and an LSP. As gluino lifetime 
 %goes to 0 recover prompt model.
 A Feynman diagram of this process is illustrated in Fig.~\ref{fig:T1qqqqLL}.
-This simplified model contains three free parameters, namely the masses of the 
+This simplified model contains three parameters, namely the masses of the 
 gluino and the LSP, and the lifetime (expressed as \ctau) of the gluino.
 % and is expressed in units of [distance]/c. For example, ctau = 1 mm means... 
 
