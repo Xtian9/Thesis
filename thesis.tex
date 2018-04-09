@@ -8,8 +8,9 @@
 %% For Cambridge soft-bound version
 %\documentclass[hyperpdf,bindnopdf]{hepthesis}
 %% For Cambridge hard-bound version (must be one-sided)
-\documentclass[hyperpdf,oneside]{hepthesis}
+%\documentclass[hyperpdf,oneside]{hepthesis}
 %\documentclass[oneside]{hepthesis}
+\documentclass[hyperpdf,oneside,nobind]{hepthesis}
 
 %% Load special font packages here if you wish
 %\usepackage{lmodern}
@@ -19,14 +20,10 @@
 %% Put package includes etc. into preamble.tex for convenience
 \input{preamble}
 
-%% You can set the line spacing this way
-%\setallspacing{double}
-%% or a section at a time like this
-%\setfrontmatterspacing{double}
-
-
 %% Define the thesis title and author
-\title{Search for long-lived scenarios of dark matter and supersymmetry in 
+%\title{Search for long-lived scenarios of dark matter and supersymmetry in 
+%final states with jets and missing energy in the CMS detector}
+\title{Search for long-lived supersymmetry in 
 final states with jets and missing energy in the CMS detector}
 \author{Christian Laner Ogilvy}
 % no transverse? energy instead of momentum?
@@ -35,18 +32,27 @@ final states with jets and missing energy in the CMS detector}
 \makeatletter
 \@ifpackageloaded{hyperref}{%
 \hypersetup{%
-  pdftitle = {Search for long-lived scenarios of dark matter and supersymmetry 
-  in final states with jets and missing transverse momentum in the CMS 
-  detector},
+  pdftitle = {Search for long-lived supersymmetry in final states with jets and 
+  missing transverse momentum in the CMS detector},
   pdfsubject = {Christian Laner's PhD thesis},
   pdfkeywords = {CMS, dark matter, supersymmetry, long-lived},
   pdfauthor = {\textcopyright\ Christian Laner}
 }}{}
 \makeatother
 
+\usepackage{setspace}
+\doublespacing
 
 %% Start the document
 \begin{document}
+	
+%% You can set the line spacing this way
+%\setallspacing{double}
+%\linespread{3.0}
+\setspacing{onehalf}
+%% or a section at a time like this
+%\setfrontmatterspacing{double}
+%\setextramargins{0.25cm}
 
 %% Define the un-numbered front matter (cover pages, rubrik and table of contents)
 \begin{frontmatter}
