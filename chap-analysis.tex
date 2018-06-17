@@ -22,8 +22,8 @@ particle. %This will be the focus of the interpretation.
 %through the detector without interacting %undetected
 % this whole paragraph might need to go somewhere else (maybe intro or chap2)
 In the proton-proton collisions, the net momentum of the colliding partons in 
-the plane transverse to the beam direction is effectively zero (this is not 
-necessarily the case in the longitudinal direction). In order to conserve 
+the plane transverse to the beam direction is effectively zero (this is not the 
+case in the longitudinal direction). In order to conserve 
 momentum, the 
 outgoing particles produced in the collision must therefore have an overall 
 transverse momentum of zero. As WIMPs do not interact with the detector 
@@ -74,7 +74,7 @@ employed in the background estimation.%s as described in
 
 Similar searches for supersymmetry have previously been performed %in Runs 1 
 %and 2 of the 
-at the LHC, at centre of mass energies of 7, 8 and 13~TeV, and for a range of 
+at CMS, at centre of mass energies of 7, 8 and 13~TeV, and for a range of 
 integrated luminosities. These can be found in 
 Refs.~\cite{alphat1,alphat2,alphat3,alphat4,alphat5}. These 
 searches are used as a basis for the analysis described in this thesis, which 
@@ -226,14 +226,14 @@ quark by the b-tagging %CSV
 algorithm described in Sec.~\ref{sec:detector-btagging}. A jet in the analysis 
 is considered to be b-tagged if its probability is larger than $0.848$. This 
 value results in a b-tagging efficiency of $\sim$60\%, as well as a mis-tagging 
-rate of $\sim$10\% for charm quarks and $\sim$1\% for up, down, strange, and 
-gluon quarks.
+rate of $\sim$10\% for charm quarks and $\sim$1\% for gluons and up, down and 
+strange quarks.
 %mistag rate --> probability of incorrectly b-tagging
 %probability value --> discriminator
 
 The jets employed in the analysis have transverse momenta and pseudorapidities 
-satisfying $\pt>40$~GeV and $\etaabs<2.4$. The \pt threshold is chosen to avoid 
-jets originating from pileup vertices.
+satisfying $\pt>40$~GeV and $\etaabs<2.4$. The \pt threshold is chosen to 
+ensure well-measured jets and to avoid jets originating from pileup vertices.
 %to select jets originating from the hard scatter, avoid pileup jets.
 
 \subsection*{Muons}
@@ -743,7 +743,7 @@ energies are the same, and the value of \alphat is exactly $0.5$. If one of the
 jets' energies is mismeasured, then $E_\mathrm{T}^{j_2} < E_\mathrm{T}^{j_1}$ 
 and \alphat takes values less than $0.5$. In an event where the jets are 
 recoiling against a system of invisible particles, the angle between them is 
-smaller than $\pi$ and the value of \alphat is generally larger than $0.5$.
+smaller than $\pi$ and the value of \alphat can be larger than $0.5$.
 
 For events with more than two jets in the final state, the jets can be grouped 
 into two \textit{pseudo jets} such that the difference in transverse energy 
@@ -762,7 +762,7 @@ E_\mathrm{T}}{2\sqrt{(\Sigma_i E_\mathrm{T}^{j_i})^2-\cancel{H}_\mathrm{T}^2}}.
 For balanced QCD events with no missing energy, $\Delta E_\mathrm T = \mht = 0$ 
 and $\alphat = 0.5$. If a jet in such an event is mismeasured, then $\Delta 
 E_\mathrm T \approx \mht$ and $\alphat < 0.5$. For events with genuine missing 
-energy, $\mht > 0$ and $\Delta E_\mathrm T = 0$, resulting in $\alphat > 0.5$.
+energy, $\mht > 0$ and \alphat can be larger than $0.5$.
 
 The discriminating power of the \alphat variable is shown in 
 Fig.~\ref{fig:alphat}. Multijet QCD events are the dominant process in the 
@@ -1128,7 +1128,9 @@ $0.2<\bdphi<0.5$~rad and $1.25<\mhtmet<3.0$.
 %what about bdphi cap? or to keep SBs "close" to SR in phase space (see qcd 
 %mechanisms studies) (see qcd sidebands trigger studies)
 Table~\ref{tab:qcdsidebands} shows a summary of the selections that define 
-these sidebands.
+these sidebands. In addition, equivalent sidebands are defined in the two muon 
+control regions in order to estimate the electroweak background in the hadronic 
+sidebands.
 
 \begin{table}[h!]
 \caption{The definitions of the sideband regions employed in the estimation of 
@@ -1508,7 +1510,7 @@ The muon trigger is employed in the muon
 control regions, while all other triggers listed are employed in the signal 
 region and hadronic control regions.
 The \scalht-\alphat triggers also have a minimum requirement of 90~GeV on the 
-average \pt of the two leading jets, which did not change throughout run.
+average \pt of the two leading jets, which did not change throughout the run.
 Also provided is the fraction of the 2016 run for which a given trigger version 
 was the lowest-threshold unprescaled trigger.}
 \label{tab:triggers}
@@ -1524,7 +1526,7 @@ are used to collect events in the signal region and hadronic control regions.
 An event that satisfies any of these triggers is selected.
 
 The first group consists of five triggers with requirements on both \scalht and 
-\alphat. These are designed to map onto the the selections employed in the 
+\alphat. These are designed to map onto the selections employed in the 
 analysis (described in Sec.~\ref{sec:analysis-eventselection}). Their 
 thresholds on (\scalht, \alphat) are (200, 0.57), (250, 0.55), (300, 0.53), 
 (350, 0.52), (400, 0.51). This set of triggers collected data for approximately 
@@ -1545,7 +1547,8 @@ asymmetric jet topology.
 The second type of trigger is one with requirements on both \met and \mht. 
 These are used to collect events with a monojet or asymmetric topology more 
 effectively than the \scalht-\alphat triggers. The initial threshold on \met 
-and \mht was 90~GeV, and was raised throughout the 2016 run up to 120~GeV.
+and \mht was 90~GeV, and was raised over the course of the 2016 run up to 
+120~GeV.
 
 The third type of trigger is one with a requirement only on \scalht. In this 
 case the threshold was either 800 or 900~GeV. This trigger is used to collect 
@@ -1646,7 +1649,7 @@ being measured.
 A completely unbiased estimate is not always possible, such as when measuring 
 the \scalht and \scalht-\alphat efficiencies via a muon sample. However, the 
 triggers are almost fully efficient in the signal region phase space and any 
-bias is covered with a conservative systematic uncertainty, as will be 
+bias is covered with a systematic uncertainty, as will be 
 discussed further in Sec.~\ref{sec:analysis-systematics}.
 
 The trigger efficiency is measured using both electron and muon reference 
@@ -1791,8 +1794,10 @@ during the year 2016~\cite{cmslumi16}.}
 The methods of Monte Carlo event generation, hadronisation and detector 
 simulation were described in Sec.~\ref{sec:detector-simulation}.
 The Monte Carlo generation of the main background processes (QCD, \zj, \wj, 
-\ttbar) is produced via the \textsc{MadGraph5}~\cite{madgraph,madgraph-amcnlo} 
-generator framework at leading order (LO) precision. 
+\ttbar) is produced via the \textsc{MadGraph5\_aMC@NLO 
+2.2.2}~\cite{madgraph,madgraph-amcnlo} 
+generator framework at leading order (LO) precision, with up to three or four 
+additional partons included in the matrix element calculation. 
 % also DY (same as Zjets)
 As the number of events falls exponentially with the energy scale of the event, 
 and it is the most energetic events that typically pass the signal region 
@@ -1803,16 +1808,21 @@ hadronic energy of the partons produced in the hard scattering.
 This improves the statistical precision of the simulation in the phase space 
 region of interest.
 Single top quark production is generated at next-to-leading order (NLO) using 
-both \textsc{MadGraph5} and \textsc{powheg}~\cite{powheg} for the different 
-production channels. The diboson background is generated with 
-\textsc{pythia8}~\cite{pythia}.
+both \textsc{MadGraph5\_aMC@NLO 2.2.2} and \textsc{powheg v2}~\cite{powheg} for 
+the different production channels. The diboson background is generated with 
+\textsc{pythia 8.205}~\cite{pythia}.
 While events are generated at LO or NLO, the cross sections of most of the main 
 background processes are computed at next-to-next-to-leading order (NNLO) 
-precision.%~\cite{adam-lots}.
+precision. %~\cite{adam-lots}.
 %\textbf{no need to mention pythia hadronisation and geant here?}
+The NNPDF3.0 parton distribution functions are used~\cite{nnpdf}. The
+\textsc{pythia} program with the \textsc{CUETP8M1} tune~\cite{cuet} is used to 
+describe parton showering and hadronisation for all simulated samples.
 
 The SUSY %and DM 
-simplified models are generated with \textsc{MadGraph5}. A number of samples 
+simplified models are generated at LO with \textsc{MadGraph5\_aMC@NLO} with 
+up to two additional partons. The production cross sections are determined at 
+NLO plus next-to-leading-logarithm (NLL) precision. A number of samples 
 with varying masses and lifetimes of the relevant particles are generated. 
 This allows the sensitivity of the search to be explored as a function of 
 these variables.
@@ -1826,8 +1836,8 @@ accuracy~\cite{fastsim}.
 %SUSY xs NLO+NLL (see Matt)
 
 The formation of R-hadrons through the hadronisation of long-lived gluinos is 
-described by 
-\textsc{pythia8}. The hadronisation process is assumed to yield predominantly 
+described by \textsc{pythia 8.205}. The hadronisation process is assumed to 
+yield predominantly 
 meson-like ($\gluino$q$\bar{\mathrm q}$) and baryon-like ($\gluino$qqq) states, 
 as well as glueball-like ($\gluino$g) states with probability 10\%. 
 Approximately one half of these R-hadrons are charged and half are uncharged. 
@@ -2043,7 +2053,8 @@ higher because the method does not count events in which neither muon is a tag.
 %, as well as events in which the second muon does not even satisfy the probe 
 %requirements. 
 Overall, the estimated efficiency is typically within $\sim$1\% 
-of the true efficiency, and the bias is expected to be negligible in the 
+of the true efficiency (as determined from generator-level information from the 
+simulation), and the bias is expected to be negligible in the 
 data-to-simulation correction factors, as the bias largely cancels out in the 
 ratio.
 % difference tnp MINUS true = 1-2% (but effs are high so difference is almost 
@@ -2102,7 +2113,7 @@ product of conditional probabilities:
 \label{eqn:muoneff}
 \end{equation}
 When measuring the identification efficiency, the probe is taken 
-as any reconstructed track, and the passing requirement is that in satisfies 
+as any reconstructed track, and the passing requirement is that it satisfies 
 the muon quality criteria of Sec.~\ref{sec:analysis-physicsobjects} except for 
 the 
 isolation requirement. These are then the requirements for a probe in the 
@@ -2212,6 +2223,7 @@ probability to trigger on at least one muon is $1-(1-0.9)(1-0.9) =
 % this is wrong (apply DATA effs):
 %https://github.com/CMSRA1/AlphaTools/blob/v1.10.x/analysis/Producers/WeightSFLeptonEtaPtCRMuons.py#L153
 % SF should be 1-(1-effD1)*(1-effD2) / 1-(1-effM1)*(1-effM2)
+% or maybe it's fine, point is you multiply all epsilons in equation by SF
 
 The efficiencies and correction factors are then propagated to the simulated 
 events as follows. The expected number of events in the \mj control region 
@@ -2285,7 +2297,7 @@ The samples are corrected for missing higher order terms in the matrix element
 calculations as a function of the 
 boson's transverse momentum. This is done by deriving NLO QCD correction 
 factors using \textsc{Madgraph5}, and NLO electroweak correction factors from 
-theoretical calculations~\cite{monojet36fb}. The combined NLO QCD+EW 
+theoretical calculations~\cite{monojet36fb,nloewk}. The combined NLO QCD+EW 
 corrections 
 range from approximately 1.4 at a boson \pt of 200~GeV to 0.9 at 800~GeV, for 
 both the \zj and \wj processes.
@@ -2690,8 +2702,8 @@ distributions obtained directly from simulation is therefore considered valid.
 \scalht=$~400-500~GeV 
 (\mmj)]{\includegraphics[width=0.49\textwidth]{figs/analysis/mht_eq1b_eq2j_ht_400_500_SinglePhoton_Graph}}
 \caption{The data-to-simulation ratio of event counts as a function of \mht for 
-two example \njnbht categories, along with the fit of a linear (and constant) 
-function.}
+two example \njnbht categories, along with the fit of a linear and constant 
+function, coloured blue and red, respectively.}
 \label{fig:mhtvalidation-fits}
 \end{figure}
 
@@ -2776,7 +2788,9 @@ of the signal region.
  \\
 \caption{The estimated number of QCD events in each \njht bin of the signal 
 region (top), and the corresponding ratio of expected QCD and electroweak 
-events (bottom).}
+events (bottom). The \njet bins are labelled with a $j$ or $a$ for symmetric 
+and asymmetric topologies, respectively. The ``eq'' and ``ge'' labels are 
+short-hand for ``equal to'' and ``greater than or equal to'', respectively.}
 \label{fig:qcdestimation}
 \end{figure}
 
@@ -2891,7 +2905,11 @@ discussed further in this section.
 \subfloat{\includegraphics[width=0.5\textwidth]{figs/analysis/transferfactors/tfratio_mumu_Zinv_2d_puWeightDown}}\\
 \caption{The ratio of the \Tmutottw (top) and \Tmumutoz (bottom) transfer 
 factors in each \njnbht bin when varying the pileup correction factors by 
-$+1\sigma$ (left) and $-1\sigma$ (right) with respect to their nominal values.}
+$+1\sigma$ (left) and $-1\sigma$ (right) with respect to their nominal values. 
+The \njet bins are labelled with a $j$ or $a$ for symmetric and asymmetric 
+topologies, respectively, while the \nb bins are labelled with a $b$. The 
+``eq'' and ``ge'' labels are short-hand for ``equal to'' and ``greater than or 
+equal to'', respectively.}
 \label{fig:tfvariations}
 \end{figure}
 
@@ -2997,7 +3015,7 @@ in this range, as shown in Fig.~\ref{fig:tfvariations-trigger}.
 The \zj and \wj simulation samples generated at leading order are corrected for 
 NLO effects as a function of boson \pt, as discussed in 
 Sec.~\ref{sec:analysis-mccorrections-nlo}.
-These correction factors are assigned a conservative uncertainty given by 
+These correction factors are assigned an uncertainty given by 
 %the magnitude of the correction itself. 
 the difference of the correction from unity.
 %For instance, a correction factor of 1.1 
@@ -3049,14 +3067,14 @@ different kinematic selections on \alphat, \bdphi, and \mt. It is checked
 whether 
 the transfer factors are indeed sensitive to this by varying the \wj and \ttbar 
 cross sections in turn by twice their uncertainties as measured by the CMS 
-experiment.
+experiment~\cite{xs-ttbar,xs-wjets}.
 % \textbf{[TODO: W 1.08, tt 1.04 - reference?]}. 
 The changes in the transfer factors are then assigned as systematic 
 uncertainties on their values.
 %https://github.com/CMSRA1/AlphaTools/blob/v1.10.x/analysis/Producers/WeightXsVariations.py
 
 The variations on the \Tmutottw transfer factors is shown in 
-Figs.\ref{fig:tfvariations-xsw}~and~\ref{fig:tfvariations-xstt} as a function 
+Figs.~\ref{fig:tfvariations-xsw}~and~\ref{fig:tfvariations-xstt} as a function 
 of \njnbht. The changes are found to be relatively small, with values between 
 0-2\%.
 
@@ -3104,12 +3122,18 @@ transfer factor. The closure tests are performed, in turn, as a function of
 \scalht and \njet. The various closure tests employed to probe different 
 sources of potential bias are discussed in this section.
 
-To avoid double counting the uncertainties due to the simulation correction 
-factors and thereby inflating the systematic uncertainties derived from the 
-closure tests, the estimation in Eq.~\ref{eqn:closuretest} is performed via a 
-maximum likelihood fit, similar to the one that will be discussed in 
-Sec.~\ref{sec:results-likelihoodmodel}, in which the data-to-simulation 
-correction factor uncertainties are included.
+%To avoid double counting the uncertainties due to the simulation correction 
+%factors and thereby inflating the systematic uncertainties derived from the 
+%closure tests, the estimation in Eq.~\ref{eqn:closuretest} is performed via a 
+%maximum likelihood fit, similar to the one that will be discussed in 
+%Sec.~\ref{sec:results-likelihoodmodel}, in which the data-to-simulation 
+%correction factor uncertainties are included.
+Linear trends as a function of \scalht and \njet are observed in certain 
+closure tests. These discrepancies are shown to be covered by the uncertainties 
+due to the simulation correction factors by performing the estimation in 
+Eq.~\ref{eqn:closuretest} via a maximum likelihood fit, similar to the one that 
+will be discussed in Sec.~\ref{sec:results-likelihoodmodel}, in which the 
+data-to-simulation correction factor uncertainties are included.
 
 \subsubsection{Extrapolation in the \alphat and \bdphi requirements}
 Unlike in the signal region, no requirements are made on the \alphat and \bdphi 
@@ -3125,7 +3149,8 @@ estimate the number of events in the \mj control region with values of \alphat
 the \bdphi and \scalht-dependent \alphat selections mentioned in 
 Sec.~\ref{sec:analysis-eventselection}. The test is performed in the \mj 
 control region as it is statistically more powerful than the \mmj control 
-region.
+region. It has been checked that the closure obtained in both control regions 
+is consistent.
 
 The results of these closure tests are shown in Fig.~\ref{fig:closuretests}. 
 The resulting systematic uncertainties are found to be in the range 
@@ -3178,10 +3203,11 @@ level of closure and the resulting systematic uncertainties assigned to the
 \subfloat{\includegraphics[width=0.5\textwidth]{figs/analysis/closuretests/WPol/SingleMuPlus_to_SingleMuMinus_nJet}}\\
 \caption{Closure tests relating to extrapolations in \alphat (top), \bdphi 
 (middle), and W boson polarisation (bottom),  as a function of \scalht (left) 
-and \njet (right). The level of closure obtained via a maximum likelihood 
-method is indicated by the open circles. The blue lines represent the resulting 
-systematic uncertainties that are assigned to the relevant transfer factors. A 
-linear fit is also shown.}
+and \njet (right). The level of closure is indicated by the black markers. The 
+blue lines represent the resulting systematic uncertainties that are assigned 
+to the relevant transfer factors. The level of closure obtained via a maximum 
+likelihood method is also indicated by the open circles. A linear fit is also 
+shown in red.}
 \label{fig:closuretests}
 \end{figure}
 

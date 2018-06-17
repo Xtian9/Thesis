@@ -221,8 +221,8 @@ Fig.~\ref{fig:tracker}.
 
 The pixel detector comprises 3 barrel layers and 2 endcap layers. Each pixel is 
 $100~\micro\metre\times150~\micro\metre$ in size. The spatial 
-resolution is approximately $10~\micro\metre$ in the {$r$-$\phi$} plane and 
-$20~\micro\metre$ in the $z$ direction.
+resolution in the barrel region is approximately $10~\micro\metre$ in the 
+{$r$-$\phi$} plane and $20~\micro\metre$ in the $z$ direction~\cite{cms}.
 
 The barrel section of the strip detector comprises the Tracker Inner Barrel 
 (TIB) consisting of 4 layers, and the Tracker Outer Barrel (TOB) consisting of 
@@ -235,7 +235,8 @@ the TEC.
 
 The tracker is able to record a hit of a charged particle with $\pt>1$~GeV with 
 an efficiency of over 99\%. The transverse momentum resolution 
-$\frac{\Delta\pt}{\pt}$ is approximately 2\% for particles with $\pt = 100$~GeV.
+$\frac{\Delta\pt}{\pt}$ is approximately 2\% for particles with $\pt = 
+100$~GeV~\cite{cms}.
 
 \subsection{Electromagnetic calorimeter}
 %Designed to detect electrons and photons. Lead tungstate crystals.
@@ -258,7 +259,7 @@ are distributed in the ECAL Barrel (EB) and ECAL Endcap (EC), which cover the
 pseudorapidity ranges of $\etaabs<1.48$ and $1.48 < \etaabs < 3$, 
 respectively. The ECAL is illustrated in Fig.~\ref{fig:ecal}. 
 The energy resolution $\frac{\Delta E}{E}$ of the ECAL is approximately 0.3\% 
-for high energy electrons.
+for high energy electrons~\cite{cms}.
 
 % sandro: supermodules (red line i think), modules (4), submodules (5x2)
 \begin{figure}
@@ -316,8 +317,8 @@ placed at a distance in $z$ from the interaction point of about 11~m.
 	\label{fig:hcal}
 \end{figure}
 
-The calorimeter cells in the HB have dimensions of $\Delta\eta\Delta\phi = 
-0.087 \times 0.087$. % sizes varies with eta (gets larger)
+The calorimeter cells in the HB have dimensions of $\Delta\eta\times\Delta\phi 
+= 0.087 \times 0.087$. % sizes varies with eta (gets larger)
 The purpose of the HO is to capture hadronic showers that leak past the HB, 
 increasing its effective thickness to over 10 interaction lengths. 
 % HO increases interaction length of HB from 5-10 to 11
@@ -406,7 +407,7 @@ precise bunch crossing determination.
 The transverse momentum of muons is measured via a combination of the muon 
 system and the tracker. The momentum resolution $\frac{\Delta\pt}{\pt}$ of the 
 combined measurement is approximately 1\% (4\%) in the region $\etaabs<0.8$ for 
-muons with a transverse momentum of 10~(1000)~GeV.
+muons with a transverse momentum of 10~(1000)~GeV~\cite{cms}.
 
 \subsection{Trigger and data acquisition}
 %40 MHz. L1 trigger. HLT.
@@ -751,8 +752,8 @@ Sec.~\ref{sec:detector-isolation}) are excluded from the event.
 %https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetEnergyScale#Documents_and_Analysis
 %https://twiki.cern.ch/twiki/bin/view/CMS/IntroToJEC
 % see also Dunne 1st year report
-The energies of reconstructed jets typically differ from the true energy of the 
-original quark or gluon due to a non-uniform and imperfect resolution of the 
+The energies of reconstructed jets typically differ from the true jet energy 
+due to a non-uniform and imperfect resolution of the 
 detector. The measured transverse momentum of a jet 
 $p_{\mathrm{T}}^{\mathrm{raw}}$ is corrected to account for this via a sequence 
 of multiplicative correction factors (the output of each step is the input to 
@@ -808,8 +809,8 @@ transverse momentum $\pt=100$~GeV.
 % also DM+tt/bb
 % also ttbar background
 A number of BSM models include the associated production of, or decays to, top 
-and bottom quarks. It is therefore advantageous to able to identify jets that 
-originate from a bottom quark, a process known as \textit{b-tagging}.
+and bottom quarks. It is therefore advantageous to be able to identify jets 
+that originate from a bottom quark, a process known as \textit{b-tagging}.
 
 %long lifetime: τ≈1.5 ps, cτ≈450 μm, γβcτ≈1.8 mm @ 20 GeV
 %large mass: ~5 GeV
@@ -1033,8 +1034,8 @@ The next step is the simulation of parton showers, that is additional QCD
 radiation emitted by the involved quarks and gluons, and the subsequent 
 hadronisation in which colourless hadrons are formed according to the Lund 
 string model. Any unstable particles in the event are then decayed. The 
-showering, hadronisation and decay processes are performed with 
-\textsc{pythia8}~\cite{pythia}.
+showering, hadronisation and decay processes, as well as the underlying event 
+modelling, are performed with \textsc{pythia8}~\cite{pythia}.
 
 %In addition to the hard scattering, a simulation of the underlying event, 
 %multi-partonic interactions of the proton remnants, is also performed. 

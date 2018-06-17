@@ -122,12 +122,12 @@ This includes uncertainties due to the corrections on the jet energy, pileup
 distribution, b-tagging efficiency, trigger efficiency, and ISR distribution. 
 The integrated luminosity of 35.9~\ifb is measured with an uncertainty of 
 2.5\%~\cite{lumi2016} which results in an additional uncertainty on the overall 
-number of signal events. The statical uncertainties due to the limited number 
-of simulated events are also considered. Additional sources of uncertainty 
-related to displaced jets are discussed in the remainder of this section. A 
-summary of all sources of uncertainty and their typical sizes is shown in 
-Tab.~\ref{tab:systs-signal} for various representative simplified models of 
-long-lived gluino production.
+number of signal events. The statistical uncertainties due to the limited 
+number of simulated events are also considered. Additional sources of 
+uncertainty related to displaced jets are discussed in the remainder of this 
+section. A summary of all sources of uncertainty and their typical sizes is 
+shown in Tab.~\ref{tab:systs-signal} for various representative simplified 
+models of long-lived gluino production.
 
 %Summarise in table or words typical size of systs for relevant models.
 \begin{table}[t]
@@ -166,7 +166,7 @@ across all \njnbhtmht bins.}
 %of pt and eta (same bins as btv).
 
 %odd jet/chf
-The requirement of \chf~$<0.1$ on the most energetic jet of the event, 
+The requirement of \chf~$>0.1$ on the most energetic jet of the event, 
 discussed in Sec.~\ref{sec:analysis-baselineselections}, reduces the selection 
 efficiency for T1qqqqLL models with $1~\mathrm{m} \lesssim \ctau \lesssim 
 10~\mathrm{m}$ to $\sim$30\%. This is because of the lack of reconstructed 
@@ -174,7 +174,7 @@ charged particle tracks in the displaced jets that are produced inside the
 calorimeters. 
 For the same reason, the veto on events containing a jet that fails the 
 identification requirements (which includes a minimum requirement on the 
-charged component of jets), has a selection efficiency of $\sim$10\% for these 
+charged component of jets), has a selection efficiency of $\sim$90\% for these 
 models.
 Below and above this range in \ctau the efficiencies of the jet identification 
 and \chf requirements are close to 100\%.
@@ -241,12 +241,13 @@ the \njnbhtmht parameter space in the signal and control regions, accounting
 for all relevant uncertainties. The 
 likelihood function is utilised to carry out the background estimation as well 
 as to perform hypothesis tests to assess the sensitivity of the search to new 
-physics.
+physics. 
 %Model the bins and number of events and uncertainties and correlations between 
 %bins as a likelihood function (probability of observing the observed data 
 %given 
 %some model parameters). This will then be fitted/maximised/used to make the 
 %background estimations and perform statistical tests to determine limits.
+The implementation is based on the RooStats statistical tool~\cite{roostats}.
 
 The number of events in each bin of the \njnbhtmht parameter space is modelled 
 as a Poisson distribution, with an expected value given by that obtained from 
@@ -281,7 +282,7 @@ $\theta_\mathrm{W,sig}^{i,j}$ encapsulate all relevant
 uncertainties related to the transfer factors (both from the data-driven 
 closure tests and the variations in simulation), the \mht shape, and the 
 limited number of 
-simulated events, $b_{\mathrm{QCD},\mu}^i$ is the number of QCD events 
+simulated events, $b_\mathrm{QCD,sig}^{i,j}$ is the number of QCD events 
 estimated using the method described in Sec.~\ref{sec:analysis-estimation-qcd} 
 with $\theta_\mathrm{QCD,sig}^{i,j}$ encoding its uncertainty, 
 $s_\mathrm{sig}^{i,j}$ is the expected number of signal 
@@ -642,7 +643,21 @@ mass-degenerate light-flavour squarks, respectively. The corresponding lower
 bounds on the LSP mass from squark decays are 500, 400 and 575~GeV. Gluino 
 masses up to 1900, 1650 and 1650~GeV are excluded for gluino decays via virtual 
 bottom, top and light-flavour squarks. The corresponding largest exclusions on 
-the LSP mass are 1150, 850 and 900~GeV.
+the LSP mass are 1150, 850 and 900~GeV. These exclusions extend the reach 
+obtained at a centre of mass energy of 8~TeV for the squark, gluino and LSP 
+mass by up to 300, 500, and 300~GeV, respectively.
+
+%FIXME
+%Mention 2sigma excess (refer back to results) (line 531)
+%fluctuations mostly nb>=1 and monojet
+The observed exclusion regions are found to be $\sim$1-2$\sigma$ weaker than 
+the expected ones for most of the models considered. This difference is due to 
+slight upward fluctuations in the observed events across several categories in 
+the signal region that signal events are expected to occupy.
+%in particular in the $\nb \ge 1$ categories. 
+%\textbf{This suggests we are close to confirming the existence of 
+%%%supersymmetry. In particular, it seems that SUSY exists in a superposition 
+%%%of all possible masses and lifetimes.}
 
 The largest excluded masses (according to the observed limits) of squarks, 
 gluinos and neutralinos are summarised in Tab.~\ref{tab:limits} for the prompt 
@@ -748,23 +763,14 @@ The sensitivity is reduced for models with lifetimes larger than $\ctau >
 limiting case is that of a metastable gluino. In this case, the gluinos always 
 decay outside of the detector and so the acceptance for these models relies 
 entirely on ISR jets. Gluino masses up to 900~GeV are excluded, and the 
-sensitivity is independent of the LSP mass.
+sensitivity is independent of the LSP mass. 
 %explain pattern in limits (line 538 in paper) prompt-low-med-high-stable ctau.
 %1 mm improvement because less background in high nb bins 
 %less background in high nj/nb.
 %mention which are MSBs (no need for plots), refer back to yield plots.
-
-%FIXME
-%Mention 2sigma excess (refer back to results) (line 531)
-%fluctuations mostly nb>=1 and monojet
-The observed exclusion regions are found to be $\sim$1-2$\sigma$ weaker than 
-the expected ones for most of the models considered. This difference is due to 
-slight upward fluctuations in the observed events across several categories in 
-the signal region that signal events are expected to occupy.
-%in particular in the $\nb \ge 1$ categories. 
-%\textbf{This suggests we are close to confirming the existence of 
-%%%supersymmetry. In particular, it seems that SUSY exists in a superposition 
-%%%of all possible masses and lifetimes.}
+Similarly to the models with a promptly decaying particle, the observed 
+exclusion regions are found to be $\sim$1-2$\sigma$ weaker than the expected 
+ones.
 
 %(line 550 in paper)
 %say r-hadron interaction model can be of varied forms. For simplicity here 
@@ -802,7 +808,8 @@ variables such as \scalht and \njet, and an acceptance to jets from ISR.
 % also partly b-tagging
 In particular, this search provides coverage that is complementary to dedicated 
 searches at the LHC (described in Sec.~\ref{sec:theory-status}) for models with 
-$\ctau \lesssim 1$~cm ($\tau \lesssim 10$~ps). This is because dedicated 
+$\ctau \lesssim 1$~cm ($\tau \lesssim 10$~ps), providing the first limits for 
+supersymmetric long-lived models below this range. This is because dedicated 
 techniques require a minimum decay length. 
 %%%or a metastable gluino, % this is true for stopped search or non-interacting 
 %LLP, but there's hscp...
